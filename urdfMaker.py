@@ -9,15 +9,15 @@ import getpass
 
 
 # error messages
-errors = []
+log = []
 
 
-def print_errors():
-    if not errors:
-        print("No errors.")
+def print_log():
+    if not log:
+        print("No entries in log found.")
     else:
-        for error in errors:
-            print(error)
+        for entry in log:
+            print(entry)
 
 # print help
 def print_help():
@@ -67,36 +67,36 @@ for arg in sys.argv:
 
       
 if(sysarg_abb_pkg != "abb" and sysarg_abb_pkg != "abb_experimental"):
-    errors.append("script does not work with package: "+sysarg_abb_pkg+", chose default: abb_experimental")
+    log.append("script does not work with package: "+sysarg_abb_pkg+", chose default: abb_experimental")
     sysarg_abb_pkg = "abb_experimental"
 
 if (sysarg_robot_name == "none"):
-    errors.append("Please add a abb robot name. use option robot_name:=irbXXX, make sure its from the right abb package. do options list_robots")
+    log.append("Please add a abb robot name. use option robot_name:=irbXXX, make sure its from the right abb package. do options list_robots")
 
 if (sysarg_ros_version == "none"):
     if (os.path.exists("/opt/ros/"+"kinetic"+"/setup.bash")):
-        errors.append("No ros version was given, set to kinetic distribution because existing")
+        log.append("No ros version was given, set to kinetic distribution because existing")
         sysarg_ros_version = "kinetic"
     else:
         if (os.path.exists("/opt/ros/"+"indigo"+"/setup.bash")):
-            errors.append("No ros version was given, tried kinetic but not existing, set to indigo distribution because existing")
+            log.append("No ros version was given, tried kinetic but not existing, set to indigo distribution because existing")
             sysarg_ros_version = "indigo"
         else:
             erros.append("No ros distribution was given. Tried finding kinetic and indigo, both not existing! Make sure to add option ros_version:=<ros distribution name> on next run")
-            print_errors()
+            print_log()
             exit()
 
 if (sysarg_project_name == "none"):
     if not (os.path.exists(sysarg_project_folder_dir+"catkin_ws")):
         sysarg_project_name = "catkin_ws"
-        errors.append("project name not given, default name catkin_ws was chosen because was not existing")
+        log.append("project name not given, default name catkin_ws was chosen because was not existing")
     else:
         a = raw_input("default project name catkin_ws already exists, press y to create robot in this project, press any other key to cancel\n")
         if not (a == "y"):
-            print_errors()
+            print_log()
             exit()
         else:
-            errors.append("project catkin_ws was chosen as default")
+            log.append("project catkin_ws was chosen as default")
             sysarg_project_name = "catkin_ws"
 
 
@@ -139,7 +139,7 @@ if not (os.path.exists(pth_ros_distribution)):
     subprocess.call(["rosdep", "update"])
     subprocess.call(["echo", pth_ros_distribution, ">>", pth_bashrc])
 else:
-    errors.append("ros-"+ arg_distribution_version+" already installed!")
+    log.append("ros-"+ arg_distribution_version+" already installed!")
 
 # build project
 subprocess.call(["mkdir", "-p", pth_project_packages])
@@ -151,17 +151,17 @@ subprocess.call(["mkdir", pth_ros_downloads])
 if not (os.path.exists(pth_ros_downloads+"/abb")):
     subprocess.call(["git", "clone", lnk_abb_git, pth_ros_downloads+"/abb"])
 else:
-    errors.append("meta-package abb already cloned")
+    log.append("meta-package abb already cloned")
 
 if not (os.path.exists(pth_ros_downloads+"/abb_experimental")):
     subprocess.call(["git", "clone", lnk_abb_experimental_git, pth_ros_downloads+"/abb_experimental"])
 else:
-    errors.append("meta-package abb_experimental already cloned")
+    log.append("meta-package abb_experimental already cloned")
 
 if not (os.path.exists(pth_ros_downloads+"/industrial_core")):
     subprocess.call(["git", "clone", lnk_industrial_core_git, pth_ros_downloads+"/industrial_core"])
 else:
-    errors.append("meta-package industrial_core already cloned")
+    log.append("meta-package industrial_core already cloned")
 
 # create package 
 subprocess.call(["catkin_create_pkg", arg_robot_package_name, "roscpp"], cwd=pth_project_packages)
@@ -182,14 +182,14 @@ if not (os.path.exists(pth_ros_downloads+arg_abb_package+"/"+arg_robot_support_p
         else:
             arg_abb_package = "abb"
         if not (os.path.exists(pth_ros_downloads+arg_abb_package+"/"+arg_robot_support_package)):
-            errors.append("could not find package: "+pth_ros_downloads+arg_abb_package+"/"+arg_robot_support_package+" to create robot urdf file with. Make sure you have chosen the right abb metapackage. Option abb_packkage:=<abb or abb_experimental>, use option list_robots to list robots in each package")
-            print_errors()
+            log.append("could not find package: "+pth_ros_downloads+arg_abb_package+"/"+arg_robot_support_package+" to create robot urdf file with. Make sure the chosen robot exists. Use option list_robots to list robots in each package")
+            print_log()
             exit()
         else:
-            errors.append("Changed package from abb to abb_experimental!")
+            log.append("Changed package from abb to abb_experimental!")
     else:
-        errors.append("could not find package: "+pth_ros_downloads+arg_abb_package+"/"+arg_robot_support_package+" to create robot urdf file with. Make sure you have chosen the right abb metapackage. Option abb_packkage:=<abb or abb_experimental>, use option list_robots to list robots in each package")
-        print_errors()
+        log.append("could not find package: "+pth_ros_downloads+arg_abb_package+"/"+arg_robot_support_package+" to create robot urdf file with. Make sure you have chosen the right abb metapackage or support package. Option abb_packkage:=<abb or abb_experimental>, use option list_robots to list robots in each package")
+        print_log()
         exit()
 
 # copy files for needed for the urdf to build a kinematic model
@@ -228,5 +228,5 @@ with open(pth_pkg_robot+"urdf/"+arg_robot_package_name+".urdf", "wb+", 0) as out
 subprocess.call(["catkin_make"], shell=True, cwd=pth_catkin_workspace)
 
 # Done
-print_errors()
+print_log()
 print("Succesfully run the script. This created a project: "+ sysarg_project_name +" with package: "+arg_robot_package_name+ " and urdf for "+arg_abb_irb_name+". The urdf is ready for MoveIT! setup assistant. Do not forget to source you project before using setupassistant, go into: "+pth_catkin_workspace+" and do: source devel/setup.bash")
