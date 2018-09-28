@@ -21,6 +21,7 @@ def print_log():
 
 # print help
 def print_help():
+    print("This is a script to create a project with urdf using ABB-metapackage abb and abb_experimental. The urdf will be ready to use with moveit setup assistant")
     print('Options: help/h/-h/options/opt, list_robots/list/l/list_packages, robot_name:=<irbXXX>, project_name:=<project_name>, ros_version:=<kinetic/indigo/>, abb_package:=<abb/abb_experimental>')
     print('Note: the robot name must be an existing abb robot in one of the following abb packages: abb or abb_experimental')
 
@@ -31,7 +32,7 @@ def print_robots():
     print('package abb_experimental has: irb1200, irb120, irb1600, irb2600, irb4600, irb52, irb6650s, irb7600')
 
 
-# default startup arguments
+# startup arguments
 sysarg_ros_version = "none"
 sysarg_robot_name = "none"
 sysarg_project_name = "none"
@@ -40,7 +41,7 @@ sysarg_abb_pkg = "none"
 
 # help for options
 if(len(sys.argv) == 1):
-    print("Add some options!")
+    print("Add atleast option robot_name:=<name>!")
     print_help()
     exit()
 
@@ -201,7 +202,7 @@ subprocess.call(["cp", pth_ros_downloads+arg_abb_package+"/"+arg_robot_support_p
 subprocess.call(["cp", "-r", pth_ros_downloads+arg_abb_package+"/"+arg_robot_support_package+"/meshes", pth_pkg_robot])
 subprocess.call(["cp", "-r", pth_ros_downloads+arg_abb_package+"/"+arg_robot_support_package+"/meshes", pth_pkg_robot])
 
-# loop through each line in urdf and change/subsitute/remove uneeded lines
+# loop through each line in urdf and change/subsitute/remove uneeded xacro lines so that the xacro conversion to actual urdf can work
 arg_abb_irb_name = re.sub("_macro.xacro", "", arg_macro_xacro)
 with open(pth_pkg_robot+"urdf/"+arg_robot_package_name+".xacro") as f:
     urdf_file = open(pth_pkg_robot+"urdf/"+arg_robot_package_name+"_macro.urdf", "w+")
@@ -230,3 +231,7 @@ subprocess.call(["catkin_make"], shell=True, cwd=pth_catkin_workspace)
 # Done
 print_log()
 print("Succesfully run the script. This created a project: "+ sysarg_project_name +" with package: "+arg_robot_package_name+ " and urdf for "+arg_abb_irb_name+". The urdf is ready for MoveIT! setup assistant. Do not forget to source you project before using setupassistant, go into: "+pth_catkin_workspace+" and do: source devel/setup.bash")
+
+# moveit setup assistant
+
+# continu after moveit setup assistant with setting up for simulation
