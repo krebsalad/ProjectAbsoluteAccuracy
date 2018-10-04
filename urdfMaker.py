@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import os
+import os       
 import subprocess
 import re
 import sys
@@ -8,24 +8,27 @@ import glob
 import getpass
 
 
-# error messages
+# list with logs
 log = []
 
-
+# print log list
 def print_log():
     if not log:
-        print("No entries in log found.")
+        print("No entries in script log found.")
     else:
+        print("\n Script log and Error list:")
         for entry in log:
             print(entry)
+
 
 # print help
 def print_help():
     print("This is a script to create a project with urdf using ABB-metapackage abb and abb_experimental. The urdf will be ready to use with moveit setup assistant")
     print('Options: help/h/-h/options/opt, list_robots/list/l/list_packages, robot_name:=<irbXXX>, project_name:=<project_name>, ros_version:=<kinetic/indigo/>, abb_package:=<abb/abb_experimental>')
-    print('Note: the robot name must be an existing abb robot in one of the following abb packages: abb or abb_experimental')
+    print('Note: the robot name must be an existing abb robot in one of the following abb packages: abb or abb_experimental. The script is reusable on the same package or different package in same project')
 
 
+# print available abb robots
 def print_robots():
     print("there are 2 abb packages: abb and abb_experimental")
     print('package abb has: irb2400, irb4400, irb5400, irb6600, irb6640' )
@@ -39,12 +42,13 @@ sysarg_project_name = "none"
 sysarg_project_folder_dir = "/home/"+getpass.getuser()+"/"
 sysarg_abb_pkg = "none"
 
-# help for options
+# auto help if no option
 if(len(sys.argv) == 1):
     print("Add atleast option robot_name:=<name>!")
     print_help()
     exit()
 
+# help options
 for arg in sys.argv:
     if(arg == "help" or arg == "h" or arg == "--h" or arg == "options" or arg == "opt"):
         print_help()
@@ -66,14 +70,17 @@ for arg in sys.argv:
     if(re.match("abb_package:=", arg)):
         sysarg_abb_pkg = re.sub("abb_package:=", "", arg)
 
-      
+# check if package existing, else change to exsting
 if(sysarg_abb_pkg != "abb" and sysarg_abb_pkg != "abb_experimental"):
     log.append("script does not work with package: "+sysarg_abb_pkg+", chose default: abb_experimental")
     sysarg_abb_pkg = "abb_experimental"
 
+# check if robot name was given
 if (sysarg_robot_name == "none"):
-    log.append("Please add a abb robot name. use option robot_name:=irbXXX, make sure its from the right abb package. do options list_robots")
+    log.append("\nFAILED Please add a abb robot name. use option robot_name:=irbXXX, make sure its from the right abb package. do option list\n")
+    exit()
 
+# ros version only indigo and kinetic, if you sure your deistribution works with ROS comment the following statement
 if (sysarg_ros_version == "none"):
     if (os.path.exists("/opt/ros/"+"kinetic"+"/setup.bash")):
         log.append("No ros version was given, set to kinetic distribution because existing")
@@ -87,6 +94,7 @@ if (sysarg_ros_version == "none"):
             print_log()
             exit()
 
+# check if project name given
 if (sysarg_project_name == "none"):
     if not (os.path.exists(sysarg_project_folder_dir+"catkin_ws")):
         sysarg_project_name = "catkin_ws"
@@ -187,7 +195,7 @@ if not (os.path.exists(pth_ros_downloads+arg_abb_package+"/"+arg_robot_support_p
             print_log()
             exit()
         else:
-            log.append("Changed package from abb to abb_experimental!")
+            log.append("Changed abb meta package to the other one")
     else:
         log.append("could not find package: "+pth_ros_downloads+arg_abb_package+"/"+arg_robot_support_package+" to create robot urdf file with. Make sure you have chosen the right abb metapackage or support package. Option abb_packkage:=<abb or abb_experimental>, use option list_robots to list robots in each package")
         print_log()
@@ -225,13 +233,27 @@ with open(pth_pkg_robot+"urdf/"+arg_robot_package_name+".xacro") as f:
 with open(pth_pkg_robot+"urdf/"+arg_robot_package_name+".urdf", "wb+", 0) as out:
    subprocess.call(['rosrun', 'xacro', 'xacro', pth_pkg_robot+"urdf/"+arg_robot_package_name+"_macro.urdf"], stdout=out)
 
-# Rebuild project
+# Rebuild project and make ready for setup assistant
 subprocess.call(["catkin_make"], shell=True, cwd=pth_catkin_workspace)
+subprocess.call(["cp", "-r", pth_ros_downloads+"/abb/abb_irb2400_moveit_config/.setup_assistant", pth_pkg_robot])
 
 # Done
 print_log()
-print("Succesfully run the script. This created a project: "+ sysarg_project_name +" with package: "+arg_robot_package_name+ " and urdf for "+arg_abb_irb_name+". The urdf is ready for MoveIT! setup assistant. Do not forget to source you project before using setupassistant, go into: "+pth_catkin_workspace+" and do: source devel/setup.bash")
+print("\n1: Succesfully run the script. This created a project: "+ sysarg_project_name +" with package: "+arg_robot_package_name+ " and urdf for "+arg_abb_irb_name+". The urdf is ready for MoveIT! setup assistant. Do not forget to source you project before using setupassistant, go into: "+pth_catkin_workspace+" and do: source devel/setup.bash")
+print("\n2: use command the following comannd to start moveit setup assitant after sourcing your project: roslaunch moveit_setup_assistant setup_assistant.launch")
+print("\n2: When saving moveit configuration with setup assistant remember to save in package folder, path:"+pth_pkg_robot)
+print("\n3: Afterwards you can run simSetup.py to setup simulation")
 
-# moveit setup assistant
+# delete existing script config
+if(os.path.exists(pth_pkg_robot+"sim_setup_config.txt")):
+    subprocess.call(["rm", pth_pkg_robot+"sim_setup_config.txt"])
 
-# continu after moveit setup assistant with setting up for simulation
+# create new config
+with open(pth_pkg_robot+"sim_setup_config.txt", "a+") as config:
+    config.write("project_name="+sysarg_project_name+"\n")
+    config.write("package_name=robot_"+sysarg_robot_name+"\n")
+    config.write("robot_name="+sysarg_robot_name+"\n")
+    config.write("abb_meta_package="+arg_abb_package+"\n")
+    config.write("irb_robot_name="+arg_abb_irb_name+"\n")
+    config.write("abb_support_package="+arg_robot_support_package+"\n")
+    config.close()
