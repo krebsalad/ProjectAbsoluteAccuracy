@@ -13,12 +13,14 @@ log = []
 
 # print log list
 def print_log():
+    print("\nurdfMaker Script Log and Error list:")
     if not log:
         print("No entries in script log found.")
     else:
-        print("\n Script log and Error list:")
+        count = 0
         for entry in log:
-            print(entry)
+            count += 1
+            print("\n"+str(count)+") "+entry)
 
 
 # print help
@@ -192,12 +194,16 @@ if not (os.path.exists(pth_ros_downloads+arg_abb_package+"/"+arg_robot_support_p
             arg_abb_package = "abb"
         if not (os.path.exists(pth_ros_downloads+arg_abb_package+"/"+arg_robot_support_package)):
             log.append("could not find package: "+pth_ros_downloads+arg_abb_package+"/"+arg_robot_support_package+" to create robot urdf file with. Make sure the chosen robot exists. Use option list_robots to list robots in each package")
+            subprocess.call(["rm", "-r", pth_pkg_robot])
+            log.append("Deleted package from project : "+ pth_pkg_robot)
             print_log()
             exit()
         else:
             log.append("Changed abb meta package to the other one")
     else:
         log.append("could not find package: "+pth_ros_downloads+arg_abb_package+"/"+arg_robot_support_package+" to create robot urdf file with. Make sure you have chosen the right abb metapackage or support package. Option abb_packkage:=<abb or abb_experimental>, use option list_robots to list robots in each package")
+        subprocess.call(["rm", "-r", pth_pkg_robot])
+        log.append("Deleted package from project : "+ pth_pkg_robot)
         print_log()
         exit()
 
@@ -239,10 +245,11 @@ subprocess.call(["cp", "-r", pth_ros_downloads+"/abb/abb_irb2400_moveit_config/.
 
 # Done
 print_log()
+print("\n---Next steps---")
 print("\n1: Succesfully run the script. This created a project: "+ sysarg_project_name +" with package: "+arg_robot_package_name+ " and urdf for "+arg_abb_irb_name+". The urdf is ready for MoveIT! setup assistant. Do not forget to source you project before using setupassistant, go into: "+pth_catkin_workspace+" and do: source devel/setup.bash")
 print("\n2: use command the following comannd to start moveit setup assitant after sourcing your project: roslaunch moveit_setup_assistant setup_assistant.launch")
-print("\n2: When saving moveit configuration with setup assistant remember to save in package folder, path:"+pth_pkg_robot)
-print("\n3: Afterwards you can run simSetup.py to setup simulation")
+print("\n3: When saving moveit configuration with setup assistant remember to save in package folder, path:"+pth_pkg_robot)
+print("\n4: Afterwards you must run simSetup.py to setup simulation and make it possible to compile the project or create other configs with setup assistant")
 
 # delete existing script config
 if(os.path.exists(pth_pkg_robot+"sim_setup_config.txt")):
