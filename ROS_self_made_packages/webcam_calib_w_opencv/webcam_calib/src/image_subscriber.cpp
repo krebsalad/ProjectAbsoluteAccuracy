@@ -3,6 +3,8 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <cv_bridge/cv_bridge.h>
 
+#include <string>
+
 void imageCallback(const sensor_msgs::ImageConstPtr& msg)
 {
   try
@@ -18,12 +20,21 @@ void imageCallback(const sensor_msgs::ImageConstPtr& msg)
 
 int main(int argc, char **argv)
 {
+  std::string topic = argv[1];
+
+  if(topic == "")
+  {
+    ROS_INFO_STREAM("no topic to subscribe to was given");
+    return 0;
+  }
+
+
   ros::init(argc, argv, "image_listener");
   ros::NodeHandle nh;
   cv::namedWindow("view");
   cv::startWindowThread();
   image_transport::ImageTransport it(nh);
-  image_transport::Subscriber sub = it.subscribe("/camera/image_raw", 1, imageCallback);
+  image_transport::Subscriber sub = it.subscribe(topic, 1, imageCallback);
   ros::spin();
   cv::destroyWindow("view");
 }
