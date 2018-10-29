@@ -1,4 +1,4 @@
-project_name=ros_robot_calibration
+project_name=ros_robot_calib
 package_name=robot_irb1600
 robot_name=irb1600
 abb_meta_package=abb_experimental
