@@ -1,0 +1,6 @@
+project_name=ros_robot_calibration
+package_name=robot_irb1600
+robot_name=irb1600
+abb_meta_package=abb_experimental
+irb_robot_name=irb1600_6_12
+abb_support_package=abb_irb1600_support
