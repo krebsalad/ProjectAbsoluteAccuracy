@@ -74,14 +74,14 @@
   </link>
   <link name="link_4">
     <visual>
-      <origin rpy="0 0 0" xyz="-0.522 0 -1.1865"/>
+      <origin rpy="0 0 0" xyz="-0.522 0 -1.2945"/>
       <geometry>
         <mesh filename="package://robot_irb1660_id/meshes/link_4_bin.stl"/>
       </geometry>
       <material name="abb_orange"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="-0.522 0 -1.1865"/>
+      <origin rpy="0 0 0" xyz="-0.522 0 -1.2945"/>
       <geometry>
         <mesh filename="package://robot_irb1660_id/meshes/link_4_bin.stl"/>
       </geometry>
@@ -90,14 +90,14 @@
   </link>
   <link name="link_5">
     <visual>
-      <origin rpy="0 0 0" xyz="-0.828 0 -1.1865"/>
+      <origin rpy="0 0 0" xyz="-0.828 0 -1.2945"/>
       <geometry>
         <mesh filename="package://robot_irb1660_id/meshes/link_5_bin.stl"/>
       </geometry>
       <material name="abb_orange"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="-0.828 0 -1.1865"/>
+      <origin rpy="0 0 0" xyz="-0.828 0 -1.2945"/>
       <geometry>
         <mesh filename="package://robot_irb1660_id/meshes/link_5_bin.stl"/>
       </geometry>
@@ -106,14 +106,14 @@
   </link>
   <link name="link_6">
     <visual>
-      <origin rpy="0 0 0" xyz="-0.963 0 -1.1865"/>
+      <origin rpy="0 0 0" xyz="-0.963 0 -1.2945"/>
       <geometry>
         <mesh filename="package://robot_irb1660_id/meshes/link_6_bin.stl"/>
       </geometry>
       <material name="abb_orange"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="-0.963 0 -1.1865"/>
+      <origin rpy="0 0 0" xyz="-0.963 0 -1.2945"/>
       <geometry>
         <mesh filename="package://robot_irb1660_id/meshes/link_6_bin.stl"/>
       </geometry>
@@ -145,7 +145,7 @@
     <limit effort="0" lower="-4.15388" upper="1.37881" velocity="3.14159"/>
   </joint>
   <joint name="joint_4" type="revolute">
-    <origin rpy="0 0 0" xyz="0.372 0 0"/>
+    <origin rpy="0 0 0" xyz="0.372 0 0.108"/>
     <parent link="link_3"/>
     <child link="link_4"/>
     <axis xyz="1 0 0"/>
