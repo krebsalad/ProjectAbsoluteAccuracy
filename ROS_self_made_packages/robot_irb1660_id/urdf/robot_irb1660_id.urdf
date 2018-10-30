@@ -26,14 +26,14 @@
   </link>
   <link name="link_1">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 -0.200"/>
       <geometry>
         <mesh filename="package://robot_irb1660_id/meshes/link_1_bin.stl"/>
       </geometry>
       <material name="abb_orange"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 -0.200"/>
       <geometry>
         <mesh filename="package://robot_irb1660_id/meshes/link_1_bin.stl"/>
       </geometry>
@@ -124,7 +124,7 @@
   <!-- end of link list -->
   <!-- joint list -->
   <joint name="joint_1" type="revolute">
-    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <origin rpy="0 0 0" xyz="0 0 0.200"/>
     <parent link="base_link"/>
     <child link="link_1"/>
     <axis xyz="0 0 1"/>

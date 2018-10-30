@@ -1,5 +1,5 @@
 project_name=ros_robot_calib
-package_name=robot_irb1600
+package_name=robot_irb1660_id
 robot_name=irb1600
 abb_meta_package=abb_experimental
 irb_robot_name=irb1600_6_12
