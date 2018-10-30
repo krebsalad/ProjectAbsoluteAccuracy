@@ -1,8 +1,11 @@
 moveit_setup_assistant_config:
   URDF:
-    package: abb_irb2400_support
-    relative_path: urdf/irb2400.urdf
+    package: robot_irb1660_id
+    relative_path: urdf/robot_irb1660_id.urdf
+    xacro_args: "--inorder "
   SRDF:
     relative_path: config/abb_irb2400.srdf
   CONFIG:
-    generated_timestamp: 1402076252
+    author_name: johan
+    author_email: johanmgina7@gmail.com
+    generated_timestamp: 1540897185
