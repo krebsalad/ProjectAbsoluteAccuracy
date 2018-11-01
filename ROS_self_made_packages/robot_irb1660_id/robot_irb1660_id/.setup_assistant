@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: robot_irb1660_id
+    relative_path: urdf/robot_irb1660_id_zeroed.urdf
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/abb_irb2400.srdf
+  CONFIG:
+    author_name: johan
+    author_email: johanmgina7@gmail.com
+    generated_timestamp: 1541074972
