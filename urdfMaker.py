@@ -25,9 +25,10 @@ def print_log():
 
 # print help
 def print_help():
-    print("This is a script to create a project with urdf using ABB-metapackage abb and abb_experimental. The urdf will be ready to use with moveit setup assistant")
-    print('Options: help/h/-h/options/opt, list_robots/list/l/list_packages, robot_name:=<irbXXX>, project_name:=<project_name>, ros_version:=<kinetic/indigo/>, abb_package:=<abb/abb_experimental>')
-    print('Note: the robot name must be an existing abb robot in one of the following abb packages: abb or abb_experimental. The script is reusable on the same package or different package in same project')
+    print("\nI. This is a script to create a project with urdf using ABB-metapackage abb and abb_experimental. The urdf will be ready to use with moveit setup assistant")
+    print('\nII. Options: help/h/-h/options/opt, list_robots/list/l/list_packages, robot_name:=<irbXXX>, project_name:=<project_name>, ros_version:=<kinetic/indigo/>, abb_package:=<abb/abb_experimental>')
+    print('\nIII. run the script with atleast option robot_name:=<irbxxx>. Default project directory is catkin_ws. The abb packages will automatically be switched if the robot can not be found')
+    print('\nNote: the robot name must be an existing abb robot in one of the following abb packages: abb or abb_experimental. The script is reusable on the same package or different package in same project')
 
 
 # print available abb robots
