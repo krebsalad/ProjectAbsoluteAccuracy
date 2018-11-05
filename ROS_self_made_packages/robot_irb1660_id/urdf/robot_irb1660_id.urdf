@@ -33,7 +33,7 @@
       <material name="abb_orange"/>
     </visual>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 -0.134"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <mesh filename="package://robot_irb1660_id/meshes/link_1_bin.stl"/>
       </geometry>
