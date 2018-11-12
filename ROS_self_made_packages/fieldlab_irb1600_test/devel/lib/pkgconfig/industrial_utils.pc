@@ -1,0 +1,8 @@
+prefix=/home/turtle/fieldlab_irb1600_test/devel
+
+Name: industrial_utils
+Description: Description of industrial_utils
+Version: 0.5.1
+Cflags: -I/home/turtle/fieldlab_irb1600_test/src/industrial_utils/include
+Libs: -L/home/turtle/fieldlab_irb1600_test/devel/lib -lindustrial_utils
+Requires: roscpp urdf
