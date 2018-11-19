@@ -112,7 +112,7 @@ void executeCartesianPath_Through_Positions(moveit::planning_interface::MoveGrou
     my_plan.trajectory_ = trajectory_msg;
     
     sleep(5.0);
-    
+
     //execute if planning succesful
     if(success)
     {
@@ -128,7 +128,7 @@ void executeCartesianPath_Through_Positions(moveit::planning_interface::MoveGrou
 int main(int argc, char* argv[])
 {
     //ros ini, ros node and spinner setup
-    ros::init(argc, argv, "robot_code");
+    ros::init(argc, argv, "robot_positioning_node");
     ros::NodeHandle node;
 
     ros::AsyncSpinner spinner(1);
