@@ -1,9 +1,6 @@
 <!--
   Manipulator specific version of abb_driver's 'robot_interface.launch'.
 
-  Defaults provided for IRB 1600:
-   - J23_coupled = true
-
   Usage:
     robot_interface_download_irb1600.launch robot_ip:=<value>
 -->

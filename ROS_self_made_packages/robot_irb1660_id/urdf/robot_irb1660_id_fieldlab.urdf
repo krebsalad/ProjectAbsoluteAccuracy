@@ -125,7 +125,7 @@
   </link>
   <!-- end of link list -->
   <!-- joint list -->
-  <!-- Note! velocity is lower than normal. Joint 4 and 5 measurements are based on the meshes, therefore not very accurate -->
+ 
   <joint name="joint_1" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 0.124"/>
     <parent link="base_link"/>
