@@ -1,12 +1,9 @@
 <launch>
-      <!-- Set the file describing which sensor(s) to use to build the octomap  -->
-
-        <rosparam command="load" file="$(find robot_irb1660_id)/config/sensors_3d.yaml" />
-
         <!-- Params for the octomap monitor -->
-          <param name="octomap_frame" type="string" value="world" />
+          <param name="octomap_frame" type="string" value="base_link" />
           <param name="octomap_resolution" type="double" value="0.05" />
           <param name="max_range" type="double" value="5.0" />
-
         
+        <!-- Set the file describing which sensor(s) to use to build the octomap  -->
+        <rosparam command="load" file="$(find robot_irb1660_id)/config/sensors_3d.yaml" />
 </launch>

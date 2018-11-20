@@ -123,20 +123,11 @@
   <link name="tool0"/>
 
   <link name="camera_link">
-      <visual>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
-        <geometry>
-          <box size = "0.2 0.2 0.2"/>
-        </geometry>
-        <material name="abb_orange"/>
-      </visual>
-      <collision>
-        <origin rpy="0 0 0" xyz="0 0 0"/>
-        <geometry>
-          <box size = "0.2 0.2 0.2"/>
-        </geometry>
-        <material name="yellow"/>
-      </collision>
+      <inertial>
+        <origin xyz="0.2 0 0" rpy="3.14 0 0"/>
+        <mass value="1"/>
+        <inertia ixx="0"  ixy="0"  ixz="0" iyy="0" iyz="0" izz="0" />
+      </inertial>
   </link>
   <!-- end of link list -->
   <!-- joint list -->
@@ -191,7 +182,7 @@
   <joint name="camera-baselink" type="fixed">
     <parent link="base_link"/>
     <child link="camera_link"/>
-    <origin rpy="0 0 0" xyz="2.0 0 0"/>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
   </joint>
   
   <!-- end of joint list -->
