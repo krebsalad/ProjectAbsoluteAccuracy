@@ -1,4 +1,5 @@
 #include <ros/ros.h>
+#include <rosbag/bag.h>
 
 #include <moveit/move_group_interface/move_group_interface.h>
 #include <moveit/planning_scene_interface/planning_scene_interface.h>
@@ -125,6 +126,21 @@ void executeCartesianPath_Through_Positions(moveit::planning_interface::MoveGrou
     }
 }
 
+void generatePosesFromCustomPositionToBagFile(std::vector<custom_position*> positions, std::string bagFilePath)
+{
+    rosbag::Bag bag;
+    //create waypoints of the path to plan
+    bag.open(bagFilePath, rosbag::bagmode::Write);
+
+    for(std::vector<custom_position*>::iterator it = positions.begin(); it != positions.end(); ++it)
+    {
+        bag.write("pose", ros::Time::now(), (*it)->getPositionAsPose());
+    }
+
+    bag.close();
+
+
+}
 int main(int argc, char* argv[])
 {
     //ros ini, ros node and spinner setup
@@ -176,6 +192,54 @@ int main(int argc, char* argv[])
                 std::stringstream nr_pos_arg;
                 nr_pos_arg << argv[2];
                 nr_pos_arg >> numOfPos;
+            }else
+            {
+                ROS_INFO_NAMED("positioning error:", "to less arguments given!!");
+                return 0;
+            }
+
+            none = false;
+
+            //create custom positions from input
+            if(argv[2 + (numOfPos*4)] != nullptr)
+            {
+                std::vector<custom_position*> positions;
+                for(int i = 3; i <= 2 + (numOfPos*4); i+=4)
+                {
+                    custom_position* position = new custom_position();
+                    position->stream_char_to_position(argv[i], argv[i+1], argv[i+2], argv[i+3]);
+                    positions.push_back(position);
+                }
+
+                //plan cartesian path
+                executeCartesianPath_Through_Positions(&move_group, positions);
+
+                //delete routine
+                for(int i = 3; i <= 2 + (numOfPos*4); i+=4)
+                {
+                    delete positions[i];
+                }  
+            }
+            else
+            {
+                ROS_INFO_NAMED("positioning error:", "not enough arguments given to plan cartesian path.");
+                return 0;
+            }
+        }
+
+        if(path_arg.str() == "g")  // cartesian path plan
+        {
+            int numOfPos;
+            if(argv[2] != nullptr)
+            {
+                std::stringstream nr_pos_arg;
+                nr_pos_arg << argv[2];
+                nr_pos_arg >> numOfPos;
+            }
+            else
+            {
+                ROS_INFO_NAMED("positioning error:", "to less arguments given!!");
+                return 0;
             }
 
             none = false;
@@ -191,11 +255,17 @@ int main(int argc, char* argv[])
                 }
 
                 //plan cartesian path
-                executeCartesianPath_Through_Positions(&move_group, positions);
+                generatePosesFromCustomPositionToBagFile(positions, "/tmp/calibration_poses.bag");
+
+                //delete routine
+                for(int i = 3; i <= 2 + (numOfPos*4); i+=4)
+                {
+                    delete positions[i];
+                } 
             }
             else
             {
-                ROS_INFO_NAMED("positioning error:", "not enough arguments given to plan cartesian path. (w x y z)x2 needed!");
+                ROS_INFO_NAMED("positioning error:", "not enough arguments given to generate rosbag file");
                 return 0;
             }
         }
