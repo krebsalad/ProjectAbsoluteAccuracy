@@ -6,7 +6,7 @@ models:
    frame: link_6
  - name: camera
    type: camera3d
-   frame: d415
+   frame: world
    topic: /camera/depth_registered/points
 free_params:
   - joint_1
@@ -23,7 +23,7 @@ free_frames:
     roll: false
     ptich: true
     yaw: false
-  - name: external_camera
+  - name: camera
     x: true
     y: true
     z: true

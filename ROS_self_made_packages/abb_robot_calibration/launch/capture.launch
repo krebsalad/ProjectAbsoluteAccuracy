@@ -14,45 +14,8 @@
     <param name="mkdir_tmp" command="mkdir -m 777 -p /tmp/abb_robot_calibration" />
   </node>
 
-  <!-- camera launch -->
-  <arg name="serial_no"             default=""/>
-  <arg name="json_file_path"        default=""/>
-  <arg name="camera"                default="camera"/>
+  <!-- launch robot_cal.launch from robot package -->
+  <include file="$(find robot_irb1660_id)/launch/robot_cal.launch"/>
 
-  <group ns="$(arg camera)">
-    <include file="$(find realsense2_camera)/launch/includes/nodelet.launch.xml">
-      <arg name="serial_no"         value="$(arg serial_no)"/>
-      <arg name="json_file_path"    value="$(arg json_file_path)"/>
-      <arg name="depth_width"       value="640"/>
-      <arg name="depth_height"      value="480"/>
-      <arg name="depth_fps"         value="30"/>
-      <arg name="color_width"       value="640"/>
-      <arg name="color_height"      value="480"/>
-      <arg name="color_fps"         value="30"/>
-      <arg name="enable_depth"      value="true"/>
-      <arg name="enable_color"      value="true"/>
-      <arg name="enable_infra1"     value="false"/>
-      <arg name="enable_infra2"     value="false"/>
-      <arg name="enable_fisheye"    value="false"/>
-      <arg name="enable_imu"        value="false"/>
-      <arg name="enable_pointcloud" value="true"/>
-      <arg name="enable_sync"       value="true"/>
-      <arg name="tf_prefix"         value="$(arg camera)"/>
-    </include>
-
-  </group>
-
-  <!-- Launch simulated robot -->
-  <rosparam command="load" file="$(find robot_irb1660_id)/config/joint_names_irb1600_6_12.yaml" />
-
-  <include file="$(find robot_irb1660_id)/launch/planning_context.launch" >
-    <arg name="load_robot_description" value="true" />
-  </include>
-
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
-
-  <include file="$(find industrial_robot_simulator)/launch/robot_interface_simulator.launch" />
-    
-  <include file="$(find robot_irb1660_id)/launch/move_group.launch" />
 
 </launch>
