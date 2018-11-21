@@ -4,7 +4,7 @@
 <!-- |    EDITING THIS FILE BY HAND IS NOT RECOMMENDED, !!! LESS speed                                 | -->
 <!-- =================================================================================== -->
 <robot name="robot_irb1660_id" xmlns:xacro="http://ros.org/wiki/xacro">
-  <!-- link list -->
+  <!-- robot link list -->
   <link name="base_link">
     <visual>
       <origin rpy="0 0 0" xyz="0 0 0"/>
@@ -122,15 +122,24 @@
   </link>
   <link name="tool0"/>
 
+  <!-- camera link list -->
+
   <link name="camera_link">
-      <inertial>
-        <origin xyz="0.2 0 0" rpy="3.14 0 0"/>
-        <mass value="1"/>
-        <inertia ixx="0"  ixy="0"  ixz="0" iyy="0" iyz="0" izz="0" />
-      </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <box size="0.2 0.2 0.2"/>
+    </geometry>
+    </visual>
+    <material name="Cyan">
+      <color rgba="0 1.0 1.0 1.0"/>
+    </material>
   </link>
+  <link name="camera_optical_frame"/>
+
   <!-- end of link list -->
-  <!-- joint list -->
+
+  <!-- robot joint list -->
  
   <joint name="joint_1" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 0.124"/>
@@ -179,12 +188,19 @@
     <child link="tool0"/>
     <origin rpy="0 0 0" xyz="0 0 0"/>
   </joint>
-  <joint name="camera-baselink" type="fixed">
-    <parent link="base_link"/>
-    <child link="camera_link"/>
-    <origin rpy="0 0 0" xyz="0 0 0"/>
-  </joint>
   
+  <!-- camera joint list -->
+  <joint name="camera_joint" type="fixed">
+    <origin rpy="0 -3.14159 0" xyz="2.0 0 1.0" />
+    <parent link="base_link" />
+    <child link="camera_link" />
+  </joint>
+  <joint name="camera_optical_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="0 0 0" />
+    <parent link="camera_link" />
+    <child link="camera_optical_frame" />
+  </joint>
+
   <!-- end of joint list -->
 </robot>
 

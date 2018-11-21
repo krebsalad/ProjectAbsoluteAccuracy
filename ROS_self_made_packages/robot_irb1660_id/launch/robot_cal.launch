@@ -1,6 +1,4 @@
 <launch>
-  <!-- robot root static tf -->
-  <!--  node pkg="tf" type="static_transform_publisher" name="virtual_joint_broadcaster_1" args="0 0 0 0 0 0 map world 100"/-->
 
   <!-- Launch 3D sensors -->
     <!-- camera launch -->

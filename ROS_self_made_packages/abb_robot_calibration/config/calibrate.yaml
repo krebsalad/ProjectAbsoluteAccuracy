@@ -6,7 +6,7 @@ models:
    frame: link_6
  - name: camera
    type: camera3d
-   frame: world
+   frame: camera_optical_frame
    topic: /camera/depth_registered/points
 free_params:
   - joint_1
