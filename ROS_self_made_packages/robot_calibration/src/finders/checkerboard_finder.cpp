@@ -20,11 +20,23 @@
 #include <pluginlib/class_list_macros.h>
 #include <robot_calibration/capture/checkerboard_finder.h>
 #include <sensor_msgs/point_cloud2_iterator.h>
+#include <sstream>
 
 PLUGINLIB_EXPORT_CLASS(robot_calibration::CheckerboardFinder, robot_calibration::FeatureFinder)
 
 namespace robot_calibration
 {
+
+namespace cpp11_patch
+{
+  // custom template so that c++11 patch is not needed
+    template < typename T > std::string to_string( const T& n )
+    {
+        std::ostringstream stm ;
+        stm << n ;
+        return stm.str() ;
+    }
+}
 
 // We use a number of PC2 iterators, define the indexes here
 const unsigned X = 0;
@@ -45,15 +57,18 @@ bool CheckerboardFinder::init(const std::string& name,
   // Setup Scriber
   std::string topic_name;
   nh.param<std::string>("topic", topic_name, "/points");
+
+  std::string logTxt = "Checkerboard finder subscirbed to: "+topic_name;
+  ROS_WARN(logTxt.c_str());
   subscriber_ = nh.subscribe(topic_name,
                              1,
                              &CheckerboardFinder::cameraCallback,
                              this);
 
   // Size of checkerboard
-  nh.param<int>("points_x", points_x_, 5);
-  nh.param<int>("points_y", points_y_, 4);
-  nh.param<double>("size", square_size_, 0.0245);
+  nh.param<int>("points_x", points_x_, 8);
+  nh.param<int>("points_y", points_y_, 6);
+  nh.param<double>("size", square_size_, 0.25);
 
   // Should we include debug image/cloud in observations
   nh.param<bool>("debug", output_debug_, false);
@@ -133,6 +148,7 @@ bool CheckerboardFinder::findInternal(robot_calibration_msgs::CalibrationData * 
     ROS_ERROR("No point cloud data");
     return false;
   }
+  ROS_INFO("Did find point cloud data");
 
   // Get an image message from point cloud
   sensor_msgs::ImagePtr image_msg(new sensor_msgs::Image);
@@ -249,6 +265,8 @@ bool CheckerboardFinder::findInternal(robot_calibration_msgs::CalibrationData * 
     return true;
   }
 
+  std::string logText = "Did not find checkerboard in pointcloud. Expected checkerboard corner Points in x:" + cpp11_patch::to_string(points_x_) + "points in y:" + cpp11_patch::to_string(points_y_);
+  ROS_ERROR(logText.c_str());
   return false;
 }
 

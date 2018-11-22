@@ -49,7 +49,7 @@ public:
     if (!n.getParam("/camera/realsense2_camera/z_offset_mm", z_offset_mm_) ||
         !n.getParam("/camera/realsense2_camera/z_scaling", z_scaling_))
     {
-      ROS_ERROR("/camera/realsense2_camera/z_offset_mm and  /camera/realsense2_camera/z_scaling are not set, is the driver running?: set z_offset_mm to: 0 and z_scaling to 1");
+      ROS_WARN("/camera/realsense2_camera/z_offset_mm and  /camera/realsense2_camera/z_scaling are not set, is the driver running?: set z_offset_mm to: 0 and z_scaling to 1");
       z_offset_mm_ = 0;
       z_scaling_ = 1;
     }
@@ -66,7 +66,7 @@ public:
       ros::spinOnce();
     }
 
-    ROS_WARN("CameraInfo receive timed out.");
+    ROS_ERROR("CameraInfo receive timed out.");
     return false;
   }
 

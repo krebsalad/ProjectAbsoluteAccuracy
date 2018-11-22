@@ -104,10 +104,9 @@ void ChainManager::stateCallback(const sensor_msgs::JointStateConstPtr& msg)
   if((msg_edited.position.size() != msg_edited.velocity.size()) && (msg_edited.velocity.size() < 1 || msg_edited.velocity.size() == 0))
   {     
     msg_edited.velocity.resize(msg_edited.position.size());
-    //ROS_ERROR("JointState Error Fix: velocity array was empty. Filled velocity array with zeros to match position array size");
+    //ROS_WARN("JointState Error Fix: velocity array was empty. Filled velocity array with zeros to match position array size");
   }
   //! the statement upp ^ is added, and all occurences msg are turned into msg_edited
-
 
   if (msg_edited.position.size() != msg_edited.velocity.size())
   {  
@@ -117,6 +116,7 @@ void ChainManager::stateCallback(const sensor_msgs::JointStateConstPtr& msg)
 
   boost::mutex::scoped_lock lock(state_mutex_);
   // Update each joint based on message
+
   for (size_t msg_j = 0; msg_j < msg_edited.name.size(); msg_j++)
   {
     size_t state_j;

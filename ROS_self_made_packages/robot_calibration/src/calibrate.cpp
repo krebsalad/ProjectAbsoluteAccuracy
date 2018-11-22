@@ -69,6 +69,17 @@
  *  calibrate calibration_poses.bag
  *  calibrate --from-bag calibration_data.bag
  */
+namespace cpp11_patch
+{
+  // custom template so that c++11 patch is not needed
+    template < typename T > std::string to_string( const T& n )
+    {
+        std::ostringstream stm ;
+        stm << n ;
+        return stm.str() ;
+    }
+}
+
 int main(int argc, char** argv)
 {
   ros::init(argc, argv,"robot_calibration");
@@ -238,6 +249,12 @@ int main(int argc, char** argv)
 
       // Fill in joint values
       chain_manager_.getState(&msg.joint_states);
+
+      //print capture joinstates
+      std::string logTextt = "Added Joint States:";
+      for(unsigned int iter = 0; iter < msg.joint_states.name.size(); iter++)
+        logTextt += "\n - " + msg.joint_states.name[iter] + ": " + cpp11_patch::to_string(msg.joint_states.position[iter]);
+      ROS_WARN(logTextt.c_str());
 
       // Publish calibration data message.
       pub.publish(msg);
