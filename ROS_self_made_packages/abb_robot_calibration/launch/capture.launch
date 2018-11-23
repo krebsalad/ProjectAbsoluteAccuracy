@@ -15,7 +15,7 @@
   </node>
 
   <!-- launch robot_cal.launch from robot package -->
-  <include file="$(find robot_irb1660_id)/launch/robot_cal.launch"/>
+  <!-- include file="$(find robot_irb1660_id)/launch/robot_cal.launch"/-->
 
 
 </launch>

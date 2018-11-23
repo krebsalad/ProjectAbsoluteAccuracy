@@ -141,6 +141,15 @@ void generatePosesFromCustomPositionToBagFile(std::vector<custom_position*> posi
 
 
 }
+
+std::string getMoveGroupCurrentPositionAsString(moveit::planning_interface::MoveGroupInterface* move_group)
+{
+	geometry_msgs::Pose current_pose = move_group->getCurrentPose().pose;
+	std::string str = "[" ;
+	str += std::to_string(current_pose.position.x) + ", " + std::to_string(current_pose.position.y) + ", " + std::to_string(current_pose.position.z) + "]" ;
+	return str;
+}
+
 int main(int argc, char* argv[])
 {
     //ros ini, ros node and spinner setup
@@ -254,7 +263,7 @@ int main(int argc, char* argv[])
                     positions.push_back(position);
                 }
 
-                //plan cartesian path
+                //generate poses bag
                 generatePosesFromCustomPositionToBagFile(positions, "/tmp/calibration_poses.bag");
 
                 //delete routine
@@ -269,6 +278,11 @@ int main(int argc, char* argv[])
                 return 0;
             }
         }
+
+	if(path_arg.str() == "p")  // cartesian path plan
+        {
+		ROS_WARN(std::string("Positioning info:" + getMoveGroupCurrentPositionAsString(&move_group)).c_str());
+	}
 
         if(none)
         {
