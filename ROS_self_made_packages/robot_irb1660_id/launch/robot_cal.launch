@@ -1,8 +1,11 @@
 <launch>
 
+  <!-- arg name="rob_ip" default="0.0.0.0"/-->
+
   <!-- Launch 3D sensors -->
     <!-- camera launch -->
   <include file="$(find realsense2_camera)/launch/rs_rgbd.launch"/>
+  
 
   <!-- Launch robot. -->
   <include file="$(find robot_irb1660_id)/launch/planning_context.launch" >
@@ -10,7 +13,7 @@
   </include>
 
   <include file="$(find robot_irb1660_id)/launch/robot_interface_download_irb1600_6_12.launch" >
-      <arg name="robot_ip" value="10.128.187.52"/>
+      <arg name="robot_ip" value="0.0.0.0"/>
   </include>
   
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
