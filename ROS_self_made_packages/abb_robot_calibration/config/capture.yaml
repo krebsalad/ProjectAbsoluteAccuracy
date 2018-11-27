@@ -9,9 +9,12 @@ chains:
       - joint_5
       - joint_6
     planning_group: group1
-
+duration: 10.0
 features:
   checkerboard_finder:
     type: robot_calibration/CheckerboardFinder
     topic: /camera/depth_registered/points
     camera_sensor_name: camera
+    chain_sensor_name: group1
+    points_x: 8
+    points_y: 6

@@ -1,4 +1,4 @@
-verbose: true
+
 base_link: base_link
 models:
  - name: group1
@@ -18,15 +18,26 @@ free_params:
 free_frames:
   - name: checkerboard
     x: true
-    y: false
+    y: true
     z: true
     roll: false
-    ptich: true
+    pitch: true
     yaw: false
-  - name: camera
+  - name: camera_optical_joint
     x: true
     y: true
     z: true
     roll: true
     pitch: true
     yaw: true
+error_blocks:
+ - name: camera_to_arm
+   type: chain3d_to_chain3d
+   model_a: camera
+   model_b: group1
+ - name: restrict_camera
+   type: outrageous
+   param: camera_optical_joint
+   joint_scale: 0.0
+   position_scale: 0.1
+   rotation_scale: 0.1

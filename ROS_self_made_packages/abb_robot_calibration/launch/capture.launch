@@ -1,12 +1,19 @@
 <launch>
-   
+
+  <!-- capture arguments -->
+  <arg name="rviz" default="true"/>
+  <arg name="ip" default="172.22.31.3"/>
+  <arg name="robot"  default="robot_irb1660_id" />
+
+  <arg name="robot_package_path" value="(find $(arg robot))" />
+  <arg name="dollar" value="$" />
+
   <!-- Robot calibration capture launch -->
   <rosparam command="delete" param="robot_calibration" />
-  <node pkg="robot_calibration" type="calibrate" name="robot_calibration"
+  <node pkg="robot_calibration" type="calibrate" name="capture"
         args="--manual"
         output="screen" required="true" launch-prefix="xterm -e">
     <rosparam file="$(find abb_robot_calibration)/config/capture.yaml" command="load" />
-    <rosparam file="$(find abb_robot_calibration)/config/calibrate.yaml" command="load" />
   </node>
 
   <node pkg="rosbag" type="record" name="calibration_bagger" output="screen"
@@ -15,7 +22,11 @@
   </node>
 
   <!-- launch robot_cal.launch from robot package -->
-  <include file="$(find robot_irb1660_id)/launch/robot_cal.launch"/>
+  <include file="$(arg dollar)$(arg robot_package_path)/launch/robot_cal.launch">
+    <arg name="robot_ip" value="$(arg ip)"/>
+    <arg name="rviz_planner" value="$(arg rviz)"/>
+    <arg name="camera_launch" value="true"/>
+  </include>
 
 
 </launch>

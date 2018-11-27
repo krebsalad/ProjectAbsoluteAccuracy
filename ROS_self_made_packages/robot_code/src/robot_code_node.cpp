@@ -174,7 +174,7 @@ int main(int argc, char* argv[])
         std::stringstream path_arg;
         path_arg << argv[1];
         
-        if(path_arg.str() == "s")  // shortest path plan
+        if(path_arg.str() == "short")  // shortest path plan
         {
             none = false;
             if(argv[5] != nullptr)
@@ -193,7 +193,7 @@ int main(int argc, char* argv[])
             }
         }
         
-        if(path_arg.str() == "c")  // cartesian path plan
+        if(path_arg.str() == "cartesian")  // cartesian path plan
         {
             int numOfPos;
             if(argv[2] != nullptr)
@@ -236,7 +236,7 @@ int main(int argc, char* argv[])
             }
         }
 
-        if(path_arg.str() == "g")  // cartesian path plan
+        if(path_arg.str() == "generate")  // cartesian path plan
         {
             int numOfPos;
             if(argv[2] != nullptr)
@@ -279,10 +279,10 @@ int main(int argc, char* argv[])
             }
         }
 
-	if(path_arg.str() == "p")  // cartesian path plan
+	    if(path_arg.str() == "current_position")  // get current position
         {
-		ROS_WARN(std::string("Positioning info:" + getMoveGroupCurrentPositionAsString(&move_group)).c_str());
-	}
+		    ROS_WARN(std::string("Positioning info:" + getMoveGroupCurrentPositionAsString(&move_group)).c_str());
+	    }
 
         if(none)
         {

@@ -1,10 +1,12 @@
 <launch>
 
-  <!-- arg name="rob_ip" default="0.0.0.0"/-->
+  <arg name="robot_ip" default="172.22.31.3"/>
+  <arg name="rviz_planner" default="true"/>
+  <arg name="camera_launch" default="false"/>
 
   <!-- Launch 3D sensors -->
     <!-- camera launch -->
-  <include file="$(find realsense2_camera)/launch/rs_rgbd.launch"/>
+  <include file="$(find realsense2_camera)/launch/rs_rgbd.launch" if="$(arg camera_launch)"/>
   
 
   <!-- Launch robot. -->
@@ -13,7 +15,7 @@
   </include>
 
   <include file="$(find robot_irb1660_id)/launch/robot_interface_download_irb1600_6_12.launch" >
-      <arg name="robot_ip" value="0.0.0.0"/>
+      <arg name="robot_ip" value="$(arg robot_ip)"/>
   </include>
   
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
@@ -22,7 +24,7 @@
     <arg name="publish_monitored_planning_scene" value="true" />
   </include>
 
-  <include file="$(find robot_irb1660_id)/launch/moveit_rviz.launch">
+  <include file="$(find robot_irb1660_id)/launch/moveit_rviz.launch" if="$(arg rviz_planner)">
     <arg name="config" value="true"/>
   </include>
 
