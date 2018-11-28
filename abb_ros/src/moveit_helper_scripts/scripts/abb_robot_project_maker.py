@@ -237,7 +237,7 @@ with open(pth_pkg_support+"urdf/"+specific_robot_ext+"_macro.xacro") as f:
     urdf_file = open(pth_pkg_support+"urdf/"+specific_robot_ext+".urdf.temp", "w+")
     for line in f:
         line = re.sub('<xacro:macro name="'+specific_robot_ext+'" params="prefix">', "", line)
-        line = re.sub('<robot xmlns:xacro=.*?>', '<robot name="'+sysarg_robot_name+'" xmlns:xacro="http://ros.org/wiki/xacro">', line)
+        line = re.sub('<robot xmlns:xacro=.*?>', '<robot name="'+specific_robot_ext+'" xmlns:xacro="http://ros.org/wiki/xacro">', line)
         line = re.sub('<xacro:macro.*?>', "", line)
         line = re.sub('</xacro:macro>', "", line)
         line = re.sub('<xacro:include.*?>', "", line)
@@ -263,7 +263,7 @@ subprocess.call(["catkin_make"], shell=True, cwd=pth_catkin_workspace)
 # Done
 print_log()
 print("\n---Next steps---")
-print("\n1: Succesfully run the script. This created a project: "+ sysarg_project_name +" with package: "+arg_robot_package_name+ " for the moveit configuration and package: "+arg_robot_support_name+" consisting the robot defs such as the urdf for "+sysarg_robot_name+". The urdf is ready for MoveIT! setup assistant. Do not forget to source you project before using setupassistant.")
+print("\n1: Succesfully run the script. This created a project: "+ sysarg_project_name +" with package: "+arg_robot_package_name+ " for the moveit configuration and package: "+arg_robot_support_name+" consisting the robot defs such as the urdf for "+specific_robot_ext+". The urdf is ready for MoveIT! setup assistant. Do not forget to source you project before using setupassistant.")
 print("\n2: use the following commands to start moveit setup assitant after sourcing your project: \n - source "+pth_catkin_workspace+"devel/setup.bash \n - roslaunch moveit_setup_assistant setup_assistant.launch")
 print("\n3: When saving moveit configuration with setup assistant remember to save in package folder, path:"+pth_pkg_config)
 print("\n4: Afterwards you must run simSetup.py to setup simulation and make it possible to build the project or create other configs with setup assistant")
@@ -279,4 +279,5 @@ with open(pth_pkg_config+"sim_setup_config.txt", "a+") as config:
     config.write("robot_name="+sysarg_robot_name+"\n")
     config.write("abb_meta_package="+arg_abb_package+"\n")
     config.write("support_package="+arg_robot_support_name+"\n")
+    config.write("specific_robot_name="+specific_robot_ext+"\n")
     config.close()

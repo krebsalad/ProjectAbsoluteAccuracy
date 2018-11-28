@@ -62,6 +62,7 @@ package_name = "abb_irbxxx_moveit_config"
 robot_name = "irbxxx"
 abb_meta_package = "abb_experimental"
 support_package = "abb_irbxxx_support"
+specific_robot_ext = "irbxxx_x_x"
 
 # read configuration file
 with open(config_file, 'r') as f:
@@ -78,6 +79,8 @@ with open(config_file, 'r') as f:
             abb_meta_package = re.sub("abb_meta_package=", "", line)
         if(re.match("support_package=", line)):
             support_package = re.sub("support_package=", "", line)
+        if(re.match("specific_robot_name=", line)):
+            specific_robot_ext = re.sub("specific_robot_name=", "", line)
     f.close()
 
 # paths
@@ -107,16 +110,6 @@ with open(pth_pkg_config+"package.xml") as f:
     f.close()
     subprocess.call(["cp", pth_pkg_config+"package_temp.xml", pth_pkg_config+"package.xml"])
     subprocess.call(["rm", pth_pkg_config+"package_temp.xml"])
-
-# get specific robot name from joint names file
-specific_robot_ext = ""
-for file in glob.glob(pth_pkg_support+"/config/joint_names_"+"*"+".yaml"):
-    specific_robot_ext = re.sub(pth_pkg_support+"/config/joint_names_", "", file)
-    specific_robot_ext = re.sub(".yaml", "", specific_robot_ext)
-
-if(specific_robot_ext == ""):
-    log.append("failed to get specific robot extension. Script will exit")
-    exit()
 
 # create moveit planning execution
 if not (os.path.exists(pth_pkg_config+"/launch/moveit_planning_execution.launch")):
