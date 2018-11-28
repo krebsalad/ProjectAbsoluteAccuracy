@@ -1,0 +1,2 @@
+set(robot_calibration_msgs_MESSAGE_FILES "msg/GripperLedCommandAction.msg;msg/GripperLedCommandActionGoal.msg;msg/GripperLedCommandActionResult.msg;msg/GripperLedCommandActionFeedback.msg;msg/GripperLedCommandGoal.msg;msg/GripperLedCommandResult.msg;msg/GripperLedCommandFeedback.msg;msg/CalibrationData.msg;msg/CameraParameter.msg;msg/CaptureConfig.msg;msg/ExtendedCameraInfo.msg;msg/Observation.msg")
+set(robot_calibration_msgs_SERVICE_FILES "")

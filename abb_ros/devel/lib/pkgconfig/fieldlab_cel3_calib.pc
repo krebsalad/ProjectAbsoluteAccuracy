@@ -1,0 +1,8 @@
+prefix=/home/turtle/abb_ros/devel
+
+Name: fieldlab_cel3_calib
+Description: Description of fieldlab_cel3_calib
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/turtle/abb_ros/devel/lib 
+Requires: 

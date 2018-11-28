@@ -1,0 +1,8 @@
+prefix=/home/turtle/abb_ros/install
+
+Name: moveit_helper_scripts
+Description: Description of moveit_helper_scripts
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/turtle/abb_ros/install/lib 
+Requires: 
