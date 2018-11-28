@@ -8,7 +8,6 @@
     <!-- camera launch -->
   <include file="$(find realsense2_camera)/launch/rs_rgbd.launch" if="$(arg camera_launch)"/>
   
-
   <!-- Launch robot. -->
   <include file="$(find abb_irb1660_moveit_config)/launch/planning_context.launch" >
     <arg name="load_robot_description" value="true" />

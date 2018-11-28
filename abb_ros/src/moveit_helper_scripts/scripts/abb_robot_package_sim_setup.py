@@ -23,8 +23,8 @@ def print_log():
             print("\n"+str(count)+") "+entry)
 
 def print_help():
-    print("\nThis script will only work if your package was generated using urdfMaker.py. You MUST run this script with a path to your package folder")
-    print("\ntype the path of the robot package right after the script name. The script is reusable on the same package or different package in same project as long as the package was generated with urdfMaker.py")
+    print("\nThis script will move the needed files to your package directory and it will only work if your package was generated using abb_robot_project_maker.py. You MUST run this script with a path to your package folder")
+    print("\ntype the path of the robot package right after the script name. The script is reusable on the same package or different package in same project as long as the package was generated with abb_robot_project_maker.py")
 
 def create_directory_if_not_existing(dir_path):
     if not (os.path.exists(dir_path)):
@@ -125,6 +125,8 @@ if not (os.path.exists(pth_pkg_config+"/launch/moveit_planning_execution.launch"
         temp.close()
         f.close()
         log.append("Added moveit_planning_execution in package launch directory because not existing")
+else:
+    log.append("Did not create or edit moveit_planning_execution because already existing")
 
 # add controller config
 if not (os.path.exists(pth_pkg_config+"/config/controllers.yaml")):
@@ -151,11 +153,12 @@ with open(pth_pkg_config+"/launch/trajectory_execution.launch.xml") as f:
 
     temp.close()
     f.close()
-    log.append("Added/Replaced controller manager in package launch directory")
+    log.append("Added/Replaced trajectory_execution.launch.xml")
     subprocess.call(["mv", pth_pkg_config+"/launch/trajectory_execution.launch.xml.temp", pth_pkg_config+"/launch/trajectory_execution.launch.xml"])
 
 # build
 subprocess.call(["catkin_make"], shell=True, cwd=pth_project_workspace)
+log.append("built the project")
 
 print_log()
 ("\n---Info---")

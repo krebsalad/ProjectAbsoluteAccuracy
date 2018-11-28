@@ -1,9 +1,20 @@
 <launch>
-	<!-- launch calibrate phase-->
+
+ <!-- capture arguments -->
+  <arg name="rviz" default="false"/>
+  <arg name="ip" default="172.22.31.3"/>
+  <arg name="robot"  default="fieldlab_cel3_calib" />
+
+  <!-- static args -->
+  <arg name="robot_package_path" value="(find $(arg robot))" />
+  <arg name="dollar" value="$" />
+
+  <!-- Robot calibration capture launch -->
+	<rosparam command="delete" param="robot_calibration" />
 	<node pkg="robot_calibration" type="calibrate" name="calibrate"
-		args="--from-bag /tmp/abb_robot_calibration/calibration_data.bag"
-		output="screen" required="true">
-	<rosparam file="$(find abb_robot_calibration)/config/calibrate.yaml" command="load"/>
+			args="--from-bag /tmp/fetch_calibration/calibration_data.bag"
+			output="screen" required="true">
+		<rosparam file="$(arg dollar)$(arg robot_package_path)/config/calibrate.yaml" command="load"/>
 	</node>
 
 </launch>

@@ -27,7 +27,7 @@ def print_help():
     print('\nII. Options: help/h/-h/options/opt, list_robots/list/l/list_packages, robot_name:=<irbXXX>, project_name:=<project_name>, ros_version:=<kinetic/indigo/>, abb_package:=<abb/abb_experimental>')
     print('\nIII. run the script with atleast option robot_name:=<irbxxx>. Default project directory is catkin_ws. The abb packages will automatically be switched if the robot can not be found')
     print('\nNote: the robot name must be an existing abb robot in one of the following abb packages: abb or abb_experimental. The script is reusable on the same package or different package in same project')
-
+    print('\nNote: the script will download packages for later use. This is done using git. Therefore git must be available on your machine')
 
 # print available abb robots
 def print_robots():
