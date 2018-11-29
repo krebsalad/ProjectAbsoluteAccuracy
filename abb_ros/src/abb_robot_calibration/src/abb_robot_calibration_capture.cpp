@@ -9,7 +9,7 @@ int main(int argc, char* argv[])
     ros::NodeHandle node("abb_rc_capture");
 
     //initialize chain manager
-    robot_calibration::ChainManager* chainManager = new robot_calibration::ChainManager(node, 0.15);
+    //robot_calibration::ChainManager* chainManager = new robot_calibration::ChainManager(node, 0.15);
 
 
 }
