@@ -1,8 +1,8 @@
-# Install script for directory: /home/turtle/abb_ros/src/industrial_utils
+# Install script for directory: /home/jmg/abb_ros/src/industrial_utils
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/turtle/abb_ros/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jmg/abb_ros/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,18 +33,18 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/turtle/abb_ros/build/industrial_utils/catkin_generated/installspace/industrial_utils.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jmg/abb_ros/build/industrial_utils/catkin_generated/installspace/industrial_utils.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/industrial_utils/cmake" TYPE FILE FILES
-    "/home/turtle/abb_ros/build/industrial_utils/catkin_generated/installspace/industrial_utilsConfig.cmake"
-    "/home/turtle/abb_ros/build/industrial_utils/catkin_generated/installspace/industrial_utilsConfig-version.cmake"
+    "/home/jmg/abb_ros/build/industrial_utils/catkin_generated/installspace/industrial_utilsConfig.cmake"
+    "/home/jmg/abb_ros/build/industrial_utils/catkin_generated/installspace/industrial_utilsConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/industrial_utils" TYPE FILE FILES "/home/turtle/abb_ros/src/industrial_utils/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/industrial_utils" TYPE FILE FILES "/home/jmg/abb_ros/src/industrial_utils/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
@@ -54,7 +54,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libindustrial_utils.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/turtle/abb_ros/devel/lib/libindustrial_utils.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/jmg/abb_ros/devel/lib/libindustrial_utils.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libindustrial_utils.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libindustrial_utils.so")
     file(RPATH_CHANGE
@@ -68,6 +68,6 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/industrial_utils" TYPE DIRECTORY FILES "/home/turtle/abb_ros/src/industrial_utils/include/industrial_utils/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/industrial_utils" TYPE DIRECTORY FILES "/home/jmg/abb_ros/src/industrial_utils/include/industrial_utils/")
 endif()
 

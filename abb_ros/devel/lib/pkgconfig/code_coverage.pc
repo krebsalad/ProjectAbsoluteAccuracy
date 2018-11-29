@@ -1,8 +1,8 @@
-prefix=/home/turtle/abb_ros/devel
+prefix=/home/jmg/abb_ros/devel
 
 Name: code_coverage
 Description: Description of code_coverage
 Version: 0.2.3
 Cflags: 
-Libs: -L/home/turtle/abb_ros/devel/lib 
+Libs: -L/home/jmg/abb_ros/devel/lib 
 Requires: 

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/turtle/abb_ros/src
+CMAKE_SOURCE_DIR = /home/jmg/abb_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/turtle/abb_ros/build
+CMAKE_BINARY_DIR = /home/jmg/abb_ros/build
 
 # Utility rule file for _run_tests_industrial_robot_client_gtest.
 
@@ -63,10 +63,10 @@ industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_gtest.dir/
 .PHONY : industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_gtest.dir/build
 
 industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_gtest.dir/clean:
-	cd /home/turtle/abb_ros/build/industrial_robot_client && $(CMAKE_COMMAND) -P CMakeFiles/_run_tests_industrial_robot_client_gtest.dir/cmake_clean.cmake
+	cd /home/jmg/abb_ros/build/industrial_robot_client && $(CMAKE_COMMAND) -P CMakeFiles/_run_tests_industrial_robot_client_gtest.dir/cmake_clean.cmake
 .PHONY : industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_gtest.dir/clean
 
 industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_gtest.dir/depend:
-	cd /home/turtle/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/turtle/abb_ros/src /home/turtle/abb_ros/src/industrial_robot_client /home/turtle/abb_ros/build /home/turtle/abb_ros/build/industrial_robot_client /home/turtle/abb_ros/build/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_gtest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jmg/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jmg/abb_ros/src /home/jmg/abb_ros/src/industrial_robot_client /home/jmg/abb_ros/build /home/jmg/abb_ros/build/industrial_robot_client /home/jmg/abb_ros/build/industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_gtest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : industrial_robot_client/CMakeFiles/_run_tests_industrial_robot_client_gtest.dir/depend
 

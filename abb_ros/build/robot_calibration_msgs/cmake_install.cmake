@@ -1,8 +1,8 @@
-# Install script for directory: /home/turtle/abb_ros/src/robot_calibration_msgs
+# Install script for directory: /home/jmg/abb_ros/src/robot_calibration_msgs
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/turtle/abb_ros/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jmg/abb_ros/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,75 +33,75 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_calibration_msgs/action" TYPE FILE FILES "/home/turtle/abb_ros/src/robot_calibration_msgs/action/GripperLedCommand.action")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_calibration_msgs/action" TYPE FILE FILES "/home/jmg/abb_ros/src/robot_calibration_msgs/action/GripperLedCommand.action")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_calibration_msgs/msg" TYPE FILE FILES
-    "/home/turtle/abb_ros/devel/share/robot_calibration_msgs/msg/GripperLedCommandAction.msg"
-    "/home/turtle/abb_ros/devel/share/robot_calibration_msgs/msg/GripperLedCommandActionGoal.msg"
-    "/home/turtle/abb_ros/devel/share/robot_calibration_msgs/msg/GripperLedCommandActionResult.msg"
-    "/home/turtle/abb_ros/devel/share/robot_calibration_msgs/msg/GripperLedCommandActionFeedback.msg"
-    "/home/turtle/abb_ros/devel/share/robot_calibration_msgs/msg/GripperLedCommandGoal.msg"
-    "/home/turtle/abb_ros/devel/share/robot_calibration_msgs/msg/GripperLedCommandResult.msg"
-    "/home/turtle/abb_ros/devel/share/robot_calibration_msgs/msg/GripperLedCommandFeedback.msg"
+    "/home/jmg/abb_ros/devel/share/robot_calibration_msgs/msg/GripperLedCommandAction.msg"
+    "/home/jmg/abb_ros/devel/share/robot_calibration_msgs/msg/GripperLedCommandActionGoal.msg"
+    "/home/jmg/abb_ros/devel/share/robot_calibration_msgs/msg/GripperLedCommandActionResult.msg"
+    "/home/jmg/abb_ros/devel/share/robot_calibration_msgs/msg/GripperLedCommandActionFeedback.msg"
+    "/home/jmg/abb_ros/devel/share/robot_calibration_msgs/msg/GripperLedCommandGoal.msg"
+    "/home/jmg/abb_ros/devel/share/robot_calibration_msgs/msg/GripperLedCommandResult.msg"
+    "/home/jmg/abb_ros/devel/share/robot_calibration_msgs/msg/GripperLedCommandFeedback.msg"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_calibration_msgs/msg" TYPE FILE FILES
-    "/home/turtle/abb_ros/src/robot_calibration_msgs/msg/CalibrationData.msg"
-    "/home/turtle/abb_ros/src/robot_calibration_msgs/msg/CameraParameter.msg"
-    "/home/turtle/abb_ros/src/robot_calibration_msgs/msg/CaptureConfig.msg"
-    "/home/turtle/abb_ros/src/robot_calibration_msgs/msg/ExtendedCameraInfo.msg"
-    "/home/turtle/abb_ros/src/robot_calibration_msgs/msg/Observation.msg"
+    "/home/jmg/abb_ros/src/robot_calibration_msgs/msg/CalibrationData.msg"
+    "/home/jmg/abb_ros/src/robot_calibration_msgs/msg/CameraParameter.msg"
+    "/home/jmg/abb_ros/src/robot_calibration_msgs/msg/CaptureConfig.msg"
+    "/home/jmg/abb_ros/src/robot_calibration_msgs/msg/ExtendedCameraInfo.msg"
+    "/home/jmg/abb_ros/src/robot_calibration_msgs/msg/Observation.msg"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_calibration_msgs/cmake" TYPE FILE FILES "/home/turtle/abb_ros/build/robot_calibration_msgs/catkin_generated/installspace/robot_calibration_msgs-msg-paths.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_calibration_msgs/cmake" TYPE FILE FILES "/home/jmg/abb_ros/build/robot_calibration_msgs/catkin_generated/installspace/robot_calibration_msgs-msg-paths.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/turtle/abb_ros/devel/include/robot_calibration_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/jmg/abb_ros/devel/include/robot_calibration_msgs")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/turtle/abb_ros/devel/share/roseus/ros/robot_calibration_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/jmg/abb_ros/devel/share/roseus/ros/robot_calibration_msgs")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/turtle/abb_ros/devel/share/common-lisp/ros/robot_calibration_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/jmg/abb_ros/devel/share/common-lisp/ros/robot_calibration_msgs")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/turtle/abb_ros/devel/share/gennodejs/ros/robot_calibration_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/jmg/abb_ros/devel/share/gennodejs/ros/robot_calibration_msgs")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/turtle/abb_ros/devel/lib/python2.7/dist-packages/robot_calibration_msgs")
+  execute_process(COMMAND "/usr/bin/python" -m compileall "/home/jmg/abb_ros/devel/lib/python2.7/dist-packages/robot_calibration_msgs")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/turtle/abb_ros/devel/lib/python2.7/dist-packages/robot_calibration_msgs")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/jmg/abb_ros/devel/lib/python2.7/dist-packages/robot_calibration_msgs")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/turtle/abb_ros/build/robot_calibration_msgs/catkin_generated/installspace/robot_calibration_msgs.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jmg/abb_ros/build/robot_calibration_msgs/catkin_generated/installspace/robot_calibration_msgs.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_calibration_msgs/cmake" TYPE FILE FILES "/home/turtle/abb_ros/build/robot_calibration_msgs/catkin_generated/installspace/robot_calibration_msgs-msg-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_calibration_msgs/cmake" TYPE FILE FILES "/home/jmg/abb_ros/build/robot_calibration_msgs/catkin_generated/installspace/robot_calibration_msgs-msg-extras.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_calibration_msgs/cmake" TYPE FILE FILES
-    "/home/turtle/abb_ros/build/robot_calibration_msgs/catkin_generated/installspace/robot_calibration_msgsConfig.cmake"
-    "/home/turtle/abb_ros/build/robot_calibration_msgs/catkin_generated/installspace/robot_calibration_msgsConfig-version.cmake"
+    "/home/jmg/abb_ros/build/robot_calibration_msgs/catkin_generated/installspace/robot_calibration_msgsConfig.cmake"
+    "/home/jmg/abb_ros/build/robot_calibration_msgs/catkin_generated/installspace/robot_calibration_msgsConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_calibration_msgs" TYPE FILE FILES "/home/turtle/abb_ros/src/robot_calibration_msgs/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_calibration_msgs" TYPE FILE FILES "/home/jmg/abb_ros/src/robot_calibration_msgs/package.xml")
 endif()
 

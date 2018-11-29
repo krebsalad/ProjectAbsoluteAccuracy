@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/utest_byte_swapping.dir/test/utest.cpp.o"
   "CMakeFiles/utest_byte_swapping.dir/test/utest_message.cpp.o"
-  "/home/turtle/abb_ros/devel/lib/simple_message/utest_byte_swapping.pdb"
-  "/home/turtle/abb_ros/devel/lib/simple_message/utest_byte_swapping"
+  "/home/jmg/abb_ros/devel/lib/simple_message/utest_byte_swapping.pdb"
+  "/home/jmg/abb_ros/devel/lib/simple_message/utest_byte_swapping"
 )
 
 # Per-language clean rules from dependency scanning.

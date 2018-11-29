@@ -1,24 +1,24 @@
 Determining if the pthread_create exist failed with the following output:
-Change Dir: /home/turtle/abb_ros/build/CMakeFiles/CMakeTmp
+Change Dir: /home/jmg/abb_ros/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_5865f/fast"
-/usr/bin/make -f CMakeFiles/cmTC_5865f.dir/build.make CMakeFiles/cmTC_5865f.dir/build
-make[1]: Entering directory '/home/turtle/abb_ros/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_5865f.dir/CheckSymbolExists.c.o
-/usr/bin/cc     -o CMakeFiles/cmTC_5865f.dir/CheckSymbolExists.c.o   -c /home/turtle/abb_ros/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_5865f
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5865f.dir/link.txt --verbose=1
-/usr/bin/cc       CMakeFiles/cmTC_5865f.dir/CheckSymbolExists.c.o  -o cmTC_5865f -rdynamic 
-CMakeFiles/cmTC_5865f.dir/CheckSymbolExists.c.o: In function `main':
+Run Build Command:"/usr/bin/make" "cmTC_84d51/fast"
+/usr/bin/make -f CMakeFiles/cmTC_84d51.dir/build.make CMakeFiles/cmTC_84d51.dir/build
+make[1]: Entering directory '/home/jmg/abb_ros/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_84d51.dir/CheckSymbolExists.c.o
+/usr/bin/cc     -o CMakeFiles/cmTC_84d51.dir/CheckSymbolExists.c.o   -c /home/jmg/abb_ros/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_84d51
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_84d51.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTC_84d51.dir/CheckSymbolExists.c.o  -o cmTC_84d51 -rdynamic 
+CMakeFiles/cmTC_84d51.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x16): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_5865f.dir/build.make:97: recipe for target 'cmTC_5865f' failed
-make[1]: *** [cmTC_5865f] Error 1
-make[1]: Leaving directory '/home/turtle/abb_ros/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_5865f/fast' failed
-make: *** [cmTC_5865f/fast] Error 2
+CMakeFiles/cmTC_84d51.dir/build.make:97: recipe for target 'cmTC_84d51' failed
+make[1]: *** [cmTC_84d51] Error 1
+make[1]: Leaving directory '/home/jmg/abb_ros/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_84d51/fast' failed
+make: *** [cmTC_84d51/fast] Error 2
 
-File /home/turtle/abb_ros/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+File /home/jmg/abb_ros/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
 #include <pthread.h>
 
@@ -34,22 +34,22 @@ int main(int argc, char** argv)
 }
 
 Determining if the function pthread_create exists in the pthreads failed with the following output:
-Change Dir: /home/turtle/abb_ros/build/CMakeFiles/CMakeTmp
+Change Dir: /home/jmg/abb_ros/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_85eec/fast"
-/usr/bin/make -f CMakeFiles/cmTC_85eec.dir/build.make CMakeFiles/cmTC_85eec.dir/build
-make[1]: Entering directory '/home/turtle/abb_ros/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_85eec.dir/CheckFunctionExists.c.o
-/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_85eec.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
-Linking C executable cmTC_85eec
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_85eec.dir/link.txt --verbose=1
-/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_85eec.dir/CheckFunctionExists.c.o  -o cmTC_85eec -rdynamic -lpthreads 
+Run Build Command:"/usr/bin/make" "cmTC_c64ab/fast"
+/usr/bin/make -f CMakeFiles/cmTC_c64ab.dir/build.make CMakeFiles/cmTC_c64ab.dir/build
+make[1]: Entering directory '/home/jmg/abb_ros/build/CMakeFiles/CMakeTmp'
+Building C object CMakeFiles/cmTC_c64ab.dir/CheckFunctionExists.c.o
+/usr/bin/cc    -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_c64ab.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.5/Modules/CheckFunctionExists.c
+Linking C executable cmTC_c64ab
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c64ab.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTC_c64ab.dir/CheckFunctionExists.c.o  -o cmTC_c64ab -rdynamic -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_85eec.dir/build.make:97: recipe for target 'cmTC_85eec' failed
-make[1]: *** [cmTC_85eec] Error 1
-make[1]: Leaving directory '/home/turtle/abb_ros/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_85eec/fast' failed
-make: *** [cmTC_85eec/fast] Error 2
+CMakeFiles/cmTC_c64ab.dir/build.make:97: recipe for target 'cmTC_c64ab' failed
+make[1]: *** [cmTC_c64ab] Error 1
+make[1]: Leaving directory '/home/jmg/abb_ros/build/CMakeFiles/CMakeTmp'
+Makefile:126: recipe for target 'cmTC_c64ab/fast' failed
+make: *** [cmTC_c64ab/fast] Error 2
 
 

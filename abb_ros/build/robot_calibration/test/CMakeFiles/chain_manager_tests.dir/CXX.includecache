@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/turtle/abb_ros/src/robot_calibration/include/robot_calibration/capture/chain_manager.h
+/home/jmg/abb_ros/src/robot_calibration/include/robot_calibration/capture/chain_manager.h
 ros/ros.h
 -
 boost/thread/mutex.hpp
@@ -20,7 +20,7 @@ control_msgs/FollowJointTrajectoryAction.h
 moveit_msgs/MoveGroupAction.h
 -
 
-/home/turtle/abb_ros/src/robot_calibration/test/chain_manager_tests.cpp
+/home/jmg/abb_ros/src/robot_calibration/test/chain_manager_tests.cpp
 robot_calibration/capture/chain_manager.h
 -
 gtest/gtest.h

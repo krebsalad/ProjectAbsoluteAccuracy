@@ -7,4 +7,10 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/home/turtle/abb_ros/build"
+export CMAKE_PREFIX_PATH="/home/jmg/abb_ros/devel:$CMAKE_PREFIX_PATH"
+export LD_LIBRARY_PATH="/home/jmg/abb_ros/devel/lib:$LD_LIBRARY_PATH"
+export PKG_CONFIG_PATH="/home/jmg/abb_ros/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
+export PWD="/home/jmg/abb_ros/build"
+export PYTHONPATH="/home/jmg/abb_ros/devel/lib/python2.7/dist-packages:$PYTHONPATH"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/jmg/abb_ros/devel/share/common-lisp"
+export ROS_PACKAGE_PATH="/home/jmg/abb_ros/src:$ROS_PACKAGE_PATH"

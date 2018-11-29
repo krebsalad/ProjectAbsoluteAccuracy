@@ -1,8 +1,8 @@
-prefix=/home/turtle/abb_ros/devel
+prefix=/home/jmg/abb_ros/devel
 
 Name: industrial_utils
 Description: Description of industrial_utils
 Version: 0.5.1
-Cflags: -I/home/turtle/abb_ros/src/industrial_utils/include
-Libs: -L/home/turtle/abb_ros/devel/lib -lindustrial_utils
+Cflags: -I/home/jmg/abb_ros/src/industrial_utils/include
+Libs: -L/home/jmg/abb_ros/devel/lib -lindustrial_utils
 Requires: roscpp urdf

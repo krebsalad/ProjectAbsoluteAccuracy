@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/viz.dir/src/tools/viz.cpp.o"
-  "/home/turtle/abb_ros/devel/lib/robot_calibration/viz.pdb"
-  "/home/turtle/abb_ros/devel/lib/robot_calibration/viz"
+  "/home/jmg/abb_ros/devel/lib/robot_calibration/viz.pdb"
+  "/home/jmg/abb_ros/devel/lib/robot_calibration/viz"
 )
 
 # Per-language clean rules from dependency scanning.

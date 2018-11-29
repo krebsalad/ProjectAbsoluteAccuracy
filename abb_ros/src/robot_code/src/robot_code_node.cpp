@@ -12,9 +12,22 @@
 
 struct custom_position
 {
-    custom_position():w(0), x(0), y(0), z(0) {}     //default constructor
-    custom_position(double _w, double _x, double _y, double _z):w(_w), x(_x), y(_y), z(_z) {} //constructor with params
-    void stream_char_to_position(char* c_w, char* c_x, char* c_y, char* c_z)    //set values with stringstream
+    custom_position():w(0), x(0), y(0), z(0), o_x(0), o_y(0), o_z(0) {}     //default constructor
+    custom_position(double _x, double _y, double _z):w(0), x(_x), y(_y), z(_z), o_x(0), o_y(0), o_z(0) {} //constructor with params
+    void stream_char_to_position(char* c_x, char* c_y, char* c_z)    //set values with stringstream
+    {
+        std::stringstream s_x;
+        std::stringstream s_y;
+        std::stringstream s_z;
+        s_x << c_x;
+        s_y << c_y;
+        s_z << c_z;
+        
+        s_x >> x;
+        s_y >> y;
+        s_z >> z;
+    }
+    void stream_char_to_orientation(char* c_w, char* c_x, char* c_y, char* c_z)    //set values with stringstream
     {
         std::stringstream s_w;
         std::stringstream s_x;
@@ -26,14 +39,18 @@ struct custom_position
         s_z << c_z;
         
         s_w >> w;
-        s_x >> x;
-        s_y >> y;
-        s_z >> z;
+        s_x >> o_x;
+        s_y >> o_y;
+        s_z >> o_z;
     }
+
     geometry_msgs::Pose getPositionAsPose()
     {
         geometry_msgs::Pose target_pose;
         target_pose.orientation.w = w;
+        target_pose.orientation.x = o_x;
+        target_pose.orientation.y = o_y;
+        target_pose.orientation.z = o_z;
         target_pose.position.x = x;
         target_pose.position.y = y;
         target_pose.position.z = z;
@@ -50,6 +67,9 @@ struct custom_position
     }
 
     double w;
+    double o_x;
+    double o_y;
+    double o_z;
     double x;
     double y;
     double z;
@@ -145,9 +165,11 @@ void generatePosesFromCustomPositionToBagFile(std::vector<custom_position*> posi
 std::string getMoveGroupCurrentPositionAsString(moveit::planning_interface::MoveGroupInterface* move_group)
 {
 	geometry_msgs::Pose current_pose = move_group->getCurrentPose().pose;
-	std::string str = "[" ;
-	str += std::to_string(current_pose.position.x) + ", " + std::to_string(current_pose.position.y) + ", " + std::to_string(current_pose.position.z) + "]" ;
-	return str;
+	std::string strorientation = "orientation:[" ;
+    std::string strPosition = "Position:[" ;
+	strorientation += std::to_string(current_pose.orientation.w) + ", " + std::to_string(current_pose.orientation.x) + ", " + std::to_string(current_pose.orientation.y) + ", " + std::to_string(current_pose.orientation.z) + "], " ;
+	strPosition += std::to_string(current_pose.position.x) + ", " + std::to_string(current_pose.position.y) + ", " + std::to_string(current_pose.position.z) + "]" ;
+    return strorientation + strPosition;
 }
 
 int main(int argc, char* argv[])
@@ -177,18 +199,19 @@ int main(int argc, char* argv[])
         if(path_arg.str() == "short")  // shortest path plan
         {
             none = false;
-            if(argv[5] != nullptr)
+            if(argv[8] != nullptr)
             {
                 custom_position* position1 = new custom_position();
 
-                position1->stream_char_to_position(argv[2], argv[3], argv[4], argv[5]);
+                position1->stream_char_to_position(argv[6], argv[7], argv[8]);
+                position1->stream_char_to_orientation(argv[2], argv[3], argv[4], argv[5]);
 
                 //plan shortest path
                 executeShortPath_To_Position(&move_group, position1);
             }
             else
             {
-                ROS_INFO_NAMED("positioning error:", "not enough arguments given to plan short path. w x y z needed!");
+                ROS_INFO_NAMED("positioning error:", "not enough arguments given to plan short path. w o_x o_y o_z x y z needed!");
                 return 0;
             }
         }
@@ -210,13 +233,14 @@ int main(int argc, char* argv[])
             none = false;
 
             //create custom positions from input
-            if(argv[2 + (numOfPos*4)] != nullptr)
+            if(argv[2 + (numOfPos*7)] != nullptr)
             {
                 std::vector<custom_position*> positions;
-                for(int i = 3; i <= 2 + (numOfPos*4); i+=4)
+                for(int i = 3; i <= 2 + (numOfPos*7); i+=7)
                 {
                     custom_position* position = new custom_position();
-                    position->stream_char_to_position(argv[i], argv[i+1], argv[i+2], argv[i+3]);
+                    position->stream_char_to_orientation(argv[i], argv[i+1], argv[i+2], argv[i+3]);
+                    position->stream_char_to_position(argv[i+4], argv[i+5], argv[i+6]);
                     positions.push_back(position);
                 }
 
@@ -224,7 +248,7 @@ int main(int argc, char* argv[])
                 executeCartesianPath_Through_Positions(&move_group, positions);
 
                 //delete routine
-                for(int i = 3; i <= 2 + (numOfPos*4); i+=4)
+                for(int i = 3; i <= 2 + (numOfPos*7); i++)
                 {
                     delete positions[i];
                 }  
@@ -253,13 +277,14 @@ int main(int argc, char* argv[])
 
             none = false;
 
-            if(argv[2 + (numOfPos*4)] != nullptr)
+            if(argv[2 + (numOfPos*7)] != nullptr)
             {
                 std::vector<custom_position*> positions;
-                for(int i = 3; i <= 2 + (numOfPos*4); i+=4)
+                for(int i = 3; i <= 2 + (numOfPos*7); i+=7)
                 {
                     custom_position* position = new custom_position();
-                    position->stream_char_to_position(argv[i], argv[i+1], argv[i+2], argv[i+3]);
+                    position->stream_char_to_orientation(argv[i], argv[i+1], argv[i+2], argv[i+3]);
+                    position->stream_char_to_position(argv[i+4], argv[i+5], argv[i+6]);
                     positions.push_back(position);
                 }
 
@@ -267,7 +292,7 @@ int main(int argc, char* argv[])
                 generatePosesFromCustomPositionToBagFile(positions, "/tmp/calibration_poses.bag");
 
                 //delete routine
-                for(int i = 3; i <= 2 + (numOfPos*4); i+=4)
+                for(int i = 3; i <= 2 + (numOfPos*7); i++)
                 {
                     delete positions[i];
                 } 

@@ -1,8 +1,8 @@
-# Install script for directory: /home/turtle/abb_ros/src/robot_calibration/test
+# Install script for directory: /home/jmg/abb_ros/src/robot_calibration/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/turtle/abb_ros/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jmg/abb_ros/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
