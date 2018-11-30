@@ -195,7 +195,7 @@
   
   <!-- camera joint list -->
   <joint name="camera_joint" type="fixed">
-    <origin rpy="0 -3.14159 0" xyz="2.85 1.43 0.12" />
+    <origin rpy="0 -3.14159 0" xyz="2.85 1.43 0.12"/>
     <parent link="base_link" />
     <child link="camera_link" />
   </joint>

@@ -293,6 +293,8 @@ fstream
 -
 ctime
 -
+sstream
+-
 ros/ros.h
 -
 rosbag/bag.h

@@ -19,6 +19,7 @@
 
 #include <fstream>
 #include <ctime>
+#include <sstream>
 
 #include <ros/ros.h>
 #include <rosbag/bag.h>
@@ -294,9 +295,22 @@ int main(int argc, char** argv)
   // Update the URDF
   std::string s = opt.getOffsets()->updateURDF(description_msg.data);
 
-  // Generate datecode
+  // extension to name of output file
   char datecode[80];
+
+  std::string calib_output_str;  //string 2 capture param
+
+  // use calibration output num if available else set datecode to local time
+  if (nh.getParam("/robot_calibration_file_output_ext", calib_output_str))
   {
+    std::stringstream calib_output_code;
+    calib_output_code << calib_output_str;
+    calib_output_code >> datecode;  //set datecode with param value instead of actual datecode
+  }
+  else
+  {
+    ROS_WARN("Did not find /robot_calibration_file_output_ext param in node namespace, set output num to current date/time");
+    //generete date
     std::time_t t = std::time(NULL);
     std::strftime(datecode, 80, "%Y_%m_%d_%H_%M_%S", std::localtime(&t));
   }

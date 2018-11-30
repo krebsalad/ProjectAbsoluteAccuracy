@@ -1,0 +1,18 @@
+Serial number: 828612061092
+Device name: Intel RealSense 415
+Device PID: 0AD3
+FW version: 05.10.06.00
+Calibration Type: Targeted
+Laser Power: Off
+Auto Exposure: On
+AE SetPoint: Auto
+Resolution: 1280x720x30
+Start rectification
+Start scale calibration
+Computed rotational correction angles in degrees: <rx, ry, rz> = <-0.020, -0.235, 0.030>
+Out of calibration.
+Scale calibration completed, start RGB calibration
+Computed rotational correction angles in degrees: <rx, ry, rz> = <0.010, 0.032, -0.186>  translation in mm: <tx, ty, tz> = <-0.000, -0.048, -0.008>
+Out of calibration.
+Calibration completed, results updated to device successfully!
+
