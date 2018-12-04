@@ -253,6 +253,9 @@ EMPY_SCRIPT:STRING=/usr/bin/empy
 //Turn on coverage testing
 ENABLE_COVERAGE_TESTING:BOOL=OFF
 
+//The directory containing a CMake configuration file for Eigen3.
+Eigen3_DIR:PATH=/usr/lib/cmake/eigen3
+
 //Path to a file.
 GFLAGS_INCLUDE_DIR:PATH=/usr/include
 
@@ -557,6 +560,9 @@ industrial_utils_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/liburdf.so;gene
 //Value Computed by CMake
 industrial_utils_SOURCE_DIR:STATIC=/home/turtle/abb_ros/src/industrial_utils
 
+//Dependencies for the target
+joint_state_listener_LIB_DEPENDS:STATIC=general;robot_state_publisher_solver;general;orocos-kdl;
+
 //The directory containing a CMake configuration file for kdl_parser.
 kdl_parser_DIR:PATH=/opt/ros/kinetic/share/kdl_parser/cmake
 
@@ -677,6 +683,15 @@ robot_code_BINARY_DIR:STATIC=/home/turtle/abb_ros/build/robot_code
 //Value Computed by CMake
 robot_code_SOURCE_DIR:STATIC=/home/turtle/abb_ros/src/robot_code
 
+//Value Computed by CMake
+robot_state_publisher_BINARY_DIR:STATIC=/home/turtle/abb_ros/build/robot_state_publisher
+
+//Value Computed by CMake
+robot_state_publisher_SOURCE_DIR:STATIC=/home/turtle/abb_ros/src/robot_state_publisher
+
+//Dependencies for the target
+robot_state_publisher_solver_LIB_DEPENDS:STATIC=general;/opt/ros/kinetic/lib/libtf.so;general;/opt/ros/kinetic/lib/libtf2_ros.so;general;/opt/ros/kinetic/lib/libactionlib.so;general;/opt/ros/kinetic/lib/libmessage_filters.so;general;/opt/ros/kinetic/lib/libtf2.so;general;/opt/ros/kinetic/lib/libkdl_parser.so;general;/opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0;general;/opt/ros/kinetic/lib/liburdf.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_model.so;general;/usr/lib/x86_64-linux-gnu/liburdfdom_world.so;general;/usr/lib/x86_64-linux-gnu/libtinyxml.so;general;/opt/ros/kinetic/lib/librosconsole_bridge.so;general;/opt/ros/kinetic/lib/libroscpp.so;general;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;general;/usr/lib/x86_64-linux-gnu/libboost_signals.so;general;/opt/ros/kinetic/lib/librosconsole.so;general;/opt/ros/kinetic/lib/librosconsole_log4cxx.so;general;/opt/ros/kinetic/lib/librosconsole_backend_interface.so;general;/usr/lib/x86_64-linux-gnu/liblog4cxx.so;general;/usr/lib/x86_64-linux-gnu/libboost_regex.so;general;/opt/ros/kinetic/lib/libroscpp_serialization.so;general;/opt/ros/kinetic/lib/libxmlrpcpp.so;general;/opt/ros/kinetic/lib/librostime.so;general;/opt/ros/kinetic/lib/libcpp_common.so;general;/usr/lib/x86_64-linux-gnu/libboost_system.so;general;/usr/lib/x86_64-linux-gnu/libboost_thread.so;general;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;general;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;general;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;general;/usr/lib/x86_64-linux-gnu/libpthread.so;general;/usr/lib/x86_64-linux-gnu/libconsole_bridge.so;general;orocos-kdl;
+
 //The directory containing a CMake configuration file for rosbag.
 rosbag_DIR:PATH=/opt/ros/kinetic/share/rosbag/cmake
 
@@ -770,6 +785,9 @@ tf2_DIR:PATH=/opt/ros/kinetic/share/tf2/cmake
 //The directory containing a CMake configuration file for tf2_geometry_msgs.
 tf2_geometry_msgs_DIR:PATH=/opt/ros/kinetic/share/tf2_geometry_msgs/cmake
 
+//The directory containing a CMake configuration file for tf2_kdl.
+tf2_kdl_DIR:PATH=/opt/ros/kinetic/share/tf2_kdl/cmake
+
 //The directory containing a CMake configuration file for tf2_msgs.
 tf2_msgs_DIR:PATH=/opt/ros/kinetic/share/tf2_msgs/cmake
 
@@ -796,6 +814,9 @@ trajectory_msgs_DIR:PATH=/opt/ros/kinetic/share/trajectory_msgs/cmake
 
 //The directory containing a CMake configuration file for urdf.
 urdf_DIR:PATH=/opt/ros/kinetic/share/urdf/cmake
+
+//The directory containing a CMake configuration file for urdfdom_headers.
+urdfdom_headers_DIR:PATH=/usr/share/urdfdom_headers/cmake
 
 //The directory containing a CMake configuration file for urdfdom_py.
 urdfdom_py_DIR:PATH=/opt/ros/kinetic/share/urdfdom_py/cmake
@@ -980,6 +1001,8 @@ CMAKE_UNAME:INTERNAL=/bin/uname
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: EIGEN_INCLUDE_DIR
 EIGEN_INCLUDE_DIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: Eigen3_DIR
+Eigen3_DIR-ADVANCED:INTERNAL=1
 //Details about finding OpenCV
 FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[/opt/ros/kinetic][v3.3.1()]
 //Details about finding PythonInterp

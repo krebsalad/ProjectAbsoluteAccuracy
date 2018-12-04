@@ -109,7 +109,7 @@ bool JointRelayHandler::create_messages(JointMessage& msg_in,
     else
       LOG_ERROR("Failed to parse #%d value from JointMessage", i);
   }
-
+  
   // apply transform to joint positions, if required
   std::vector<double> xform_joint_pos;
   if (!transform(all_joint_pos, &xform_joint_pos))
@@ -127,17 +127,33 @@ bool JointRelayHandler::create_messages(JointMessage& msg_in,
     return false;
   }
 
+  /******************joint offset tempolary implementatin************/
+  std::vector<double> joint_offsets(pub_joint_pos.size());
+  joint_offsets.push_back(0);
+  joint_offsets.push_back(0);
+  joint_offsets.push_back(0);
+  joint_offsets.push_back(0);
+  joint_offsets.push_back(0);
+  joint_offsets.push_back(0);
+
+  for(unsigned int iter = 0; iter < pub_joint_pos.size() && iter < 6; iter++) 
+  {
+    pub_joint_pos[iter] -= joint_offsets[iter];
+  }
+
+  /****************************************************************/
+
   // assign values to messages
   control_msgs::FollowJointTrajectoryFeedback tmp_control_state;  // always start with a "clean" message
   tmp_control_state.header.stamp = ros::Time::now();
-  tmp_control_state.joint_names = pub_joint_names;
+  tmp_control_state.joint_names = pub_joint_names;  //!! changed
   tmp_control_state.actual.positions = pub_joint_pos;
   *control_state = tmp_control_state;
 
   sensor_msgs::JointState tmp_sensor_state;
   tmp_sensor_state.header.stamp = ros::Time::now();
   tmp_sensor_state.name = pub_joint_names;
-  tmp_sensor_state.position = pub_joint_pos;
+  tmp_sensor_state.position = pub_joint_pos;  //!! changed
   *sensor_state = tmp_sensor_state;
 
   return true;

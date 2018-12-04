@@ -8,7 +8,7 @@
 #include <std_msgs/String.h>
 
 #include <iostream>
-#include <sstream>
+#include <sstream>    
 #include <string>
 #include <map>
 
@@ -69,6 +69,54 @@ struct custom_position
         str += std::to_string(z) + "]";
         return str;
     }
+    void askForPositionInput()
+    {
+        std::string input;
+        std::stringstream stream_input[7];
+        
+        ROS_INFO("w:");
+        std::getline(std::cin, input);
+        stream_input[0].str(input);
+        input = std::string();
+
+        ROS_INFO("orientaiton_x:");
+        std::getline(std::cin, input);
+        stream_input[1].str(input);
+        input = std::string();
+
+        ROS_INFO("orientaiton_y:");
+        std::getline(std::cin, input);
+        stream_input[2].str(input);
+        input = std::string();
+
+        ROS_INFO("orientaiton_z:");
+        std::getline(std::cin, input);
+        stream_input[3].str(input);
+        input = std::string();
+
+        ROS_INFO("x:");
+        std::getline(std::cin, input);
+        stream_input[4].str(input);
+        input = std::string();
+
+        ROS_INFO("y:");
+        std::getline(std::cin, input);
+        stream_input[5].str(input);
+        input = std::string();
+
+        ROS_INFO("z:");
+        std::getline(std::cin, input);
+        stream_input[6].str(input);
+        input = std::string();
+
+        stream_input[0] >> w;
+        stream_input[1] >> o_x;
+        stream_input[2] >> o_y;
+        stream_input[3] >> o_z;
+        stream_input[4] >> x;
+        stream_input[5] >> y;
+        stream_input[6] >> z;
+    }
 
     double w;
     double o_x;
@@ -82,9 +130,8 @@ struct custom_position
 // get joint_offsets from description and add them to the given plan
 bool computeJointOffsetsOnPlan(moveit::planning_interface::MoveGroupInterface::Plan* my_plan)
 {
-    /// Load joint_offsets
     std::map<std::string, float> joint_offsets;
-    
+
     // get robot_Description
     std_msgs::String description_msg;
     ros::NodeHandle node;
@@ -94,16 +141,55 @@ bool computeJointOffsetsOnPlan(moveit::planning_interface::MoveGroupInterface::P
         return false;
     }
 
-    KDL::Tree my_tree;
-    if (!kdl_parser::treeFromString(std::string(description_msg.data), my_tree)){
+    //get kdl model
+
+    KDL::Tree model;
+
+    if (!kdl_parser::treeFromString(std::string(description_msg.data), model))
+    {
         ROS_ERROR("Failed to construct kdl tree");
         return false;
     }
 
+    KDL::Chain chain;
+
+    if(!model.getChain("base_link", "link_6", chain))
+    {
+        ROS_ERROR("Failed to construct kdl chain");
+        return false;
+    }
+
+    KDL::Frame p_out = KDL::Frame::Identity();
+
+    // for each joint
+    for (unsigned int i = 0; i < chain.getNrOfSegments(); ++i)
+    {
+        std::string joint_name = chain.getSegment(i).getJoint().getName();
+
+        // Apply any joint offset calibration
+        if (chain.getSegment(i).getJoint().getType() != KDL::Joint::None)
+        {
+
+        }
+        else
+        {
+
+        }
+    }
+    /// Load joint_offsets
+    /*
+    
+ 
+
+    KDL::Tree my_tree;
+
+
 
     // TODO!! Get joint offsets and /joint_states and add offsets to joint offsets <--- made issue in robot_calibration git
-    //KDL::Chain chain;
-    //my_tree.getChain("joint_1", "joint_6", chain);
+    KDL::Chain chain;
+    my_tree.getChain("link_1", "joint_6", chain);
+
+    */
     /*for(unsigned int i = 0; i < chain.getNrOfSegments(); i++)
     {
         std::string logstr;
@@ -112,8 +198,7 @@ bool computeJointOffsetsOnPlan(moveit::planning_interface::MoveGroupInterface::P
         logstr += "Got segment: " + segment.getName();
         logstr += ", Segment has joint: " + segment.getJoint().getName();
         ROS_ERROR(logstr.c_str());
-    }
-    */
+    }*/
 
     /*KDL::SegmentMap segment_map = my_tree.getSegments();
     for (std::map<std::string, KDL::TreeElement>::iterator it=segment_map.begin(); it!=segment_map.end(); ++it)
@@ -153,7 +238,7 @@ void executeShortPath_To_Position(moveit::planning_interface::MoveGroupInterface
     //set the target for the next path
     move_group->setPoseTarget(pos1->getPositionAsPose());
     bool planned = (move_group->plan(my_plan) == moveit::planning_interface::MoveItErrorCode::SUCCESS);
-    computeJointOffsetsOnPlan(&my_plan);
+    
     //execute if planning succesful
     if(planned)
     {
@@ -230,8 +315,6 @@ void generatePosesFromCustomPositionToBagFile(std::vector<custom_position*> posi
 
 }
 
-
-
 std::string getMoveGroupCurrentPositionAsString(moveit::planning_interface::MoveGroupInterface* move_group)
 {
 	geometry_msgs::Pose current_pose = move_group->getCurrentPose().pose;
@@ -258,139 +341,94 @@ int main(int argc, char* argv[])
     static const std::string planning_group = "group1";
     moveit::planning_interface::MoveGroupInterface move_group(planning_group);
     moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
-    const robot_state::JointModelGroup* joint_model_group = move_group.getCurrentState()->getJointModelGroup(planning_group);
+    // const robot_state::JointModelGroup* joint_model_group = move_group.getCurrentState()->getJointModelGroup(planning_group);
 
-    if(argv[1] != nullptr)
-    {    
-        bool none = true;
-        std::stringstream path_arg;
-        path_arg << argv[1];
-        
-        if(path_arg.str() == "short")  // shortest path plan
-        {
-            none = false;
-            if(argv[8] != nullptr)
-            {
-                custom_position* position1 = new custom_position();
 
-                position1->stream_char_to_position(argv[6], argv[7], argv[8]);
-                position1->stream_char_to_orientation(argv[2], argv[3], argv[4], argv[5]);
-
-                //plan shortest path
-                executeShortPath_To_Position(&move_group, position1);
-            }
-            else
-            {
-                ROS_INFO_NAMED("positioning error:", "not enough arguments given to plan short path. w o_x o_y o_z x y z needed!");
-                return 0;
-            }
-        }
-        
-        if(path_arg.str() == "cartesian")  // cartesian path plan
-        {
-            int numOfPos;
-            if(argv[2] != nullptr)
-            {
-                std::stringstream nr_pos_arg;
-                nr_pos_arg << argv[2];
-                nr_pos_arg >> numOfPos;
-            }else
-            {
-                ROS_INFO_NAMED("positioning error:", "to less arguments given!!");
-                return 0;
-            }
-
-            none = false;
-
-            //create custom positions from input
-            if(argv[2 + (numOfPos*7)] != nullptr)
-            {
-                std::vector<custom_position*> positions;
-                for(int i = 3; i <= 2 + (numOfPos*7); i+=7)
-                {
-                    custom_position* position = new custom_position();
-                    position->stream_char_to_orientation(argv[i], argv[i+1], argv[i+2], argv[i+3]);
-                    position->stream_char_to_position(argv[i+4], argv[i+5], argv[i+6]);
-                    positions.push_back(position);
-                }
-
-                //plan cartesian path
-                executeCartesianPath_Through_Positions(&move_group, positions);
-
-                //delete routine
-                for(int i = 3; i <= 2 + (numOfPos*7); i++)
-                {
-                    delete positions[i];
-                }  
-            }
-            else
-            {
-                ROS_INFO_NAMED("positioning error:", "not enough arguments given to plan cartesian path.");
-                return 0;
-            }
-        }
-
-        if(path_arg.str() == "generate")  // cartesian path plan
-        {
-            int numOfPos;
-            if(argv[2] != nullptr)
-            {
-                std::stringstream nr_pos_arg;
-                nr_pos_arg << argv[2];
-                nr_pos_arg >> numOfPos;
-            }
-            else
-            {
-                ROS_INFO_NAMED("positioning error:", "to less arguments given!!");
-                return 0;
-            }
-
-            none = false;
-
-            if(argv[2 + (numOfPos*7)] != nullptr)
-            {
-                std::vector<custom_position*> positions;
-                for(int i = 3; i <= 2 + (numOfPos*7); i+=7)
-                {
-                    custom_position* position = new custom_position();
-                    position->stream_char_to_orientation(argv[i], argv[i+1], argv[i+2], argv[i+3]);
-                    position->stream_char_to_position(argv[i+4], argv[i+5], argv[i+6]);
-                    positions.push_back(position);
-                }
-
-                //generate poses bag
-                generatePosesFromCustomPositionToBagFile(positions, "/tmp/calibration_poses.bag");
-
-                //delete routine
-                for(int i = 3; i <= 2 + (numOfPos*7); i++)
-                {
-                    delete positions[i];
-                } 
-            }
-            else
-            {
-                ROS_INFO_NAMED("positioning error:", "not enough arguments given to generate rosbag file");
-                return 0;
-            }
-        }
-
-	    if(path_arg.str() == "current_position")  // get current position
-        {
-		    ROS_WARN(std::string("Positioning info:" + getMoveGroupCurrentPositionAsString(&move_group)).c_str());
-	    }
-
-        if(none)
-        {
-            ROS_INFO_NAMED("positioning error:", "given path type invalid!");
-        }
-    }
-    else
+    while(ros::ok)
     {
-        ROS_INFO_NAMED("positioning error:", "No arguments were given");
-        return 0;
-    }
+        //ask for option
+        ROS_INFO("Input utility option: options [short, cartesian, generate, current_position, exit]\n");
+        std::string option_input;
+        std::getline(std::cin, option_input);
 
-   
+        if(option_input == "short")
+        {
+            //create position for short path planning from given input
+            ROS_INFO("please do input positions");
+            custom_position* position = new custom_position();
+            position->askForPositionInput();
+            executeShortPath_To_Position(&move_group, position);
+            delete position;
+        }
+
+        if(option_input == "cartesian")
+        {
+            //create positions for cartesian path planning from given inputs
+            int num_of_positions = 0;
+            std::string str_n_o_p;
+            ROS_INFO("how many positions?");
+            std::getline(std::cin, str_n_o_p);
+            num_of_positions = std::stoi(str_n_o_p);
+
+             std::vector<custom_position*> positions;
+            for (int i = 0; i < num_of_positions; i++)
+            {
+                custom_position* position = new custom_position();
+                position->askForPositionInput();
+                positions.push_back(position);
+            }
+
+            executeCartesianPath_Through_Positions(&move_group, positions);
+
+            for (int i = 0; i < num_of_positions; i++)
+            {
+                delete positions[i];
+            }
+        }
+
+        if(option_input == "generate")
+        {
+            //create positions for pose generating from given inputs
+            int num_of_positions = 0;
+            std::string str_n_o_p;
+            ROS_INFO("how many positions?");
+            std::getline(std::cin, str_n_o_p);
+            num_of_positions = std::stoi(str_n_o_p);
+
+            std::vector<custom_position*> positions;
+            for (int i = 0; i < num_of_positions; i++)
+            {
+                ROS_INFO(std::string("input Position "+ std::to_string(i)).c_str());
+                custom_position* position = new custom_position();
+                position->askForPositionInput();
+                positions.push_back(position);
+            }
+
+            generatePosesFromCustomPositionToBagFile(positions, "/tmp/poses_bagfile.bag");
+
+            for (int i = 0; i < num_of_positions; i++)
+            {
+                delete positions[i];
+            }
+        }
+
+        if(option_input == "current_position")
+        {
+            //print current position off end_Effector
+            ROS_WARN(std::string("Positioning info:" + getMoveGroupCurrentPositionAsString(&move_group)).c_str());
+        }
+
+        if(option_input == "")
+        {
+            ROS_INFO_NAMED("positioning error:", "given option type invalid!");
+        }
+
+        if(option_input == "exit")
+        {
+            ROS_INFO_NAMED("positioning node:", "exiting...");
+            break;
+        }
+    }
     ROS_INFO_NAMED("positioning node:", "exited");
     return 0;
 }

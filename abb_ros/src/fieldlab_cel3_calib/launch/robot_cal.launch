@@ -8,21 +8,25 @@
     <!-- camera launch -->
   <include file="$(find realsense2_camera)/launch/rs_rgbd.launch" if="$(arg camera_launch)"/>
   
-  <!-- Launch robot. -->
+  <!-- robot definitions. will load robot description to /robot_description -->
   <include file="$(find abb_irb1660_moveit_config)/launch/planning_context.launch" >
     <arg name="load_robot_description" value="true" />
   </include>
 
+  <!-- link to abb_driver/industrial_robot_client for connection with actual robot-->
   <include file="$(find abb_irb1660_support)/launch/robot_interface_download_irb1660.launch" >
       <arg name="robot_ip" value="$(arg robot_ip)"/>
   </include>
   
+  <!-- publishes /joint_states-->
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" />
 
+  <!-- moveit params -->
   <include file="$(find abb_irb1660_moveit_config)/launch/move_group.launch">
     <arg name="publish_monitored_planning_scene" value="true" />
   </include>
 
+  <!-- vizualize -->
   <include file="$(find abb_irb1660_moveit_config)/launch/moveit_rviz.launch" if="$(arg rviz_planner)">
     <arg name="config" value="true"/>
   </include>
