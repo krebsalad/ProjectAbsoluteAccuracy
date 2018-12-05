@@ -82,10 +82,12 @@ public:
   * \return true on success, false otherwise (an invalid message type)
   */
  bool init(industrial::smpl_msg_connection::SmplMsgConnection* connection, std::vector<std::string> &joint_names);
+ void SetJointOffsets(const std::vector<float> &joint_offsets); /***added!!*******************************************************************/
 
 protected:
 
   std::vector<std::string> all_joint_names_;
+  std::vector<float> all_joint_offsets_; /***added!!*******************************************************************/
 
   ros::Publisher pub_joint_control_state_;
   ros::Publisher pub_joint_sensor_state_;

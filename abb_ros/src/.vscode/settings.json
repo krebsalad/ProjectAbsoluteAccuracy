@@ -47,6 +47,8 @@
         "utility": "cpp",
         "complex": "cpp",
         "list": "cpp",
-        "bitset": "cpp"
+        "bitset": "cpp",
+        "csignal": "cpp",
+        "mutex": "cpp"
     }
 }

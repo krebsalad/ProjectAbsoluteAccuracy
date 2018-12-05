@@ -64,6 +64,7 @@ int main(int argc, char** argv)
   // initialize node
   ros::init(argc, argv, "state_interface");
 
+  
   // launch the default Robot State Interface connection/handlers
   RobotStateInterface rsi;
   rsi.init();
@@ -72,6 +73,24 @@ int main(int argc, char** argv)
   ABB_JointRelayHandler jointHandler;  // for joint-linkage correction
   std::vector<std::string> joint_names = rsi.get_joint_names();
   jointHandler.init(rsi.get_connection(), joint_names);
+
+
+  /***added!!*******************************************************************/
+
+  
+  ros::NodeHandle nh;
+  std::vector<float> joint_offsets;
+  if(!(nh.getParam("/joint_offsets", joint_offsets)))
+  {
+    jointHandler.SetJointOffsets(std::vector<float>()); 
+  }
+  else
+  {
+    jointHandler.SetJointOffsets(joint_offsets); 
+  }
+
+  /**************************************************************************/
+
   rsi.add_handler(&jointHandler);
 
   // run the node

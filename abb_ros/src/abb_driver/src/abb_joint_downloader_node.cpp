@@ -80,6 +80,21 @@ int main(int argc, char** argv)
   // launch the default JointTrajectoryDownloader connection/handlers
   ABB_JointTrajectoryDownloader motionInterface;
   motionInterface.init();
+  /***added!!*******************************************************************/
+
+  
+  ros::NodeHandle nh;
+  std::vector<float> joint_offsets;
+  if(!(nh.getParam("/joint_offsets", joint_offsets)))
+  {
+    motionInterface.SetJointOffsets(std::vector<float>()); 
+  }
+  else
+  {
+    motionInterface.SetJointOffsets(joint_offsets); 
+  }
+
+  /**************************************************************************/
   motionInterface.run();
 
   return 0;

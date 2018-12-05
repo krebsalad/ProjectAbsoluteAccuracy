@@ -115,6 +115,8 @@ public:
    */
   virtual void run() { ros::spin(); }
 
+  virtual void SetJointOffsets(const std::vector<float> &joint_offsets);  /***added!!*******************************************************************/
+
 protected:
 
   /**
@@ -249,6 +251,7 @@ protected:
   ros::ServiceServer srv_joint_trajectory_;  // handle for joint-trajectory service
   ros::ServiceServer srv_stop_motion_;   // handle for stop_motion service
   std::vector<std::string> all_joint_names_;
+  std::vector<float> all_joint_offsets_; /***added!!*******************************************************************/
   double default_joint_pos_;  // default position to use for "dummy joints", if none specified
   double default_vel_ratio_;  // default velocity ratio to use for joint commands, if no velocity or max_vel specified
   double default_duration_;   // default duration to use for joint commands, if no

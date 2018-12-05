@@ -56,6 +56,13 @@ bool JointRelayHandler::init(SmplMsgConnection* connection, std::vector<std::str
   return init((int)StandardMsgTypes::JOINT, connection);
 }
 
+/***added!!*******************************************************************/
+void JointRelayHandler::SetJointOffsets(const std::vector<float> &joint_offsets)
+{
+  this->all_joint_offsets_ = joint_offsets;
+}
+/***added!!*******************************************************************/
+
 bool JointRelayHandler::internalCB(SimpleMessage& in)
 {
   JointMessage joint_msg;
@@ -128,17 +135,18 @@ bool JointRelayHandler::create_messages(JointMessage& msg_in,
   }
 
   /******************joint offset tempolary implementatin************/
-  std::vector<double> joint_offsets(pub_joint_pos.size());
-  joint_offsets.push_back(0);
-  joint_offsets.push_back(0);
-  joint_offsets.push_back(0);
-  joint_offsets.push_back(0);
-  joint_offsets.push_back(0);
-  joint_offsets.push_back(0);
-
-  for(unsigned int iter = 0; iter < pub_joint_pos.size() && iter < 6; iter++) 
+  if(this->all_joint_offsets_.size() > 0)
   {
-    pub_joint_pos[iter] -= joint_offsets[iter];
+    for(unsigned int iter = 0; iter < pub_joint_pos.size() && iter < 6; iter++) 
+    {
+      if(all_joint_offsets_[iter] == NULL)
+        break;
+
+      pub_joint_pos[iter] -= all_joint_offsets_[iter];
+    }
+  }else
+  {
+    ROS_DEBUG("Did not unapply joint offsets");
   }
 
   /****************************************************************/
@@ -146,14 +154,14 @@ bool JointRelayHandler::create_messages(JointMessage& msg_in,
   // assign values to messages
   control_msgs::FollowJointTrajectoryFeedback tmp_control_state;  // always start with a "clean" message
   tmp_control_state.header.stamp = ros::Time::now();
-  tmp_control_state.joint_names = pub_joint_names;  //!! changed
+  tmp_control_state.joint_names = pub_joint_names; 
   tmp_control_state.actual.positions = pub_joint_pos;
   *control_state = tmp_control_state;
 
   sensor_msgs::JointState tmp_sensor_state;
   tmp_sensor_state.header.stamp = ros::Time::now();
   tmp_sensor_state.name = pub_joint_names;
-  tmp_sensor_state.position = pub_joint_pos;  //!! changed
+  tmp_sensor_state.position = pub_joint_pos;  
   *sensor_state = tmp_sensor_state;
 
   return true;

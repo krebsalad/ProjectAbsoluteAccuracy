@@ -91,6 +91,12 @@ E. Testing RealSense camera
     3. Is the camera found?
 - rgbd point cloud
     1. Follow the instructions here: https://github.com/intel-ros/realsense 
+- octocloud for collision detection
+    1. edit abb_irbxxx_moveit_config/launch/sensor_manager.launch.xml to look like abb_irb1660_moveit_config/launch/sensor_manager.launch.xml
+    2. In this file the octomap is initialised. The most important in this file is the octomap frame. The frame defined in the example is a camera_frame defined in the urdf. Read further (F) for more about the frame and joints. Also the file sensors_3d.yaml is called in this launch file.
+    3. In sensors_3d.yaml file the definitions of the topic coming from the camera can be found. Make sure to change these to the correct topic. 
+        - Read more here: http://docs.ros.org/indigo/api/moveit_tutorials/html/doc/pr2_tutorials/planning/src/doc/perception_configuration.html 
+    4. Note that Octomap is only usefull when you mount the camera for calibration, or else it will mess around with your collisions and will prevent planning new paths.
 
 F. Calibrating the camera
 - install dynamic calibrator
@@ -99,7 +105,7 @@ F. Calibrating the camera
 - run dynamic calibration
     1. download dynamic calibrator app from googleplay
     2. run: Intel.RealSense.DynamicCalibrator
-    3. follow the instruction on the dynamiccalibrator
+    3. follow the instruction on the dynamiccalibrator output window
 
 G. setup the calibration
 - define camera_link in your urdf
@@ -175,7 +181,6 @@ I. Troubleshooting
         - edit /etc/default/grub (dont forget to backup first)
         - add pci=nomsi under GRUB_CMDLINE_LINYX=""
         - sudo update-grub before restarting
-
 - need help?
     1. pm https://github.com/krebsalad 
     2. post here for issues relating robot_calibration: https://github.com/mikeferguson/robot_calibration/issues 
@@ -185,3 +190,4 @@ J. Issues
 - The version of industrial_robot_client in this project has calibration offset implementation. The official version doesn't, as of 4-12-2018. Follow issue:                 1. https://github.com/ros-industrial/industrial_core/issues/218.
 - The official version of abb_driver RAPID code always expects paths for external axes, if configured.
     1. https://github.com/ros-industrial/abb/pull/155 
+- ROS_WARN and ROS_ERROR gives warnings when compiling. These warnings have to do with std::string logs.

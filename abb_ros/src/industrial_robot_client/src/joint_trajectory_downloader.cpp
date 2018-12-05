@@ -62,42 +62,40 @@ bool JointTrajectoryDownloader::send_to_robot(const std::vector<JointTrajPtMessa
   ROS_INFO("Sending trajectory points, size: %d", (int)points.size());
 
   /******************joint offset tempolary implementatin************/
-  std::vector<double> joint_offsets;  
-  joint_offsets.push_back(0.5);
-  joint_offsets.push_back(0.5);
-  joint_offsets.push_back(0.5);
-  joint_offsets.push_back(0.5);
-  joint_offsets.push_back(0.5);
-  joint_offsets.push_back(0.5);
-
-  // loop though all points
-  for(unsigned int iter = 0; iter < points.size(); iter++) 
+  if(all_joint_offsets_.size() > 0)
   {
-    // get joint data of point as jointData object
-    industrial::joint_data::JointData j_data;
-    points[iter].point_.getJointPosition(j_data);
-
-    // set joint offsets into copy of jointData
-    for(industrial::shared_types::shared_int i = 0; i <  j_data.getMaxNumJoints(); i++)
+    // loop though all points
+    for(unsigned int iter = 0; iter < points.size(); iter++) 
     {
-      // get joint value
-      industrial::shared_types::shared_real value;
-      if(j_data.getJoint(i, value) && joint_offsets[i] != NULL)
-      {
-          // set joint value with offset
-          value += joint_offsets[i];
-          j_data.setJoint(i, value);
-      }
-      else
-      {
-        break;
-      }
-    }
+      // get joint data of point as jointData object
+      industrial::joint_data::JointData j_data;
+      points[iter].point_.getJointPosition(j_data);
 
-    //set new joint data (only the positions)
-    points[iter].point_.setJointPosition(j_data);
+      // set joint offsets into copy of jointData
+      for(industrial::shared_types::shared_int i = 0; i <  j_data.getMaxNumJoints(); i++)
+      {
+        // get joint value
+        industrial::shared_types::shared_real value;
+        if(j_data.getJoint(i, value) && all_joint_offsets_[i] != NULL)
+        {
+            // set joint value with offset
+            value += all_joint_offsets_[i];
+            j_data.setJoint(i, value);
+        }
+        else
+        {
+          break;
+        }
+      }
+
+      //set new joint data (only the positions)
+      points[iter].point_.setJointPosition(j_data);
+    }
   }
-  
+  else
+  {
+    ROS_DEBUG("Did not apply joint offsets");
+  }
   /****************************************************************/
 
   for (int i = 0; i < (int)points.size(); ++i)
