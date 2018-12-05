@@ -117,7 +117,23 @@
       <material name="yellow"/>
     </collision>
   </link>
-  <link name="tool0"/>
+  <!-- tool link list -->
+  <link name="tool0">
+  <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://abb_irb1660_support/meshes/tools/tool_sks_FP8i-L.stl"/>
+      </geometry>
+      <material name="abb_orange"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <mesh filename="package://abb_irb1660_support/meshes/tools/tool_sks_FP8i-L.stl"/>
+      </geometry>
+      <material name="yellow"/>
+    </collision>
+  </link>
 
   <!-- camera link list -->
 
@@ -187,6 +203,8 @@
     <axis xyz="1 0 0"/>
     <limit effort="0" lower="-6.98132" upper="6.98132" velocity="8.72665"/>
   </joint>
+
+  <!-- tool joint list -->
   <joint name="joint_6-tool0" type="fixed">
     <parent link="link_6"/>
     <child link="tool0"/>
