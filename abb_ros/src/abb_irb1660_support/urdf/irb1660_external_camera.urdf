@@ -226,61 +226,85 @@
 
   <!-- object placement -->
   <!-- object link list -->
-  <!-- link name="front_of_cel_link"/>
+  <link name="front_of_cel_link"/>
 
   <link name="external_axis_object">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.525"/>
       <geometry>
-        <box size="0.7 2 0.5"/>
+        <box size="0.45 1.60 1.05"/>
       </geometry>
     </visual>
     <material name="Cyan">
       <color rgba="0 1.0 1.0 1.0"/>
     </material>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <origin rpy="0 0 0" xyz="0 0 0.525"/>
       <geometry>
-        <box size="0.7 2 0.5"/>
+        <box size="0.45 1.60 1.05"/>
       </geometry>
       <material name="Cyan"/>
     </collision>
   </link>
 
-  <link name="wall_back_object">
+   <link name="ground_object">
     <visual>
-      <origin rpy="0 0 1.5708" xyz="0 0 1.5"/>
+      <origin rpy="1.5708 0 0" xyz="0 -0.025 0"/>
       <geometry>
-        <box size="3 0.1 3"/>
+        <box size="4 0.05 3.25"/>
       </geometry>
     </visual>
     <material name="Cyan">
       <color rgba="0 255 0 0.3"/>
     </material>
     <collision>
-      <origin rpy="0 0 1.5708" xyz="0 0 1.5"/>
+      <origin rpy="1.5708  0 0" xyz="0 -0.025 0"/>
       <geometry>
-        <box size="3 0.1 3"/>
+        <box size="4 0.05 3.25"/>
       </geometry>
       <material name="Cyan">
       <color rgba="0 255 0 0.3"/>
     </material>
     </collision>
   </link>
-  <link name="wall_left_object">
+   
+  
+  <link name="wall_back_object">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 1.5"/>
+      <origin rpy="0 0 1.5708" xyz="0 0 1.25"/>
       <geometry>
-        <box size="5 0.1 3"/>
+        <box size="3.25 0.05 2.5"/>
       </geometry>
     </visual>
     <material name="Cyan">
       <color rgba="0 255 0 0.3"/>
     </material>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 1.5"/>
+      <origin rpy="0 0 1.5708" xyz="0 0 1.25"/>
       <geometry>
-        <box size="5 0.1 3"/>
+        <box size="3.25 0.05 2.5"/>
+      </geometry>
+      <material name="Cyan">
+      <color rgba="0 255 0 0.3"/>
+    </material>
+    </collision>
+  </link>
+  
+  
+  <link name="wall_left_object">
+    <visual>
+      <origin rpy="0 0 0" xyz="-2 0 1.25"/>
+      <geometry>
+        <box size="4 0.05 2.5"/>
+      </geometry>
+    </visual>
+    <material name="Cyan">
+      <color rgba="0 255 0 0.3"/>
+    </material>
+    <collision>
+      <origin rpy="0 0 0" xyz="-2 0 1.25"/>
+      <geometry>
+        <box size="4 0.05 2.5"/>
       </geometry>
       <material name="Cyan">
       <color rgba="0 255 0 0.3"/>
@@ -289,77 +313,61 @@
   </link>
   <link name="wall_right_object">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 1.5"/>
+      <origin rpy="0 0 0" xyz="-2 0 1.25"/>
       <geometry>
-        <box size="5 0.1 3"/>
+        <box size="4 0.05 2.5"/>
       </geometry>
     </visual>
     <material name="Cyan">
       <color rgba="0 255 0 0.3"/>
     </material>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 1.5"/>
+      <origin rpy="0 0 0" xyz="-2 0 1.25"/>
       <geometry>
-        <box size="5 0.1 3"/>
+        <box size="4 0.05 2.5"/>
       </geometry>
       <material name="Cyan">
       <color rgba="0 255 0 0.3"/>
     </material>
     </collision>
   </link>
-  <link name="ground_object">
-    <visual>
-      <origin rpy="1.5708 0 0" xyz="0 0 1.5"/>
-      <geometry>
-        <box size="5 0.1 3"/>
-      </geometry>
-    </visual>
-    <material name="Cyan">
-      <color rgba="0 255 0 0.3"/>
-    </material>
-    <collision>
-      <origin rpy="1.5708  0 0" xyz="0 0 1.5"/>
-      <geometry>
-        <box size="5 0.1 3"/>
-      </geometry>
-      <material name="Cyan">
-      <color rgba="0 255 0 0.3"/>
-    </material>
-    </collision>
-  </link-->
 
-  <!-- object joint list >
-  <joint name="base_link_to_external_axis_link_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="1 0 0"/>
-    <parent link="base_link" />
-    <child link="external_axis_object" />
-  </joint>
-
+  <!--object joint list -->
   <joint name="front_of_cel_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="2.50 0 0"/>
+    <origin rpy="0 0 0" xyz="2 0 -0.655"/>
     <parent link="base_link" />
     <child link="front_of_cel_link" />
   </joint>
+
+  <joint name="external_axis_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="-0.75 0 0"/>
+    <parent link="front_of_cel_link" />
+    <child link="external_axis_object" />
+  </joint>
+
+  <joint name="ground_joint" type="fixed">
+    <origin rpy="0 0 0" xyz="-2 0 0"/>
+    <parent link="front_of_cel_link" />
+    <child link="ground_object" />
+  </joint>
+  
   <joint name="front_to_back_wall_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="-5.0 0 0"/>
+    <origin rpy="0 0 0" xyz="-4 0 0"/>
     <parent link="front_of_cel_link" />
     <child link="wall_back_object" />
   </joint>
+  
   <joint name="front_to_left_wall_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="-2.5 -1.50 0"/>
+    <origin rpy="0 0 0" xyz="0 -1.625 0"/>
     <parent link="front_of_cel_link" />
     <child link="wall_left_object" />
   </joint>
+  
   <joint name="front_to_right_wall_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="-2.5 1.50 0"/>
+    <origin rpy="0 0 0" xyz="0 1.625 0"/>
     <parent link="front_of_cel_link" />
     <child link="wall_right_object" />
   </joint>
-  <joint name="front_to_ground_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="-2.5 0 -1.6"/>
-    <parent link="front_of_cel_link" />
-    <child link="ground_object" />
-  </joint-->
   <!--end of object placement -->
   
 </robot>

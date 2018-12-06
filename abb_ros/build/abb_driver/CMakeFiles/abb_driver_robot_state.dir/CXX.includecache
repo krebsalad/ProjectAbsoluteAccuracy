@@ -25,6 +25,10 @@ abb_driver/abb_utils.h
 /home/turtle/abb_ros/src/abb_driver/src/abb_driver/abb_utils.h
 ros/ros.h
 /home/turtle/abb_ros/src/abb_driver/src/ros/ros.h
+chrono
+-
+thread
+-
 
 /home/turtle/abb_ros/src/industrial_robot_client/include/industrial_robot_client/joint_relay_handler.h
 string

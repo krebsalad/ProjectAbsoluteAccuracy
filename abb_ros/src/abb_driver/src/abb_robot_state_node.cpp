@@ -76,19 +76,7 @@ int main(int argc, char** argv)
 
 
   /***added!!*******************************************************************/
-
-  
-  ros::NodeHandle nh;
-  std::vector<float> joint_offsets;
-  if(!(nh.getParam("/joint_offsets", joint_offsets)))
-  {
-    jointHandler.SetJointOffsets(std::vector<float>()); 
-  }
-  else
-  {
-    jointHandler.SetJointOffsets(joint_offsets); 
-  }
-
+  jointHandler.SetJointOffsets(abb::utils::getJointOffsetsFromParam(10)); 
   /**************************************************************************/
 
   rsi.add_handler(&jointHandler);

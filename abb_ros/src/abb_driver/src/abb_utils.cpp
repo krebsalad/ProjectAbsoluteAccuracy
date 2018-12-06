@@ -32,6 +32,11 @@
 #include "abb_driver/abb_utils.h"
 #include "ros/ros.h"
 
+#include <chrono>
+#include <thread>
+
+
+
 namespace abb
 {
 namespace utils
@@ -51,6 +56,34 @@ void linkage_transform(const std::vector<double>& points_in, std::vector<double>
   *points_out = points_in;
   points_out->at(2) += J23_factor * points_out->at(1);
 }
+
+/*********************************added***************************/
+std::vector<float> getJointOffsetsFromParam(unsigned int retry)
+{
+  ros::NodeHandle nh;
+  std::vector<float> joint_offsets = std::vector<float>();
+
+  int counter = 0;
+  while(counter < retry)
+  {
+    if(!(nh.getParam("/controller_joint_offsets", joint_offsets)))
+    {
+      ROS_ERROR("no joint offsets found, retrying...");
+    }
+    else
+    {
+      ROS_WARN("did find joint offsets");
+      return joint_offsets;
+    }
+
+    std::this_thread::sleep_for(std::chrono::milliseconds(100));
+    counter++;
+  }
+
+  ROS_ERROR("no joint offsets defined, assuming no joint offsets");
+  return joint_offsets;
+}
+/*********************************added***************************/
 
 } //abb
 

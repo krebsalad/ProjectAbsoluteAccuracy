@@ -60,6 +60,7 @@ void linkage_transform(const std::vector<double>& joints_in, std::vector<double>
  */
 void linkage_transform(const trajectory_msgs::JointTrajectoryPoint& pt_in, trajectory_msgs::JointTrajectoryPoint* pt_out, double J23_factor=0);
 
+std::vector<float> getJointOffsetsFromParam(unsigned int retry);
 } //abb
 } //utils
 

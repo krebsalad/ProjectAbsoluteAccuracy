@@ -3,11 +3,16 @@
   <arg name="robot_ip" default="172.22.31.3"/>
   <arg name="rviz_planner" default="true"/>
   <arg name="camera_launch" default="false"/>
+  <arg name="enable_calibration_offsets" default="false"/>
 
   <!-- Launch 3D sensors -->
     <!-- camera launch -->
   <include file="$(find realsense2_camera)/launch/rs_rgbd.launch" if="$(arg camera_launch)"/>
-  
+    <!-- load calibration offsets, this must be called after robot description is loaded and before robot_interface_download nodes are run-->
+  <group if="$(arg enable_calibration_offsets)">
+    <node name="load_joint_offsets" pkg="abb_robot_calibration" type="load_joint_offsets.py"/>
+  </group>
+
   <!-- robot definitions. will load robot description to /robot_description -->
   <include file="$(find abb_irb1660_moveit_config)/launch/planning_context.launch" >
     <arg name="load_robot_description" value="true" />
@@ -30,5 +35,6 @@
   <include file="$(find abb_irb1660_moveit_config)/launch/moveit_rviz.launch" if="$(arg rviz_planner)">
     <arg name="config" value="true"/>
   </include>
+
 
 </launch>

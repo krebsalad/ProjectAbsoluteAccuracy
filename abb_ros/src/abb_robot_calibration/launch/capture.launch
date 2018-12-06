@@ -53,4 +53,6 @@
 
   <!-- Set output param code -->
   <param name="robot_calibration_file_output_ext" type="str" value="$(arg output_file_ext)" />
+
+  
 </launch>
