@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/turtle/abb_ros/src/robot_calibration/include/robot_calibration/ceres/optimization_params.h
+/home/jmg/abb_ros/src/robot_calibration/include/robot_calibration/ceres/optimization_params.h
 ros/ros.h
 -
 
-/home/turtle/abb_ros/src/robot_calibration/test/optimization_param_tests.cpp
+/home/jmg/abb_ros/src/robot_calibration/test/optimization_param_tests.cpp
 robot_calibration/ceres/optimization_params.h
 -
 gtest/gtest.h

@@ -4,8 +4,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/robot_calibration.dir/src/models.cpp.o"
   "CMakeFiles/robot_calibration.dir/src/optimization_params.cpp.o"
   "CMakeFiles/robot_calibration.dir/src/optimizer.cpp.o"
-  "/home/turtle/abb_ros/devel/lib/librobot_calibration.pdb"
-  "/home/turtle/abb_ros/devel/lib/librobot_calibration.so"
+  "/home/jmg/abb_ros/devel/lib/librobot_calibration.pdb"
+  "/home/jmg/abb_ros/devel/lib/librobot_calibration.so"
 )
 
 # Per-language clean rules from dependency scanning.

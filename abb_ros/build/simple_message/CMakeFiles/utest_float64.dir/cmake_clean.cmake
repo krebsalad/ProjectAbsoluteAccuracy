@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/utest_float64.dir/test/utest.cpp.o"
   "CMakeFiles/utest_float64.dir/test/utest_message.cpp.o"
-  "/home/turtle/abb_ros/devel/lib/simple_message/utest_float64.pdb"
-  "/home/turtle/abb_ros/devel/lib/simple_message/utest_float64"
+  "/home/jmg/abb_ros/devel/lib/simple_message/utest_float64.pdb"
+  "/home/jmg/abb_ros/devel/lib/simple_message/utest_float64"
 )
 
 # Per-language clean rules from dependency scanning.

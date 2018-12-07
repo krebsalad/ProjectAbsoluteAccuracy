@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/turtle/abb_ros/src
+CMAKE_SOURCE_DIR = /home/jmg/abb_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/turtle/abb_ros/build
+CMAKE_BINARY_DIR = /home/jmg/abb_ros/build
 
 # Utility rule file for nav_msgs_generate_messages_lisp.
 
@@ -63,10 +63,10 @@ robot_calibration/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build: nav_msgs
 .PHONY : robot_calibration/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build
 
 robot_calibration/CMakeFiles/nav_msgs_generate_messages_lisp.dir/clean:
-	cd /home/turtle/abb_ros/build/robot_calibration && $(CMAKE_COMMAND) -P CMakeFiles/nav_msgs_generate_messages_lisp.dir/cmake_clean.cmake
+	cd /home/jmg/abb_ros/build/robot_calibration && $(CMAKE_COMMAND) -P CMakeFiles/nav_msgs_generate_messages_lisp.dir/cmake_clean.cmake
 .PHONY : robot_calibration/CMakeFiles/nav_msgs_generate_messages_lisp.dir/clean
 
 robot_calibration/CMakeFiles/nav_msgs_generate_messages_lisp.dir/depend:
-	cd /home/turtle/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/turtle/abb_ros/src /home/turtle/abb_ros/src/robot_calibration /home/turtle/abb_ros/build /home/turtle/abb_ros/build/robot_calibration /home/turtle/abb_ros/build/robot_calibration/CMakeFiles/nav_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jmg/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jmg/abb_ros/src /home/jmg/abb_ros/src/robot_calibration /home/jmg/abb_ros/build /home/jmg/abb_ros/build/robot_calibration /home/jmg/abb_ros/build/robot_calibration/CMakeFiles/nav_msgs_generate_messages_lisp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : robot_calibration/CMakeFiles/nav_msgs_generate_messages_lisp.dir/depend
 

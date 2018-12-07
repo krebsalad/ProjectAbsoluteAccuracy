@@ -1,5 +1,5 @@
 #!/usr/bin/env sh
 # generated from dynamic_reconfigure/cmake/setup_custom_pythonpath.sh.in
 
-PYTHONPATH=/home/turtle/abb_ros/devel/lib/python2.7/dist-packages:$PYTHONPATH
+PYTHONPATH=/home/jmg/abb_ros/devel/lib/python2.7/dist-packages:$PYTHONPATH
 exec "$@"

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/turtle/abb_ros/src
+CMAKE_SOURCE_DIR = /home/jmg/abb_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/turtle/abb_ros/build
+CMAKE_BINARY_DIR = /home/jmg/abb_ros/build
 
 # Utility rule file for object_recognition_msgs_generate_messages_eus.
 
@@ -63,10 +63,10 @@ robot_calibration/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/b
 .PHONY : robot_calibration/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/build
 
 robot_calibration/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/clean:
-	cd /home/turtle/abb_ros/build/robot_calibration && $(CMAKE_COMMAND) -P CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/cmake_clean.cmake
+	cd /home/jmg/abb_ros/build/robot_calibration && $(CMAKE_COMMAND) -P CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/cmake_clean.cmake
 .PHONY : robot_calibration/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/clean
 
 robot_calibration/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/depend:
-	cd /home/turtle/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/turtle/abb_ros/src /home/turtle/abb_ros/src/robot_calibration /home/turtle/abb_ros/build /home/turtle/abb_ros/build/robot_calibration /home/turtle/abb_ros/build/robot_calibration/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jmg/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jmg/abb_ros/src /home/jmg/abb_ros/src/robot_calibration /home/jmg/abb_ros/build /home/jmg/abb_ros/build/robot_calibration /home/jmg/abb_ros/build/robot_calibration/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : robot_calibration/CMakeFiles/object_recognition_msgs_generate_messages_eus.dir/depend
 

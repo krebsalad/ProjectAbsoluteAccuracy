@@ -1,8 +1,8 @@
-# Install script for directory: /home/turtle/abb_ros/src/abb_driver
+# Install script for directory: /home/jmg/abb_ros/src/abb_driver
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/turtle/abb_ros/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jmg/abb_ros/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,18 +33,18 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/turtle/abb_ros/build/abb_driver/catkin_generated/installspace/abb_driver.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jmg/abb_ros/build/abb_driver/catkin_generated/installspace/abb_driver.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abb_driver/cmake" TYPE FILE FILES
-    "/home/turtle/abb_ros/build/abb_driver/catkin_generated/installspace/abb_driverConfig.cmake"
-    "/home/turtle/abb_ros/build/abb_driver/catkin_generated/installspace/abb_driverConfig-version.cmake"
+    "/home/jmg/abb_ros/build/abb_driver/catkin_generated/installspace/abb_driverConfig.cmake"
+    "/home/jmg/abb_ros/build/abb_driver/catkin_generated/installspace/abb_driverConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abb_driver" TYPE FILE FILES "/home/turtle/abb_ros/src/abb_driver/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abb_driver" TYPE FILE FILES "/home/jmg/abb_ros/src/abb_driver/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
@@ -54,12 +54,12 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/abb_driver/robot_state"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/abb_driver" TYPE EXECUTABLE FILES "/home/turtle/abb_ros/devel/lib/abb_driver/robot_state")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/abb_driver" TYPE EXECUTABLE FILES "/home/jmg/abb_ros/devel/lib/abb_driver/robot_state")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/abb_driver/robot_state" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/abb_driver/robot_state")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/abb_driver/robot_state"
-         OLD_RPATH "/opt/ros/kinetic/lib:/home/turtle/abb_ros/devel/lib:"
+         OLD_RPATH "/opt/ros/kinetic/lib:/home/jmg/abb_ros/devel/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/abb_driver/robot_state")
@@ -74,12 +74,12 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/abb_driver/motion_download_interface"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/abb_driver" TYPE EXECUTABLE FILES "/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/abb_driver" TYPE EXECUTABLE FILES "/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/abb_driver/motion_download_interface" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/abb_driver/motion_download_interface")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/abb_driver/motion_download_interface"
-         OLD_RPATH "/opt/ros/kinetic/lib:/home/turtle/abb_ros/devel/lib:"
+         OLD_RPATH "/opt/ros/kinetic/lib:/home/jmg/abb_ros/devel/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/abb_driver/motion_download_interface")
@@ -88,10 +88,10 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abb_driver/launch" TYPE DIRECTORY FILES "/home/turtle/abb_ros/src/abb_driver/launch/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abb_driver/launch" TYPE DIRECTORY FILES "/home/jmg/abb_ros/src/abb_driver/launch/")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abb_driver/rapid" TYPE DIRECTORY FILES "/home/turtle/abb_ros/src/abb_driver/rapid/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abb_driver/rapid" TYPE DIRECTORY FILES "/home/jmg/abb_ros/src/abb_driver/rapid/")
 endif()
 

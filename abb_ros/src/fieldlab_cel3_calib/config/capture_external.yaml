@@ -9,7 +9,7 @@ chains:
       - joint_5
       - joint_6
     planning_group: group1
-duration: 10.0
+duration: 20.0
 features:
   checkerboard_finder:
     type: robot_calibration/CheckerboardFinder

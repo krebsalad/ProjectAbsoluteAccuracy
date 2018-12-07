@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/abb_driver_robot_state.dir/src/abb_robot_state_node.cpp.o"
   "CMakeFiles/abb_driver_robot_state.dir/src/abb_utils.cpp.o"
-  "/home/turtle/abb_ros/devel/lib/abb_driver/robot_state.pdb"
-  "/home/turtle/abb_ros/devel/lib/abb_driver/robot_state"
+  "/home/jmg/abb_ros/devel/lib/abb_driver/robot_state.pdb"
+  "/home/jmg/abb_ros/devel/lib/abb_driver/robot_state"
 )
 
 # Per-language clean rules from dependency scanning.

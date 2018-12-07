@@ -1,8 +1,8 @@
-# Install script for directory: /home/turtle/abb_ros/src/robot_calibration
+# Install script for directory: /home/jmg/abb_ros/src/robot_calibration
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/turtle/abb_ros/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jmg/abb_ros/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,22 +33,22 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/turtle/abb_ros/build/robot_calibration/catkin_generated/installspace/robot_calibration.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jmg/abb_ros/build/robot_calibration/catkin_generated/installspace/robot_calibration.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_calibration/cmake" TYPE FILE FILES
-    "/home/turtle/abb_ros/build/robot_calibration/catkin_generated/installspace/robot_calibrationConfig.cmake"
-    "/home/turtle/abb_ros/build/robot_calibration/catkin_generated/installspace/robot_calibrationConfig-version.cmake"
+    "/home/jmg/abb_ros/build/robot_calibration/catkin_generated/installspace/robot_calibrationConfig.cmake"
+    "/home/jmg/abb_ros/build/robot_calibration/catkin_generated/installspace/robot_calibrationConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_calibration" TYPE FILE FILES "/home/turtle/abb_ros/src/robot_calibration/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_calibration" TYPE FILE FILES "/home/jmg/abb_ros/src/robot_calibration/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/turtle/abb_ros/src/robot_calibration/include/")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/jmg/abb_ros/src/robot_calibration/include/")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
@@ -58,12 +58,12 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/robot_calibration/calibrate"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/robot_calibration" TYPE EXECUTABLE FILES "/home/turtle/abb_ros/devel/lib/robot_calibration/calibrate")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/robot_calibration" TYPE EXECUTABLE FILES "/home/jmg/abb_ros/devel/lib/robot_calibration/calibrate")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/robot_calibration/calibrate" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/robot_calibration/calibrate")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/robot_calibration/calibrate"
-         OLD_RPATH "/home/turtle/abb_ros/devel/lib:/opt/ros/kinetic/lib:/opt/ros/kinetic/lib/x86_64-linux-gnu:"
+         OLD_RPATH "/home/jmg/abb_ros/devel/lib:/opt/ros/kinetic/lib:/opt/ros/kinetic/lib/x86_64-linux-gnu:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/robot_calibration/calibrate")
@@ -78,7 +78,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/robot_calibration/calibrate_base"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/robot_calibration" TYPE EXECUTABLE FILES "/home/turtle/abb_ros/devel/lib/robot_calibration/calibrate_base")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/robot_calibration" TYPE EXECUTABLE FILES "/home/jmg/abb_ros/devel/lib/robot_calibration/calibrate_base")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/robot_calibration/calibrate_base" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/robot_calibration/calibrate_base")
     file(RPATH_CHANGE
@@ -98,7 +98,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librobot_calibration.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/turtle/abb_ros/devel/lib/librobot_calibration.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/jmg/abb_ros/devel/lib/librobot_calibration.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librobot_calibration.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librobot_calibration.so")
     file(RPATH_CHANGE
@@ -118,12 +118,12 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librobot_calibration_feature_finders.so"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE SHARED_LIBRARY FILES "/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librobot_calibration_feature_finders.so" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librobot_calibration_feature_finders.so")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librobot_calibration_feature_finders.so"
-         OLD_RPATH "/home/turtle/abb_ros/devel/lib:/opt/ros/kinetic/lib:/opt/ros/kinetic/lib/x86_64-linux-gnu:"
+         OLD_RPATH "/home/jmg/abb_ros/devel/lib:/opt/ros/kinetic/lib:/opt/ros/kinetic/lib/x86_64-linux-gnu:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/librobot_calibration_feature_finders.so")
@@ -138,12 +138,12 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/robot_calibration/to_rpy"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/robot_calibration" TYPE EXECUTABLE FILES "/home/turtle/abb_ros/devel/lib/robot_calibration/to_rpy")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/robot_calibration" TYPE EXECUTABLE FILES "/home/jmg/abb_ros/devel/lib/robot_calibration/to_rpy")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/robot_calibration/to_rpy" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/robot_calibration/to_rpy")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/robot_calibration/to_rpy"
-         OLD_RPATH "/home/turtle/abb_ros/devel/lib:/opt/ros/kinetic/lib:"
+         OLD_RPATH "/home/jmg/abb_ros/devel/lib:/opt/ros/kinetic/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/robot_calibration/to_rpy")
@@ -158,12 +158,12 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/robot_calibration/viz"
          RPATH "")
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/robot_calibration" TYPE EXECUTABLE FILES "/home/turtle/abb_ros/devel/lib/robot_calibration/viz")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/robot_calibration" TYPE EXECUTABLE FILES "/home/jmg/abb_ros/devel/lib/robot_calibration/viz")
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/robot_calibration/viz" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/robot_calibration/viz")
     file(RPATH_CHANGE
          FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/robot_calibration/viz"
-         OLD_RPATH "/home/turtle/abb_ros/devel/lib:/opt/ros/kinetic/lib:"
+         OLD_RPATH "/home/jmg/abb_ros/devel/lib:/opt/ros/kinetic/lib:"
          NEW_RPATH "")
     if(CMAKE_INSTALL_DO_STRIP)
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/robot_calibration/viz")
@@ -172,12 +172,12 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_calibration" TYPE FILE FILES "/home/turtle/abb_ros/src/robot_calibration/robot_calibration.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_calibration" TYPE FILE FILES "/home/jmg/abb_ros/src/robot_calibration/robot_calibration.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("/home/turtle/abb_ros/build/robot_calibration/test/cmake_install.cmake")
+  include("/home/jmg/abb_ros/build/robot_calibration/test/cmake_install.cmake")
 
 endif()
 

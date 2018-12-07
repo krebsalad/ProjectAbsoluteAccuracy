@@ -1,8 +1,8 @@
-# Install script for directory: /home/turtle/abb_ros/src/abb_irb1660_support
+# Install script for directory: /home/jmg/abb_ros/src/abb_irb1660_support
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/turtle/abb_ros/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jmg/abb_ros/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/turtle/abb_ros/build/abb_irb1660_support/catkin_generated/installspace/abb_irb1660_support.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jmg/abb_ros/build/abb_irb1660_support/catkin_generated/installspace/abb_irb1660_support.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abb_irb1660_support/cmake" TYPE FILE FILES
-    "/home/turtle/abb_ros/build/abb_irb1660_support/catkin_generated/installspace/abb_irb1660_supportConfig.cmake"
-    "/home/turtle/abb_ros/build/abb_irb1660_support/catkin_generated/installspace/abb_irb1660_supportConfig-version.cmake"
+    "/home/jmg/abb_ros/build/abb_irb1660_support/catkin_generated/installspace/abb_irb1660_supportConfig.cmake"
+    "/home/jmg/abb_ros/build/abb_irb1660_support/catkin_generated/installspace/abb_irb1660_supportConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abb_irb1660_support" TYPE FILE FILES "/home/turtle/abb_ros/src/abb_irb1660_support/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abb_irb1660_support" TYPE FILE FILES "/home/jmg/abb_ros/src/abb_irb1660_support/package.xml")
 endif()
 

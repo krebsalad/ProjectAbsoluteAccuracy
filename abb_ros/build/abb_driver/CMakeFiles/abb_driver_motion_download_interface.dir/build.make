@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/turtle/abb_ros/src
+CMAKE_SOURCE_DIR = /home/jmg/abb_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/turtle/abb_ros/build
+CMAKE_BINARY_DIR = /home/jmg/abb_ros/build
 
 # Include any dependencies generated for this target.
 include abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/depend.make
@@ -58,17 +58,17 @@ include abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/progress.
 include abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/flags.make
 
 abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_joint_downloader_node.cpp.o: abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/flags.make
-abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_joint_downloader_node.cpp.o: /home/turtle/abb_ros/src/abb_driver/src/abb_joint_downloader_node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_joint_downloader_node.cpp.o"
-	cd /home/turtle/abb_ros/build/abb_driver && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_joint_downloader_node.cpp.o -c /home/turtle/abb_ros/src/abb_driver/src/abb_joint_downloader_node.cpp
+abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_joint_downloader_node.cpp.o: /home/jmg/abb_ros/src/abb_driver/src/abb_joint_downloader_node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_joint_downloader_node.cpp.o"
+	cd /home/jmg/abb_ros/build/abb_driver && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_joint_downloader_node.cpp.o -c /home/jmg/abb_ros/src/abb_driver/src/abb_joint_downloader_node.cpp
 
 abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_joint_downloader_node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_joint_downloader_node.cpp.i"
-	cd /home/turtle/abb_ros/build/abb_driver && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/turtle/abb_ros/src/abb_driver/src/abb_joint_downloader_node.cpp > CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_joint_downloader_node.cpp.i
+	cd /home/jmg/abb_ros/build/abb_driver && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jmg/abb_ros/src/abb_driver/src/abb_joint_downloader_node.cpp > CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_joint_downloader_node.cpp.i
 
 abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_joint_downloader_node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_joint_downloader_node.cpp.s"
-	cd /home/turtle/abb_ros/build/abb_driver && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/turtle/abb_ros/src/abb_driver/src/abb_joint_downloader_node.cpp -o CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_joint_downloader_node.cpp.s
+	cd /home/jmg/abb_ros/build/abb_driver && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jmg/abb_ros/src/abb_driver/src/abb_joint_downloader_node.cpp -o CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_joint_downloader_node.cpp.s
 
 abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_joint_downloader_node.cpp.o.requires:
 
@@ -82,17 +82,17 @@ abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_joint_dow
 
 
 abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_utils.cpp.o: abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/flags.make
-abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_utils.cpp.o: /home/turtle/abb_ros/src/abb_driver/src/abb_utils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_utils.cpp.o"
-	cd /home/turtle/abb_ros/build/abb_driver && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_utils.cpp.o -c /home/turtle/abb_ros/src/abb_driver/src/abb_utils.cpp
+abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_utils.cpp.o: /home/jmg/abb_ros/src/abb_driver/src/abb_utils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_utils.cpp.o"
+	cd /home/jmg/abb_ros/build/abb_driver && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_utils.cpp.o -c /home/jmg/abb_ros/src/abb_driver/src/abb_utils.cpp
 
 abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_utils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_utils.cpp.i"
-	cd /home/turtle/abb_ros/build/abb_driver && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/turtle/abb_ros/src/abb_driver/src/abb_utils.cpp > CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_utils.cpp.i
+	cd /home/jmg/abb_ros/build/abb_driver && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jmg/abb_ros/src/abb_driver/src/abb_utils.cpp > CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_utils.cpp.i
 
 abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_utils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_utils.cpp.s"
-	cd /home/turtle/abb_ros/build/abb_driver && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/turtle/abb_ros/src/abb_driver/src/abb_utils.cpp -o CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_utils.cpp.s
+	cd /home/jmg/abb_ros/build/abb_driver && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jmg/abb_ros/src/abb_driver/src/abb_utils.cpp -o CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_utils.cpp.s
 
 abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_utils.cpp.o.requires:
 
@@ -113,47 +113,47 @@ abb_driver_motion_download_interface_OBJECTS = \
 # External object files for target abb_driver_motion_download_interface
 abb_driver_motion_download_interface_EXTERNAL_OBJECTS =
 
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_joint_downloader_node.cpp.o
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_utils.cpp.o
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/build.make
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /home/turtle/abb_ros/devel/lib/libindustrial_robot_client.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /home/turtle/abb_ros/devel/lib/libsimple_message.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /home/turtle/abb_ros/devel/lib/libindustrial_robot_client_dummy.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /opt/ros/kinetic/lib/libactionlib.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /home/turtle/abb_ros/devel/lib/libindustrial_utils.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /opt/ros/kinetic/lib/liburdf.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/liburdfdom_model.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/liburdfdom_world.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/libtinyxml.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /opt/ros/kinetic/lib/librosconsole_bridge.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /home/turtle/abb_ros/devel/lib/libsimple_message_dummy.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /opt/ros/kinetic/lib/libroscpp.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /opt/ros/kinetic/lib/librosconsole.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /opt/ros/kinetic/lib/librostime.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /opt/ros/kinetic/lib/libcpp_common.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface: abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface"
-	cd /home/turtle/abb_ros/build/abb_driver && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/abb_driver_motion_download_interface.dir/link.txt --verbose=$(VERBOSE)
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_joint_downloader_node.cpp.o
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/src/abb_utils.cpp.o
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/build.make
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /home/jmg/abb_ros/devel/lib/libindustrial_robot_client.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /home/jmg/abb_ros/devel/lib/libsimple_message.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /home/jmg/abb_ros/devel/lib/libindustrial_robot_client_dummy.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /opt/ros/kinetic/lib/libactionlib.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /home/jmg/abb_ros/devel/lib/libindustrial_utils.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /opt/ros/kinetic/lib/liburdf.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/liburdfdom_model.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/liburdfdom_world.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/libtinyxml.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /opt/ros/kinetic/lib/librosconsole_bridge.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /home/jmg/abb_ros/devel/lib/libsimple_message_dummy.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /opt/ros/kinetic/lib/libroscpp.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /opt/ros/kinetic/lib/librosconsole.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /opt/ros/kinetic/lib/librostime.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /opt/ros/kinetic/lib/libcpp_common.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface: abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable /home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface"
+	cd /home/jmg/abb_ros/build/abb_driver && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/abb_driver_motion_download_interface.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/build: /home/turtle/abb_ros/devel/lib/abb_driver/motion_download_interface
+abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/build: /home/jmg/abb_ros/devel/lib/abb_driver/motion_download_interface
 
 .PHONY : abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/build
 
@@ -163,10 +163,10 @@ abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/requires: abb_dri
 .PHONY : abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/requires
 
 abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/clean:
-	cd /home/turtle/abb_ros/build/abb_driver && $(CMAKE_COMMAND) -P CMakeFiles/abb_driver_motion_download_interface.dir/cmake_clean.cmake
+	cd /home/jmg/abb_ros/build/abb_driver && $(CMAKE_COMMAND) -P CMakeFiles/abb_driver_motion_download_interface.dir/cmake_clean.cmake
 .PHONY : abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/clean
 
 abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/depend:
-	cd /home/turtle/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/turtle/abb_ros/src /home/turtle/abb_ros/src/abb_driver /home/turtle/abb_ros/build /home/turtle/abb_ros/build/abb_driver /home/turtle/abb_ros/build/abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jmg/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jmg/abb_ros/src /home/jmg/abb_ros/src/abb_driver /home/jmg/abb_ros/build /home/jmg/abb_ros/build/abb_driver /home/jmg/abb_ros/build/abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : abb_driver/CMakeFiles/abb_driver_motion_download_interface.dir/depend
 

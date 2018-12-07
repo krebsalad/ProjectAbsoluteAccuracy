@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/motion_streaming_interface.dir/src/generic_joint_streamer_node.cpp.o"
-  "/home/turtle/abb_ros/devel/lib/industrial_robot_client/motion_streaming_interface.pdb"
-  "/home/turtle/abb_ros/devel/lib/industrial_robot_client/motion_streaming_interface"
+  "/home/jmg/abb_ros/devel/lib/industrial_robot_client/motion_streaming_interface.pdb"
+  "/home/jmg/abb_ros/devel/lib/industrial_robot_client/motion_streaming_interface"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/turtle/abb_ros/src
+CMAKE_SOURCE_DIR = /home/jmg/abb_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/turtle/abb_ros/build
+CMAKE_BINARY_DIR = /home/jmg/abb_ros/build
 
 # Utility rule file for robot_calibration_msgs_genpy.
 
@@ -63,10 +63,10 @@ robot_calibration_msgs/CMakeFiles/robot_calibration_msgs_genpy.dir/build: robot_
 .PHONY : robot_calibration_msgs/CMakeFiles/robot_calibration_msgs_genpy.dir/build
 
 robot_calibration_msgs/CMakeFiles/robot_calibration_msgs_genpy.dir/clean:
-	cd /home/turtle/abb_ros/build/robot_calibration_msgs && $(CMAKE_COMMAND) -P CMakeFiles/robot_calibration_msgs_genpy.dir/cmake_clean.cmake
+	cd /home/jmg/abb_ros/build/robot_calibration_msgs && $(CMAKE_COMMAND) -P CMakeFiles/robot_calibration_msgs_genpy.dir/cmake_clean.cmake
 .PHONY : robot_calibration_msgs/CMakeFiles/robot_calibration_msgs_genpy.dir/clean
 
 robot_calibration_msgs/CMakeFiles/robot_calibration_msgs_genpy.dir/depend:
-	cd /home/turtle/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/turtle/abb_ros/src /home/turtle/abb_ros/src/robot_calibration_msgs /home/turtle/abb_ros/build /home/turtle/abb_ros/build/robot_calibration_msgs /home/turtle/abb_ros/build/robot_calibration_msgs/CMakeFiles/robot_calibration_msgs_genpy.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jmg/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jmg/abb_ros/src /home/jmg/abb_ros/src/robot_calibration_msgs /home/jmg/abb_ros/build /home/jmg/abb_ros/build/robot_calibration_msgs /home/jmg/abb_ros/build/robot_calibration_msgs/CMakeFiles/robot_calibration_msgs_genpy.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : robot_calibration_msgs/CMakeFiles/robot_calibration_msgs_genpy.dir/depend
 

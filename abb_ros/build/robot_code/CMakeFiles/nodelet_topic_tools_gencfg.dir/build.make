@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/turtle/abb_ros/src
+CMAKE_SOURCE_DIR = /home/jmg/abb_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/turtle/abb_ros/build
+CMAKE_BINARY_DIR = /home/jmg/abb_ros/build
 
 # Utility rule file for nodelet_topic_tools_gencfg.
 
@@ -63,10 +63,10 @@ robot_code/CMakeFiles/nodelet_topic_tools_gencfg.dir/build: nodelet_topic_tools_
 .PHONY : robot_code/CMakeFiles/nodelet_topic_tools_gencfg.dir/build
 
 robot_code/CMakeFiles/nodelet_topic_tools_gencfg.dir/clean:
-	cd /home/turtle/abb_ros/build/robot_code && $(CMAKE_COMMAND) -P CMakeFiles/nodelet_topic_tools_gencfg.dir/cmake_clean.cmake
+	cd /home/jmg/abb_ros/build/robot_code && $(CMAKE_COMMAND) -P CMakeFiles/nodelet_topic_tools_gencfg.dir/cmake_clean.cmake
 .PHONY : robot_code/CMakeFiles/nodelet_topic_tools_gencfg.dir/clean
 
 robot_code/CMakeFiles/nodelet_topic_tools_gencfg.dir/depend:
-	cd /home/turtle/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/turtle/abb_ros/src /home/turtle/abb_ros/src/robot_code /home/turtle/abb_ros/build /home/turtle/abb_ros/build/robot_code /home/turtle/abb_ros/build/robot_code/CMakeFiles/nodelet_topic_tools_gencfg.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jmg/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jmg/abb_ros/src /home/jmg/abb_ros/src/robot_code /home/jmg/abb_ros/build /home/jmg/abb_ros/build/robot_code /home/jmg/abb_ros/build/robot_code/CMakeFiles/nodelet_topic_tools_gencfg.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : robot_code/CMakeFiles/nodelet_topic_tools_gencfg.dir/depend
 

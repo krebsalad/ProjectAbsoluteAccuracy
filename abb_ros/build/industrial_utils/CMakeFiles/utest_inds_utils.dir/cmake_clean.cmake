@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/utest_inds_utils.dir/test/utest.cpp.o"
-  "/home/turtle/abb_ros/devel/lib/industrial_utils/utest_inds_utils.pdb"
-  "/home/turtle/abb_ros/devel/lib/industrial_utils/utest_inds_utils"
+  "/home/jmg/abb_ros/devel/lib/industrial_utils/utest_inds_utils.pdb"
+  "/home/jmg/abb_ros/devel/lib/industrial_utils/utest_inds_utils"
 )
 
 # Per-language clean rules from dependency scanning.

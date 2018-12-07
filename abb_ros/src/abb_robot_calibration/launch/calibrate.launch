@@ -1,10 +1,8 @@
 <launch>
 
  <!-- calibrate arguments -->
-  <arg name="rviz" default="false"/>
-  <arg name="ip" default="172.22.31.3"/>
-  <arg name="robot"  default="fieldlab_cel3_calib" />
   <arg name="calibration_data" default="calibration_data.bag"/>
+  <arg name="output_file_ext" default="fieldlab_cel3_calib"/>
 
   <!-- static args -->
   <arg name="robot_package_path" value="(find $(arg robot))" />
@@ -17,5 +15,8 @@
 			output="screen" required="true">
 		<rosparam file="$(arg dollar)$(arg robot_package_path)/config/calibrate_external.yaml" command="load"/>
 	</node>
+
+  <!-- Set output param code -->
+  <param name="robot_calibration_file_output_ext" type="str" value="$(arg output_file_ext)" />
 
 </launch>
