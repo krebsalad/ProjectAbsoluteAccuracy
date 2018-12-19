@@ -1,25 +1,27 @@
 {
-  "configurations": [
-    {
-      "browse": {
-        "databaseFilename": "",
-        "limitSymbolsToIncludedHeaders": true
-      },
-      "includePath": [
-        "/home/jmg/abb_ros/devel/include",
-        "/opt/ros/kinetic/include",
-        "/home/jmg/abb_ros/src/abb_driver/include",
-        "/home/jmg/abb_ros/src/abb_robot_calibration/include",
-        "/home/jmg/abb_ros/src/industrial_robot_client/include",
-        "/home/jmg/abb_ros/src/industrial_trajectory_filters/include",
-        "/home/jmg/abb_ros/src/industrial_utils/include",
-        "/home/jmg/abb_ros/src/realsense2_camera/include",
-        "/home/jmg/abb_ros/src/robot_calibration/include",
-        "/home/jmg/abb_ros/src/robot_code/include",
-        "/home/jmg/abb_ros/src/simple_message/include",
-        "/usr/include"
-      ],
-      "name": "Linux"
-    }
-  ]
+    "configurations": [
+        {
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true
+            },
+            "includePath": [
+                "/home/jmg/abb_ros/devel/include",
+                "/opt/ros/kinetic/include",
+                "/home/jmg/abb_ros/src/abb_driver/include",
+                "/home/jmg/abb_ros/src/abb_robot_calibration/include",
+                "/home/jmg/abb_ros/src/industrial_robot_client/include",
+                "/home/jmg/abb_ros/src/industrial_trajectory_filters/include",
+                "/home/jmg/abb_ros/src/industrial_utils/include",
+                "/home/jmg/abb_ros/src/realsense2_camera/include",
+                "/home/jmg/abb_ros/src/robot_calibration/include",
+                "/home/jmg/abb_ros/src/robot_code/include",
+                "/home/jmg/abb_ros/src/simple_message/include",
+                "/usr/include"
+            ],
+            "name": "Linux",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
 }

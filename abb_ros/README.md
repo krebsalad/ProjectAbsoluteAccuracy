@@ -18,8 +18,8 @@ Dependencies description :
 - realsense2_camera: Intel Real Sense series driver for ros. No changes were made here.
 - code_coverage: Dependency for robot_calibration package. No changes were made here.
 
-How to use...
-A. Requirments
+#How to use...
+##A. Requirments
 - recommended ubuntu distribution: 16.04 lts xenial xerus for amd64
     1. Download image here: 
 - ros kinetic (recommended desktop full) 
@@ -31,13 +31,15 @@ A. Requirments
 - intel realsense SDK 2.0
     1. Installation: https://github.com/IntelRealSense/librealsense/blob/master/doc/distribution_linux.md#installing-the-packages
 
-B. Project setup
+##B. Project setup
 - create new catkin_project
-    1. mkdir -p ~/catkin_project/src/
-    2. cd ~/catkin_project/src/
-    3. catkin_init_workspace
-    4. cd..
-    5. catkin_make
+    ```
+    mkdir -p ~/catkin_project/src/
+    cd ~/catkin_project/src/
+    catkin_init_workspace
+    cd..
+    catkin_make
+    ```
 - add the robots specific configuration. (abb_irbxx_moveit_config, abb_irbxx_support)
     1. You can use moveit_helper_scripts/sripts/abb_robot_project_maker.py to generate the robot configurations
     2. Use moveit_setup_assistant to setup the moveit configuration. Save the configuration in the abb_irbxxx_moveit_config folder.
@@ -45,13 +47,15 @@ B. Project setup
     3. You can use moveit_helper_scripts/sripts/abb_robot_package_sim_setup.py to add simulation parameters and launch files.
 - for calibration and realsense camera move all folders in to src except for robot specific configuration. Do not copy abb_irbxx_moveit_config, abb_irbxx_support and fieldlab_cel3_calib unless the robot your using is the irb1660id_6_155. You can do this by cloning abb_ros package and deleting the robot specific configuration and then following the next steps.
     1. make sure ceres solver is installed
-    2. cp -r ~/abb_ros/src/* ~/catkin_project/src/
-    3. git clone https://github.com/mikeferguson/code_coverage ~/catkin_project/src/code_coverage
-    4. cd ~/catkin_project/
-    5. catkin_make clean
-    6. catkin_make
+    ```
+    cp -r ~/abb_ros/src/* ~/catkin_project/src/
+    git clone https://github.com/mikeferguson/code_coverage ~/catkin_project/src/code_coverage
+    cd ~/catkin_project/
+    catkin_make clean
+    catkin_make
+    ```
 
-C. setup the robot controller
+##C. setup the robot controller
 - Using simulated robot
     1. Follow the instructions in the link below.
         - http://wiki.ros.org/abb/Tutorials/InstallServer
@@ -71,7 +75,7 @@ C. setup the robot controller
         - export the controller parameters from the virtual-system
         - import the controller parameters into the actual robot
 
-D. running moveit configuration with the robot
+##D. running moveit configuration with the robot
 - Move the robot with Rviz. This requires the robot to be running.
     1. running the simulated robot: http://wiki.ros.org/abb/Tutorials/RunServer 
     2. source your project. 
@@ -84,7 +88,7 @@ D. running moveit configuration with the robot
     5. input 'short'
     6. The orientaiton will be asked, afterwards the transition. (Don't know what values? Use frames in robotstudio. If your using the actual robot, first move the robot with rviz and make sure it does not collide with anything, then run robot_code_node with input 'curren_position' and note the position. Next time you can use these positions to always go the same pose)
 
-E. Testing RealSense camera
+##E. Testing RealSense camera
 - make sure the sdk installed properly
     1. plug in your realsense camera
     2. run: realsense-viewer
@@ -98,16 +102,19 @@ E. Testing RealSense camera
         - Read more here: http://docs.ros.org/indigo/api/moveit_tutorials/html/doc/pr2_tutorials/planning/src/doc/perception_configuration.html 
     4. Note that Octomap is only usefull when you mount the camera for calibration, or else it will mess around with your collisions and will prevent planning new paths.
 
-F. Calibrating the camera
+##F. Calibrating the camera
 - install dynamic calibrator
     1. Can be installated for windows too. 
         - Installation: https://www.intel.com/content/dam/support/us/en/documents/emerging-technologies/intel-realsense-technology/RealSense_D400_Dyn_Calib_User_Guide.pdf 
 - run dynamic calibration
     1. download dynamic calibrator app from googleplay
-    2. run: Intel.RealSense.DynamicCalibrator
+    2. run:
+    ``` 
+        Intel.RealSense.DynamicCalibrator
+    ```
     3. follow the instruction on the dynamiccalibrator output window
 
-G. setup the calibration
+##G. setup the calibration
 - define camera_link in your urdf
     1. add a camera_link and a camera_optical_link. You can set some meshes if you want. They should not be in any planning_group
     2. add a camera_joint and a camera_optical_joint.
@@ -127,14 +134,24 @@ G. setup the calibration
     2. edit capture.launch. It is recommended to change the default values to your values.
     3. edit calibrate.launch. It is recommended to change the default values to your values. No need to change the calibration_data.bag this should be inputted as an option.
 
-H. run the calibration
+- steps to changing calibration configuration
+    1. Create capture_new_config.yaml and calibrate_new_config.yaml with desired configuration in the specific calibration package, in this case fieldlab_cel3_calib package
+    2. Call the newly created files from abb_robot_calibration calibrate and capture launch files
+    3. Create a new URDF with desired links in the robot's support package
+    4. Change collision properties in the SRDF of the robot's moveit configuration to match newly added links
+    5. (Not mandatory)Enable or disable octomap in sensor_manager.launch.xml of the robot moveit configuration depending on the camera that is mounted. If mounted -> enable octomap
+    6. Follow 'run the calibration' 
+
+##H. run the calibration
 - manual mode
-    1. roslaunch abb_robot_calibration capture.launch output_file_ext:=xtension1
-    2. add some the options specifying the robot_ip, calibration configuration and manual being true if you did not change the default values.
-    3. a new x-terminal will pop-up. This terminal will output the calibration routine. Simply move the robot and press enter after its on the new pose.
-    4. when your done capturing samples, type exit in the x-terminal. Your files will be saved in /tmp/calibrated_urdf_xtension1.urdf and /tmp/abb_robot_calibration/calibration_data_xtension1.yaml
-    5. run calibrate.launch with option of the name of the calibration_data outputted.
-    6. roslaunch abb_robot_calibration calibrate.launch calibration_data:=calibration_data_xtension1.yaml. This will edit the calibrated urdf with offsets in /tmp/
+    ```
+    roslaunch abb_robot_calibration capture.launch output_file_ext:=xtension1
+    ```
+    1. add some the options specifying the robot_ip, calibration configuration and manual being true if you did not change the default values.
+    2. a new x-terminal will pop-up. This terminal will output the calibration routine. Simply move the robot and press enter after its on the new pose.
+    3. when your done capturing samples, type exit in the x-terminal. Your files will be saved in /tmp/calibrated_urdf_xtension1.urdf and /tmp/abb_robot_calibration/calibration_data_xtension1.yaml
+    4. run calibrate.launch with option of the name of the calibration_data outputted.
+    5. roslaunch abb_robot_calibration calibrate.launch calibration_data:=calibration_data_xtension1.yaml. This will edit the calibrated urdf with offsets in /tmp/
 
 - auto mode
     1. To do this you need a poses bag file. This can be generated with a script
@@ -145,10 +162,12 @@ H. run the calibration
     6. move the calibration_poses.bag to your robot calibration specific configuration. For example fieldab_cel3_calib/config/
     7. Now you can automatically run the capture.launch with option manual:=false
 
-- updating the urdf
+- updating the urdf after calibration
     1. in abb_robot_calibration/scripts/ there is a update_urdf.py script
     2. run this scripts with the path to the calibrated_urdf and the path to your abb_irbxx_moveit_config
-    3. python src/abb_robot_calibration/scripts/update_urdf.py /tmp/calibrated_urdf_xtension1.urdf src/abb_irbxxx_moveit_config
+    ```
+    python src/abb_robot_calibration/scripts/update_urdf.py /tmp/calibrated_urdf_xtension1.urdf src/abb_irbxxx_moveit_config
+    ```
 
 - updating the camera parameters
     TODO !!!
@@ -156,7 +175,7 @@ H. run the calibration
 - joint offsets based on poses
     TODO !!!
 
-I. Troubleshooting
+##I. Troubleshooting
 - If you can setup assistant cannot find your robots meshes
     1. Make sure the paths to the meshes are correct
     2. Did you source your project before running setup assistant?
@@ -167,7 +186,10 @@ I. Troubleshooting
     2. Controller is taking too long to execute trajectory? see: https://answers.ros.org/question/196586/how-do-i-disable-execution_duration_monitoring/
 - realsense dynamic calibrator
     1. cannot run calibration after pressing start calibration
-        - run: Intel.DynamicCalibrator.CustomRW -g
+        - run: 
+            ```
+            Intel.DynamicCalibrator.CustomRW -g
+            ```
         - this will reset your calibration options to factory gold settings
 - realsense camera recognized as USB 2.0 even though its a USB 3-series port
     1. working with oracle VM?
@@ -186,7 +208,7 @@ I. Troubleshooting
     2. post here for issues relating robot_calibration: https://github.com/mikeferguson/robot_calibration/issues 
     3. post here for issues relating industrial_core: https://github.com/ros-industrial/industrial_core/issues 
 
-J. Issues
+##J. Issues
 - The version of industrial_robot_client in this project has calibration offset implementation. The official version doesn't, as of 4-12-2018. Follow issue:                 1. https://github.com/ros-industrial/industrial_core/issues/218.
 - The official version of abb_driver RAPID code always expects paths for external axes, if configured.
     1. https://github.com/ros-industrial/abb/pull/155 

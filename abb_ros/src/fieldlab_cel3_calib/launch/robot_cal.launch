@@ -4,10 +4,15 @@
   <arg name="rviz_planner" default="true"/>
   <arg name="camera_launch" default="false"/>
   <arg name="enable_calibration_offsets" default="false"/>
+  <arg name="camera_launcher_arg" default="none"/>
 
   <!-- Launch 3D sensors -->
-    <!-- camera launch -->
-  <include file="$(find realsense2_camera)/launch/rs_rgbd.launch" if="$(arg camera_launch)"/>
+  <!-- camera launch -->
+  <!-- launch camera, with or without replugging, run the script with arg camera_launcher_arg "replug" -->
+  <group if="$(arg camera_launch)">
+      <node pkg="fieldlab_cel3_calib" type="realsense_camera_launcher.py" name="realsense_camera_launcher" args="$(arg camera_launcher_arg)" output="screen" required="true" launch-prefix="xterm -e"/>
+  </group>
+
     <!-- load calibration offsets, this must be called after robot description is loaded and before robot_interface_download nodes are run-->
   <group if="$(arg enable_calibration_offsets)">
     <node name="load_joint_offsets" pkg="abb_robot_calibration" type="load_joint_offsets.py"/>

@@ -54,7 +54,7 @@ bool CheckerboardFinder::init(const std::string& name,
   if (!FeatureFinder::init(name, nh))
     return false;
 
-  // Setup Scriber
+  // Setup subscriber
   std::string topic_name;
   nh.param<std::string>("topic", topic_name, "/points");
 

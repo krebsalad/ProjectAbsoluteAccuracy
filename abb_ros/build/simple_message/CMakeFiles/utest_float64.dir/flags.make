@@ -6,5 +6,5 @@ CXX_FLAGS =
 
 CXX_DEFINES = -DFLOAT64 -DLINUXSOCKETS=1 -DROS=1 -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"simple_message\" -DTEST_PORT_BASE=13000
 
-CXX_INCLUDES = -I/home/jmg/abb_ros/src/simple_message/include -I/home/jmg/abb_ros/devel/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/turtle/abb_ros/src/simple_message/include -I/home/turtle/abb_ros/devel/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

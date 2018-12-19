@@ -1,8 +1,8 @@
-prefix=/home/jmg/abb_ros/devel
+prefix=/home/turtle/abb_ros/devel
 
 Name: moveit_helper_scripts
 Description: Description of moveit_helper_scripts
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/jmg/abb_ros/devel/lib 
+Libs: -L/home/turtle/abb_ros/devel/lib 
 Requires: 

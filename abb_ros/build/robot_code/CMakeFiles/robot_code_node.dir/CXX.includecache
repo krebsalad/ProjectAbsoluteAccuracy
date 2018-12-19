@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/jmg/abb_ros/src/robot_code/src/robot_code_node.cpp
+/home/turtle/abb_ros/src/robot_code/src/robot_code_node.cpp
 ros/ros.h
 -
 rosbag/bag.h
@@ -30,6 +30,8 @@ string
 map
 -
 kdl_parser/kdl_parser.hpp
+-
+visualization_msgs/Marker.h
 -
 
 /opt/ros/kinetic/include/eigen_stl_containers/eigen_stl_containers.h

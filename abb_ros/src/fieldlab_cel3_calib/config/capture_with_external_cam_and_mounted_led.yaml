@@ -1,0 +1,18 @@
+chains:
+  - name: group1
+    topic: /joint_trajectory_action
+    joints:
+      - joint_1
+      - joint_2
+      - joint_3
+      - joint_4
+      - joint_5
+      - joint_6
+    planning_group: group1
+duration: 10.0
+features:
+  const_blink_led_finder:
+    type: robot_calibration/ConstBlinkLedFinder
+    topic: /camera/depth_registered/points
+    camera_sensor_name: camera
+    chain_sensor_name: group1

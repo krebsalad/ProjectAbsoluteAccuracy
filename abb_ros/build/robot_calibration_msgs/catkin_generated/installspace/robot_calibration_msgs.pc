@@ -1,8 +1,8 @@
-prefix=/home/jmg/abb_ros/install
+prefix=/home/turtle/abb_ros/install
 
 Name: robot_calibration_msgs
 Description: Description of robot_calibration_msgs
 Version: 0.6.0
-Cflags: -I/home/jmg/abb_ros/install/include
-Libs: -L/home/jmg/abb_ros/install/lib 
+Cflags: -I/home/turtle/abb_ros/install/include
+Libs: -L/home/turtle/abb_ros/install/lib 
 Requires: actionlib_msgs geometry_msgs message_runtime sensor_msgs std_msgs

@@ -1,8 +1,8 @@
-# Install script for directory: /home/jmg/abb_ros/src/fieldlab_cel3_calib
+# Install script for directory: /home/turtle/abb_ros/src/fieldlab_cel3_calib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jmg/abb_ros/install")
+  set(CMAKE_INSTALL_PREFIX "/home/turtle/abb_ros/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,25 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jmg/abb_ros/build/fieldlab_cel3_calib/catkin_generated/installspace/fieldlab_cel3_calib.pc")
+  include("/home/turtle/abb_ros/build/fieldlab_cel3_calib/catkin_generated/safe_execute_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/turtle/abb_ros/build/fieldlab_cel3_calib/catkin_generated/installspace/fieldlab_cel3_calib.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/fieldlab_cel3_calib/cmake" TYPE FILE FILES
-    "/home/jmg/abb_ros/build/fieldlab_cel3_calib/catkin_generated/installspace/fieldlab_cel3_calibConfig.cmake"
-    "/home/jmg/abb_ros/build/fieldlab_cel3_calib/catkin_generated/installspace/fieldlab_cel3_calibConfig-version.cmake"
+    "/home/turtle/abb_ros/build/fieldlab_cel3_calib/catkin_generated/installspace/fieldlab_cel3_calibConfig.cmake"
+    "/home/turtle/abb_ros/build/fieldlab_cel3_calib/catkin_generated/installspace/fieldlab_cel3_calibConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/fieldlab_cel3_calib" TYPE FILE FILES "/home/jmg/abb_ros/src/fieldlab_cel3_calib/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/fieldlab_cel3_calib" TYPE FILE FILES "/home/turtle/abb_ros/src/fieldlab_cel3_calib/package.xml")
+endif()
+
+if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/fieldlab_cel3_calib" TYPE PROGRAM FILES "/home/turtle/abb_ros/src/fieldlab_cel3_calib/scripts/realsense_camera_launcher.py")
 endif()
 

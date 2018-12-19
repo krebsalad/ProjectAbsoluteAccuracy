@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/error_block_tests.dir/error_block_tests.cpp.o"
-  "/home/jmg/abb_ros/devel/lib/robot_calibration/error_block_tests.pdb"
-  "/home/jmg/abb_ros/devel/lib/robot_calibration/error_block_tests"
+  "/home/turtle/abb_ros/devel/lib/robot_calibration/error_block_tests.pdb"
+  "/home/turtle/abb_ros/devel/lib/robot_calibration/error_block_tests"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -13,6 +13,7 @@ find_package(catkin REQUIRED COMPONENTS
   rosbag
   pcl_ros
   pcl_conversions
+  visualization_msgs
 )
 
 ## Generate messages in the 'msg' folder

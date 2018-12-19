@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jmg/abb_ros/src
+CMAKE_SOURCE_DIR = /home/turtle/abb_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jmg/abb_ros/build
+CMAKE_BINARY_DIR = /home/turtle/abb_ros/build
 
 # Utility rule file for std_msgs_generate_messages_nodejs.
 
@@ -63,10 +63,10 @@ industrial_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build: std_msgs
 .PHONY : industrial_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/build
 
 industrial_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean:
-	cd /home/jmg/abb_ros/build/industrial_msgs && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
+	cd /home/turtle/abb_ros/build/industrial_msgs && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_nodejs.dir/cmake_clean.cmake
 .PHONY : industrial_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/clean
 
 industrial_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/depend:
-	cd /home/jmg/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jmg/abb_ros/src /home/jmg/abb_ros/src/industrial_msgs /home/jmg/abb_ros/build /home/jmg/abb_ros/build/industrial_msgs /home/jmg/abb_ros/build/industrial_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/turtle/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/turtle/abb_ros/src /home/turtle/abb_ros/src/industrial_msgs /home/turtle/abb_ros/build /home/turtle/abb_ros/build/industrial_msgs /home/turtle/abb_ros/build/industrial_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : industrial_msgs/CMakeFiles/std_msgs_generate_messages_nodejs.dir/depend
 

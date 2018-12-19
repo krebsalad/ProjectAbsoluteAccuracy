@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jmg/abb_ros/src
+CMAKE_SOURCE_DIR = /home/turtle/abb_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jmg/abb_ros/build
+CMAKE_BINARY_DIR = /home/turtle/abb_ros/build
 
 # Utility rule file for moveit_ros_manipulation_gencfg.
 
@@ -63,10 +63,10 @@ robot_code/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build: moveit_ros_manip
 .PHONY : robot_code/CMakeFiles/moveit_ros_manipulation_gencfg.dir/build
 
 robot_code/CMakeFiles/moveit_ros_manipulation_gencfg.dir/clean:
-	cd /home/jmg/abb_ros/build/robot_code && $(CMAKE_COMMAND) -P CMakeFiles/moveit_ros_manipulation_gencfg.dir/cmake_clean.cmake
+	cd /home/turtle/abb_ros/build/robot_code && $(CMAKE_COMMAND) -P CMakeFiles/moveit_ros_manipulation_gencfg.dir/cmake_clean.cmake
 .PHONY : robot_code/CMakeFiles/moveit_ros_manipulation_gencfg.dir/clean
 
 robot_code/CMakeFiles/moveit_ros_manipulation_gencfg.dir/depend:
-	cd /home/jmg/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jmg/abb_ros/src /home/jmg/abb_ros/src/robot_code /home/jmg/abb_ros/build /home/jmg/abb_ros/build/robot_code /home/jmg/abb_ros/build/robot_code/CMakeFiles/moveit_ros_manipulation_gencfg.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/turtle/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/turtle/abb_ros/src /home/turtle/abb_ros/src/robot_code /home/turtle/abb_ros/build /home/turtle/abb_ros/build/robot_code /home/turtle/abb_ros/build/robot_code/CMakeFiles/moveit_ros_manipulation_gencfg.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : robot_code/CMakeFiles/moveit_ros_manipulation_gencfg.dir/depend
 

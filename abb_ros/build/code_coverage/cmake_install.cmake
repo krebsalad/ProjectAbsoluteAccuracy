@@ -1,8 +1,8 @@
-# Install script for directory: /home/jmg/abb_ros/src/code_coverage
+# Install script for directory: /home/turtle/abb_ros/src/code_coverage
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jmg/abb_ros/install")
+  set(CMAKE_INSTALL_PREFIX "/home/turtle/abb_ros/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,25 +33,25 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jmg/abb_ros/build/code_coverage/catkin_generated/installspace/code_coverage.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/turtle/abb_ros/build/code_coverage/catkin_generated/installspace/code_coverage.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/code_coverage/cmake" TYPE FILE FILES "/home/jmg/abb_ros/build/code_coverage/catkin_generated/installspace/code_coverage-extras.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/code_coverage/cmake" TYPE FILE FILES "/home/turtle/abb_ros/build/code_coverage/catkin_generated/installspace/code_coverage-extras.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/code_coverage/cmake" TYPE FILE FILES
-    "/home/jmg/abb_ros/build/code_coverage/catkin_generated/installspace/code_coverageConfig.cmake"
-    "/home/jmg/abb_ros/build/code_coverage/catkin_generated/installspace/code_coverageConfig-version.cmake"
+    "/home/turtle/abb_ros/build/code_coverage/catkin_generated/installspace/code_coverageConfig.cmake"
+    "/home/turtle/abb_ros/build/code_coverage/catkin_generated/installspace/code_coverageConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/code_coverage" TYPE FILE FILES "/home/jmg/abb_ros/src/code_coverage/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/code_coverage" TYPE FILE FILES "/home/turtle/abb_ros/src/code_coverage/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/code_coverage/cmake" TYPE DIRECTORY FILES "/home/jmg/abb_ros/src/code_coverage/cmake/Modules")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/code_coverage/cmake" TYPE DIRECTORY FILES "/home/turtle/abb_ros/src/code_coverage/cmake/Modules")
 endif()
 

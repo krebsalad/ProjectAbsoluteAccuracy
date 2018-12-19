@@ -13,6 +13,11 @@
 #include <map>
 
 #include <kdl_parser/kdl_parser.hpp>
+#include <visualization_msgs/Marker.h>
+
+
+namespace robot_positioning_utility
+{
 
 struct custom_position
 {
@@ -127,105 +132,7 @@ struct custom_position
     double z;
 };
 
-// get joint_offsets from description and add them to the given plan
-bool computeJointOffsetsOnPlan(moveit::planning_interface::MoveGroupInterface::Plan* my_plan)
-{
-    std::map<std::string, float> joint_offsets;
 
-    // get robot_Description
-    std_msgs::String description_msg;
-    ros::NodeHandle node;
-    if(!node.getParam("/robot_description", description_msg.data))
-    {
-        ROS_ERROR( std::string("Failed to read /robot_description").c_str() );
-        return false;
-    }
-
-    //get kdl model
-
-    KDL::Tree model;
-
-    if (!kdl_parser::treeFromString(std::string(description_msg.data), model))
-    {
-        ROS_ERROR("Failed to construct kdl tree");
-        return false;
-    }
-
-    KDL::Chain chain;
-
-    if(!model.getChain("base_link", "link_6", chain))
-    {
-        ROS_ERROR("Failed to construct kdl chain");
-        return false;
-    }
-
-    KDL::Frame p_out = KDL::Frame::Identity();
-
-    // for each joint
-    for (unsigned int i = 0; i < chain.getNrOfSegments(); ++i)
-    {
-        std::string joint_name = chain.getSegment(i).getJoint().getName();
-
-        // Apply any joint offset calibration
-        if (chain.getSegment(i).getJoint().getType() != KDL::Joint::None)
-        {
-
-        }
-        else
-        {
-
-        }
-    }
-    /// Load joint_offsets
-    /*
-    
- 
-
-    KDL::Tree my_tree;
-
-
-
-    // TODO!! Get joint offsets and /joint_states and add offsets to joint offsets <--- made issue in robot_calibration git
-    KDL::Chain chain;
-    my_tree.getChain("link_1", "joint_6", chain);
-
-    */
-    /*for(unsigned int i = 0; i < chain.getNrOfSegments(); i++)
-    {
-        std::string logstr;
-        KDL::Segment segment;
-        segment = chain.getSegment(i);
-        logstr += "Got segment: " + segment.getName();
-        logstr += ", Segment has joint: " + segment.getJoint().getName();
-        ROS_ERROR(logstr.c_str());
-    }*/
-
-    /*KDL::SegmentMap segment_map = my_tree.getSegments();
-    for (std::map<std::string, KDL::TreeElement>::iterator it=segment_map.begin(); it!=segment_map.end(); ++it)
-    {
-        if(it->second)
-    }*/
-    
-    // select only calibration tags
-    // save into join_offsets per joint name the joint offsets
-    
-    /// get joint state messages of plan
-    // create a copy of joint_angles
-    //  add per joint_angle the joint_offset
-
-    /// save copy into plan
-    // exit
-
-    /*int DOF = 6;
-    for (unsigned int i = 0; i < DOF; i++)
-    {
-      if(model.getJoint(JointNames[i].c_str())->calibration == NULL)
-        Offsets[i] = 0.0;
-      else
-        Offsets[i] = model.getJoint(JointNames[i].c_str())->calibration->rising.get()[0];
-    }*/
-
-}
 
 //shortest path trajectory
 void executeShortPath_To_Position(moveit::planning_interface::MoveGroupInterface* move_group, custom_position* pos1)
@@ -325,11 +232,53 @@ std::string getMoveGroupCurrentPositionAsString(moveit::planning_interface::Move
     return strorientation + strPosition;
 }
 
+visualization_msgs::Marker createVizualizationMarker(custom_position* pos, std::string namespace_name, int identifier)
+{
+    //create and modify frame
+    visualization_msgs::Marker marker;
+    marker.header.frame_id = "base_link";
+    marker.header.stamp = ros::Time::now();
+    marker.ns = namespace_name;
+    marker.id = identifier;
+    marker.type = visualization_msgs::Marker::SPHERE;
+    marker.action = visualization_msgs::Marker::ADD;
+
+    //transform frame
+    marker.pose.position.x = pos->x;
+    marker.pose.position.y = pos->y;
+    marker.pose.position.z = pos->z;
+
+    //rotate frame
+    marker.pose.orientation.x = pos->o_x;
+    marker.pose.orientation.y = pos->o_y;
+    marker.pose.orientation.z = pos->o_z;
+    marker.pose.orientation.w = pos->w;
+
+    //scale frame
+    marker.scale.x = 0.25;
+    marker.scale.y = 0.25;
+    marker.scale.z = 0.25;
+
+    //color frame
+    marker.color.r = 0.0f;
+    marker.color.g = 1.0f;
+    marker.color.b = 0.0f;
+    marker.color.a = 1.0;
+
+    //lifetime, will not be auto deleted
+    marker.lifetime = ros::Duration();
+
+    return marker;
+}
+
+}
+
 int main(int argc, char* argv[])
 {
     //ros ini, ros node and spinner setup
     ros::init(argc, argv, "robot_positioning_node");
     ros::NodeHandle node;
+    ros::Rate r(1);
 
     ros::AsyncSpinner spinner(1);
     spinner.start();
@@ -343,21 +292,54 @@ int main(int argc, char* argv[])
     moveit::planning_interface::PlanningSceneInterface planning_scene_interface;
     // const robot_state::JointModelGroup* joint_model_group = move_group.getCurrentState()->getJointModelGroup(planning_group);
 
+    //setup vizualisation
+    ros::Publisher viz_pub = node.advertise<visualization_msgs::Marker>("visualization_marker", 1);
 
     while(ros::ok)
     {
+        std::vector<visualization_msgs::Marker> pub_markers;
         //ask for option
-        ROS_INFO("Input utility option: options [short, cartesian, generate, current_position, exit]\n");
+        ROS_INFO("Input utility option: options [short, cartesian, generate, current_position, viz_point, exit]\n");
         std::string option_input;
         std::getline(std::cin, option_input);
 
         if(option_input == "short")
         {
             //create position for short path planning from given input
-            ROS_INFO("please do input positions");
-            custom_position* position = new custom_position();
+            ROS_INFO("please do input position");
+            robot_positioning_utility::custom_position* position = new robot_positioning_utility::custom_position();
             position->askForPositionInput();
-            executeShortPath_To_Position(&move_group, position);
+            robot_positioning_utility::executeShortPath_To_Position(&move_group, position);
+            delete position;
+        }
+
+        if(option_input == "viz_point")
+        {
+            ROS_WARN("make sure rviz has a marker display and that this display is subscribed to topic /visualization_marker");
+               
+            //ask for extra inputs
+            ROS_INFO("First, do input namespace of the frame and identifier. Note that using the same ns and identifier will result in modifying instead of creating a new one");
+            std::string namespace_input;
+            std::string frame_id_str;
+            ROS_INFO("frame namespace:");
+            std::getline(std::cin, namespace_input);
+            ROS_INFO("identifier:");
+            std::getline(std::cin, frame_id_str);
+
+            //convert string to int
+            int frame_id = 0;
+            std::stringstream stream_input;
+            stream_input.str(frame_id_str);
+            stream_input >> frame_id;
+
+            //create position
+            ROS_INFO("please do input position");
+            robot_positioning_utility::custom_position* position = new robot_positioning_utility::custom_position();
+            position->askForPositionInput();
+
+            //vizualize point in rviz  
+            visualization_msgs::Marker marker = robot_positioning_utility::createVizualizationMarker(position, namespace_input, frame_id);
+            pub_markers.push_back(marker);
             delete position;
         }
 
@@ -370,15 +352,15 @@ int main(int argc, char* argv[])
             std::getline(std::cin, str_n_o_p);
             num_of_positions = std::stoi(str_n_o_p);
 
-             std::vector<custom_position*> positions;
+             std::vector<robot_positioning_utility::custom_position*> positions;
             for (int i = 0; i < num_of_positions; i++)
             {
-                custom_position* position = new custom_position();
+                robot_positioning_utility::custom_position* position = new robot_positioning_utility::custom_position();
                 position->askForPositionInput();
                 positions.push_back(position);
             }
 
-            executeCartesianPath_Through_Positions(&move_group, positions);
+            robot_positioning_utility::executeCartesianPath_Through_Positions(&move_group, positions);
 
             for (int i = 0; i < num_of_positions; i++)
             {
@@ -395,16 +377,17 @@ int main(int argc, char* argv[])
             std::getline(std::cin, str_n_o_p);
             num_of_positions = std::stoi(str_n_o_p);
 
-            std::vector<custom_position*> positions;
+            std::vector<robot_positioning_utility::custom_position*> positions;
             for (int i = 0; i < num_of_positions; i++)
             {
                 ROS_INFO(std::string("input Position "+ std::to_string(i)).c_str());
-                custom_position* position = new custom_position();
+                robot_positioning_utility::custom_position* position = new robot_positioning_utility::custom_position();
                 position->askForPositionInput();
                 positions.push_back(position);
             }
 
-            generatePosesFromCustomPositionToBagFile(positions, "/tmp/poses_bagfile.bag");
+            // note that this is not usable for robot_calibration auto routine
+            robot_positioning_utility::generatePosesFromCustomPositionToBagFile(positions, "/tmp/poses_bagfile.bag");
 
             for (int i = 0; i < num_of_positions; i++)
             {
@@ -415,7 +398,7 @@ int main(int argc, char* argv[])
         if(option_input == "current_position")
         {
             //print current position off end_Effector
-            ROS_WARN(std::string("Positioning info:" + getMoveGroupCurrentPositionAsString(&move_group)).c_str());
+            ROS_WARN(std::string("Positioning info:" + robot_positioning_utility::getMoveGroupCurrentPositionAsString(&move_group)).c_str());
         }
 
         if(option_input == "")
@@ -428,6 +411,12 @@ int main(int argc, char* argv[])
             ROS_INFO_NAMED("positioning node:", "exiting...");
             break;
         }
+
+        for (int i = 0; i < pub_markers.size(); i++)
+        {
+            viz_pub.publish(pub_markers[i]);
+        }
+        
     }
     ROS_INFO_NAMED("positioning node:", "exited");
     return 0;

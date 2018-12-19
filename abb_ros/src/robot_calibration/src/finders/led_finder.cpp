@@ -93,7 +93,7 @@ bool LedFinder::init(const std::string& name,
   std::string gripper_led_frame;
   nh.param<std::string>("gripper_led_frame", gripper_led_frame, "wrist_roll_link");
   XmlRpc::XmlRpcValue led_poses;
-  nh.getParam("poses", led_poses);
+  nh.getParam("led_pose", led_poses);
   ROS_ASSERT(led_poses.getType() == XmlRpc::XmlRpcValue::TypeArray);
   // Each LED has a code, and pose in the gripper_led_frame
   for (int i = 0; i < led_poses.size(); ++i)

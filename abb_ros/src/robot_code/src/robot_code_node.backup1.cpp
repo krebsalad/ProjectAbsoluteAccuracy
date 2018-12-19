@@ -97,7 +97,7 @@ bool computeJointOffsetsOnPlan(moveit::planning_interface::MoveGroupInterface::P
 
     KDL::Tree model;
 
-    if (!kdl_parser::treeFromString(std::string(description_msg.data), my_tree))
+    if (!kdl_parser::treeFromString(std::string(description_msg.data), model))
     {
         ROS_ERROR("Failed to construct kdl tree");
         return false;

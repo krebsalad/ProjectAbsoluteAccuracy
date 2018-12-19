@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jmg/abb_ros/src
+CMAKE_SOURCE_DIR = /home/turtle/abb_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jmg/abb_ros/build
+CMAKE_BINARY_DIR = /home/turtle/abb_ros/build
 
 # Utility rule file for control_msgs_generate_messages_eus.
 
@@ -63,10 +63,10 @@ industrial_robot_client/CMakeFiles/control_msgs_generate_messages_eus.dir/build:
 .PHONY : industrial_robot_client/CMakeFiles/control_msgs_generate_messages_eus.dir/build
 
 industrial_robot_client/CMakeFiles/control_msgs_generate_messages_eus.dir/clean:
-	cd /home/jmg/abb_ros/build/industrial_robot_client && $(CMAKE_COMMAND) -P CMakeFiles/control_msgs_generate_messages_eus.dir/cmake_clean.cmake
+	cd /home/turtle/abb_ros/build/industrial_robot_client && $(CMAKE_COMMAND) -P CMakeFiles/control_msgs_generate_messages_eus.dir/cmake_clean.cmake
 .PHONY : industrial_robot_client/CMakeFiles/control_msgs_generate_messages_eus.dir/clean
 
 industrial_robot_client/CMakeFiles/control_msgs_generate_messages_eus.dir/depend:
-	cd /home/jmg/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jmg/abb_ros/src /home/jmg/abb_ros/src/industrial_robot_client /home/jmg/abb_ros/build /home/jmg/abb_ros/build/industrial_robot_client /home/jmg/abb_ros/build/industrial_robot_client/CMakeFiles/control_msgs_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/turtle/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/turtle/abb_ros/src /home/turtle/abb_ros/src/industrial_robot_client /home/turtle/abb_ros/build /home/turtle/abb_ros/build/industrial_robot_client /home/turtle/abb_ros/build/industrial_robot_client/CMakeFiles/control_msgs_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : industrial_robot_client/CMakeFiles/control_msgs_generate_messages_eus.dir/depend
 

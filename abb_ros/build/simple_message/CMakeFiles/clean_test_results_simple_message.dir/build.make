@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jmg/abb_ros/src
+CMAKE_SOURCE_DIR = /home/turtle/abb_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jmg/abb_ros/build
+CMAKE_BINARY_DIR = /home/turtle/abb_ros/build
 
 # Utility rule file for clean_test_results_simple_message.
 
@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/jmg/abb_ros/build
 include simple_message/CMakeFiles/clean_test_results_simple_message.dir/progress.make
 
 simple_message/CMakeFiles/clean_test_results_simple_message:
-	cd /home/jmg/abb_ros/build/simple_message && /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/remove_test_results.py /home/jmg/abb_ros/build/test_results/simple_message
+	cd /home/turtle/abb_ros/build/simple_message && /usr/bin/python /opt/ros/kinetic/share/catkin/cmake/test/remove_test_results.py /home/turtle/abb_ros/build/test_results/simple_message
 
 clean_test_results_simple_message: simple_message/CMakeFiles/clean_test_results_simple_message
 clean_test_results_simple_message: simple_message/CMakeFiles/clean_test_results_simple_message.dir/build.make
@@ -67,10 +67,10 @@ simple_message/CMakeFiles/clean_test_results_simple_message.dir/build: clean_tes
 .PHONY : simple_message/CMakeFiles/clean_test_results_simple_message.dir/build
 
 simple_message/CMakeFiles/clean_test_results_simple_message.dir/clean:
-	cd /home/jmg/abb_ros/build/simple_message && $(CMAKE_COMMAND) -P CMakeFiles/clean_test_results_simple_message.dir/cmake_clean.cmake
+	cd /home/turtle/abb_ros/build/simple_message && $(CMAKE_COMMAND) -P CMakeFiles/clean_test_results_simple_message.dir/cmake_clean.cmake
 .PHONY : simple_message/CMakeFiles/clean_test_results_simple_message.dir/clean
 
 simple_message/CMakeFiles/clean_test_results_simple_message.dir/depend:
-	cd /home/jmg/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jmg/abb_ros/src /home/jmg/abb_ros/src/simple_message /home/jmg/abb_ros/build /home/jmg/abb_ros/build/simple_message /home/jmg/abb_ros/build/simple_message/CMakeFiles/clean_test_results_simple_message.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/turtle/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/turtle/abb_ros/src /home/turtle/abb_ros/src/simple_message /home/turtle/abb_ros/build /home/turtle/abb_ros/build/simple_message /home/turtle/abb_ros/build/simple_message/CMakeFiles/clean_test_results_simple_message.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : simple_message/CMakeFiles/clean_test_results_simple_message.dir/depend
 

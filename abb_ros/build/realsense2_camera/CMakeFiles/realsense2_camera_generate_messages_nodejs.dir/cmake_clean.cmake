@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/realsense2_camera_generate_messages_nodejs"
-  "/home/jmg/abb_ros/devel/share/gennodejs/ros/realsense2_camera/msg/Extrinsics.js"
-  "/home/jmg/abb_ros/devel/share/gennodejs/ros/realsense2_camera/msg/IMUInfo.js"
+  "/home/turtle/abb_ros/devel/share/gennodejs/ros/realsense2_camera/msg/Extrinsics.js"
+  "/home/turtle/abb_ros/devel/share/gennodejs/ros/realsense2_camera/msg/IMUInfo.js"
 )
 
 # Per-language clean rules from dependency scanning.

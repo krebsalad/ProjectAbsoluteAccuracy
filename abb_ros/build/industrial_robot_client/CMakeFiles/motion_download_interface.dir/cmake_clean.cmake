@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/motion_download_interface.dir/src/generic_joint_downloader_node.cpp.o"
-  "/home/jmg/abb_ros/devel/lib/industrial_robot_client/motion_download_interface.pdb"
-  "/home/jmg/abb_ros/devel/lib/industrial_robot_client/motion_download_interface"
+  "/home/turtle/abb_ros/devel/lib/industrial_robot_client/motion_download_interface.pdb"
+  "/home/turtle/abb_ros/devel/lib/industrial_robot_client/motion_download_interface"
 )
 
 # Per-language clean rules from dependency scanning.

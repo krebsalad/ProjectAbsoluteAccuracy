@@ -1,8 +1,8 @@
-# Install script for directory: /home/jmg/abb_ros/src/robot_code
+# Install script for directory: /home/turtle/abb_ros/src/robot_code
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/jmg/abb_ros/install")
+  set(CMAKE_INSTALL_PREFIX "/home/turtle/abb_ros/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jmg/abb_ros/build/robot_code/catkin_generated/installspace/robot_code.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/turtle/abb_ros/build/robot_code/catkin_generated/installspace/robot_code.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_code/cmake" TYPE FILE FILES
-    "/home/jmg/abb_ros/build/robot_code/catkin_generated/installspace/robot_codeConfig.cmake"
-    "/home/jmg/abb_ros/build/robot_code/catkin_generated/installspace/robot_codeConfig-version.cmake"
+    "/home/turtle/abb_ros/build/robot_code/catkin_generated/installspace/robot_codeConfig.cmake"
+    "/home/turtle/abb_ros/build/robot_code/catkin_generated/installspace/robot_codeConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_code" TYPE FILE FILES "/home/jmg/abb_ros/src/robot_code/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/robot_code" TYPE FILE FILES "/home/turtle/abb_ros/src/robot_code/package.xml")
 endif()
 
