@@ -42,10 +42,17 @@ public:
   bool find(robot_calibration_msgs::CalibrationData * msg);
 
 private:
-  bool findInternal(robot_calibration_msgs::CalibrationData * msg, std::string temp_enc);
+  bool findInternal(robot_calibration_msgs::CalibrationData * msg);
 
   void cameraCallback(const sensor_msgs::PointCloud2::ConstPtr& cloud);
   bool waitForCloud();
+  bool getCurrentCloudAsImageMsg(sensor_msgs::Image& msg);
+
+  //debugging function for images
+  void writeCvImage(cv_bridge::CvImagePtr bridge, std::string image_path);
+  
+  bool getDifferenceBetweenImages(cv_bridge::CvImagePtr bridge_1, cv_bridge::CvImagePtr bridge_2, cv_bridge::CvImagePtr diff_bridge);
+  bool findCenterOfPointOfInterest(cv_bridge::CvImagePtr bridge, cv::Point2f& point);
 
   ros::Subscriber subscriber_;  /// Incoming sensor_msgs::PointCloud2
   ros::Publisher publisher_;  /// Outgoing sensor_msgs::PointCloud2
@@ -59,6 +66,9 @@ private:
    */
   std::string camera_sensor_name_;
   std::string chain_sensor_name_;
+
+  cv_bridge::CvImagePtr last_cv_image;
+  
 };
 
 }  // namespace robot_calibration

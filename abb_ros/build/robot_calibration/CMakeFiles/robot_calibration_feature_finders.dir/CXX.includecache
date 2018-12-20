@@ -329,6 +329,8 @@ sensor_msgs/point_cloud2_iterator.h
 -
 sensor_msgs/image_encodings.h
 -
+sensor_msgs/PointCloud2.h
+-
 vector
 -
 

@@ -23,6 +23,8 @@
 #include <robot_calibration/capture/led_finder.h>
 #include <sensor_msgs/point_cloud2_iterator.h>
 #include <sensor_msgs/image_encodings.h>
+
+#include <sensor_msgs/PointCloud2.h>
 #include <vector>
 
 
@@ -42,6 +44,17 @@ double DistancePoints(
   return std::sqrt((p1.x-p2.x) * (p1.x-p2.x) +
                    (p1.y-p2.y) * (p1.y-p2.y) +
                    (p1.z-p2.z) * (p1.z-p2.z));
+}
+
+namespace cpp11_patch
+{
+  // custom template so that c++11 patch is not needed
+    template < typename T > std::string to_string( const T& n )
+    {
+        std::ostringstream stm ;
+        stm << n ;
+        return stm.str() ;
+    }
 }
 
 ConstBlinkLedFinder::ConstBlinkLedFinder() :
@@ -117,21 +130,12 @@ bool ConstBlinkLedFinder::waitForCloud()
 
 bool ConstBlinkLedFinder::find(robot_calibration_msgs::CalibrationData * msg)
 {
-  ROS_ERROR("In un implemeted led finder find function");
   // Try up to 50 frames
-  std::vector<std::string> try_encoding;
-  try_encoding.push_back("mono8");
-  try_encoding.push_back("mono16");
-  try_encoding.push_back("bgr8");
-  try_encoding.push_back("rgb8");
-
-  ROS_ERROR("here");
-
-  for (int i = 0; i < 4; ++i)        // SET HIGHER!!!!
+  for (int i = 0; i < 10; ++i)        // SET HIGHER!!!!
   {
     // temporary copy of msg, so we throw away all changes if findInternal() returns false
     robot_calibration_msgs::CalibrationData tmp_msg(*msg);
-    if (findInternal(&tmp_msg, try_encoding[i]))
+    if (findInternal(&tmp_msg))
     {
       *msg = tmp_msg;
       return true;
@@ -140,7 +144,7 @@ bool ConstBlinkLedFinder::find(robot_calibration_msgs::CalibrationData * msg)
   return false;
 }
 
-bool ConstBlinkLedFinder::findInternal(robot_calibration_msgs::CalibrationData * msg, std::string temp_enc)
+bool ConstBlinkLedFinder::findInternal(robot_calibration_msgs::CalibrationData * msg)
 {
   //cloud variables
   geometry_msgs::PointStamped rgbd;
@@ -154,31 +158,18 @@ bool ConstBlinkLedFinder::findInternal(robot_calibration_msgs::CalibrationData *
   }
   ROS_INFO("Did find point cloud data");
 
-  // Get an image message from point cloud
-  sensor_msgs::ImagePtr image_msg(new sensor_msgs::Image);
-  sensor_msgs::PointCloud2ConstIterator<uint8_t> rgb(cloud_, "rgb");
-  image_msg->encoding = "rgb8";
-  image_msg->height = cloud_.height;
-  image_msg->width = cloud_.width;
-  image_msg->step = image_msg->width * sizeof (uint8_t) * 3;
-  image_msg->data.resize(image_msg->step * image_msg->height);
-  for (size_t y = 0; y < cloud_.height; y++)
+  // Convert cloud to image message
+  sensor_msgs::Image image_msg = sensor_msgs::Image();
+  if(!(getCurrentCloudAsImageMsg(image_msg)))
   {
-    for (size_t x = 0; x < cloud_.width; x++)
-    {
-      uint8_t* pixel = &(image_msg->data[y * image_msg->step + x * 3]);
-      pixel[0] = rgb[0];
-      pixel[1] = rgb[1];
-      pixel[2] = rgb[2];
-      ++rgb;
-    }
+    return false;
   }
 
   // Get an OpenCV image from image_msg
   cv_bridge::CvImagePtr bridge;
   try
   {
-    bridge = cv_bridge::toCvCopy(image_msg, temp_enc);  // TODO: was rgb8? does this work?
+    bridge = cv_bridge::toCvCopy(image_msg, "rgb8");  // TODO: was rgb8? does this work?
   }
   catch(cv_bridge::Exception& e)
   {
@@ -186,20 +177,154 @@ bool ConstBlinkLedFinder::findInternal(robot_calibration_msgs::CalibrationData *
     return false;
   }
 
-  //display found image
-  if(!(bridge->image.empty()))
+  //find differences
+  if(!(last_cv_image))
   {
-    ROS_WARN("image encoding %s, image cols: %d, image rows %d", bridge->encoding.c_str(), bridge->image.cols, bridge->image.rows);
-    cv::imshow( "Display window", bridge->image );
-    std::string temp;
-    std::getline(std::cin, temp);
+    last_cv_image = bridge;
+    return false;
+  }
+  else if(last_cv_image->image.empty())
+  {
+    last_cv_image = bridge;
+    return false;
   }
   else
-  {
-    ROS_ERROR("cv image is empty");
+  {    
+    //create difference image
+    cv_bridge::CvImagePtr diff_bridge(new cv_bridge::CvImage);
+    if(!(getDifferenceBetweenImages(last_cv_image, bridge, diff_bridge)))
+    {
+      last_cv_image = bridge;
+      return false;
+    }
+
+    writeCvImage(diff_bridge, "/home/turtle/Desktop/debug_diff_image.png");
+  
+    //get point of interesent from difference image
+    cv::Point2f center_point;
+    if(!(findCenterOfPointOfInterest(diff_bridge, center_point)))
+    {
+      last_cv_image = bridge;
+      return false;
+    }
+
+    //dont forget to save the current image as last image
+    last_cv_image = bridge;
+
+    // Should be TRUE when its working
+    return false; 
   }
 
   return false;
+}
+
+void ConstBlinkLedFinder::writeCvImage(cv_bridge::CvImagePtr bridge, std::string image_path)
+{
+  if(!(bridge))
+  {
+    ROS_ERROR("display: invalid cv bridge");
+    return;
+  }
+
+  //display image
+  if(!(bridge->image.empty()))
+  {
+    cv::imwrite( image_path, bridge->image);
+    ROS_WARN("displayed image at: %s \n Press <enter> to continue", image_path.c_str());
+    std::string input;
+    std::getline(std::cin, input);
+  }
+  else
+  {
+    ROS_ERROR("display: cv image is empty");
+  }
+
+}
+
+bool ConstBlinkLedFinder::getDifferenceBetweenImages(cv_bridge::CvImagePtr bridge_1, cv_bridge::CvImagePtr bridge_2, cv_bridge::CvImagePtr diff_bridge)
+{
+  // image checks
+  if(bridge_1->encoding != bridge_2->encoding)
+  {
+    return false;
+  }
+
+  if(bridge_1->image.size != bridge_2->image.size)
+  {
+    ROS_WARN("bridge 1 and two have different sizes");
+  }
+
+  //create difference image
+  cv::Mat diffImage;
+
+  cv::absdiff(bridge_1->image, bridge_2->image, diffImage);
+
+  //set difference cv bridge with difference image
+  diff_bridge->header = bridge_2->header;
+  diff_bridge->encoding = bridge_2->encoding;
+  diff_bridge->image = diffImage;
+
+  return true;
+}
+
+bool ConstBlinkLedFinder::getCurrentCloudAsImageMsg(sensor_msgs::Image& image_msg)
+{
+  if (cloud_.width == 0 && cloud_.height == 0)
+  {
+    return false;
+  }
+
+  sensor_msgs::PointCloud2ConstIterator<uint8_t> rgb(cloud_, "rgb");
+  image_msg.encoding = "bgr8";
+  image_msg.height = cloud_.height;
+  image_msg.width = cloud_.width;
+  image_msg.step = image_msg.width * sizeof (uint8_t) * 3;
+  image_msg.data.resize(image_msg.step * image_msg.height);
+  for (size_t y = 0; y < cloud_.height; y++)
+  {
+    for (size_t x = 0; x < cloud_.width; x++)
+    {
+      uint8_t* pixel = &(image_msg.data[y * image_msg.step + x * 3]);
+      pixel[0] = rgb[0];
+      pixel[1] = rgb[1];
+      pixel[2] = rgb[2];
+      ++rgb;
+    }
+  }
+
+  return true;
+}
+
+bool ConstBlinkLedFinder::findCenterOfPointOfInterest(cv_bridge::CvImagePtr bridge, cv::Point2f & point)
+{
+  //checks
+  if(bridge->image.empty())
+  {
+    ROS_WARN("Difference image is empty");
+    return false;
+  }
+
+  //convert to gray scale image
+  cv::Mat1b grayed_image;
+  cv::cvtColor(bridge->image, grayed_image, CV_BGR2GRAY);
+
+  //moments: Calculates all of the moments up to the third order of a polygon or rasterized shape.
+  cv::Moments mu = cv::moments(grayed_image, true);
+  point.x = mu.m10 / mu.m00;
+  point.y = mu.m01 / mu.m00;
+
+  //draw results
+  cv::Mat3b result_image;
+  cv::cvtColor(grayed_image, result_image, CV_GRAY2BGR);
+  cv::circle(result_image, point, 2, cv::Scalar(0,0,255));
+
+  //temp
+  cv::imwrite( "/home/turtle/Desktop/ResultImage.png", result_image);
+  ROS_WARN("displayed image resulting from findcenterofpointofinterest at: /home/turtle/Desktop/ResultImage.png \n --Press <enter> to continue--");
+  std::string input;
+  std::getline(std::cin, input);
+
+  return true;
 }
 
 }  // namespace robot_calibration
