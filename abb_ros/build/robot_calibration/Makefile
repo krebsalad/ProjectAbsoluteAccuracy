@@ -963,6 +963,33 @@ src/chain_manager.cpp.s:
 	cd /home/turtle/abb_ros/build && $(MAKE) -f robot_calibration/CMakeFiles/robot_calibration.dir/build.make robot_calibration/CMakeFiles/robot_calibration.dir/src/chain_manager.cpp.s
 .PHONY : src/chain_manager.cpp.s
 
+src/finders/blinking_light_source_finder.o: src/finders/blinking_light_source_finder.cpp.o
+
+.PHONY : src/finders/blinking_light_source_finder.o
+
+# target to build an object file
+src/finders/blinking_light_source_finder.cpp.o:
+	cd /home/turtle/abb_ros/build && $(MAKE) -f robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/build.make robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.o
+.PHONY : src/finders/blinking_light_source_finder.cpp.o
+
+src/finders/blinking_light_source_finder.i: src/finders/blinking_light_source_finder.cpp.i
+
+.PHONY : src/finders/blinking_light_source_finder.i
+
+# target to preprocess a source file
+src/finders/blinking_light_source_finder.cpp.i:
+	cd /home/turtle/abb_ros/build && $(MAKE) -f robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/build.make robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.i
+.PHONY : src/finders/blinking_light_source_finder.cpp.i
+
+src/finders/blinking_light_source_finder.s: src/finders/blinking_light_source_finder.cpp.s
+
+.PHONY : src/finders/blinking_light_source_finder.s
+
+# target to generate assembly for a file
+src/finders/blinking_light_source_finder.cpp.s:
+	cd /home/turtle/abb_ros/build && $(MAKE) -f robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/build.make robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.s
+.PHONY : src/finders/blinking_light_source_finder.cpp.s
+
 src/finders/checkerboard_finder.o: src/finders/checkerboard_finder.cpp.o
 
 .PHONY : src/finders/checkerboard_finder.o
@@ -989,33 +1016,6 @@ src/finders/checkerboard_finder.s: src/finders/checkerboard_finder.cpp.s
 src/finders/checkerboard_finder.cpp.s:
 	cd /home/turtle/abb_ros/build && $(MAKE) -f robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/build.make robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/checkerboard_finder.cpp.s
 .PHONY : src/finders/checkerboard_finder.cpp.s
-
-src/finders/const_blink_led_finder.o: src/finders/const_blink_led_finder.cpp.o
-
-.PHONY : src/finders/const_blink_led_finder.o
-
-# target to build an object file
-src/finders/const_blink_led_finder.cpp.o:
-	cd /home/turtle/abb_ros/build && $(MAKE) -f robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/build.make robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o
-.PHONY : src/finders/const_blink_led_finder.cpp.o
-
-src/finders/const_blink_led_finder.i: src/finders/const_blink_led_finder.cpp.i
-
-.PHONY : src/finders/const_blink_led_finder.i
-
-# target to preprocess a source file
-src/finders/const_blink_led_finder.cpp.i:
-	cd /home/turtle/abb_ros/build && $(MAKE) -f robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/build.make robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.i
-.PHONY : src/finders/const_blink_led_finder.cpp.i
-
-src/finders/const_blink_led_finder.s: src/finders/const_blink_led_finder.cpp.s
-
-.PHONY : src/finders/const_blink_led_finder.s
-
-# target to generate assembly for a file
-src/finders/const_blink_led_finder.cpp.s:
-	cd /home/turtle/abb_ros/build && $(MAKE) -f robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/build.make robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.s
-.PHONY : src/finders/const_blink_led_finder.cpp.s
 
 src/finders/led_finder.o: src/finders/led_finder.cpp.o
 
@@ -1277,12 +1277,12 @@ help:
 	@echo "... src/chain_manager.o"
 	@echo "... src/chain_manager.i"
 	@echo "... src/chain_manager.s"
+	@echo "... src/finders/blinking_light_source_finder.o"
+	@echo "... src/finders/blinking_light_source_finder.i"
+	@echo "... src/finders/blinking_light_source_finder.s"
 	@echo "... src/finders/checkerboard_finder.o"
 	@echo "... src/finders/checkerboard_finder.i"
 	@echo "... src/finders/checkerboard_finder.s"
-	@echo "... src/finders/const_blink_led_finder.o"
-	@echo "... src/finders/const_blink_led_finder.i"
-	@echo "... src/finders/const_blink_led_finder.s"
 	@echo "... src/finders/led_finder.o"
 	@echo "... src/finders/led_finder.i"
 	@echo "... src/finders/led_finder.s"

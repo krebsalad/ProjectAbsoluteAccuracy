@@ -8,6 +8,7 @@
   <arg name="output_file_ext" default="fieldlab_cel3_calib"/>
   <arg name="calibrate_config_file_name" default="calibrate_with_external_cam_and_mounted_led.yaml"/> <!--calibrate_mounted_cam..yaml -->
   <arg name="capture_config_file_name" default="capture_with_external_cam_and_mounted_led.yaml"/> <!--capture_mounted_cam..yaml -->
+  <arg name="robot_utility_launch" default="false"/>
 
   <!-- path args -->
   <arg name="robot_package_path" value="(find $(arg robot))" />
@@ -48,4 +49,11 @@
 
   <!-- Set output param code -->
   <param name="robot_calibration_file_output_ext" type="str" value="$(arg output_file_ext)" />
+
+  <!-- launch robot code node -->
+  <group if="$(arg robot_utility_launch)">
+    <node pkg="robot_code" type="robot_code_node" name="robot_positioning_utility" 
+    output="screen" launch-prefix="xterm -e">
+    </node>
+  </group>
 </launch>

@@ -105,28 +105,28 @@ robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/l
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.o.provides.build: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.o
 
 
-robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/flags.make
-robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o: /home/turtle/abb_ros/src/robot_calibration/src/finders/const_blink_led_finder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o"
-	cd /home/turtle/abb_ros/build/robot_calibration && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o -c /home/turtle/abb_ros/src/robot_calibration/src/finders/const_blink_led_finder.cpp
+robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.o: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/flags.make
+robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.o: /home/turtle/abb_ros/src/robot_calibration/src/finders/blinking_light_source_finder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.o"
+	cd /home/turtle/abb_ros/build/robot_calibration && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.o -c /home/turtle/abb_ros/src/robot_calibration/src/finders/blinking_light_source_finder.cpp
 
-robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.i"
-	cd /home/turtle/abb_ros/build/robot_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/turtle/abb_ros/src/robot_calibration/src/finders/const_blink_led_finder.cpp > CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.i
+robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.i"
+	cd /home/turtle/abb_ros/build/robot_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/turtle/abb_ros/src/robot_calibration/src/finders/blinking_light_source_finder.cpp > CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.i
 
-robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.s"
-	cd /home/turtle/abb_ros/build/robot_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/turtle/abb_ros/src/robot_calibration/src/finders/const_blink_led_finder.cpp -o CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.s
+robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.s"
+	cd /home/turtle/abb_ros/build/robot_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/turtle/abb_ros/src/robot_calibration/src/finders/blinking_light_source_finder.cpp -o CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.s
 
-robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o.requires:
+robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.o.requires:
 
-.PHONY : robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o.requires
+.PHONY : robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.o.requires
 
-robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o.provides: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o.requires
-	$(MAKE) -f robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/build.make robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o.provides.build
-.PHONY : robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o.provides
+robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.o.provides: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.o.requires
+	$(MAKE) -f robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/build.make robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.o.provides.build
+.PHONY : robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.o.provides
 
-robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o.provides.build: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o
+robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.o.provides.build: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.o
 
 
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.o: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/flags.make
@@ -157,7 +157,7 @@ robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/p
 robot_calibration_feature_finders_OBJECTS = \
 "CMakeFiles/robot_calibration_feature_finders.dir/src/finders/checkerboard_finder.cpp.o" \
 "CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.o" \
-"CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o" \
+"CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.o" \
 "CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.o"
 
 # External object files for target robot_calibration_feature_finders
@@ -165,7 +165,7 @@ robot_calibration_feature_finders_EXTERNAL_OBJECTS =
 
 /home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/checkerboard_finder.cpp.o
 /home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.o
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o
+/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.o
 /home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.o
 /home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/build.make
 /home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /home/turtle/abb_ros/devel/lib/librobot_calibration.so
@@ -367,7 +367,7 @@ robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/build: /home/
 
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/requires: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/checkerboard_finder.cpp.o.requires
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/requires: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.o.requires
-robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/requires: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o.requires
+robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/requires: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/blinking_light_source_finder.cpp.o.requires
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/requires: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.o.requires
 
 .PHONY : robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/requires
