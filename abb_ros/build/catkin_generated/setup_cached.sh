@@ -7,4 +7,7 @@
 # new environment variables
 
 # modified environment variables
+export PKG_CONFIG_PATH="/opt/ros/kinetic/lib/pkgconfig:/opt/ros/kinetic/lib/x86_64-linux-gnu/pkgconfig"
 export PWD="/home/turtle/abb_ros/build"
+export PYTHONPATH="/opt/ros/kinetic/lib/python2.7/dist-packages"
+export ROS_PACKAGE_PATH="/home/turtle/abb_ros/src:/opt/ros/kinetic/share"

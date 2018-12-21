@@ -723,6 +723,8 @@ robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/p
  /opt/ros/kinetic/include/geometry_msgs/TransformStamped.h
  /opt/ros/kinetic/include/geometry_msgs/Vector3.h
  /opt/ros/kinetic/include/geometry_msgs/Vector3Stamped.h
+ /opt/ros/kinetic/include/geometry_msgs/Wrench.h
+ /opt/ros/kinetic/include/geometry_msgs/WrenchStamped.h
  /opt/ros/kinetic/include/kdl/frames.hpp
  /opt/ros/kinetic/include/kdl/frames.inl
  /opt/ros/kinetic/include/kdl/utilities/kdl-config.h

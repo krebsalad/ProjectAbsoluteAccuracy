@@ -722,6 +722,8 @@ robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/p
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.o: /opt/ros/kinetic/include/geometry_msgs/TransformStamped.h
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Vector3.h
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Vector3Stamped.h
+robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.o: /opt/ros/kinetic/include/geometry_msgs/Wrench.h
+robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.o: /opt/ros/kinetic/include/geometry_msgs/WrenchStamped.h
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.o: /opt/ros/kinetic/include/kdl/frames.hpp
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.o: /opt/ros/kinetic/include/kdl/frames.inl
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.o: /opt/ros/kinetic/include/kdl/utilities/kdl-config.h
