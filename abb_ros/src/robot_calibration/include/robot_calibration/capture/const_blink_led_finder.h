@@ -28,6 +28,7 @@
 #include <opencv2/calib3d/calib3d.hpp>
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 #include <cv_bridge/cv_bridge.h>
 
 namespace robot_calibration
@@ -67,7 +68,10 @@ private:
   std::string camera_sensor_name_;
   std::string chain_sensor_name_;
 
+  // finding differences variables
   cv_bridge::CvImagePtr last_cv_image;
+  int thresh = 200;
+  int max_thresh = 255;
   
 };
 

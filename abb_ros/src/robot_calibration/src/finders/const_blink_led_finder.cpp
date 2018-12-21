@@ -197,8 +197,6 @@ bool ConstBlinkLedFinder::findInternal(robot_calibration_msgs::CalibrationData *
       last_cv_image = bridge;
       return false;
     }
-
-    writeCvImage(diff_bridge, "/home/turtle/Desktop/debug_diff_image.png");
   
     //get point of interesent from difference image
     cv::Point2f center_point;
@@ -207,6 +205,8 @@ bool ConstBlinkLedFinder::findInternal(robot_calibration_msgs::CalibrationData *
       last_cv_image = bridge;
       return false;
     }
+
+    //display point of interest
 
     //dont forget to save the current image as last image
     last_cv_image = bridge;
@@ -230,15 +230,8 @@ void ConstBlinkLedFinder::writeCvImage(cv_bridge::CvImagePtr bridge, std::string
   if(!(bridge->image.empty()))
   {
     cv::imwrite( image_path, bridge->image);
-    ROS_WARN("displayed image at: %s \n Press <enter> to continue", image_path.c_str());
-    std::string input;
-    std::getline(std::cin, input);
+    ROS_WARN("displayed image at: %s", image_path.c_str());
   }
-  else
-  {
-    ROS_ERROR("display: cv image is empty");
-  }
-
 }
 
 bool ConstBlinkLedFinder::getDifferenceBetweenImages(cv_bridge::CvImagePtr bridge_1, cv_bridge::CvImagePtr bridge_2, cv_bridge::CvImagePtr diff_bridge)
@@ -304,23 +297,93 @@ bool ConstBlinkLedFinder::findCenterOfPointOfInterest(cv_bridge::CvImagePtr brid
     return false;
   }
 
-  //convert to gray scale image
-  cv::Mat1b grayed_image;
+  //gray scaled image
+  cv::Mat grayed_image;
   cv::cvtColor(bridge->image, grayed_image, CV_BGR2GRAY);
 
-  //moments: Calculates all of the moments up to the third order of a polygon or rasterized shape.
-  cv::Moments mu = cv::moments(grayed_image, true);
-  point.x = mu.m10 / mu.m00;
-  point.y = mu.m01 / mu.m00;
+  //canny variables
+  cv::Mat canny_output;
+  std::vector<std::vector<cv::Point> > contours;
+  std::vector<cv::Vec4i> hierarchy;
 
-  //draw results
-  cv::Mat3b result_image;
-  cv::cvtColor(grayed_image, result_image, CV_GRAY2BGR);
-  cv::circle(result_image, point, 2, cv::Scalar(0,0,255));
+  // Detect edges using canny
+  cv::Canny( grayed_image, canny_output, thresh, thresh*2, 3 );
 
-  //temp
-  cv::imwrite( "/home/turtle/Desktop/ResultImage.png", result_image);
-  ROS_WARN("displayed image resulting from findcenterofpointofinterest at: /home/turtle/Desktop/ResultImage.png \n --Press <enter> to continue--");
+  // find contours
+  cv::findContours( canny_output, contours, hierarchy, 3, 2, cv::Point(0, 0) );
+  
+  /// Get the moments
+  std::vector<cv::Moments> mu(contours.size() );
+  for( int i = 0; i < contours.size(); i++ )
+     { mu[i] = cv::moments( contours[i], false ); }
+
+  //  Get the mass centers of all countours
+  std::vector<cv::Point2f> mc( contours.size() );
+  for( int i = 0; i < contours.size(); i++ )
+    { mc[i] = cv::Point2f( mu[i].m10/mu[i].m00 , mu[i].m01/mu[i].m00 ); }
+
+  //checks before trying to get single point
+  if(mc.size() > 3)
+  {
+    ROS_ERROR("Too many differences in image, can not find blinking LED ");
+    return false;
+  }
+
+  if(mc.size() < 1)
+  {
+    ROS_ERROR("No point was found");
+    return false;
+  }
+
+  //get single the point
+  float led_point_x = 0;
+  float led_point_y = 0;
+  float max_distance_multiple_points = 25;
+  
+  if(mc.size() == 2)
+  {
+    if(mc[0].x - mc[1].x < max_distance_multiple_points && mc[0].x - mc[1].x > -(max_distance_multiple_points))
+    {
+        if(mc[0].y - mc[1].y < max_distance_multiple_points && mc[0].y - mc[1].y > -(max_distance_multiple_points))
+        {
+            ROS_WARN("Found two points, taking average, because points close enough");
+            led_point_x = (mc[0].x + mc[1].x)/2;
+            led_point_y = (mc[0].y + mc[1].y)/2;
+        }
+        else
+        {
+          ROS_ERROR("Found two points, but to far apart");
+          return false;
+        }
+    }
+    else
+    {
+      ROS_ERROR("Found two points, but to far apart");
+      return false;
+    }
+  }
+  
+  if(mc.size() == 1)
+  {
+    led_point_x = mc[0].x;
+    led_point_y = mc[0].y;
+  }
+
+  if(led_point_x == 0 || led_point_y == 0)
+  {
+    ROS_ERROR("Found point @ x:0 y:0, skipping point");
+    return false;
+  }
+
+  //set point
+  point.x = led_point_x;
+  point.y = led_point_y;
+  ROS_INFO("Found point at x: %f, y: %f", point.x, point.y);
+
+  // draw points, !!!! not required
+  cv::circle(grayed_image, point, 4, cv::Scalar(0, 0, 255), 1, 8, 0);
+  cv::imwrite( "/home/turtle/Desktop/LedPoints.png", grayed_image);
+  ROS_WARN("displayed image resulting from findcenterofpointofinterest at: /home/turtle/Desktop/LedPoints.png \n --Press <enter> to continue--");
   std::string input;
   std::getline(std::cin, input);
 
