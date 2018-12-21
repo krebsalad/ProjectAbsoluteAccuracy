@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/turtle/abb_ros/src
+CMAKE_SOURCE_DIR = /home/jmg/abb_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/turtle/abb_ros/build
+CMAKE_BINARY_DIR = /home/jmg/abb_ros/build
 
 # Utility rule file for run_tests_industrial_utils.
 
@@ -63,10 +63,10 @@ industrial_utils/CMakeFiles/run_tests_industrial_utils.dir/build: run_tests_indu
 .PHONY : industrial_utils/CMakeFiles/run_tests_industrial_utils.dir/build
 
 industrial_utils/CMakeFiles/run_tests_industrial_utils.dir/clean:
-	cd /home/turtle/abb_ros/build/industrial_utils && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_industrial_utils.dir/cmake_clean.cmake
+	cd /home/jmg/abb_ros/build/industrial_utils && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_industrial_utils.dir/cmake_clean.cmake
 .PHONY : industrial_utils/CMakeFiles/run_tests_industrial_utils.dir/clean
 
 industrial_utils/CMakeFiles/run_tests_industrial_utils.dir/depend:
-	cd /home/turtle/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/turtle/abb_ros/src /home/turtle/abb_ros/src/industrial_utils /home/turtle/abb_ros/build /home/turtle/abb_ros/build/industrial_utils /home/turtle/abb_ros/build/industrial_utils/CMakeFiles/run_tests_industrial_utils.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jmg/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jmg/abb_ros/src /home/jmg/abb_ros/src/industrial_utils /home/jmg/abb_ros/build /home/jmg/abb_ros/build/industrial_utils /home/jmg/abb_ros/build/industrial_utils/CMakeFiles/run_tests_industrial_utils.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : industrial_utils/CMakeFiles/run_tests_industrial_utils.dir/depend
 

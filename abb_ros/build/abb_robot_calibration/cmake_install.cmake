@@ -1,8 +1,8 @@
-# Install script for directory: /home/turtle/abb_ros/src/abb_robot_calibration
+# Install script for directory: /home/jmg/abb_ros/src/abb_robot_calibration
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/turtle/abb_ros/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jmg/abb_ros/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,28 +33,28 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  include("/home/turtle/abb_ros/build/abb_robot_calibration/catkin_generated/safe_execute_install.cmake")
+  include("/home/jmg/abb_ros/build/abb_robot_calibration/catkin_generated/safe_execute_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/turtle/abb_ros/build/abb_robot_calibration/catkin_generated/installspace/abb_robot_calibration.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jmg/abb_ros/build/abb_robot_calibration/catkin_generated/installspace/abb_robot_calibration.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abb_robot_calibration/cmake" TYPE FILE FILES
-    "/home/turtle/abb_ros/build/abb_robot_calibration/catkin_generated/installspace/abb_robot_calibrationConfig.cmake"
-    "/home/turtle/abb_ros/build/abb_robot_calibration/catkin_generated/installspace/abb_robot_calibrationConfig-version.cmake"
+    "/home/jmg/abb_ros/build/abb_robot_calibration/catkin_generated/installspace/abb_robot_calibrationConfig.cmake"
+    "/home/jmg/abb_ros/build/abb_robot_calibration/catkin_generated/installspace/abb_robot_calibrationConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abb_robot_calibration" TYPE FILE FILES "/home/turtle/abb_ros/src/abb_robot_calibration/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/abb_robot_calibration" TYPE FILE FILES "/home/jmg/abb_ros/src/abb_robot_calibration/package.xml")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/abb_robot_calibration" TYPE PROGRAM FILES
-    "/home/turtle/abb_ros/src/abb_robot_calibration/scripts/update_urdf.py"
-    "/home/turtle/abb_ros/src/abb_robot_calibration/scripts/load_joint_offsets.py"
+    "/home/jmg/abb_ros/src/abb_robot_calibration/scripts/update_urdf.py"
+    "/home/jmg/abb_ros/src/abb_robot_calibration/scripts/load_joint_offsets.py"
     )
 endif()
 

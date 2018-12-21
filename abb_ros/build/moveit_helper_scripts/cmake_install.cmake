@@ -1,8 +1,8 @@
-# Install script for directory: /home/turtle/abb_ros/src/moveit_helper_scripts
+# Install script for directory: /home/jmg/abb_ros/src/moveit_helper_scripts
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
-  set(CMAKE_INSTALL_PREFIX "/home/turtle/abb_ros/install")
+  set(CMAKE_INSTALL_PREFIX "/home/jmg/abb_ros/install")
 endif()
 string(REGEX REPLACE "/$" "" CMAKE_INSTALL_PREFIX "${CMAKE_INSTALL_PREFIX}")
 
@@ -33,17 +33,17 @@ if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/turtle/abb_ros/build/moveit_helper_scripts/catkin_generated/installspace/moveit_helper_scripts.pc")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/jmg/abb_ros/build/moveit_helper_scripts/catkin_generated/installspace/moveit_helper_scripts.pc")
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/moveit_helper_scripts/cmake" TYPE FILE FILES
-    "/home/turtle/abb_ros/build/moveit_helper_scripts/catkin_generated/installspace/moveit_helper_scriptsConfig.cmake"
-    "/home/turtle/abb_ros/build/moveit_helper_scripts/catkin_generated/installspace/moveit_helper_scriptsConfig-version.cmake"
+    "/home/jmg/abb_ros/build/moveit_helper_scripts/catkin_generated/installspace/moveit_helper_scriptsConfig.cmake"
+    "/home/jmg/abb_ros/build/moveit_helper_scripts/catkin_generated/installspace/moveit_helper_scriptsConfig-version.cmake"
     )
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/moveit_helper_scripts" TYPE FILE FILES "/home/turtle/abb_ros/src/moveit_helper_scripts/package.xml")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/moveit_helper_scripts" TYPE FILE FILES "/home/jmg/abb_ros/src/moveit_helper_scripts/package.xml")
 endif()
 

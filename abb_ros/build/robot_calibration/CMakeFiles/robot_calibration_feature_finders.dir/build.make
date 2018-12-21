@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/turtle/abb_ros/src
+CMAKE_SOURCE_DIR = /home/jmg/abb_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/turtle/abb_ros/build
+CMAKE_BINARY_DIR = /home/jmg/abb_ros/build
 
 # Include any dependencies generated for this target.
 include robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/depend.make
@@ -58,17 +58,17 @@ include robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/progr
 include robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/flags.make
 
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/checkerboard_finder.cpp.o: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/flags.make
-robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/checkerboard_finder.cpp.o: /home/turtle/abb_ros/src/robot_calibration/src/finders/checkerboard_finder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/checkerboard_finder.cpp.o"
-	cd /home/turtle/abb_ros/build/robot_calibration && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robot_calibration_feature_finders.dir/src/finders/checkerboard_finder.cpp.o -c /home/turtle/abb_ros/src/robot_calibration/src/finders/checkerboard_finder.cpp
+robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/checkerboard_finder.cpp.o: /home/jmg/abb_ros/src/robot_calibration/src/finders/checkerboard_finder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/checkerboard_finder.cpp.o"
+	cd /home/jmg/abb_ros/build/robot_calibration && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robot_calibration_feature_finders.dir/src/finders/checkerboard_finder.cpp.o -c /home/jmg/abb_ros/src/robot_calibration/src/finders/checkerboard_finder.cpp
 
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/checkerboard_finder.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robot_calibration_feature_finders.dir/src/finders/checkerboard_finder.cpp.i"
-	cd /home/turtle/abb_ros/build/robot_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/turtle/abb_ros/src/robot_calibration/src/finders/checkerboard_finder.cpp > CMakeFiles/robot_calibration_feature_finders.dir/src/finders/checkerboard_finder.cpp.i
+	cd /home/jmg/abb_ros/build/robot_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jmg/abb_ros/src/robot_calibration/src/finders/checkerboard_finder.cpp > CMakeFiles/robot_calibration_feature_finders.dir/src/finders/checkerboard_finder.cpp.i
 
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/checkerboard_finder.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robot_calibration_feature_finders.dir/src/finders/checkerboard_finder.cpp.s"
-	cd /home/turtle/abb_ros/build/robot_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/turtle/abb_ros/src/robot_calibration/src/finders/checkerboard_finder.cpp -o CMakeFiles/robot_calibration_feature_finders.dir/src/finders/checkerboard_finder.cpp.s
+	cd /home/jmg/abb_ros/build/robot_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jmg/abb_ros/src/robot_calibration/src/finders/checkerboard_finder.cpp -o CMakeFiles/robot_calibration_feature_finders.dir/src/finders/checkerboard_finder.cpp.s
 
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/checkerboard_finder.cpp.o.requires:
 
@@ -82,17 +82,17 @@ robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/c
 
 
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.o: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/flags.make
-robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.o: /home/turtle/abb_ros/src/robot_calibration/src/finders/led_finder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.o"
-	cd /home/turtle/abb_ros/build/robot_calibration && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.o -c /home/turtle/abb_ros/src/robot_calibration/src/finders/led_finder.cpp
+robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.o: /home/jmg/abb_ros/src/robot_calibration/src/finders/led_finder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.o"
+	cd /home/jmg/abb_ros/build/robot_calibration && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.o -c /home/jmg/abb_ros/src/robot_calibration/src/finders/led_finder.cpp
 
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.i"
-	cd /home/turtle/abb_ros/build/robot_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/turtle/abb_ros/src/robot_calibration/src/finders/led_finder.cpp > CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.i
+	cd /home/jmg/abb_ros/build/robot_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jmg/abb_ros/src/robot_calibration/src/finders/led_finder.cpp > CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.i
 
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.s"
-	cd /home/turtle/abb_ros/build/robot_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/turtle/abb_ros/src/robot_calibration/src/finders/led_finder.cpp -o CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.s
+	cd /home/jmg/abb_ros/build/robot_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jmg/abb_ros/src/robot_calibration/src/finders/led_finder.cpp -o CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.s
 
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.o.requires:
 
@@ -106,17 +106,17 @@ robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/l
 
 
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/flags.make
-robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o: /home/turtle/abb_ros/src/robot_calibration/src/finders/const_blink_led_finder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o"
-	cd /home/turtle/abb_ros/build/robot_calibration && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o -c /home/turtle/abb_ros/src/robot_calibration/src/finders/const_blink_led_finder.cpp
+robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o: /home/jmg/abb_ros/src/robot_calibration/src/finders/const_blink_led_finder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o"
+	cd /home/jmg/abb_ros/build/robot_calibration && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o -c /home/jmg/abb_ros/src/robot_calibration/src/finders/const_blink_led_finder.cpp
 
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.i"
-	cd /home/turtle/abb_ros/build/robot_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/turtle/abb_ros/src/robot_calibration/src/finders/const_blink_led_finder.cpp > CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.i
+	cd /home/jmg/abb_ros/build/robot_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jmg/abb_ros/src/robot_calibration/src/finders/const_blink_led_finder.cpp > CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.i
 
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.s"
-	cd /home/turtle/abb_ros/build/robot_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/turtle/abb_ros/src/robot_calibration/src/finders/const_blink_led_finder.cpp -o CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.s
+	cd /home/jmg/abb_ros/build/robot_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jmg/abb_ros/src/robot_calibration/src/finders/const_blink_led_finder.cpp -o CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.s
 
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o.requires:
 
@@ -130,17 +130,17 @@ robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/c
 
 
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.o: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/flags.make
-robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.o: /home/turtle/abb_ros/src/robot_calibration/src/finders/plane_finder.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.o"
-	cd /home/turtle/abb_ros/build/robot_calibration && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.o -c /home/turtle/abb_ros/src/robot_calibration/src/finders/plane_finder.cpp
+robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.o: /home/jmg/abb_ros/src/robot_calibration/src/finders/plane_finder.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.o"
+	cd /home/jmg/abb_ros/build/robot_calibration && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.o -c /home/jmg/abb_ros/src/robot_calibration/src/finders/plane_finder.cpp
 
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.i"
-	cd /home/turtle/abb_ros/build/robot_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/turtle/abb_ros/src/robot_calibration/src/finders/plane_finder.cpp > CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.i
+	cd /home/jmg/abb_ros/build/robot_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jmg/abb_ros/src/robot_calibration/src/finders/plane_finder.cpp > CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.i
 
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.s"
-	cd /home/turtle/abb_ros/build/robot_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/turtle/abb_ros/src/robot_calibration/src/finders/plane_finder.cpp -o CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.s
+	cd /home/jmg/abb_ros/build/robot_calibration && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jmg/abb_ros/src/robot_calibration/src/finders/plane_finder.cpp -o CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.s
 
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.o.requires:
 
@@ -163,205 +163,205 @@ robot_calibration_feature_finders_OBJECTS = \
 # External object files for target robot_calibration_feature_finders
 robot_calibration_feature_finders_EXTERNAL_OBJECTS =
 
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/checkerboard_finder.cpp.o
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.o
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.o
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/build.make
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /home/turtle/abb_ros/devel/lib/librobot_calibration.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libcamera_calibration_parsers.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libcv_bridge.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libkdl_parser.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/liburdf.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liburdfdom_world.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosconsole_bridge.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libclass_loader.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/libPocoFoundation.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libdl.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libroslib.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librospack.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libpython2.7.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosbag.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosbag_storage.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libroslz4.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liblz4.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libtopic_tools.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libtf.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/liborocos-kdl.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libtf2_ros.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libactionlib.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libmessage_filters.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libroscpp.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosconsole.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libtf2.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librostime.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libcpp_common.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_stitching3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_superres3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_videostab3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_aruco3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_bgsegm3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_bioinspired3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ccalib3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_cvv3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_dpm3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_face3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_fuzzy3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_hdf3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_img_hash3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_line_descriptor3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_optflow3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_reg3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_rgbd3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_saliency3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_stereo3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_structured_light3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_surface_matching3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_tracking3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xfeatures2d3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ximgproc3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xobjdetect3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xphoto3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libcamera_calibration_parsers.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libcv_bridge.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libkdl_parser.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/liburdf.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liburdfdom_world.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosconsole_bridge.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libclass_loader.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/libPocoFoundation.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libdl.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libroslib.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librospack.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libpython2.7.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosbag.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosbag_storage.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libroslz4.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liblz4.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libtopic_tools.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libtf.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/liborocos-kdl.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libtf2_ros.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libactionlib.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libmessage_filters.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libroscpp.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosconsole.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libtf2.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librostime.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libcpp_common.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/local/lib/libceres.a
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libglog.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libgflags.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libspqr.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libtbbmalloc.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libtbb.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libcholmod.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libccolamd.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libcamd.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libcolamd.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libamd.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/liblapack.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/libf77blas.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/libatlas.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libsuitesparseconfig.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/librt.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libcxsparse.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libspqr.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libtbbmalloc.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libtbb.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libcholmod.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libccolamd.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libcamd.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libcolamd.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libamd.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/liblapack.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/libf77blas.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/libatlas.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libsuitesparseconfig.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/librt.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libcxsparse.so
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_shape3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_photo3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_datasets3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_plot3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_text3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_dnn3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ml3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_video3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_calib3d3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_features2d3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_highgui3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_videoio3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_viz3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_phase_unwrapping3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_flann3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_objdetect3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1
-/home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library /home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so"
-	cd /home/turtle/abb_ros/build/robot_calibration && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/robot_calibration_feature_finders.dir/link.txt --verbose=$(VERBOSE)
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/checkerboard_finder.cpp.o
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/led_finder.cpp.o
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/const_blink_led_finder.cpp.o
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/src/finders/plane_finder.cpp.o
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/build.make
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /home/jmg/abb_ros/devel/lib/librobot_calibration.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libcamera_calibration_parsers.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libcv_bridge.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libkdl_parser.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/liburdf.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liburdfdom_world.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosconsole_bridge.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libclass_loader.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/libPocoFoundation.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libdl.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libroslib.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librospack.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosbag.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosbag_storage.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libroslz4.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liblz4.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libtopic_tools.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libtf.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/liborocos-kdl.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libtf2_ros.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libactionlib.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libmessage_filters.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libroscpp.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosconsole.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libtf2.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librostime.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libcpp_common.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_stitching3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_superres3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_videostab3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_aruco3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_bgsegm3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_bioinspired3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ccalib3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_cvv3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_dpm3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_face3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_fuzzy3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_hdf3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_img_hash3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_line_descriptor3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_optflow3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_reg3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_rgbd3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_saliency3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_stereo3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_structured_light3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_surface_matching3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_tracking3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xfeatures2d3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ximgproc3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xobjdetect3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_xphoto3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libcamera_calibration_parsers.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libcv_bridge.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libkdl_parser.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/liburdf.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liburdfdom_world.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosconsole_bridge.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libclass_loader.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/libPocoFoundation.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libdl.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libroslib.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librospack.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosbag.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosbag_storage.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libroslz4.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liblz4.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libtopic_tools.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libtf.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/liborocos-kdl.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libtf2_ros.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libactionlib.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libmessage_filters.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libroscpp.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosconsole.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libtf2.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/librostime.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/libcpp_common.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/local/lib/libceres.a
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libglog.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libgflags.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libspqr.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libtbbmalloc.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libtbb.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libcholmod.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libccolamd.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libcamd.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libcolamd.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libamd.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/liblapack.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/libf77blas.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/libatlas.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libsuitesparseconfig.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/librt.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libcxsparse.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libspqr.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libtbbmalloc.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libtbb.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libcholmod.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libccolamd.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libcamd.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libcolamd.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libamd.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/liblapack.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/libf77blas.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/libatlas.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libsuitesparseconfig.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/librt.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /usr/lib/x86_64-linux-gnu/libcxsparse.so
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_shape3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_photo3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_datasets3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_plot3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_text3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_dnn3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_ml3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_video3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_calib3d3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_features2d3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_highgui3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_videoio3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_viz3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_phase_unwrapping3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_flann3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgcodecs3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_objdetect3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_imgproc3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: /opt/ros/kinetic/lib/x86_64-linux-gnu/libopencv_core3.so.3.3.1
+/home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so: robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library /home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so"
+	cd /home/jmg/abb_ros/build/robot_calibration && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/robot_calibration_feature_finders.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/build: /home/turtle/abb_ros/devel/lib/librobot_calibration_feature_finders.so
+robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/build: /home/jmg/abb_ros/devel/lib/librobot_calibration_feature_finders.so
 
 .PHONY : robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/build
 
@@ -373,10 +373,10 @@ robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/requires: rob
 .PHONY : robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/requires
 
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/clean:
-	cd /home/turtle/abb_ros/build/robot_calibration && $(CMAKE_COMMAND) -P CMakeFiles/robot_calibration_feature_finders.dir/cmake_clean.cmake
+	cd /home/jmg/abb_ros/build/robot_calibration && $(CMAKE_COMMAND) -P CMakeFiles/robot_calibration_feature_finders.dir/cmake_clean.cmake
 .PHONY : robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/clean
 
 robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/depend:
-	cd /home/turtle/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/turtle/abb_ros/src /home/turtle/abb_ros/src/robot_calibration /home/turtle/abb_ros/build /home/turtle/abb_ros/build/robot_calibration /home/turtle/abb_ros/build/robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jmg/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jmg/abb_ros/src /home/jmg/abb_ros/src/robot_calibration /home/jmg/abb_ros/build /home/jmg/abb_ros/build/robot_calibration /home/jmg/abb_ros/build/robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : robot_calibration/CMakeFiles/robot_calibration_feature_finders.dir/depend
 

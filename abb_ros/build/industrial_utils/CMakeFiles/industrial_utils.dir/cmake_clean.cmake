@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/industrial_utils.dir/src/utils.cpp.o"
   "CMakeFiles/industrial_utils.dir/src/param_utils.cpp.o"
-  "/home/turtle/abb_ros/devel/lib/libindustrial_utils.pdb"
-  "/home/turtle/abb_ros/devel/lib/libindustrial_utils.so"
+  "/home/jmg/abb_ros/devel/lib/libindustrial_utils.pdb"
+  "/home/jmg/abb_ros/devel/lib/libindustrial_utils.so"
 )
 
 # Per-language clean rules from dependency scanning.

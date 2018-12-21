@@ -7,7 +7,7 @@ from sys import path as sys_path
 
 from pkgutil import extend_path
 
-__extended_path = "/home/turtle/abb_ros/src/abb_robot_calibration/src".split(";")
+__extended_path = "/home/jmg/abb_ros/src/abb_robot_calibration/src".split(";")
 for p in reversed(__extended_path):
     sys_path.insert(0, p)
     del p

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/turtle/abb_ros/src
+CMAKE_SOURCE_DIR = /home/jmg/abb_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/turtle/abb_ros/build
+CMAKE_BINARY_DIR = /home/jmg/abb_ros/build
 
 # Utility rule file for _catkin_empty_exported_target.
 
@@ -63,10 +63,10 @@ abb_irb1660_support/CMakeFiles/_catkin_empty_exported_target.dir/build: _catkin_
 .PHONY : abb_irb1660_support/CMakeFiles/_catkin_empty_exported_target.dir/build
 
 abb_irb1660_support/CMakeFiles/_catkin_empty_exported_target.dir/clean:
-	cd /home/turtle/abb_ros/build/abb_irb1660_support && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
+	cd /home/jmg/abb_ros/build/abb_irb1660_support && $(CMAKE_COMMAND) -P CMakeFiles/_catkin_empty_exported_target.dir/cmake_clean.cmake
 .PHONY : abb_irb1660_support/CMakeFiles/_catkin_empty_exported_target.dir/clean
 
 abb_irb1660_support/CMakeFiles/_catkin_empty_exported_target.dir/depend:
-	cd /home/turtle/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/turtle/abb_ros/src /home/turtle/abb_ros/src/abb_irb1660_support /home/turtle/abb_ros/build /home/turtle/abb_ros/build/abb_irb1660_support /home/turtle/abb_ros/build/abb_irb1660_support/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jmg/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jmg/abb_ros/src /home/jmg/abb_ros/src/abb_irb1660_support /home/jmg/abb_ros/build /home/jmg/abb_ros/build/abb_irb1660_support /home/jmg/abb_ros/build/abb_irb1660_support/CMakeFiles/_catkin_empty_exported_target.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : abb_irb1660_support/CMakeFiles/_catkin_empty_exported_target.dir/depend
 

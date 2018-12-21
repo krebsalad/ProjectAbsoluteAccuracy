@@ -7,4 +7,4 @@
 # new environment variables
 
 # modified environment variables
-export PWD="/home/turtle/abb_ros/build"
+export PWD="/home/jmg/abb_ros/build"

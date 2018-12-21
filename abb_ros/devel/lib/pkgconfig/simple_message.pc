@@ -1,8 +1,8 @@
-prefix=/home/turtle/abb_ros/devel
+prefix=/home/jmg/abb_ros/devel
 
 Name: simple_message
 Description: Description of simple_message
 Version: 0.5.1
-Cflags: -I/home/turtle/abb_ros/src/simple_message/include
-Libs: -L/home/turtle/abb_ros/devel/lib -lsimple_message_dummy
+Cflags: -I/home/jmg/abb_ros/src/simple_message/include
+Libs: -L/home/jmg/abb_ros/devel/lib -lsimple_message_dummy
 Requires: roscpp industrial_msgs

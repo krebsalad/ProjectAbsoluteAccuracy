@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/turtle/abb_ros/src
+CMAKE_SOURCE_DIR = /home/jmg/abb_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/turtle/abb_ros/build
+CMAKE_BINARY_DIR = /home/jmg/abb_ros/build
 
 # Include any dependencies generated for this target.
 include industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/depend.make
@@ -58,17 +58,17 @@ include industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.d
 include industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/flags.make
 
 industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/n_point_filter.cpp.o: industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/flags.make
-industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/n_point_filter.cpp.o: /home/turtle/abb_ros/src/industrial_trajectory_filters/src/n_point_filter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/n_point_filter.cpp.o"
-	cd /home/turtle/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/industrial_trajectory_filters.dir/src/n_point_filter.cpp.o -c /home/turtle/abb_ros/src/industrial_trajectory_filters/src/n_point_filter.cpp
+industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/n_point_filter.cpp.o: /home/jmg/abb_ros/src/industrial_trajectory_filters/src/n_point_filter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/n_point_filter.cpp.o"
+	cd /home/jmg/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/industrial_trajectory_filters.dir/src/n_point_filter.cpp.o -c /home/jmg/abb_ros/src/industrial_trajectory_filters/src/n_point_filter.cpp
 
 industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/n_point_filter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/industrial_trajectory_filters.dir/src/n_point_filter.cpp.i"
-	cd /home/turtle/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/turtle/abb_ros/src/industrial_trajectory_filters/src/n_point_filter.cpp > CMakeFiles/industrial_trajectory_filters.dir/src/n_point_filter.cpp.i
+	cd /home/jmg/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jmg/abb_ros/src/industrial_trajectory_filters/src/n_point_filter.cpp > CMakeFiles/industrial_trajectory_filters.dir/src/n_point_filter.cpp.i
 
 industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/n_point_filter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/industrial_trajectory_filters.dir/src/n_point_filter.cpp.s"
-	cd /home/turtle/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/turtle/abb_ros/src/industrial_trajectory_filters/src/n_point_filter.cpp -o CMakeFiles/industrial_trajectory_filters.dir/src/n_point_filter.cpp.s
+	cd /home/jmg/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jmg/abb_ros/src/industrial_trajectory_filters/src/n_point_filter.cpp -o CMakeFiles/industrial_trajectory_filters.dir/src/n_point_filter.cpp.s
 
 industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/n_point_filter.cpp.o.requires:
 
@@ -82,17 +82,17 @@ industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/n
 
 
 industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/uniform_sample_filter.cpp.o: industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/flags.make
-industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/uniform_sample_filter.cpp.o: /home/turtle/abb_ros/src/industrial_trajectory_filters/src/uniform_sample_filter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/uniform_sample_filter.cpp.o"
-	cd /home/turtle/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/industrial_trajectory_filters.dir/src/uniform_sample_filter.cpp.o -c /home/turtle/abb_ros/src/industrial_trajectory_filters/src/uniform_sample_filter.cpp
+industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/uniform_sample_filter.cpp.o: /home/jmg/abb_ros/src/industrial_trajectory_filters/src/uniform_sample_filter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/uniform_sample_filter.cpp.o"
+	cd /home/jmg/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/industrial_trajectory_filters.dir/src/uniform_sample_filter.cpp.o -c /home/jmg/abb_ros/src/industrial_trajectory_filters/src/uniform_sample_filter.cpp
 
 industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/uniform_sample_filter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/industrial_trajectory_filters.dir/src/uniform_sample_filter.cpp.i"
-	cd /home/turtle/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/turtle/abb_ros/src/industrial_trajectory_filters/src/uniform_sample_filter.cpp > CMakeFiles/industrial_trajectory_filters.dir/src/uniform_sample_filter.cpp.i
+	cd /home/jmg/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jmg/abb_ros/src/industrial_trajectory_filters/src/uniform_sample_filter.cpp > CMakeFiles/industrial_trajectory_filters.dir/src/uniform_sample_filter.cpp.i
 
 industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/uniform_sample_filter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/industrial_trajectory_filters.dir/src/uniform_sample_filter.cpp.s"
-	cd /home/turtle/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/turtle/abb_ros/src/industrial_trajectory_filters/src/uniform_sample_filter.cpp -o CMakeFiles/industrial_trajectory_filters.dir/src/uniform_sample_filter.cpp.s
+	cd /home/jmg/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jmg/abb_ros/src/industrial_trajectory_filters/src/uniform_sample_filter.cpp -o CMakeFiles/industrial_trajectory_filters.dir/src/uniform_sample_filter.cpp.s
 
 industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/uniform_sample_filter.cpp.o.requires:
 
@@ -106,17 +106,17 @@ industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/u
 
 
 industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/add_smoothing_filter.cpp.o: industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/flags.make
-industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/add_smoothing_filter.cpp.o: /home/turtle/abb_ros/src/industrial_trajectory_filters/src/add_smoothing_filter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/add_smoothing_filter.cpp.o"
-	cd /home/turtle/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/industrial_trajectory_filters.dir/src/add_smoothing_filter.cpp.o -c /home/turtle/abb_ros/src/industrial_trajectory_filters/src/add_smoothing_filter.cpp
+industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/add_smoothing_filter.cpp.o: /home/jmg/abb_ros/src/industrial_trajectory_filters/src/add_smoothing_filter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/add_smoothing_filter.cpp.o"
+	cd /home/jmg/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/industrial_trajectory_filters.dir/src/add_smoothing_filter.cpp.o -c /home/jmg/abb_ros/src/industrial_trajectory_filters/src/add_smoothing_filter.cpp
 
 industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/add_smoothing_filter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/industrial_trajectory_filters.dir/src/add_smoothing_filter.cpp.i"
-	cd /home/turtle/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/turtle/abb_ros/src/industrial_trajectory_filters/src/add_smoothing_filter.cpp > CMakeFiles/industrial_trajectory_filters.dir/src/add_smoothing_filter.cpp.i
+	cd /home/jmg/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jmg/abb_ros/src/industrial_trajectory_filters/src/add_smoothing_filter.cpp > CMakeFiles/industrial_trajectory_filters.dir/src/add_smoothing_filter.cpp.i
 
 industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/add_smoothing_filter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/industrial_trajectory_filters.dir/src/add_smoothing_filter.cpp.s"
-	cd /home/turtle/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/turtle/abb_ros/src/industrial_trajectory_filters/src/add_smoothing_filter.cpp -o CMakeFiles/industrial_trajectory_filters.dir/src/add_smoothing_filter.cpp.s
+	cd /home/jmg/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jmg/abb_ros/src/industrial_trajectory_filters/src/add_smoothing_filter.cpp -o CMakeFiles/industrial_trajectory_filters.dir/src/add_smoothing_filter.cpp.s
 
 industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/add_smoothing_filter.cpp.o.requires:
 
@@ -130,17 +130,17 @@ industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/a
 
 
 industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/smoothing_trajectory_filter.cpp.o: industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/flags.make
-industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/smoothing_trajectory_filter.cpp.o: /home/turtle/abb_ros/src/industrial_trajectory_filters/src/smoothing_trajectory_filter.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/smoothing_trajectory_filter.cpp.o"
-	cd /home/turtle/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/industrial_trajectory_filters.dir/src/smoothing_trajectory_filter.cpp.o -c /home/turtle/abb_ros/src/industrial_trajectory_filters/src/smoothing_trajectory_filter.cpp
+industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/smoothing_trajectory_filter.cpp.o: /home/jmg/abb_ros/src/industrial_trajectory_filters/src/smoothing_trajectory_filter.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/smoothing_trajectory_filter.cpp.o"
+	cd /home/jmg/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/industrial_trajectory_filters.dir/src/smoothing_trajectory_filter.cpp.o -c /home/jmg/abb_ros/src/industrial_trajectory_filters/src/smoothing_trajectory_filter.cpp
 
 industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/smoothing_trajectory_filter.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/industrial_trajectory_filters.dir/src/smoothing_trajectory_filter.cpp.i"
-	cd /home/turtle/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/turtle/abb_ros/src/industrial_trajectory_filters/src/smoothing_trajectory_filter.cpp > CMakeFiles/industrial_trajectory_filters.dir/src/smoothing_trajectory_filter.cpp.i
+	cd /home/jmg/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/jmg/abb_ros/src/industrial_trajectory_filters/src/smoothing_trajectory_filter.cpp > CMakeFiles/industrial_trajectory_filters.dir/src/smoothing_trajectory_filter.cpp.i
 
 industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/smoothing_trajectory_filter.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/industrial_trajectory_filters.dir/src/smoothing_trajectory_filter.cpp.s"
-	cd /home/turtle/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/turtle/abb_ros/src/industrial_trajectory_filters/src/smoothing_trajectory_filter.cpp -o CMakeFiles/industrial_trajectory_filters.dir/src/smoothing_trajectory_filter.cpp.s
+	cd /home/jmg/abb_ros/build/industrial_trajectory_filters && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/jmg/abb_ros/src/industrial_trajectory_filters/src/smoothing_trajectory_filter.cpp -o CMakeFiles/industrial_trajectory_filters.dir/src/smoothing_trajectory_filter.cpp.s
 
 industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/smoothing_trajectory_filter.cpp.o.requires:
 
@@ -163,97 +163,97 @@ industrial_trajectory_filters_OBJECTS = \
 # External object files for target industrial_trajectory_filters
 industrial_trajectory_filters_EXTERNAL_OBJECTS =
 
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/n_point_filter.cpp.o
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/uniform_sample_filter.cpp.o
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/add_smoothing_filter.cpp.o
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/smoothing_trajectory_filter.cpp.o
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/build.make
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_rdf_loader.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_kinematics_plugin_loader.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_robot_model_loader.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_constraint_sampler_manager_loader.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_planning_pipeline.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_trajectory_execution_manager.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_plan_execution.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_planning_scene_monitor.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_collision_plugin_loader.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_lazy_free_space_updater.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_point_containment_filter.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_occupancy_map_monitor.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_pointcloud_octomap_updater_core.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_semantic_world.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_exceptions.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_background_processing.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_kinematics_base.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_robot_model.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_transforms.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_robot_state.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_robot_trajectory.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_planning_interface.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_collision_detection.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_collision_detection_fcl.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_kinematic_constraints.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_planning_scene.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_constraint_samplers.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_planning_request_adapter.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_profiler.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_trajectory_processing.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_distance_field.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_kinematics_metrics.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_dynamics_solver.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_utils.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libfcl.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libeigen_conversions.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libgeometric_shapes.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/liboctomap.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/liboctomath.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libkdl_parser.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/liburdf.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/liburdfdom_world.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/librosconsole_bridge.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/librandom_numbers.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libsrdfdom.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libimage_transport.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmessage_filters.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libclass_loader.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/libPocoFoundation.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libdl.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libroscpp.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/librosconsole.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libxmlrpcpp.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libroslib.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/librospack.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libpython2.7.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libroscpp_serialization.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/librostime.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libcpp_common.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libpthread.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
-/home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so: industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library /home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so"
-	cd /home/turtle/abb_ros/build/industrial_trajectory_filters && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/industrial_trajectory_filters.dir/link.txt --verbose=$(VERBOSE)
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/n_point_filter.cpp.o
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/uniform_sample_filter.cpp.o
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/add_smoothing_filter.cpp.o
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/src/smoothing_trajectory_filter.cpp.o
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/build.make
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_rdf_loader.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_kinematics_plugin_loader.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_robot_model_loader.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_constraint_sampler_manager_loader.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_planning_pipeline.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_trajectory_execution_manager.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_plan_execution.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_planning_scene_monitor.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_collision_plugin_loader.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_lazy_free_space_updater.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_point_containment_filter.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_occupancy_map_monitor.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_pointcloud_octomap_updater_core.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_semantic_world.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_exceptions.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_background_processing.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_kinematics_base.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_robot_model.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_transforms.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_robot_state.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_robot_trajectory.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_planning_interface.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_collision_detection.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_collision_detection_fcl.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_kinematic_constraints.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_planning_scene.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_constraint_samplers.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_planning_request_adapter.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_profiler.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_trajectory_processing.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_distance_field.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_kinematics_metrics.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_dynamics_solver.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmoveit_utils.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libboost_iostreams.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libfcl.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libeigen_conversions.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libgeometric_shapes.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/liboctomap.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/liboctomath.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libkdl_parser.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/liborocos-kdl.so.1.3.0
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/liburdf.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/liburdfdom_sensor.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model_state.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/liburdfdom_model.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/liburdfdom_world.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/librosconsole_bridge.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/librandom_numbers.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libsrdfdom.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libimage_transport.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libmessage_filters.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libtinyxml2.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libclass_loader.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/libPocoFoundation.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libdl.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libroscpp.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libboost_signals.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/librosconsole.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/librosconsole_log4cxx.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/librosconsole_backend_interface.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/liblog4cxx.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libboost_regex.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libxmlrpcpp.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libroslib.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/librospack.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libpython2.7.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libboost_filesystem.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libboost_program_options.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libtinyxml.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libroscpp_serialization.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/librostime.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /opt/ros/kinetic/lib/libcpp_common.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libboost_system.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libboost_thread.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libboost_chrono.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libboost_date_time.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libboost_atomic.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libpthread.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: /usr/lib/x86_64-linux-gnu/libconsole_bridge.so
+/home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so: industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/link.txt
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX shared library /home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so"
+	cd /home/jmg/abb_ros/build/industrial_trajectory_filters && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/industrial_trajectory_filters.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
-industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/build: /home/turtle/abb_ros/devel/lib/libindustrial_trajectory_filters.so
+industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/build: /home/jmg/abb_ros/devel/lib/libindustrial_trajectory_filters.so
 
 .PHONY : industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/build
 
@@ -265,10 +265,10 @@ industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/requi
 .PHONY : industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/requires
 
 industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/clean:
-	cd /home/turtle/abb_ros/build/industrial_trajectory_filters && $(CMAKE_COMMAND) -P CMakeFiles/industrial_trajectory_filters.dir/cmake_clean.cmake
+	cd /home/jmg/abb_ros/build/industrial_trajectory_filters && $(CMAKE_COMMAND) -P CMakeFiles/industrial_trajectory_filters.dir/cmake_clean.cmake
 .PHONY : industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/clean
 
 industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/depend:
-	cd /home/turtle/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/turtle/abb_ros/src /home/turtle/abb_ros/src/industrial_trajectory_filters /home/turtle/abb_ros/build /home/turtle/abb_ros/build/industrial_trajectory_filters /home/turtle/abb_ros/build/industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/jmg/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jmg/abb_ros/src /home/jmg/abb_ros/src/industrial_trajectory_filters /home/jmg/abb_ros/build /home/jmg/abb_ros/build/industrial_trajectory_filters /home/jmg/abb_ros/build/industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : industrial_trajectory_filters/CMakeFiles/industrial_trajectory_filters.dir/depend
 

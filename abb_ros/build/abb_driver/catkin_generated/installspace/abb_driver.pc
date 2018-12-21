@@ -1,8 +1,8 @@
-prefix=/home/turtle/abb_ros/install
+prefix=/home/jmg/abb_ros/install
 
 Name: abb_driver
 Description: Description of abb_driver
 Version: 1.2.1
 Cflags: 
-Libs: -L/home/turtle/abb_ros/install/lib 
+Libs: -L/home/jmg/abb_ros/install/lib 
 Requires: industrial_robot_client

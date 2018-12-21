@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/realsense2_camera_generate_messages_cpp"
-  "/home/turtle/abb_ros/devel/include/realsense2_camera/Extrinsics.h"
-  "/home/turtle/abb_ros/devel/include/realsense2_camera/IMUInfo.h"
+  "/home/jmg/abb_ros/devel/include/realsense2_camera/Extrinsics.h"
+  "/home/jmg/abb_ros/devel/include/realsense2_camera/IMUInfo.h"
 )
 
 # Per-language clean rules from dependency scanning.
