@@ -18,3 +18,9 @@ features:
     chain_sensor_name: group1
     points_x: 8
     points_y: 6
+  blinking_light_source_finder:
+    type: robot_calibration/BlinkingLightSourceFinder
+    topic: /camera/depth_registered/points
+    camera_sensor_name: camera
+    chain_sensor_name: group1
+  

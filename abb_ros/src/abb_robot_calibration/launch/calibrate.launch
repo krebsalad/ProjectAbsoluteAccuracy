@@ -1,8 +1,9 @@
 <launch>
 
  <!-- calibrate arguments -->
-  <arg name="calibration_data" default="calibration_data.bag"/>
+  <arg name="calibration_data" default="calibration_data_2019-01-08-09-41-57.bag"/>
   <arg name="output_file_ext" default="fieldlab_cel3_calib"/>
+  <arg name="robot"  default="fieldlab_cel3_calib" />
 
   <!-- static args -->
   <arg name="robot_package_path" value="(find $(arg robot))" />

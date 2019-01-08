@@ -242,7 +242,7 @@ bool BlinkingLightSourceFinder::findInternal(robot_calibration_msgs::Calibration
     iter_cloud[1] = rgbd.point.y;
     iter_cloud[2] = rgbd.point.z;
 
-    //ROS_INFO("light source center point in 3d world: x: %f, y: %f, z: %f", rgbd.point.x, rgbd.point.y, rgbd.point.z);
+    ROS_INFO("light source center point in rgbd camera pointcloud: x: %f, y: %f, z: %f", rgbd.point.x, rgbd.point.y, rgbd.point.z);
 
     // Publish results
     publisher_.publish(cloud);
@@ -409,14 +409,14 @@ bool BlinkingLightSourceFinder::findCenterOfPointOfInterest(cv_bridge::CvImagePt
 
   //set point
   point.x = light_point_x;
-  point.y = light_point_x;
+  point.y = light_point_y;
 
   // draw points, !!!! not required, only for debugging, to see if found point is the actual point in the image
-  /*cv::circle(grayed_image, point, 4, cv::Scalar(0, 0, 255), 1, 8, 0);
-  cv::imwrite( "/home/turtle/Desktop/LightPoint.png", grayed_image);
-  ROS_WARN("displayed image resulting from findcenterofpointofinterest at: /home/turtle/Desktop/LightPoint.png \n --Press <enter> to continue--");
-  std::string input;
-  std::getline(std::cin, input);*/
+  cv::Mat3b debug_image;
+  cv::cvtColor(grayed_image, debug_image, CV_GRAY2BGR);
+  cv::circle(debug_image, point, 2, cv::Scalar(0,0,255));
+  cv::imwrite( "/home/turtle/Desktop/LightPoint.png", debug_image);
+  ROS_WARN("displayed image resulting from findcenterofpointofinterest at: /home/turtle/Desktop/LightPoint.png \n");
 
   return true;
 }

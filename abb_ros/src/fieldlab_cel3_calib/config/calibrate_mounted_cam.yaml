@@ -21,7 +21,7 @@ free_frames:
     y: true
     z: true
     roll: false
-    pitch: true
+    pitch: false
     yaw: false
   - name: camera_optical_joint
     x: true
