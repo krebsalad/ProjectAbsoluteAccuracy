@@ -4,5 +4,5 @@ PROJECT_PKG_CONFIG_INCLUDE_DIRS = "".split(';') if "" != "" else []
 PROJECT_CATKIN_DEPENDS = "".replace(';', ' ')
 PKG_CONFIG_LIBRARIES_WITH_PREFIX = "".split(';') if "" != "" else []
 PROJECT_NAME = "code_coverage"
-PROJECT_SPACE_DIR = "/home/jmg/abb_ros/devel"
+PROJECT_SPACE_DIR = "/home/turtle/abb_ros/devel"
 PROJECT_VERSION = "0.2.3"

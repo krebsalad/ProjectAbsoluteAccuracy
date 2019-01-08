@@ -131,7 +131,7 @@ bool ConstBlinkLedFinder::waitForCloud()
 bool ConstBlinkLedFinder::find(robot_calibration_msgs::CalibrationData * msg)
 {
   // Try up to 50 frames
-  for (int i = 0; i < 10; ++i)        // SET HIGHER!!!!
+  for (int i = 0; i < 20; ++i)        // SET HIGHER!!!!
   {
     // temporary copy of msg, so we throw away all changes if findInternal() returns false
     robot_calibration_msgs::CalibrationData tmp_msg(*msg);

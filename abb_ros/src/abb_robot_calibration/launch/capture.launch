@@ -6,19 +6,20 @@
   <arg name="robot"  default="fieldlab_cel3_calib" />
   <arg name="manual" default="true"/>
   <arg name="output_file_ext" default="fieldlab_cel3_calib"/>
-  <arg name="calibrate_config_file_name" default="calibrate_mounted_cam.yaml"/> <!--calibrate_with_external_cam_and_mounted_led.yaml -->
+  <arg name="calibrate_config_file_name" default="calibrate_mounted_cam.yaml"/> <!--calibrate_with_external_cam_and_mounted_led..yaml -->
   <arg name="capture_config_file_name" default="capture_mounted_cam.yaml"/> <!--capture_with_external_cam_and_mounted_led.yaml -->
+  <arg name="calibration_poses_bag" default="calibration_poses_mounted_cam.bag"/>
+  <arg name="robot_utility_launch" default="false"/>
 
-  <!-- static args -->
+  <!-- path args -->
   <arg name="robot_package_path" value="(find $(arg robot))" />
   <arg name="dollar" value="$" />
-  
 
   <!-- launch robot_cal.launch from robot package -->
   <include file="$(arg dollar)$(arg robot_package_path)/launch/robot_cal.launch">
     <arg name="robot_ip" value="$(arg ip)"/>
     <arg name="rviz_planner" value="$(arg rviz)"/>
-    <arg name="camera_launch" value="false"/>
+    <arg name="camera_launch" value="true"/>
   </include>
 
   <!-- launch in manual mode -->
@@ -35,7 +36,7 @@
   <group unless="$(arg manual)">
     <rosparam command="delete" param="robot_calibration" />
     <node pkg="robot_calibration" type="calibrate" name="capture"
-          args="$(arg dollar)$(arg robot_package_path)/config/calibration_poses_mounted_checkerboard.bag"
+          args="$(arg dollar)$(arg robot_package_path)/config/$(arg calibration_poses_bag)"
           output="screen" required="true" launch-prefix="xterm -e">
       <rosparam file="$(arg dollar)$(arg robot_package_path)/config/$(arg capture_config_file_name)" command="load" />
     </node>
@@ -49,4 +50,11 @@
 
   <!-- Set output param code -->
   <param name="robot_calibration_file_output_ext" type="str" value="$(arg output_file_ext)" />
+
+  <!-- launch robot code node -->
+  <group if="$(arg robot_utility_launch)">
+    <node pkg="robot_code" type="robot_code_node" name="robot_positioning_utility" 
+    output="screen" launch-prefix="xterm -e">
+    </node>
+  </group>
 </launch>

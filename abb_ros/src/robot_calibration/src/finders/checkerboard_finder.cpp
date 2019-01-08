@@ -124,7 +124,7 @@ bool CheckerboardFinder::waitForCloud()
 bool CheckerboardFinder::find(robot_calibration_msgs::CalibrationData * msg)
 {
   // Try up to 50 frames
-  for (int i = 0; i < 50; ++i)
+  for (int i = 0; i < 25; ++i)
   {
     // temporary copy of msg, so we throw away all changes if findInternal() returns false
     robot_calibration_msgs::CalibrationData tmp_msg(*msg);
@@ -249,6 +249,7 @@ bool CheckerboardFinder::findInternal(robot_calibration_msgs::CalibrationData * 
       iter_cloud[0] = rgbd.point.x;
       iter_cloud[1] = rgbd.point.y;
       iter_cloud[2] = rgbd.point.z;
+      //ROS_INFO("Checkerboard point %d in 3d world: x: %f, y: %f, z: %f", i , rgbd.point.x, rgbd.point.y, rgbd.point.z);
       ++iter_cloud;
     }
 

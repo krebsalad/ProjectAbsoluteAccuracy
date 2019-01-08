@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jmg/abb_ros/src
+CMAKE_SOURCE_DIR = /home/turtle/abb_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jmg/abb_ros/build
+CMAKE_BINARY_DIR = /home/turtle/abb_ros/build
 
 # Utility rule file for run_tests_simple_message.
 
@@ -63,10 +63,10 @@ simple_message/CMakeFiles/run_tests_simple_message.dir/build: run_tests_simple_m
 .PHONY : simple_message/CMakeFiles/run_tests_simple_message.dir/build
 
 simple_message/CMakeFiles/run_tests_simple_message.dir/clean:
-	cd /home/jmg/abb_ros/build/simple_message && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_simple_message.dir/cmake_clean.cmake
+	cd /home/turtle/abb_ros/build/simple_message && $(CMAKE_COMMAND) -P CMakeFiles/run_tests_simple_message.dir/cmake_clean.cmake
 .PHONY : simple_message/CMakeFiles/run_tests_simple_message.dir/clean
 
 simple_message/CMakeFiles/run_tests_simple_message.dir/depend:
-	cd /home/jmg/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jmg/abb_ros/src /home/jmg/abb_ros/src/simple_message /home/jmg/abb_ros/build /home/jmg/abb_ros/build/simple_message /home/jmg/abb_ros/build/simple_message/CMakeFiles/run_tests_simple_message.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/turtle/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/turtle/abb_ros/src /home/turtle/abb_ros/src/simple_message /home/turtle/abb_ros/build /home/turtle/abb_ros/build/simple_message /home/turtle/abb_ros/build/simple_message/CMakeFiles/run_tests_simple_message.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : simple_message/CMakeFiles/run_tests_simple_message.dir/depend
 

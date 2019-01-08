@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/jmg/abb_ros/devel/include/robot_calibration_msgs/CalibrationData.h
+/home/turtle/abb_ros/devel/include/robot_calibration_msgs/CalibrationData.h
 string
 -
 vector
@@ -26,7 +26,7 @@ sensor_msgs/JointState.h
 robot_calibration_msgs/Observation.h
 -
 
-/home/jmg/abb_ros/devel/include/robot_calibration_msgs/CameraParameter.h
+/home/turtle/abb_ros/devel/include/robot_calibration_msgs/CameraParameter.h
 string
 -
 vector
@@ -42,7 +42,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/jmg/abb_ros/devel/include/robot_calibration_msgs/ExtendedCameraInfo.h
+/home/turtle/abb_ros/devel/include/robot_calibration_msgs/ExtendedCameraInfo.h
 string
 -
 vector
@@ -62,7 +62,7 @@ sensor_msgs/CameraInfo.h
 robot_calibration_msgs/CameraParameter.h
 -
 
-/home/jmg/abb_ros/devel/include/robot_calibration_msgs/GripperLedCommandAction.h
+/home/turtle/abb_ros/devel/include/robot_calibration_msgs/GripperLedCommandAction.h
 string
 -
 vector
@@ -84,7 +84,7 @@ robot_calibration_msgs/GripperLedCommandActionResult.h
 robot_calibration_msgs/GripperLedCommandActionFeedback.h
 -
 
-/home/jmg/abb_ros/devel/include/robot_calibration_msgs/GripperLedCommandActionFeedback.h
+/home/turtle/abb_ros/devel/include/robot_calibration_msgs/GripperLedCommandActionFeedback.h
 string
 -
 vector
@@ -106,7 +106,7 @@ actionlib_msgs/GoalStatus.h
 robot_calibration_msgs/GripperLedCommandFeedback.h
 -
 
-/home/jmg/abb_ros/devel/include/robot_calibration_msgs/GripperLedCommandActionGoal.h
+/home/turtle/abb_ros/devel/include/robot_calibration_msgs/GripperLedCommandActionGoal.h
 string
 -
 vector
@@ -128,7 +128,7 @@ actionlib_msgs/GoalID.h
 robot_calibration_msgs/GripperLedCommandGoal.h
 -
 
-/home/jmg/abb_ros/devel/include/robot_calibration_msgs/GripperLedCommandActionResult.h
+/home/turtle/abb_ros/devel/include/robot_calibration_msgs/GripperLedCommandActionResult.h
 string
 -
 vector
@@ -150,7 +150,7 @@ actionlib_msgs/GoalStatus.h
 robot_calibration_msgs/GripperLedCommandResult.h
 -
 
-/home/jmg/abb_ros/devel/include/robot_calibration_msgs/GripperLedCommandFeedback.h
+/home/turtle/abb_ros/devel/include/robot_calibration_msgs/GripperLedCommandFeedback.h
 string
 -
 vector
@@ -166,7 +166,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/jmg/abb_ros/devel/include/robot_calibration_msgs/GripperLedCommandGoal.h
+/home/turtle/abb_ros/devel/include/robot_calibration_msgs/GripperLedCommandGoal.h
 string
 -
 vector
@@ -182,7 +182,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/jmg/abb_ros/devel/include/robot_calibration_msgs/GripperLedCommandResult.h
+/home/turtle/abb_ros/devel/include/robot_calibration_msgs/GripperLedCommandResult.h
 string
 -
 vector
@@ -198,7 +198,7 @@ ros/builtin_message_traits.h
 ros/message_operations.h
 -
 
-/home/jmg/abb_ros/devel/include/robot_calibration_msgs/Observation.h
+/home/turtle/abb_ros/devel/include/robot_calibration_msgs/Observation.h
 string
 -
 vector
@@ -222,21 +222,7 @@ sensor_msgs/PointCloud2.h
 sensor_msgs/Image.h
 -
 
-/home/jmg/abb_ros/src/robot_calibration/include/robot_calibration/capture/checkerboard_finder.h
-ros/ros.h
--
-robot_calibration/capture/depth_camera.h
--
-robot_calibration/plugins/feature_finder.h
--
-robot_calibration_msgs/CalibrationData.h
--
-opencv2/calib3d/calib3d.hpp
--
-cv_bridge/cv_bridge.h
--
-
-/home/jmg/abb_ros/src/robot_calibration/include/robot_calibration/capture/const_blink_led_finder.h
+/home/turtle/abb_ros/src/robot_calibration/include/robot_calibration/capture/blinking_light_source_finder.h
 ros/ros.h
 -
 robot_calibration/capture/depth_camera.h
@@ -256,7 +242,21 @@ opencv2/imgproc/imgproc.hpp
 cv_bridge/cv_bridge.h
 -
 
-/home/jmg/abb_ros/src/robot_calibration/include/robot_calibration/capture/depth_camera.h
+/home/turtle/abb_ros/src/robot_calibration/include/robot_calibration/capture/checkerboard_finder.h
+ros/ros.h
+-
+robot_calibration/capture/depth_camera.h
+-
+robot_calibration/plugins/feature_finder.h
+-
+robot_calibration_msgs/CalibrationData.h
+-
+opencv2/calib3d/calib3d.hpp
+-
+cv_bridge/cv_bridge.h
+-
+
+/home/turtle/abb_ros/src/robot_calibration/include/robot_calibration/capture/depth_camera.h
 ros/ros.h
 -
 sensor_msgs/CameraInfo.h
@@ -266,7 +266,7 @@ robot_calibration_msgs/CalibrationData.h
 robot_calibration_msgs/ExtendedCameraInfo.h
 -
 
-/home/jmg/abb_ros/src/robot_calibration/include/robot_calibration/capture/led_finder.h
+/home/turtle/abb_ros/src/robot_calibration/include/robot_calibration/capture/led_finder.h
 ros/ros.h
 -
 robot_calibration/capture/depth_camera.h
@@ -288,7 +288,7 @@ robot_calibration_msgs/GripperLedCommandAction.h
 actionlib/client/simple_action_client.h
 -
 
-/home/jmg/abb_ros/src/robot_calibration/include/robot_calibration/capture/plane_finder.h
+/home/turtle/abb_ros/src/robot_calibration/include/robot_calibration/capture/plane_finder.h
 ros/ros.h
 -
 robot_calibration/capture/depth_camera.h
@@ -302,30 +302,18 @@ cv_bridge/cv_bridge.h
 tf2_ros/transform_listener.h
 -
 
-/home/jmg/abb_ros/src/robot_calibration/include/robot_calibration/plugins/feature_finder.h
+/home/turtle/abb_ros/src/robot_calibration/include/robot_calibration/plugins/feature_finder.h
 ros/ros.h
 -
 robot_calibration_msgs/CalibrationData.h
 -
 
-/home/jmg/abb_ros/src/robot_calibration/src/finders/checkerboard_finder.cpp
-pluginlib/class_list_macros.h
--
-robot_calibration/capture/checkerboard_finder.h
--
-sensor_msgs/point_cloud2_iterator.h
--
-sstream
--
-
-/home/jmg/abb_ros/src/robot_calibration/src/finders/const_blink_led_finder.cpp
+/home/turtle/abb_ros/src/robot_calibration/src/finders/blinking_light_source_finder.cpp
 math.h
 -
 pluginlib/class_list_macros.h
 -
-robot_calibration/capture/const_blink_led_finder.h
--
-robot_calibration/capture/led_finder.h
+robot_calibration/capture/blinking_light_source_finder.h
 -
 sensor_msgs/point_cloud2_iterator.h
 -
@@ -336,7 +324,17 @@ sensor_msgs/PointCloud2.h
 vector
 -
 
-/home/jmg/abb_ros/src/robot_calibration/src/finders/led_finder.cpp
+/home/turtle/abb_ros/src/robot_calibration/src/finders/checkerboard_finder.cpp
+pluginlib/class_list_macros.h
+-
+robot_calibration/capture/checkerboard_finder.h
+-
+sensor_msgs/point_cloud2_iterator.h
+-
+sstream
+-
+
+/home/turtle/abb_ros/src/robot_calibration/src/finders/led_finder.cpp
 math.h
 -
 pluginlib/class_list_macros.h
@@ -348,7 +346,7 @@ sensor_msgs/point_cloud2_iterator.h
 sensor_msgs/image_encodings.h
 -
 
-/home/jmg/abb_ros/src/robot_calibration/src/finders/plane_finder.cpp
+/home/turtle/abb_ros/src/robot_calibration/src/finders/plane_finder.cpp
 math.h
 -
 pluginlib/class_list_macros.h

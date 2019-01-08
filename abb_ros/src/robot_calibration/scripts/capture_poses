@@ -64,7 +64,7 @@ class CapturePoses:
             try:
                 idx = self.last_state_.joint_states.name.index(joint)
                 self.last_state_.joint_states.position[idx] = position
-                self.last_state_.features = ['checkerboard_finder']
+                self.last_state_.features = ['checkerboard_finder', 'blinking_light_source_finder']
             except ValueError:
                 self.last_state_.joint_states.name.append(joint)
                 self.last_state_.joint_states.position.append(position)

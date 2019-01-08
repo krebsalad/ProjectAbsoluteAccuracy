@@ -1,18 +1,18 @@
 
 "use strict";
 
-let DebugLevel = require('./DebugLevel.js');
-let DeviceInfo = require('./DeviceInfo.js');
-let RobotMode = require('./RobotMode.js');
-let TriState = require('./TriState.js');
-let RobotStatus = require('./RobotStatus.js');
 let ServiceReturnCode = require('./ServiceReturnCode.js');
+let DebugLevel = require('./DebugLevel.js');
+let RobotStatus = require('./RobotStatus.js');
+let RobotMode = require('./RobotMode.js');
+let DeviceInfo = require('./DeviceInfo.js');
+let TriState = require('./TriState.js');
 
 module.exports = {
-  DebugLevel: DebugLevel,
-  DeviceInfo: DeviceInfo,
-  RobotMode: RobotMode,
-  TriState: TriState,
-  RobotStatus: RobotStatus,
   ServiceReturnCode: ServiceReturnCode,
+  DebugLevel: DebugLevel,
+  RobotStatus: RobotStatus,
+  RobotMode: RobotMode,
+  DeviceInfo: DeviceInfo,
+  TriState: TriState,
 };

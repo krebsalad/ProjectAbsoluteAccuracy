@@ -43,135 +43,135 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jmg/abb_ros/src
+CMAKE_SOURCE_DIR = /home/turtle/abb_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jmg/abb_ros/build
+CMAKE_BINARY_DIR = /home/turtle/abb_ros/build
 
 # Utility rule file for industrial_msgs_generate_messages_cpp.
 
 # Include the progress variables for this target.
 include industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp.dir/progress.make
 
-industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/RobotMode.h
-industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/DebugLevel.h
-industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/TriState.h
-industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/RobotStatus.h
-industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/ServiceReturnCode.h
-industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/DeviceInfo.h
-industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/GetRobotInfo.h
-industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/SetRemoteLoggerLevel.h
-industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/CmdJointTrajectory.h
-industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/StopMotion.h
-industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/SetDrivePower.h
-industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/StartMotion.h
+industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/RobotMode.h
+industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/DebugLevel.h
+industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/TriState.h
+industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/ServiceReturnCode.h
+industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/DeviceInfo.h
+industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/RobotStatus.h
+industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/CmdJointTrajectory.h
+industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/GetRobotInfo.h
+industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/StopMotion.h
+industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/SetDrivePower.h
+industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/StartMotion.h
+industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/SetRemoteLoggerLevel.h
 
 
-/home/jmg/abb_ros/devel/include/industrial_msgs/RobotMode.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/jmg/abb_ros/devel/include/industrial_msgs/RobotMode.h: /home/jmg/abb_ros/src/industrial_msgs/msg/RobotMode.msg
-/home/jmg/abb_ros/devel/include/industrial_msgs/RobotMode.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from industrial_msgs/RobotMode.msg"
-	cd /home/jmg/abb_ros/src/industrial_msgs && /home/jmg/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/jmg/abb_ros/src/industrial_msgs/msg/RobotMode.msg -Iindustrial_msgs:/home/jmg/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/jmg/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/turtle/abb_ros/devel/include/industrial_msgs/RobotMode.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/turtle/abb_ros/devel/include/industrial_msgs/RobotMode.h: /home/turtle/abb_ros/src/industrial_msgs/msg/RobotMode.msg
+/home/turtle/abb_ros/devel/include/industrial_msgs/RobotMode.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating C++ code from industrial_msgs/RobotMode.msg"
+	cd /home/turtle/abb_ros/src/industrial_msgs && /home/turtle/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/turtle/abb_ros/src/industrial_msgs/msg/RobotMode.msg -Iindustrial_msgs:/home/turtle/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/turtle/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/jmg/abb_ros/devel/include/industrial_msgs/DebugLevel.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/jmg/abb_ros/devel/include/industrial_msgs/DebugLevel.h: /home/jmg/abb_ros/src/industrial_msgs/msg/DebugLevel.msg
-/home/jmg/abb_ros/devel/include/industrial_msgs/DebugLevel.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from industrial_msgs/DebugLevel.msg"
-	cd /home/jmg/abb_ros/src/industrial_msgs && /home/jmg/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/jmg/abb_ros/src/industrial_msgs/msg/DebugLevel.msg -Iindustrial_msgs:/home/jmg/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/jmg/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/turtle/abb_ros/devel/include/industrial_msgs/DebugLevel.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/turtle/abb_ros/devel/include/industrial_msgs/DebugLevel.h: /home/turtle/abb_ros/src/industrial_msgs/msg/DebugLevel.msg
+/home/turtle/abb_ros/devel/include/industrial_msgs/DebugLevel.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating C++ code from industrial_msgs/DebugLevel.msg"
+	cd /home/turtle/abb_ros/src/industrial_msgs && /home/turtle/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/turtle/abb_ros/src/industrial_msgs/msg/DebugLevel.msg -Iindustrial_msgs:/home/turtle/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/turtle/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/jmg/abb_ros/devel/include/industrial_msgs/TriState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/jmg/abb_ros/devel/include/industrial_msgs/TriState.h: /home/jmg/abb_ros/src/industrial_msgs/msg/TriState.msg
-/home/jmg/abb_ros/devel/include/industrial_msgs/TriState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from industrial_msgs/TriState.msg"
-	cd /home/jmg/abb_ros/src/industrial_msgs && /home/jmg/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/jmg/abb_ros/src/industrial_msgs/msg/TriState.msg -Iindustrial_msgs:/home/jmg/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/jmg/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/turtle/abb_ros/devel/include/industrial_msgs/TriState.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/turtle/abb_ros/devel/include/industrial_msgs/TriState.h: /home/turtle/abb_ros/src/industrial_msgs/msg/TriState.msg
+/home/turtle/abb_ros/devel/include/industrial_msgs/TriState.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating C++ code from industrial_msgs/TriState.msg"
+	cd /home/turtle/abb_ros/src/industrial_msgs && /home/turtle/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/turtle/abb_ros/src/industrial_msgs/msg/TriState.msg -Iindustrial_msgs:/home/turtle/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/turtle/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/jmg/abb_ros/devel/include/industrial_msgs/RobotStatus.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/jmg/abb_ros/devel/include/industrial_msgs/RobotStatus.h: /home/jmg/abb_ros/src/industrial_msgs/msg/RobotStatus.msg
-/home/jmg/abb_ros/devel/include/industrial_msgs/RobotStatus.h: /home/jmg/abb_ros/src/industrial_msgs/msg/TriState.msg
-/home/jmg/abb_ros/devel/include/industrial_msgs/RobotStatus.h: /home/jmg/abb_ros/src/industrial_msgs/msg/RobotMode.msg
-/home/jmg/abb_ros/devel/include/industrial_msgs/RobotStatus.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/jmg/abb_ros/devel/include/industrial_msgs/RobotStatus.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from industrial_msgs/RobotStatus.msg"
-	cd /home/jmg/abb_ros/src/industrial_msgs && /home/jmg/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/jmg/abb_ros/src/industrial_msgs/msg/RobotStatus.msg -Iindustrial_msgs:/home/jmg/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/jmg/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/turtle/abb_ros/devel/include/industrial_msgs/ServiceReturnCode.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/turtle/abb_ros/devel/include/industrial_msgs/ServiceReturnCode.h: /home/turtle/abb_ros/src/industrial_msgs/msg/ServiceReturnCode.msg
+/home/turtle/abb_ros/devel/include/industrial_msgs/ServiceReturnCode.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating C++ code from industrial_msgs/ServiceReturnCode.msg"
+	cd /home/turtle/abb_ros/src/industrial_msgs && /home/turtle/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/turtle/abb_ros/src/industrial_msgs/msg/ServiceReturnCode.msg -Iindustrial_msgs:/home/turtle/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/turtle/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/jmg/abb_ros/devel/include/industrial_msgs/ServiceReturnCode.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/jmg/abb_ros/devel/include/industrial_msgs/ServiceReturnCode.h: /home/jmg/abb_ros/src/industrial_msgs/msg/ServiceReturnCode.msg
-/home/jmg/abb_ros/devel/include/industrial_msgs/ServiceReturnCode.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating C++ code from industrial_msgs/ServiceReturnCode.msg"
-	cd /home/jmg/abb_ros/src/industrial_msgs && /home/jmg/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/jmg/abb_ros/src/industrial_msgs/msg/ServiceReturnCode.msg -Iindustrial_msgs:/home/jmg/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/jmg/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/turtle/abb_ros/devel/include/industrial_msgs/DeviceInfo.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/turtle/abb_ros/devel/include/industrial_msgs/DeviceInfo.h: /home/turtle/abb_ros/src/industrial_msgs/msg/DeviceInfo.msg
+/home/turtle/abb_ros/devel/include/industrial_msgs/DeviceInfo.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating C++ code from industrial_msgs/DeviceInfo.msg"
+	cd /home/turtle/abb_ros/src/industrial_msgs && /home/turtle/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/turtle/abb_ros/src/industrial_msgs/msg/DeviceInfo.msg -Iindustrial_msgs:/home/turtle/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/turtle/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/jmg/abb_ros/devel/include/industrial_msgs/DeviceInfo.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/jmg/abb_ros/devel/include/industrial_msgs/DeviceInfo.h: /home/jmg/abb_ros/src/industrial_msgs/msg/DeviceInfo.msg
-/home/jmg/abb_ros/devel/include/industrial_msgs/DeviceInfo.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating C++ code from industrial_msgs/DeviceInfo.msg"
-	cd /home/jmg/abb_ros/src/industrial_msgs && /home/jmg/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/jmg/abb_ros/src/industrial_msgs/msg/DeviceInfo.msg -Iindustrial_msgs:/home/jmg/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/jmg/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/turtle/abb_ros/devel/include/industrial_msgs/RobotStatus.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/turtle/abb_ros/devel/include/industrial_msgs/RobotStatus.h: /home/turtle/abb_ros/src/industrial_msgs/msg/RobotStatus.msg
+/home/turtle/abb_ros/devel/include/industrial_msgs/RobotStatus.h: /home/turtle/abb_ros/src/industrial_msgs/msg/RobotMode.msg
+/home/turtle/abb_ros/devel/include/industrial_msgs/RobotStatus.h: /home/turtle/abb_ros/src/industrial_msgs/msg/TriState.msg
+/home/turtle/abb_ros/devel/include/industrial_msgs/RobotStatus.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/turtle/abb_ros/devel/include/industrial_msgs/RobotStatus.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating C++ code from industrial_msgs/RobotStatus.msg"
+	cd /home/turtle/abb_ros/src/industrial_msgs && /home/turtle/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/turtle/abb_ros/src/industrial_msgs/msg/RobotStatus.msg -Iindustrial_msgs:/home/turtle/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/turtle/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/jmg/abb_ros/devel/include/industrial_msgs/GetRobotInfo.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/jmg/abb_ros/devel/include/industrial_msgs/GetRobotInfo.h: /home/jmg/abb_ros/src/industrial_msgs/srv/GetRobotInfo.srv
-/home/jmg/abb_ros/devel/include/industrial_msgs/GetRobotInfo.h: /home/jmg/abb_ros/src/industrial_msgs/msg/DeviceInfo.msg
-/home/jmg/abb_ros/devel/include/industrial_msgs/GetRobotInfo.h: /home/jmg/abb_ros/src/industrial_msgs/msg/ServiceReturnCode.msg
-/home/jmg/abb_ros/devel/include/industrial_msgs/GetRobotInfo.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-/home/jmg/abb_ros/devel/include/industrial_msgs/GetRobotInfo.h: /opt/ros/kinetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating C++ code from industrial_msgs/GetRobotInfo.srv"
-	cd /home/jmg/abb_ros/src/industrial_msgs && /home/jmg/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/jmg/abb_ros/src/industrial_msgs/srv/GetRobotInfo.srv -Iindustrial_msgs:/home/jmg/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/jmg/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/turtle/abb_ros/devel/include/industrial_msgs/CmdJointTrajectory.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/turtle/abb_ros/devel/include/industrial_msgs/CmdJointTrajectory.h: /home/turtle/abb_ros/src/industrial_msgs/srv/CmdJointTrajectory.srv
+/home/turtle/abb_ros/devel/include/industrial_msgs/CmdJointTrajectory.h: /home/turtle/abb_ros/src/industrial_msgs/msg/ServiceReturnCode.msg
+/home/turtle/abb_ros/devel/include/industrial_msgs/CmdJointTrajectory.h: /opt/ros/kinetic/share/trajectory_msgs/msg/JointTrajectoryPoint.msg
+/home/turtle/abb_ros/devel/include/industrial_msgs/CmdJointTrajectory.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
+/home/turtle/abb_ros/devel/include/industrial_msgs/CmdJointTrajectory.h: /opt/ros/kinetic/share/trajectory_msgs/msg/JointTrajectory.msg
+/home/turtle/abb_ros/devel/include/industrial_msgs/CmdJointTrajectory.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+/home/turtle/abb_ros/devel/include/industrial_msgs/CmdJointTrajectory.h: /opt/ros/kinetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Generating C++ code from industrial_msgs/CmdJointTrajectory.srv"
+	cd /home/turtle/abb_ros/src/industrial_msgs && /home/turtle/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/turtle/abb_ros/src/industrial_msgs/srv/CmdJointTrajectory.srv -Iindustrial_msgs:/home/turtle/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/turtle/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/jmg/abb_ros/devel/include/industrial_msgs/SetRemoteLoggerLevel.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/jmg/abb_ros/devel/include/industrial_msgs/SetRemoteLoggerLevel.h: /home/jmg/abb_ros/src/industrial_msgs/srv/SetRemoteLoggerLevel.srv
-/home/jmg/abb_ros/devel/include/industrial_msgs/SetRemoteLoggerLevel.h: /home/jmg/abb_ros/src/industrial_msgs/msg/DebugLevel.msg
-/home/jmg/abb_ros/devel/include/industrial_msgs/SetRemoteLoggerLevel.h: /home/jmg/abb_ros/src/industrial_msgs/msg/ServiceReturnCode.msg
-/home/jmg/abb_ros/devel/include/industrial_msgs/SetRemoteLoggerLevel.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-/home/jmg/abb_ros/devel/include/industrial_msgs/SetRemoteLoggerLevel.h: /opt/ros/kinetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating C++ code from industrial_msgs/SetRemoteLoggerLevel.srv"
-	cd /home/jmg/abb_ros/src/industrial_msgs && /home/jmg/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/jmg/abb_ros/src/industrial_msgs/srv/SetRemoteLoggerLevel.srv -Iindustrial_msgs:/home/jmg/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/jmg/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/turtle/abb_ros/devel/include/industrial_msgs/GetRobotInfo.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/turtle/abb_ros/devel/include/industrial_msgs/GetRobotInfo.h: /home/turtle/abb_ros/src/industrial_msgs/srv/GetRobotInfo.srv
+/home/turtle/abb_ros/devel/include/industrial_msgs/GetRobotInfo.h: /home/turtle/abb_ros/src/industrial_msgs/msg/ServiceReturnCode.msg
+/home/turtle/abb_ros/devel/include/industrial_msgs/GetRobotInfo.h: /home/turtle/abb_ros/src/industrial_msgs/msg/DeviceInfo.msg
+/home/turtle/abb_ros/devel/include/industrial_msgs/GetRobotInfo.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+/home/turtle/abb_ros/devel/include/industrial_msgs/GetRobotInfo.h: /opt/ros/kinetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Generating C++ code from industrial_msgs/GetRobotInfo.srv"
+	cd /home/turtle/abb_ros/src/industrial_msgs && /home/turtle/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/turtle/abb_ros/src/industrial_msgs/srv/GetRobotInfo.srv -Iindustrial_msgs:/home/turtle/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/turtle/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/jmg/abb_ros/devel/include/industrial_msgs/CmdJointTrajectory.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/jmg/abb_ros/devel/include/industrial_msgs/CmdJointTrajectory.h: /home/jmg/abb_ros/src/industrial_msgs/srv/CmdJointTrajectory.srv
-/home/jmg/abb_ros/devel/include/industrial_msgs/CmdJointTrajectory.h: /opt/ros/kinetic/share/trajectory_msgs/msg/JointTrajectoryPoint.msg
-/home/jmg/abb_ros/devel/include/industrial_msgs/CmdJointTrajectory.h: /opt/ros/kinetic/share/std_msgs/msg/Header.msg
-/home/jmg/abb_ros/devel/include/industrial_msgs/CmdJointTrajectory.h: /home/jmg/abb_ros/src/industrial_msgs/msg/ServiceReturnCode.msg
-/home/jmg/abb_ros/devel/include/industrial_msgs/CmdJointTrajectory.h: /opt/ros/kinetic/share/trajectory_msgs/msg/JointTrajectory.msg
-/home/jmg/abb_ros/devel/include/industrial_msgs/CmdJointTrajectory.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-/home/jmg/abb_ros/devel/include/industrial_msgs/CmdJointTrajectory.h: /opt/ros/kinetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating C++ code from industrial_msgs/CmdJointTrajectory.srv"
-	cd /home/jmg/abb_ros/src/industrial_msgs && /home/jmg/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/jmg/abb_ros/src/industrial_msgs/srv/CmdJointTrajectory.srv -Iindustrial_msgs:/home/jmg/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/jmg/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/turtle/abb_ros/devel/include/industrial_msgs/StopMotion.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/turtle/abb_ros/devel/include/industrial_msgs/StopMotion.h: /home/turtle/abb_ros/src/industrial_msgs/srv/StopMotion.srv
+/home/turtle/abb_ros/devel/include/industrial_msgs/StopMotion.h: /home/turtle/abb_ros/src/industrial_msgs/msg/ServiceReturnCode.msg
+/home/turtle/abb_ros/devel/include/industrial_msgs/StopMotion.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+/home/turtle/abb_ros/devel/include/industrial_msgs/StopMotion.h: /opt/ros/kinetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Generating C++ code from industrial_msgs/StopMotion.srv"
+	cd /home/turtle/abb_ros/src/industrial_msgs && /home/turtle/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/turtle/abb_ros/src/industrial_msgs/srv/StopMotion.srv -Iindustrial_msgs:/home/turtle/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/turtle/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/jmg/abb_ros/devel/include/industrial_msgs/StopMotion.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/jmg/abb_ros/devel/include/industrial_msgs/StopMotion.h: /home/jmg/abb_ros/src/industrial_msgs/srv/StopMotion.srv
-/home/jmg/abb_ros/devel/include/industrial_msgs/StopMotion.h: /home/jmg/abb_ros/src/industrial_msgs/msg/ServiceReturnCode.msg
-/home/jmg/abb_ros/devel/include/industrial_msgs/StopMotion.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-/home/jmg/abb_ros/devel/include/industrial_msgs/StopMotion.h: /opt/ros/kinetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating C++ code from industrial_msgs/StopMotion.srv"
-	cd /home/jmg/abb_ros/src/industrial_msgs && /home/jmg/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/jmg/abb_ros/src/industrial_msgs/srv/StopMotion.srv -Iindustrial_msgs:/home/jmg/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/jmg/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/turtle/abb_ros/devel/include/industrial_msgs/SetDrivePower.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/turtle/abb_ros/devel/include/industrial_msgs/SetDrivePower.h: /home/turtle/abb_ros/src/industrial_msgs/srv/SetDrivePower.srv
+/home/turtle/abb_ros/devel/include/industrial_msgs/SetDrivePower.h: /home/turtle/abb_ros/src/industrial_msgs/msg/ServiceReturnCode.msg
+/home/turtle/abb_ros/devel/include/industrial_msgs/SetDrivePower.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+/home/turtle/abb_ros/devel/include/industrial_msgs/SetDrivePower.h: /opt/ros/kinetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Generating C++ code from industrial_msgs/SetDrivePower.srv"
+	cd /home/turtle/abb_ros/src/industrial_msgs && /home/turtle/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/turtle/abb_ros/src/industrial_msgs/srv/SetDrivePower.srv -Iindustrial_msgs:/home/turtle/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/turtle/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/jmg/abb_ros/devel/include/industrial_msgs/SetDrivePower.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/jmg/abb_ros/devel/include/industrial_msgs/SetDrivePower.h: /home/jmg/abb_ros/src/industrial_msgs/srv/SetDrivePower.srv
-/home/jmg/abb_ros/devel/include/industrial_msgs/SetDrivePower.h: /home/jmg/abb_ros/src/industrial_msgs/msg/ServiceReturnCode.msg
-/home/jmg/abb_ros/devel/include/industrial_msgs/SetDrivePower.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-/home/jmg/abb_ros/devel/include/industrial_msgs/SetDrivePower.h: /opt/ros/kinetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating C++ code from industrial_msgs/SetDrivePower.srv"
-	cd /home/jmg/abb_ros/src/industrial_msgs && /home/jmg/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/jmg/abb_ros/src/industrial_msgs/srv/SetDrivePower.srv -Iindustrial_msgs:/home/jmg/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/jmg/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/turtle/abb_ros/devel/include/industrial_msgs/StartMotion.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/turtle/abb_ros/devel/include/industrial_msgs/StartMotion.h: /home/turtle/abb_ros/src/industrial_msgs/srv/StartMotion.srv
+/home/turtle/abb_ros/devel/include/industrial_msgs/StartMotion.h: /home/turtle/abb_ros/src/industrial_msgs/msg/ServiceReturnCode.msg
+/home/turtle/abb_ros/devel/include/industrial_msgs/StartMotion.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+/home/turtle/abb_ros/devel/include/industrial_msgs/StartMotion.h: /opt/ros/kinetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Generating C++ code from industrial_msgs/StartMotion.srv"
+	cd /home/turtle/abb_ros/src/industrial_msgs && /home/turtle/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/turtle/abb_ros/src/industrial_msgs/srv/StartMotion.srv -Iindustrial_msgs:/home/turtle/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/turtle/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
-/home/jmg/abb_ros/devel/include/industrial_msgs/StartMotion.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
-/home/jmg/abb_ros/devel/include/industrial_msgs/StartMotion.h: /home/jmg/abb_ros/src/industrial_msgs/srv/StartMotion.srv
-/home/jmg/abb_ros/devel/include/industrial_msgs/StartMotion.h: /home/jmg/abb_ros/src/industrial_msgs/msg/ServiceReturnCode.msg
-/home/jmg/abb_ros/devel/include/industrial_msgs/StartMotion.h: /opt/ros/kinetic/share/gencpp/msg.h.template
-/home/jmg/abb_ros/devel/include/industrial_msgs/StartMotion.h: /opt/ros/kinetic/share/gencpp/srv.h.template
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/jmg/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating C++ code from industrial_msgs/StartMotion.srv"
-	cd /home/jmg/abb_ros/src/industrial_msgs && /home/jmg/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/jmg/abb_ros/src/industrial_msgs/srv/StartMotion.srv -Iindustrial_msgs:/home/jmg/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/jmg/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
+/home/turtle/abb_ros/devel/include/industrial_msgs/SetRemoteLoggerLevel.h: /opt/ros/kinetic/lib/gencpp/gen_cpp.py
+/home/turtle/abb_ros/devel/include/industrial_msgs/SetRemoteLoggerLevel.h: /home/turtle/abb_ros/src/industrial_msgs/srv/SetRemoteLoggerLevel.srv
+/home/turtle/abb_ros/devel/include/industrial_msgs/SetRemoteLoggerLevel.h: /home/turtle/abb_ros/src/industrial_msgs/msg/DebugLevel.msg
+/home/turtle/abb_ros/devel/include/industrial_msgs/SetRemoteLoggerLevel.h: /home/turtle/abb_ros/src/industrial_msgs/msg/ServiceReturnCode.msg
+/home/turtle/abb_ros/devel/include/industrial_msgs/SetRemoteLoggerLevel.h: /opt/ros/kinetic/share/gencpp/msg.h.template
+/home/turtle/abb_ros/devel/include/industrial_msgs/SetRemoteLoggerLevel.h: /opt/ros/kinetic/share/gencpp/srv.h.template
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/turtle/abb_ros/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Generating C++ code from industrial_msgs/SetRemoteLoggerLevel.srv"
+	cd /home/turtle/abb_ros/src/industrial_msgs && /home/turtle/abb_ros/build/catkin_generated/env_cached.sh /usr/bin/python /opt/ros/kinetic/share/gencpp/cmake/../../../lib/gencpp/gen_cpp.py /home/turtle/abb_ros/src/industrial_msgs/srv/SetRemoteLoggerLevel.srv -Iindustrial_msgs:/home/turtle/abb_ros/src/industrial_msgs/msg -Itrajectory_msgs:/opt/ros/kinetic/share/trajectory_msgs/cmake/../msg -Istd_msgs:/opt/ros/kinetic/share/std_msgs/cmake/../msg -Igeometry_msgs:/opt/ros/kinetic/share/geometry_msgs/cmake/../msg -p industrial_msgs -o /home/turtle/abb_ros/devel/include/industrial_msgs -e /opt/ros/kinetic/share/gencpp/cmake/..
 
 industrial_msgs_generate_messages_cpp: industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp
-industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/RobotMode.h
-industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/DebugLevel.h
-industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/TriState.h
-industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/RobotStatus.h
-industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/ServiceReturnCode.h
-industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/DeviceInfo.h
-industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/GetRobotInfo.h
-industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/SetRemoteLoggerLevel.h
-industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/CmdJointTrajectory.h
-industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/StopMotion.h
-industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/SetDrivePower.h
-industrial_msgs_generate_messages_cpp: /home/jmg/abb_ros/devel/include/industrial_msgs/StartMotion.h
+industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/RobotMode.h
+industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/DebugLevel.h
+industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/TriState.h
+industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/ServiceReturnCode.h
+industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/DeviceInfo.h
+industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/RobotStatus.h
+industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/CmdJointTrajectory.h
+industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/GetRobotInfo.h
+industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/StopMotion.h
+industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/SetDrivePower.h
+industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/StartMotion.h
+industrial_msgs_generate_messages_cpp: /home/turtle/abb_ros/devel/include/industrial_msgs/SetRemoteLoggerLevel.h
 industrial_msgs_generate_messages_cpp: industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp.dir/build.make
 
 .PHONY : industrial_msgs_generate_messages_cpp
@@ -182,10 +182,10 @@ industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp.dir/build: indu
 .PHONY : industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp.dir/build
 
 industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp.dir/clean:
-	cd /home/jmg/abb_ros/build/industrial_msgs && $(CMAKE_COMMAND) -P CMakeFiles/industrial_msgs_generate_messages_cpp.dir/cmake_clean.cmake
+	cd /home/turtle/abb_ros/build/industrial_msgs && $(CMAKE_COMMAND) -P CMakeFiles/industrial_msgs_generate_messages_cpp.dir/cmake_clean.cmake
 .PHONY : industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp.dir/clean
 
 industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp.dir/depend:
-	cd /home/jmg/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jmg/abb_ros/src /home/jmg/abb_ros/src/industrial_msgs /home/jmg/abb_ros/build /home/jmg/abb_ros/build/industrial_msgs /home/jmg/abb_ros/build/industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/turtle/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/turtle/abb_ros/src /home/turtle/abb_ros/src/industrial_msgs /home/turtle/abb_ros/build /home/turtle/abb_ros/build/industrial_msgs /home/turtle/abb_ros/build/industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : industrial_msgs/CMakeFiles/industrial_msgs_generate_messages_cpp.dir/depend
 

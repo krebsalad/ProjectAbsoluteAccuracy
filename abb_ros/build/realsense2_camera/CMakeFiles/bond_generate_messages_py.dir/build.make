@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/jmg/abb_ros/src
+CMAKE_SOURCE_DIR = /home/turtle/abb_ros/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/jmg/abb_ros/build
+CMAKE_BINARY_DIR = /home/turtle/abb_ros/build
 
 # Utility rule file for bond_generate_messages_py.
 
@@ -63,10 +63,10 @@ realsense2_camera/CMakeFiles/bond_generate_messages_py.dir/build: bond_generate_
 .PHONY : realsense2_camera/CMakeFiles/bond_generate_messages_py.dir/build
 
 realsense2_camera/CMakeFiles/bond_generate_messages_py.dir/clean:
-	cd /home/jmg/abb_ros/build/realsense2_camera && $(CMAKE_COMMAND) -P CMakeFiles/bond_generate_messages_py.dir/cmake_clean.cmake
+	cd /home/turtle/abb_ros/build/realsense2_camera && $(CMAKE_COMMAND) -P CMakeFiles/bond_generate_messages_py.dir/cmake_clean.cmake
 .PHONY : realsense2_camera/CMakeFiles/bond_generate_messages_py.dir/clean
 
 realsense2_camera/CMakeFiles/bond_generate_messages_py.dir/depend:
-	cd /home/jmg/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/jmg/abb_ros/src /home/jmg/abb_ros/src/realsense2_camera /home/jmg/abb_ros/build /home/jmg/abb_ros/build/realsense2_camera /home/jmg/abb_ros/build/realsense2_camera/CMakeFiles/bond_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/turtle/abb_ros/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/turtle/abb_ros/src /home/turtle/abb_ros/src/realsense2_camera /home/turtle/abb_ros/build /home/turtle/abb_ros/build/realsense2_camera /home/turtle/abb_ros/build/realsense2_camera/CMakeFiles/bond_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : realsense2_camera/CMakeFiles/bond_generate_messages_py.dir/depend
 

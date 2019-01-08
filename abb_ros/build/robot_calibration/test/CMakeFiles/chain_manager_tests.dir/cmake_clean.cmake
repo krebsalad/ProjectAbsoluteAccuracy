@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/chain_manager_tests.dir/chain_manager_tests.cpp.o"
-  "/home/jmg/abb_ros/devel/lib/robot_calibration/chain_manager_tests.pdb"
-  "/home/jmg/abb_ros/devel/lib/robot_calibration/chain_manager_tests"
+  "/home/turtle/abb_ros/devel/lib/robot_calibration/chain_manager_tests.pdb"
+  "/home/turtle/abb_ros/devel/lib/robot_calibration/chain_manager_tests"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -6,5 +6,5 @@ CXX_FLAGS = -fPIC
 
 CXX_DEFINES = -DLINUXSOCKETS=1 -DROS=1 -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\"industrial_robot_client\" -Dindustrial_robot_client_dummy_EXPORTS
 
-CXX_INCLUDES = -I/home/jmg/abb_ros/src/industrial_robot_client/include -I/home/jmg/abb_ros/devel/include -I/home/jmg/abb_ros/src/simple_message/include -I/home/jmg/abb_ros/src/industrial_utils/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
+CXX_INCLUDES = -I/home/turtle/abb_ros/src/industrial_robot_client/include -I/home/turtle/abb_ros/devel/include -I/home/turtle/abb_ros/src/simple_message/include -I/home/turtle/abb_ros/src/industrial_utils/include -I/opt/ros/kinetic/include -I/opt/ros/kinetic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp 
 

@@ -15,6 +15,8 @@
 #include <kdl_parser/kdl_parser.hpp>
 #include <visualization_msgs/Marker.h>
 
+#include <tf/transform_listener.h>
+
 
 namespace robot_positioning_utility
 {
@@ -23,6 +25,7 @@ struct custom_position
 {
     custom_position():w(0), x(0), y(0), z(0), o_x(0), o_y(0), o_z(0) {}     //default constructor
     custom_position(double _x, double _y, double _z):w(0), x(_x), y(_y), z(_z), o_x(0), o_y(0), o_z(0) {} //constructor with params
+    custom_position(double _w, double _o_x, double _o_y, double _o_z, double _x, double _y, double _z):w(_w), x(_x), y(_y), z(_z), o_x(_o_x), o_y(_o_y), o_z(_o_z) {}
     void stream_char_to_position(char* c_x, char* c_y, char* c_z)    //set values with stringstream
     {
         std::stringstream s_x;
@@ -232,7 +235,7 @@ std::string getMoveGroupCurrentPositionAsString(moveit::planning_interface::Move
     return strorientation + strPosition;
 }
 
-visualization_msgs::Marker createVizualizationMarker(custom_position* pos, std::string namespace_name, int identifier)
+visualization_msgs::Marker createVizualizationMarker(custom_position* pos, custom_position* ref_pos, std::string namespace_name, int identifier)
 {
     //create and modify frame
     visualization_msgs::Marker marker;
@@ -244,15 +247,15 @@ visualization_msgs::Marker createVizualizationMarker(custom_position* pos, std::
     marker.action = visualization_msgs::Marker::ADD;
 
     //transform frame
-    marker.pose.position.x = pos->x;
-    marker.pose.position.y = pos->y;
-    marker.pose.position.z = pos->z;
+    marker.pose.position.x = pos->x + ref_pos->x;
+    marker.pose.position.y = pos->y + ref_pos->y;
+    marker.pose.position.z = pos->z + ref_pos->z;
 
     //rotate frame
-    marker.pose.orientation.x = pos->o_x;
-    marker.pose.orientation.y = pos->o_y;
-    marker.pose.orientation.z = pos->o_z;
-    marker.pose.orientation.w = pos->w;
+    marker.pose.orientation.x = pos->o_x + ref_pos->o_x;
+    marker.pose.orientation.y = pos->o_y + ref_pos->o_y;
+    marker.pose.orientation.z = pos->o_z + ref_pos->o_z;
+    marker.pose.orientation.w = ref_pos->w;
 
     //scale frame
     marker.scale.x = 0.25;
@@ -295,6 +298,9 @@ int main(int argc, char* argv[])
     //setup vizualisation
     ros::Publisher viz_pub = node.advertise<visualization_msgs::Marker>("visualization_marker", 1);
 
+    //setup tf listener
+    tf::TransformListener tf_listener;
+
     while(ros::ok)
     {
         std::vector<visualization_msgs::Marker> pub_markers;
@@ -321,10 +327,19 @@ int main(int argc, char* argv[])
             ROS_INFO("First, do input namespace of the frame and identifier. Note that using the same ns and identifier will result in modifying instead of creating a new one");
             std::string namespace_input;
             std::string frame_id_str;
+            std::string parent_reference_frame;
+            std::string child_reference_frame;
+
+
             ROS_INFO("frame namespace:");
             std::getline(std::cin, namespace_input);
             ROS_INFO("identifier:");
             std::getline(std::cin, frame_id_str);
+            ROS_INFO("parent reference frame to lookup from transform:");
+            std::getline(std::cin, parent_reference_frame);
+            ROS_INFO("child reference frame to lookup from transform:");
+            std::getline(std::cin, child_reference_frame);
+
 
             //convert string to int
             int frame_id = 0;
@@ -337,8 +352,22 @@ int main(int argc, char* argv[])
             robot_positioning_utility::custom_position* position = new robot_positioning_utility::custom_position();
             position->askForPositionInput();
 
+            //get reference transform
+            tf::StampedTransform transform;
+
+            tf_listener.waitForTransform(child_reference_frame, parent_reference_frame, ros::Time(0), ros::Duration(3.0));
+
+            tf_listener.lookupTransform(child_reference_frame, parent_reference_frame,
+                                    ros::Time(0), transform);
+
+            //create reference frame
+            tf::Quaternion rotation = transform.getRotation();
+            tf::Vector3 transition = transform.getOrigin();
+            robot_positioning_utility::custom_position* reference_position = new robot_positioning_utility::custom_position(rotation.getW(), rotation.getAxis().x(), rotation.getAxis().y(), rotation.getAxis().z(), transition.x(), transition.y(), transition.z());
+            ROS_INFO("Found reference position: %s", reference_position->getPositionAsString().c_str());
+
             //vizualize point in rviz  
-            visualization_msgs::Marker marker = robot_positioning_utility::createVizualizationMarker(position, namespace_input, frame_id);
+            visualization_msgs::Marker marker = robot_positioning_utility::createVizualizationMarker(position, reference_position, namespace_input, frame_id);
             pub_markers.push_back(marker);
             delete position;
         }
