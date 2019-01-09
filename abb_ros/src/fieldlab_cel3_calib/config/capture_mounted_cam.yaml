@@ -19,7 +19,7 @@ features:
     points_x: 7
     points_y: 5
     size: 0.030
-  checkerboard_finder:
+  checkerboard_finder_2:
     type: robot_calibration/CheckerboardFinder
     topic: /camera/depth_registered/points
     camera_sensor_name: camera
@@ -27,7 +27,7 @@ features:
     points_x: 6
     points_y: 4
     size: 0.030
-  checkerboard_finder:
+  checkerboard_finder_3:
     type: robot_calibration/CheckerboardFinder
     topic: /camera/depth_registered/points
     camera_sensor_name: camera
@@ -35,8 +35,3 @@ features:
     points_x: 5
     points_y: 3
     size: 0.030
-  blinking_light_source_finder:
-    type: robot_calibration/BlinkingLightSourceFinder
-    topic: /camera/depth_registered/points
-    camera_sensor_name: camera
-    chain_sensor_name: group1

@@ -58,7 +58,7 @@ bool CheckerboardFinder::init(const std::string& name,
   std::string topic_name;
   nh.param<std::string>("topic", topic_name, "/points");
 
-  std::string logTxt = "Checkerboard finder subscirbed to: "+topic_name;
+  std::string logTxt = "Checkerboard finder subscribed to: "+topic_name;
   ROS_WARN(logTxt.c_str());
   subscriber_ = nh.subscribe(topic_name,
                              1,
@@ -266,7 +266,7 @@ bool CheckerboardFinder::findInternal(robot_calibration_msgs::CalibrationData * 
     return true;
   }
 
-  std::string logText = "Did not find checkerboard in pointcloud. Expected checkerboard corner Points in x:" + cpp11_patch::to_string(points_x_) + "points in y:" + cpp11_patch::to_string(points_y_);
+  std::string logText = "Did not find checkerboard in pointcloud. Expected checkerboard corner Points in x:" + cpp11_patch::to_string(points_x_) + "points in y:" + cpp11_patch::to_string(points_y_) + "square size: "+ cpp11_patch::to_string(square_size_);
   ROS_ERROR(logText.c_str());
   return false;
 }
