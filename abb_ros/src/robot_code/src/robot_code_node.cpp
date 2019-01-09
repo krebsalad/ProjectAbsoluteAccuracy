@@ -26,7 +26,7 @@ struct custom_position
     custom_position():w(0), x(0), y(0), z(0), o_x(0), o_y(0), o_z(0) {}     //default constructor
     custom_position(double _x, double _y, double _z):w(0), x(_x), y(_y), z(_z), o_x(0), o_y(0), o_z(0) {} //constructor with params
     custom_position(double _w, double _o_x, double _o_y, double _o_z, double _x, double _y, double _z):w(_w), x(_x), y(_y), z(_z), o_x(_o_x), o_y(_o_y), o_z(_o_z) {}
-    void stream_char_to_position(char* c_x, char* c_y, char* c_z)    //set values with stringstream
+    void stream_char_to_position(const char* c_x, const char* c_y, const char* c_z)    //set values with stringstream
     {
         std::stringstream s_x;
         std::stringstream s_y;
@@ -39,7 +39,7 @@ struct custom_position
         s_y >> y;
         s_z >> z;
     }
-    void stream_char_to_orientation(char* c_w, char* c_x, char* c_y, char* c_z)    //set values with stringstream
+    void stream_char_to_orientation(const char* c_w, const char* c_x, const char* c_y, const char* c_z)    //set values with stringstream
     {
         std::stringstream s_w;
         std::stringstream s_x;
@@ -68,15 +68,122 @@ struct custom_position
         target_pose.position.z = z;
         return target_pose;
     }
+
     std::string getPositionAsString()
     {
-        std::string str = "[w: ";
-        str += std::to_string(w) + ", x:";
-        str += std::to_string(x) + ", y:";
-        str += std::to_string(y) + ", z:";
+        std::string str = "Orientation:[";
+        str += std::to_string(w) + ", ";
+        str += std::to_string(o_x) + ", ";
+        str += std::to_string(o_y) + ", ";
+        str += std::to_string(o_z) + "]";
+        str += ", Position:[";
+        str += std::to_string(x) + ", ";
+        str += std::to_string(y) + ", ";
         str += std::to_string(z) + "]";
         return str;
     }
+
+    bool setPositionFromString(std::string pose_as_string)
+    {
+        std::vector<std::string> orientation;  //orientation
+        std::vector<std::string> position;  //position
+
+        int iter = 0;
+
+        while(iter < pose_as_string.size() && pose_as_string[iter] != '[') iter++; // go to first starting column
+        if(iter >= pose_as_string.size()) return false;
+
+        iter++; // skip ' [ ' 
+        // we expect 4 values
+        for (int i = 0; i < 4; i++)
+        {
+            orientation.push_back(std::string(""));
+
+            // loop till , or ]
+            while(iter < pose_as_string.size() && pose_as_string[iter] != ',' && pose_as_string[iter] != ']') 
+            {
+                orientation[i] += pose_as_string[iter];
+                iter++;
+            }
+
+            // if the current char is a , then capture the next value
+            if(pose_as_string[iter] == ',')
+            {
+                iter++; //skip ,
+                continue;
+            }
+
+            // if the current char is a ] then exit the loop
+            if(pose_as_string[iter] == ']')
+            {
+                break;
+            }
+
+            //if we reached here, then there is a fault in the given string
+            if(iter >= pose_as_string.size()) 
+            {
+                ROS_ERROR("given string is invalid, exiting parser");
+                return false;
+            }
+        }
+
+        //if the amount of values is not equal to 4, quit
+        if(orientation.size() != 4)
+        {
+            ROS_ERROR("size of orientation is to small, exiting parser");
+            return false;
+        }
+
+        //make sure we exited loop correctly
+        if(pose_as_string[iter] == ']')
+        {
+            while(iter < pose_as_string.size() && pose_as_string[iter] != '[') iter++; // go to second starting column
+        }
+        else
+        {
+            return false;
+        }
+
+        iter++; // skip ' [ ' 
+        // we expect 3 values
+        for (int i = 0; i < 3; i++)
+        {
+            position.push_back(std::string(""));
+
+            // loop till , or ]
+            while(iter < pose_as_string.size() && pose_as_string[iter] != ',' && pose_as_string[iter] != ']') 
+            {
+                position[i] += pose_as_string[iter];
+                iter++;
+            }
+
+            // if the current char is a , then capture the next value
+            if(pose_as_string[iter] == ',')
+            {
+                iter++; //skip ,
+                continue;
+            }
+
+            // if the current char is a ] then exit the loop
+            if(pose_as_string[iter] == ']')
+            {
+                break;
+            }
+
+            //if we reached here, then there is a fault in the given string
+            if(iter >= pose_as_string.size()) return false;
+        }
+
+        //if the amount of values is not equal to 3, quit
+        if(position.size() != 3)
+            return false;
+
+        stream_char_to_orientation(orientation[0].c_str(), orientation[1].c_str(), orientation[2].c_str(), orientation[3].c_str());
+        stream_char_to_position(position[0].c_str(), position[1].c_str(), position[2].c_str());
+
+        return true;
+    }
+
     void askForPositionInput()
     {
         std::string input;
@@ -126,6 +233,7 @@ struct custom_position
         stream_input[6] >> z;
     }
 
+    //members
     double w;
     double o_x;
     double o_y;
@@ -142,6 +250,7 @@ void executeShortPath_To_Position(moveit::planning_interface::MoveGroupInterface
 { 
     std::string txt = "planning shortpath to position" + pos1->getPositionAsString();
     ROS_INFO_NAMED("positioning execution:", txt.c_str());
+
     //planning path, if not changed = will stay on the same pos
     moveit::planning_interface::MoveGroupInterface::Plan my_plan;
 
@@ -152,7 +261,7 @@ void executeShortPath_To_Position(moveit::planning_interface::MoveGroupInterface
     //execute if planning succesful
     if(planned)
     {
-        ROS_INFO_NAMED("positioning execution success:", "See RViz for planned path");
+        ROS_INFO_NAMED("positioning execution success:", "Executing the path");
         move_group->move();
     }
     else
@@ -200,7 +309,7 @@ void executeCartesianPath_Through_Positions(moveit::planning_interface::MoveGrou
     //execute if planning succesful
     if(success)
     {
-        ROS_INFO_NAMED("positioning execution success:", "See RViz for planned path");
+        ROS_INFO_NAMED("positioning execution success:", "Executing the path");
         move_group->execute(my_plan);
     }
     else
@@ -228,7 +337,7 @@ void generatePosesFromCustomPositionToBagFile(std::vector<custom_position*> posi
 std::string getMoveGroupCurrentPositionAsString(moveit::planning_interface::MoveGroupInterface* move_group)
 {
 	geometry_msgs::Pose current_pose = move_group->getCurrentPose().pose;
-	std::string strorientation = "orientation:[" ;
+	std::string strorientation = "Orientation:[" ;
     std::string strPosition = "Position:[" ;
 	strorientation += std::to_string(current_pose.orientation.w) + ", " + std::to_string(current_pose.orientation.x) + ", " + std::to_string(current_pose.orientation.y) + ", " + std::to_string(current_pose.orientation.z) + "], " ;
 	strPosition += std::to_string(current_pose.position.x) + ", " + std::to_string(current_pose.position.y) + ", " + std::to_string(current_pose.position.z) + "]" ;
@@ -301,26 +410,64 @@ int main(int argc, char* argv[])
     //setup tf listener
     tf::TransformListener tf_listener;
 
+    //save positions for delete and possibly write to file
+    std::vector<robot_positioning_utility::custom_position*> saved_positions;
+
     while(ros::ok)
     {
+        bool no_opt = true;
         std::vector<visualization_msgs::Marker> pub_markers;
+
         //ask for option
-        ROS_INFO("Input utility option: options [short, cartesian, generate, current_position, viz_point, exit]\n");
+        ROS_INFO("Input utility option: options [short_path_input, short_path_from_string, cartesian_path_input, generate_cartesian_bag, current_position, visualize_point, save_inputed_positions, exit]\n");
         std::string option_input;
         std::getline(std::cin, option_input);
 
-        if(option_input == "short")
+        if(option_input == "short_path_input")
         {
+            no_opt = false;
+
             //create position for short path planning from given input
             ROS_INFO("please do input position");
             robot_positioning_utility::custom_position* position = new robot_positioning_utility::custom_position();
             position->askForPositionInput();
             robot_positioning_utility::executeShortPath_To_Position(&move_group, position);
-            delete position;
+
+            //save position
+            saved_positions.push_back(position);
+            ROS_INFO("Position saved!");
         }
 
-        if(option_input == "viz_point")
+        if(option_input == "short_path_from_string")
         {
+            no_opt = false;
+
+            //create position for short path planning from given string
+            ROS_INFO("please do paste string. The string should be formated like this: Orientation:[w,x,y,z], Position:[x,y,z]");
+            
+            std::string pose_as_string_input;
+            std::getline(std::cin, pose_as_string_input);
+
+            robot_positioning_utility::custom_position* position = new robot_positioning_utility::custom_position();
+            if(position->setPositionFromString(pose_as_string_input))
+            {
+                robot_positioning_utility::executeShortPath_To_Position(&move_group, position);
+                
+                //save position
+                saved_positions.push_back(position);
+                ROS_INFO("Position saved!");
+            }
+            else
+            {
+                ROS_ERROR("Failed to create position from string. Will not save position");
+                delete position;
+            }
+        }
+
+        if(option_input == "visualize_point")
+        {
+            no_opt = false;
+
             ROS_WARN("make sure rviz has a marker display and that this display is subscribed to topic /visualization_marker");
                
             //ask for extra inputs
@@ -370,10 +517,13 @@ int main(int argc, char* argv[])
             visualization_msgs::Marker marker = robot_positioning_utility::createVizualizationMarker(position, reference_position, namespace_input, frame_id);
             pub_markers.push_back(marker);
             delete position;
+            delete reference_position;
         }
 
-        if(option_input == "cartesian")
+        if(option_input == "cartesian_path_input")
         {
+            no_opt = false;
+
             //create positions for cartesian path planning from given inputs
             int num_of_positions = 0;
             std::string str_n_o_p;
@@ -381,7 +531,7 @@ int main(int argc, char* argv[])
             std::getline(std::cin, str_n_o_p);
             num_of_positions = std::stoi(str_n_o_p);
 
-             std::vector<robot_positioning_utility::custom_position*> positions;
+            std::vector<robot_positioning_utility::custom_position*> positions;
             for (int i = 0; i < num_of_positions; i++)
             {
                 robot_positioning_utility::custom_position* position = new robot_positioning_utility::custom_position();
@@ -391,14 +541,18 @@ int main(int argc, char* argv[])
 
             robot_positioning_utility::executeCartesianPath_Through_Positions(&move_group, positions);
 
+            //save position
             for (int i = 0; i < num_of_positions; i++)
             {
-                delete positions[i];
+                saved_positions.push_back(positions[i]);
             }
+            ROS_INFO("All way points are saved!");
         }
 
         if(option_input == "generate")
         {
+            no_opt = false;
+
             //create positions for pose generating from given inputs
             int num_of_positions = 0;
             std::string str_n_o_p;
@@ -426,27 +580,45 @@ int main(int argc, char* argv[])
 
         if(option_input == "current_position")
         {
+            no_opt = false;
+
             //print current position off end_Effector
             ROS_WARN(std::string("Positioning info:" + robot_positioning_utility::getMoveGroupCurrentPositionAsString(&move_group)).c_str());
         }
 
-        if(option_input == "")
+        if(option_input == "save_inputed_positions")
+        {
+            no_opt = false;
+
+            //print current position off end_Effector
+            ROS_WARN("this will save all positions inputed with the options: short_path_input, short_path_from_string, cartesian_path_input \nAre you sure you want to continue?");
+            ROS_ERROR("not yet implemented!!!");
+        }
+
+        //delete pointers on exit
+        if(option_input == "exit")
+        {
+            ROS_INFO_NAMED("positioning node:", "Exiting...");
+            for (int i = 0; i < saved_positions.size(); i++)
+            {
+                delete saved_positions[i];
+            }
+            break;
+        }
+
+        //check if something was inputted
+        if(option_input == "" || no_opt == true)
         {
             ROS_INFO_NAMED("positioning error:", "given option type invalid!");
         }
 
-        if(option_input == "exit")
-        {
-            ROS_INFO_NAMED("positioning node:", "exiting...");
-            break;
-        }
-
+        //publish markers
         for (int i = 0; i < pub_markers.size(); i++)
         {
             viz_pub.publish(pub_markers[i]);
         }
         
     }
-    ROS_INFO_NAMED("positioning node:", "exited");
+    ROS_INFO_NAMED("positioning node:", "Exited succesfully");
     return 0;
 }
