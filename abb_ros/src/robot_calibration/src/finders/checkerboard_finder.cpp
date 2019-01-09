@@ -68,7 +68,7 @@ bool CheckerboardFinder::init(const std::string& name,
   // Size of checkerboard
   nh.param<int>("points_x", points_x_, 8);
   nh.param<int>("points_y", points_y_, 6);
-  nh.param<double>("size", square_size_, 0.25);
+  nh.param<double>("size", square_size_, 0.30);
 
   // Should we include debug image/cloud in observations
   nh.param<bool>("debug", output_debug_, false);
@@ -148,7 +148,6 @@ bool CheckerboardFinder::findInternal(robot_calibration_msgs::CalibrationData * 
     ROS_ERROR("No point cloud data");
     return false;
   }
-  ROS_INFO("Did find point cloud data");
 
   // Get an image message from point cloud
   sensor_msgs::ImagePtr image_msg(new sensor_msgs::Image);
@@ -191,7 +190,8 @@ bool CheckerboardFinder::findInternal(robot_calibration_msgs::CalibrationData * 
 
   if (found)
   {
-    ROS_INFO("Found the checkboard");
+    std::string tmp_log = "checkerboard corner Points in x:" + cpp11_patch::to_string(points_x_) + "points in y:" + cpp11_patch::to_string(points_y_) + "square size: "+ cpp11_patch::to_string(square_size_);
+    ROS_INFO("Found the checkboard: \n %s", tmp_log.c_str());
 
     // Create PointCloud2 to publish
     sensor_msgs::PointCloud2 cloud;
@@ -266,8 +266,8 @@ bool CheckerboardFinder::findInternal(robot_calibration_msgs::CalibrationData * 
     return true;
   }
 
-  std::string logText = "Did not find checkerboard in pointcloud. Expected checkerboard corner Points in x:" + cpp11_patch::to_string(points_x_) + "points in y:" + cpp11_patch::to_string(points_y_) + "square size: "+ cpp11_patch::to_string(square_size_);
-  ROS_ERROR(logText.c_str());
+  //std::string logText = "Did not find checkerboard in pointcloud. Expected checkerboard corner Points in x:" + cpp11_patch::to_string(points_x_) + "points in y:" + cpp11_patch::to_string(points_y_) + "square size: "+ cpp11_patch::to_string(square_size_);
+  //ROS_ERROR(logText.c_str());
   return false;
 }
 

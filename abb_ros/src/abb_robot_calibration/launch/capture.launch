@@ -8,7 +8,7 @@
   <arg name="output_file_ext" default="fieldlab_cel3_calib"/>
   <arg name="calibrate_config_file_name" default="calibrate_mounted_cam.yaml"/> <!--calibrate_with_external_cam_and_mounted_led..yaml -->
   <arg name="capture_config_file_name" default="capture_mounted_cam.yaml"/> <!--capture_with_external_cam_and_mounted_led.yaml -->
-  <arg name="calibration_poses_bag" default="calibration_poses_mounted_cam.bag"/>
+  <arg name="calibration_poses_bag" default="calibration_poses_multiple_checkers.bag"/>
   <arg name="robot_utility_launch" default="false"/>
 
   <!-- path args -->

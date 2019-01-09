@@ -11,7 +11,7 @@ chains:
     planning_group: group1
 duration: 10.0
 features:
-  checkerboard_finder:
+  checkerboard_finder_1:
     type: robot_calibration/CheckerboardFinder
     topic: /camera/depth_registered/points
     camera_sensor_name: camera

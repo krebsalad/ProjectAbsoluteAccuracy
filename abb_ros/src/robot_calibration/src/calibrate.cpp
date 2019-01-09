@@ -171,6 +171,7 @@ int main(int argc, char** argv)
       ROS_INFO("Using manual calibration mode...");
     }
 
+
     // For each pose in the capture sequence.
     for (unsigned pose_idx = 0;
          (pose_idx < poses.size() || poses.size() == 0) && ros::ok();
@@ -207,6 +208,8 @@ int main(int argc, char** argv)
 
       // Get pose of the features
       bool found_all_features = true;
+      std::string failed_features = "";
+
       if (poses.size() == 0)
       {
         // In manual mode, we need to capture all features
@@ -232,7 +235,8 @@ int main(int argc, char** argv)
           {
             ROS_WARN("%s failed to capture features.", feature.c_str());
             found_all_features = false;
-            break;
+            failed_features += feature + ", ";
+            break;   
           }
         }
       }
@@ -244,7 +248,7 @@ int main(int argc, char** argv)
       }
       else
       {
-        ROS_WARN("Failed to capture sample %u.", pose_idx);
+        ROS_WARN("Failed to capture features %s.", failed_features.c_str());
         continue;
       }
 
