@@ -191,8 +191,8 @@ bool CheckerboardFinder::findInternal(robot_calibration_msgs::CalibrationData * 
 
   if (found)
   {
-    std::string tmp_log = "checkerboard corner Points in x:" + cpp11_patch::to_string(points_x_) + "points in y:" + cpp11_patch::to_string(points_y_) + "square size: "+ cpp11_patch::to_string(square_size_);
-    ROS_INFO("Found the checkboard: \n %s", tmp_log.c_str());
+    //std::string tmp_log = "checkerboard corner Points in x:" + cpp11_patch::to_string(points_x_) + "points in y:" + cpp11_patch::to_string(points_y_) + "square size: "+ cpp11_patch::to_string(square_size_);
+    ROS_INFO("Found the checkboard: %s", checkerboard_frame_name_.c_str());
 
     // Create PointCloud2 to publish
     sensor_msgs::PointCloud2 cloud;

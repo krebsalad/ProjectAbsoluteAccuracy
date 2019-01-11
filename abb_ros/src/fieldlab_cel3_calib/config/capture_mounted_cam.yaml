@@ -35,6 +35,6 @@ features:
     camera_sensor_name: camera
     chain_sensor_name: group1
     checkerboard_frame_name: checkerboard_3
-    points_x: 3
-    points_y: 2
-    size: 0.058
+    points_x: 6
+    points_y: 4
+    size: 0.038
