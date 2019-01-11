@@ -140,14 +140,14 @@ bool CustomData::load(industrial::byte_array::ByteArray *buffer)			// zie byte s
   bool rtn = false;
   shared_real value = 0.0;
 
-  LOG_COMM("Executing Data position load");
+  LOG_COMM("Executing Data load");
   for (int i = 0; i < this->getMaxNumData(); i++)
   {
     this->getData(i, value);
     rtn = buffer->load(value);
     if (!rtn)
     {
-      LOG_ERROR("Failed to load Data position data");
+      LOG_ERROR("Failed to load Data ");
       break;
     }
   }

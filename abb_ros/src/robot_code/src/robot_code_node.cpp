@@ -9,6 +9,7 @@
 
 #include <iostream>
 #include <sstream>    
+#include <fstream>
 #include <string>
 #include <map>
 
@@ -243,7 +244,22 @@ struct custom_position
     double z;
 };
 
+void appendStringToFile(std::string file_name, std::string text)
+{
+    std::ofstream myfile;
+    myfile.open(file_name, std::ios::out | std::ios::app | std::ios::binary);
 
+
+    if (myfile.is_open())
+    {
+        myfile << text+"\n";
+        myfile.close();
+    }
+    else
+    { 
+        ROS_ERROR("unable to open file");
+    }
+}
 
 //shortest path trajectory
 void executeShortPath_To_Position(moveit::planning_interface::MoveGroupInterface* move_group, custom_position* pos1)
@@ -411,7 +427,8 @@ int main(int argc, char* argv[])
     tf::TransformListener tf_listener;
 
     //save positions for delete and possibly write to file
-    std::vector<robot_positioning_utility::custom_position*> saved_positions;
+    std::vector<robot_positioning_utility::custom_position*> saved_inputed_positions;
+    std::vector<std::string> saved_outputed_position_strings;
 
     while(ros::ok)
     {
@@ -419,7 +436,7 @@ int main(int argc, char* argv[])
         std::vector<visualization_msgs::Marker> pub_markers;
 
         //ask for option
-        ROS_INFO("Input utility option: options [short_path_input, short_path_from_string, cartesian_path_input, generate_cartesian_bag, current_position, visualize_point, save_inputed_positions, exit]\n");
+        ROS_INFO("Input utility option: options [short_path_input, short_path_from_string, cartesian_path_input, generate_cartesian_bag, current_position, visualize_point, save_inputed_positions, save_getted_current_positions, exit]\n");
         std::string option_input;
         std::getline(std::cin, option_input);
 
@@ -434,7 +451,7 @@ int main(int argc, char* argv[])
             robot_positioning_utility::executeShortPath_To_Position(&move_group, position);
 
             //save position
-            saved_positions.push_back(position);
+            saved_inputed_positions.push_back(position);
             ROS_INFO("Position saved!");
         }
 
@@ -454,7 +471,7 @@ int main(int argc, char* argv[])
                 robot_positioning_utility::executeShortPath_To_Position(&move_group, position);
                 
                 //save position
-                saved_positions.push_back(position);
+                saved_inputed_positions.push_back(position);
                 ROS_INFO("Position saved!");
             }
             else
@@ -544,7 +561,7 @@ int main(int argc, char* argv[])
             //save position
             for (int i = 0; i < num_of_positions; i++)
             {
-                saved_positions.push_back(positions[i]);
+                saved_inputed_positions.push_back(positions[i]);
             }
             ROS_INFO("All way points are saved!");
         }
@@ -583,25 +600,42 @@ int main(int argc, char* argv[])
             no_opt = false;
 
             //print current position off end_Effector
-            ROS_WARN(std::string("Positioning info:" + robot_positioning_utility::getMoveGroupCurrentPositionAsString(&move_group)).c_str());
+            std::string cur_pos_string = robot_positioning_utility::getMoveGroupCurrentPositionAsString(&move_group);
+            ROS_WARN(std::string("Positioning info:" + cur_pos_string).c_str());
+            saved_outputed_position_strings.push_back(cur_pos_string);
         }
 
+        //save all inputted postions
         if(option_input == "save_inputed_positions")
         {
             no_opt = false;
 
-            //print current position off end_Effector
-            ROS_WARN("this will save all positions inputed with the options: short_path_input, short_path_from_string, cartesian_path_input \nAre you sure you want to continue?");
-            ROS_ERROR("not yet implemented!!!");
+            ROS_WARN("Saving all positions inputed with the options: short_path_input, short_path_from_string, cartesian_path_input \n");
+            for (int i = 0; i < saved_inputed_positions.size(); i++)
+            {
+                robot_positioning_utility::appendStringToFile("saved_inputted_positions.txt", saved_inputed_positions[i]->getPositionAsString());
+            }
+        }
+
+        //save all gotten current_positions
+        if(option_input == "save_getted_current_positions")
+        {
+            no_opt = false;
+
+            ROS_WARN("Saving all positions outputted with the options: current_position \n");
+            for (int i = 0; i < saved_outputed_position_strings.size(); i++)
+            {
+                robot_positioning_utility::appendStringToFile("saved_outputted_positions.txt", saved_outputed_position_strings[i]);
+            }
         }
 
         //delete pointers on exit
         if(option_input == "exit")
         {
             ROS_INFO_NAMED("positioning node:", "Exiting...");
-            for (int i = 0; i < saved_positions.size(); i++)
+            for (int i = 0; i < saved_inputed_positions.size(); i++)
             {
-                delete saved_positions[i];
+                delete saved_inputed_positions[i];
             }
             break;
         }

@@ -208,6 +208,7 @@ int main(int argc, char** argv)
 
       // Get pose of the features
       bool found_all_features = true;
+      bool atleast_one_feature = false;
       std::string failed_features = "";
 
       if (poses.size() == 0)
@@ -223,6 +224,10 @@ int main(int argc, char** argv)
             found_all_features = false;
             break;
           }
+          else
+          {
+            atleast_one_feature = true;
+          }
         }
       }
       else
@@ -236,19 +241,32 @@ int main(int argc, char** argv)
             ROS_WARN("%s failed to capture features.", feature.c_str());
             found_all_features = false;
             failed_features += feature + ", ";
-            break;   
+            // break  // we want to capture all features even if one fails
+          }
+          else
+          {
+            atleast_one_feature = true;
           }
         }
       }
 
       // Make sure we succeeded
-      if (found_all_features)
+      if (atleast_one_feature)  //instead of found_all_features
       {
+        if(found_all_features)
+        {
+          ROS_INFO("Found all features");
+        }
+        else
+        {
+          ROS_WARN("Failed capturing some features : %s.", failed_features.c_str());
+        }
         ROS_INFO("Captured pose %u", pose_idx);
       }
       else
       {
-        ROS_WARN("Failed to capture features %s.", failed_features.c_str());
+        ROS_WARN("Failed to capture all features : %s.", failed_features.c_str());
+        ROS_WARN("Will not capture joint states");
         continue;
       }
 

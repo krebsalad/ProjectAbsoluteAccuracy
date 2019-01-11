@@ -14,6 +14,21 @@ free_params:
   - joint_4
   - joint_5
   - joint_6
+free_frames:
+  - name: checkerboard_1
+    x: true
+    y: false
+    z: true
+    roll: false
+    pitch: true
+    yaw: false
+  - name: light_source_1
+    x: true
+    y: false
+    z: true
+    roll: false
+    pitch: true
+    yaw: false
 error_blocks:
  - name: arm_to_camera
    type: chain3d_to_chain3d

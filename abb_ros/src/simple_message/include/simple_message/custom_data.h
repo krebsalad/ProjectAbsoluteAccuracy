@@ -95,7 +95,7 @@ public:
    *
    * \return true if value set, otherwise false (index greater than max)
    */
-  bool CustomData(industrial::shared_types::shared_int index, industrial::shared_types::shared_real value);
+  bool setData(industrial::shared_types::shared_int index, industrial::shared_types::shared_real value);
 
   /**
    * \brief Gets a Data value within the buffer

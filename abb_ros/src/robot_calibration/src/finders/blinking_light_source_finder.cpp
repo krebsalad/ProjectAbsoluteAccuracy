@@ -57,6 +57,7 @@ bool BlinkingLightSourceFinder::init(const std::string& name,
   // Name of the sensor model that will be used during optimization
   nh.param<std::string>("camera_sensor_name", camera_sensor_name_, "camera");
   nh.param<std::string>("chain_sensor_name", chain_sensor_name_, "arm");
+  nh.param<std::string>("light_source_frame_name", light_source_frame_name_, "light_source");
 
   // Publish where light points were seen
   publisher_ = nh.advertise<sensor_msgs::PointCloud2>(getName() + "_points", 10);
@@ -210,7 +211,7 @@ bool BlinkingLightSourceFinder::findInternal(robot_calibration_msgs::Calibration
 
     // Fill in the headers
     rgbd.header = cloud_.header;
-    world.header.frame_id = "light_source";
+    world.header.frame_id = light_source_frame_name_;
 
     // Fill in message
     sensor_msgs::PointCloud2ConstIterator<float> xyz(cloud_, "x");

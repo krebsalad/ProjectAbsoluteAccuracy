@@ -16,10 +16,13 @@ features:
     topic: /camera/depth_registered/points
     camera_sensor_name: camera
     chain_sensor_name: group1
-  checkerboard_finder:
+    light_source_frame_name: light_source_1
+  checkerboard_finder_1:
     type: robot_calibration/CheckerboardFinder
     topic: /camera/depth_registered/points
     camera_sensor_name: camera
     chain_sensor_name: group1
-    points_x: 8
-    points_y: 6
+    checkerboard_frame_name: checkerboard_1
+    points_x: 4
+    points_y: 3
+    size: 0.068

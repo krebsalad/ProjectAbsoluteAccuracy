@@ -67,6 +67,7 @@ private:
    */
   std::string camera_sensor_name_;
   std::string chain_sensor_name_;
+  std::string light_source_frame_name_;
 
   // finding differences variables
   cv_bridge::CvImagePtr last_cv_image;
