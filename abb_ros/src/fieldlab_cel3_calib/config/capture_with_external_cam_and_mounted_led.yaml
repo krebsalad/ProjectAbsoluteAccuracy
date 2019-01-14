@@ -11,18 +11,27 @@ chains:
     planning_group: group1
 duration: 10.0
 features:
-  blinking_light_source_finder:
-    type: robot_calibration/BlinkingLightSourceFinder
-    topic: /camera/depth_registered/points
-    camera_sensor_name: camera
-    chain_sensor_name: group1
-    light_source_frame_name: light_source_1
   checkerboard_finder_1:
     type: robot_calibration/CheckerboardFinder
     topic: /camera/depth_registered/points
     camera_sensor_name: camera
     chain_sensor_name: group1
     checkerboard_frame_name: checkerboard_1
+    points_x: 5
+    points_y: 4
+    size: 0.038
+  checkerboard_finder_2:
+    type: robot_calibration/CheckerboardFinder
+    topic: /camera/depth_registered/points
+    camera_sensor_name: camera
+    chain_sensor_name: group1
+    checkerboard_frame_name: checkerboard_2
     points_x: 4
     points_y: 3
-    size: 0.068
+    size: 0.048
+  blinking_light_source_finder:
+    type: robot_calibration/BlinkingLightSourceFinder
+    topic: /camera/depth_registered/points
+    camera_sensor_name: camera
+    chain_sensor_name: group1
+    light_source_frame_name: light_source_1

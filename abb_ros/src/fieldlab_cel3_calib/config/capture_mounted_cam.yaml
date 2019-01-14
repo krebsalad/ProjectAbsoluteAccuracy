@@ -38,3 +38,9 @@ features:
     points_x: 6
     points_y: 4
     size: 0.038
+  blinking_light_source_finder:
+    type: robot_calibration/BlinkingLightSourceFinder
+    topic: /camera/depth_registered/points
+    camera_sensor_name: camera
+    chain_sensor_name: group1
+    light_source_frame_name: light_source_1

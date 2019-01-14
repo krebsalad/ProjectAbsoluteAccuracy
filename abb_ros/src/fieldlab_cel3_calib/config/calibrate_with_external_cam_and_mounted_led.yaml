@@ -14,8 +14,16 @@ free_params:
   - joint_4
   - joint_5
   - joint_6
+  - led_joint
 free_frames:
   - name: checkerboard_1
+    x: true
+    y: false
+    z: true
+    roll: false
+    pitch: true
+    yaw: false
+  - name: checkerboard_2
     x: true
     y: false
     z: true
@@ -34,9 +42,3 @@ error_blocks:
    type: chain3d_to_chain3d
    model_a: group1
    model_b: camera
- - name: restrict_camera
-   type: outrageous
-   param: camera_optical_joint
-   joint_scale: 0.0
-   position_scale: 0.1
-   rotation_scale: 0.1

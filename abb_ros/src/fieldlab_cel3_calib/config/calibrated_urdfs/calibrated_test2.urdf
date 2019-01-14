@@ -155,7 +155,7 @@
   </link>
   <link name="led_link">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 -0.050" />
+      <origin rpy="0 0 0" xyz="0 0 -0.057" />
       <geometry>
         <sphere radius="0.01" />
       </geometry>
@@ -169,7 +169,7 @@
     <child link="link_1" />
     <axis xyz="0 0 1" />
     <limit effort="0" lower="-3.14159" upper="3.14159" velocity="3.14159" />
-    <calibration rising="-0.112819" />
+    <calibration rising="0.131003" />
   </joint>
   <joint name="joint_2" type="revolute">
     <origin rpy="0 0 0" xyz="0.15 -0.107 0.3625" />
@@ -177,7 +177,7 @@
     <child link="link_2" />
     <axis xyz="0 1 0" />
     <limit effort="0" lower="-1.5708" upper="2.61799" velocity="3.14159" />
-    <calibration rising="-0.01114" />
+    <calibration rising="0.619914" />
   </joint>
   <joint name="joint_3" type="revolute">
     <origin rpy="0 0 0" xyz="0 0 0.7" />
@@ -185,7 +185,7 @@
     <child link="link_3" />
     <axis xyz="0 1 0" />
     <limit effort="0" lower="-4.15388" upper="1.37881" velocity="3.14159" />
-    <calibration rising="-0.01114" />
+    <calibration rising="-1.25284" />
   </joint>
   <joint name="joint_4" type="revolute">
     <origin rpy="0 0 0" xyz="0.128 0.107 0.108" />
@@ -193,7 +193,7 @@
     <child link="link_4" />
     <axis xyz="1 0 0" />
     <limit effort="0" lower="-3.05433" upper="3.05433" velocity="5.58505" />
-    <calibration rising="0.0899604" />
+    <calibration rising="0.0786591" />
   </joint>
   <joint name="joint_5" type="revolute">
     <origin rpy="0 0 0" xyz="0.55 0 0" />
@@ -201,7 +201,7 @@
     <child link="link_5" />
     <axis xyz="0 1 0" />
     <limit effort="0" lower="-2.0944" upper="2.0944" velocity="6.28319" />
-    <calibration rising="-0.0123815" />
+    <calibration rising="-6.70289" />
   </joint>
   <joint name="joint_6" type="revolute">
     <origin rpy="0.0 0 0" xyz="0.135 0 0" />
@@ -209,7 +209,7 @@
     <child link="link_6" />
     <axis xyz="1 0 0" />
     <limit effort="0" lower="-6.98132" upper="6.98132" velocity="8.72665" />
-    <calibration rising="0" />
+    <calibration rising="13.9541" />
   </joint>
   <!-- tool joint list -->
   <joint name="joint_6-tool0" type="fixed">
@@ -219,8 +219,8 @@
   </joint>
   <!-- camera joint list -->
   <joint name="camera_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.115 0 0.112" />
-    <parent link="link_5" />
+    <origin rpy="0 0 -2.7488909" xyz="3.02 0.50 0.50" />
+    <parent link="base_link" />
     <child link="camera_link" />
   </joint>
   <joint name="camera_optical_joint" type="fixed">
