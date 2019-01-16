@@ -264,8 +264,8 @@ void appendStringToFile(std::string file_name, std::string text)
 //shortest path trajectory
 void executeShortPath_To_Position(moveit::planning_interface::MoveGroupInterface* move_group, custom_position* pos1)
 { 
-    std::string txt = "planning shortpath to position" + pos1->getPositionAsString();
-    ROS_INFO_NAMED("positioning execution:", txt.c_str());
+    std::string txt = "Planning shortpath to position: \n -> " + pos1->getPositionAsString();
+    ROS_INFO_NAMED("\n Positioning execution:", txt.c_str());
 
     //planning path, if not changed = will stay on the same pos
     moveit::planning_interface::MoveGroupInterface::Plan my_plan;
@@ -301,8 +301,8 @@ void executeCartesianPath_Through_Positions(moveit::planning_interface::MoveGrou
         ROS_INFO_NAMED("positioning:", "added waypoint");
     }
 
-    std::string txt = "planning cartesian path through positions" + allPosStr;
-    ROS_INFO_NAMED("positioning execution:", txt.c_str());
+    std::string txt = "planning cartesian path through positions: \n -> " + allPosStr;
+    ROS_INFO_NAMED("\n Positioning execution:", txt.c_str());
 
     //create trajectory message and compute path
     moveit_msgs::RobotTrajectory trajectory_msg;
@@ -460,7 +460,7 @@ int main(int argc, char* argv[])
             no_opt = false;
 
             //create position for short path planning from given string
-            ROS_INFO("please do paste string. The string should be formated like this: Orientation:[w,x,y,z], Position:[x,y,z]");
+            ROS_INFO("please do paste string. The string should be formated like this: Orientation:[w,x,y,z], Position:[x,y,z] \n");
             
             std::string pose_as_string_input;
             std::getline(std::cin, pose_as_string_input);
