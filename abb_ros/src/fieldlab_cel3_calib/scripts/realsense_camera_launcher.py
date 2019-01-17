@@ -11,15 +11,6 @@ import getpass
 import signal
 
 
-def launch_camera(camera_launch_file):
-    uuid = roslaunch.rlutil.get_or_generate_uuid(None, False)
-    roslaunch.configure_logging(uuid)
-    launch = roslaunch.parent.ROSLaunchParent(uuid, [camera_launch_file])
-    launch.start()
-    rospy.loginfo("started")
-    return launch
-
-
 def reset_camera(vendor_id):
     path='/sys/bus/usb/devices/'
 
@@ -64,27 +55,45 @@ def main():
     # init rospy
     rospy.init_node('camera_launcher', anonymous=True)
 
-    # arguments !!!!! CHANGE depending on camera and launch file
+    # arguments
     vendor_id = "8086"
-    base_path = "/home/"+getpass.getuser()+"/"
-    launch_file = base_path + 'abb_ros/src/realsense2_camera/launch/rs_rgbd.launch'
+    base_path = '/home/'+getpass.getuser()+'/'
+
+    # roslaunch camera arguments
+    launch_file_package = "fieldlab_cel3_calib"
+    launch_file_name = "cameras_cal.launch"
+    launch_file_path = base_path + 'abb_ros/src/' + launch_file_package + '/launch/' + launch_file_name
 
     # replug camera
     if(sys.argv[1]):
         if(sys.argv[1] == "replug"):
             if not (reset_camera(vendor_id)):
-                print("could not reset device with vendor id: "+vendor_id+", please make sure this vendor_id is equal to the said camera")
+                print("could not reset device")
     
     # launch camera
-    if (os.path.exists(launch_file)):
-        launch_process = launch_camera(launch_file)
+    if (os.path.exists(launch_file_path)):
+        # init roslaunch
+        uuid = roslaunch.rlutil.get_or_generate_uuid(None, False)
+        roslaunch.configure_logging(uuid)
+
+        # launch file
+        launch = roslaunch.parent.ROSLaunchParent(uuid, [launch_file_path])
+
+        # start
+        launch.start()
+        print("starting camera nodes...")
+
         # wait for ctrl + c
         signal.signal(signal.SIGINT, signal_handler)
         signal.pause()
-        launch.shutdown()
-        print("shutting down")
+
+        # shutdown
+        print("shutting down camera nodes...")
+        launch.stop()
+
     else:
-        print("could not find launch file: "+launch_file)
+        print("could not find launch file: "+ launch_file_path)
+
 
 if __name__ == "__main__":
     main()

@@ -4,7 +4,7 @@
   <arg name="rviz_planner" default="true"/>
   <arg name="camera_launch" default="false"/>
   <arg name="enable_calibration_offsets" default="false"/>
-  <arg name="camera_launcher_arg" default="none"/>
+  <arg name="camera_launcher_arg" default="no_replug"/>
 
   <!-- Launch 3D sensors -->
   <!-- camera launch -->

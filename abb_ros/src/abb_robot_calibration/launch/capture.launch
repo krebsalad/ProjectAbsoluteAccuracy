@@ -1,14 +1,13 @@
 <launch>
 
   <!-- capture arguments -->
-  <arg name="rviz" default="true"/>
-  <arg name="ip" default="172.22.31.3"/>
+  <arg name="rviz" default="false"/>
+  <arg name="ip" default="10.128.187.52"/>
   <arg name="robot"  default="fieldlab_cel3_calib" />
   <arg name="manual" default="true"/>
   <arg name="output_file_ext" default="fieldlab_cel3_calib"/>
-  <arg name="calibrate_config_file_name" default="calibrate_mounted_cam.yaml"/> <!--calibrate_mounted_cam.yaml -->
-  <arg name="capture_config_file_name" default="capture_mounted_cam.yaml"/> <!--capture_mounted_cam.yaml -->
-  <arg name="calibration_poses_bag" default="calibration_poses_multiple_checkers_w_led.bag"/>
+  <arg name="capture_config_file_name" default="capture_with_multiple_cameras.yaml"/>
+  <arg name="calibration_poses_bag" default="calibration_poses_multiple_cameras.bag"/>
   <arg name="robot_utility_launch" default="false"/>
 
   <!-- path args -->

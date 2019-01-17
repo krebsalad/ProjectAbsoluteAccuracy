@@ -1,0 +1,15 @@
+<launch>
+    <!-- Configure your cameras here. This is made so that the cameras can be launched after a script -->
+
+    <!-- Camera 1-->
+    <include file="$(find realsense2_camera)/launch/rs_rgbd.launch">
+        <arg name="camera" value="camera_1"/>
+        <arg name="serial_no" value="828612061092"/>
+    </include>
+
+    <!-- Camera 2-->
+    <include file="$(find realsense2_camera)/launch/rs_rgbd.launch">
+        <arg name="camera" value="camera_2"/>
+        <arg name="serial_no" value="806312060253"/>
+    </include>
+</launch>
