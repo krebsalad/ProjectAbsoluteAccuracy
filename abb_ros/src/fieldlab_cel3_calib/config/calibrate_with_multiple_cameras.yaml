@@ -47,6 +47,13 @@ free_frames:
     roll: false
     pitch: true
     yaw: false
+  - name: light_source_1
+    x: true
+    y: false
+    z: true
+    roll: false
+    pitch: true
+    yaw: false
   - name: external_camera_optical_joint
     x: true
     y: true
