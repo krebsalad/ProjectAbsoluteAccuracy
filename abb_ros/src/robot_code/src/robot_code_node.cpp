@@ -55,15 +55,21 @@ struct custom_position
         s_x >> o_x;
         s_y >> o_y;
         s_z >> o_z;
+
+        is_orientation_set = true;
     }
 
     geometry_msgs::Pose getPositionAsPose()
     {
         geometry_msgs::Pose target_pose;
-        target_pose.orientation.w = w;
-        target_pose.orientation.x = o_x;
-        target_pose.orientation.y = o_y;
-        target_pose.orientation.z = o_z;
+
+        if (is_orientation_set)
+        {
+            target_pose.orientation.w = w;
+            target_pose.orientation.x = o_x;
+            target_pose.orientation.y = o_y;
+            target_pose.orientation.z = o_z;
+        }
         target_pose.position.x = x;
         target_pose.position.y = y;
         target_pose.position.z = z;
@@ -185,30 +191,48 @@ struct custom_position
         return true;
     }
 
-    void askForPositionInput()
+    void askForPositionInput(std::string current_pos_str)
     {
         std::string input;
         std::stringstream stream_input[7];
         
-        ROS_INFO("w:");
+        ROS_INFO("set orientation? type ' y ' to set");
         std::getline(std::cin, input);
-        stream_input[0].str(input);
-        input = std::string();
+        if(input == "y")
+        {
+            is_orientation_set = true;
+        }
+        else
+        {
+            is_orientation_set = false;
+        }
 
-        ROS_INFO("orientaiton_x:");
-        std::getline(std::cin, input);
-        stream_input[1].str(input);
-        input = std::string();
+        if(is_orientation_set)
+        {
+            ROS_INFO("w:");
+            std::getline(std::cin, input);
+            stream_input[0].str(input);
+            input = std::string();
 
-        ROS_INFO("orientaiton_y:");
-        std::getline(std::cin, input);
-        stream_input[2].str(input);
-        input = std::string();
+            ROS_INFO("orientaiton_x:");
+            std::getline(std::cin, input);
+            stream_input[1].str(input);
+            input = std::string();
 
-        ROS_INFO("orientaiton_z:");
-        std::getline(std::cin, input);
-        stream_input[3].str(input);
-        input = std::string();
+            ROS_INFO("orientaiton_y:");
+            std::getline(std::cin, input);
+            stream_input[2].str(input);
+            input = std::string();
+
+            ROS_INFO("orientaiton_z:");
+            std::getline(std::cin, input);
+            stream_input[3].str(input);
+            input = std::string();
+        }
+        else
+        {
+            setPositionFromString(current_pos_str);
+        }
 
         ROS_INFO("x:");
         std::getline(std::cin, input);
@@ -235,6 +259,7 @@ struct custom_position
     }
 
     //members
+    bool is_orientation_set = false;
     double w;
     double o_x;
     double o_y;
@@ -447,7 +472,7 @@ int main(int argc, char* argv[])
             //create position for short path planning from given input
             ROS_INFO("please do input position");
             robot_positioning_utility::custom_position* position = new robot_positioning_utility::custom_position();
-            position->askForPositionInput();
+            position->askForPositionInput(robot_positioning_utility::getMoveGroupCurrentPositionAsString(&move_group));
             robot_positioning_utility::executeShortPath_To_Position(&move_group, position);
 
             //save position
@@ -514,7 +539,7 @@ int main(int argc, char* argv[])
             //create position
             ROS_INFO("please do input position");
             robot_positioning_utility::custom_position* position = new robot_positioning_utility::custom_position();
-            position->askForPositionInput();
+            position->askForPositionInput(robot_positioning_utility::getMoveGroupCurrentPositionAsString(&move_group));
 
             //get reference transform
             tf::StampedTransform transform;
@@ -552,7 +577,7 @@ int main(int argc, char* argv[])
             for (int i = 0; i < num_of_positions; i++)
             {
                 robot_positioning_utility::custom_position* position = new robot_positioning_utility::custom_position();
-                position->askForPositionInput();
+                position->askForPositionInput(robot_positioning_utility::getMoveGroupCurrentPositionAsString(&move_group));
                 positions.push_back(position);
             }
 
@@ -582,7 +607,7 @@ int main(int argc, char* argv[])
             {
                 ROS_INFO(std::string("input Position "+ std::to_string(i)).c_str());
                 robot_positioning_utility::custom_position* position = new robot_positioning_utility::custom_position();
-                position->askForPositionInput();
+                position->askForPositionInput(robot_positioning_utility::getMoveGroupCurrentPositionAsString(&move_group));
                 positions.push_back(position);
             }
 

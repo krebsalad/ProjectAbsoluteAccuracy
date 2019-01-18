@@ -18,7 +18,7 @@
   <include file="$(arg dollar)$(arg robot_package_path)/launch/robot_cal.launch">
     <arg name="robot_ip" value="$(arg ip)"/>
     <arg name="rviz_planner" value="$(arg rviz)"/>
-    <arg name="camera_launch" value="true"/>
+    <arg name="camera_launch" value="false"/>
   </include>
 
   <!-- launch in manual mode -->
@@ -36,7 +36,7 @@
     <rosparam command="delete" param="robot_calibration" />
     <node pkg="robot_calibration" type="calibrate" name="capture"
           args="$(arg dollar)$(arg robot_package_path)/config/$(arg calibration_poses_bag)"
-          output="screen" required="true" launch-prefix="xterm -e">
+          output="screen" required="true" > <!--launch-prefix="xterm -e"-->
       <rosparam file="$(arg dollar)$(arg robot_package_path)/config/$(arg capture_config_file_name)" command="load" />
     </node>
   </group>

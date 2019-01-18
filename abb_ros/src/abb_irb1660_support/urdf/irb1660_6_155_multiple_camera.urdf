@@ -240,27 +240,27 @@
   
   <!-- camera joint list -->
   <joint name="mounted_camera_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.115 0 0.112"/>
+    <origin rpy="0 0 0" xyz="0.095 0 0.075"/>
     <parent link="link_5" />
     <child link="mounted_camera_link" />
   </joint>
   <joint name="mounted_camera_optical_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.025 0 0"/>
+    <origin rpy="0 0 0" xyz="0.010 0 0.010"/>
     <parent link="mounted_camera_link" />
     <child link="mounted_camera_optical_frame" />
   </joint>
   <joint name="external_camera_joint" type="fixed">
-    <origin rpy="0 -3.14159 0" xyz="3.02 0 0.79"/>
+    <origin rpy="0 0 4.75" xyz="2.439 0.60 0.354"/>
     <parent link="base_link" />
     <child link="external_camera_link" />
   </joint>
   <joint name="external_camera_optical_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.025 0 0"/>
+    <origin rpy="0 0 0" xyz="0.010 0 0.010"/>
     <parent link="external_camera_link" />
     <child link="external_camera_optical_frame" />
   </joint>
   <joint name="led_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.463 0.0 -0.120"/>
+    <origin rpy="0 0 0" xyz="0.463 0.0 -0.110"/>
     <parent link="tool0" />
     <child link="led_link" />
   </joint>
@@ -274,7 +274,7 @@
 
   <link name="external_axis_object">
     <visual>
-      <origin rpy="0 0 0" xyz="0 0 0.525"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <box size="0.45 1.60 1.05"/>
       </geometry>
@@ -283,7 +283,7 @@
       <color rgba="0 0 1.0 1.0"/>
     </material>
     <collision>
-      <origin rpy="0 0 0" xyz="0 0 0.525"/>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
       <geometry>
         <box size="0.45 1.60 1.05"/>
       </geometry>
@@ -383,8 +383,8 @@
   </joint>
 
   <joint name="external_axis_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="-0.75 0 0"/>
-    <parent link="front_of_cel_link" />
+    <origin rpy="0 0 0" xyz="0.993 0 0"/>
+    <parent link="base_link" />
     <child link="external_axis_object" />
   </joint>
 
