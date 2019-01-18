@@ -17,7 +17,7 @@ features:
     camera_sensor_name: mounted_camera
     chain_sensor_name: group1
     checkerboard_frame_name: checkerboard_1
-    points_x: 5
+    points_x: 6
     points_y: 4
     size: 0.038
   checkerboard_finder_2_mt:
@@ -35,16 +35,16 @@ features:
     camera_sensor_name: mounted_camera
     chain_sensor_name: group1
     checkerboard_frame_name: checkerboard_3
-    points_x: 6
-    points_y: 4
-    size: 0.038
+    points_x: 5
+    points_y: 3
+    size: 0.042
   checkerboard_finder_1_ex:
     type: robot_calibration/CheckerboardFinder
     topic: /camera_2/depth_registered/points
     camera_sensor_name: external_camera
     chain_sensor_name: group1
     checkerboard_frame_name: checkerboard_1
-    points_x: 5
+    points_x: 6
     points_y: 4
     size: 0.038
   checkerboard_finder_2_ex:
@@ -56,15 +56,6 @@ features:
     points_x: 4
     points_y: 3
     size: 0.048
-  checkerboard_finder_3_ex:
-    type: robot_calibration/CheckerboardFinder
-    topic: /camera_2/depth_registered/points
-    camera_sensor_name: external_camera
-    chain_sensor_name: group1
-    checkerboard_frame_name: checkerboard_3
-    points_x: 6
-    points_y: 4
-    size: 0.038
   blinking_light_source_finder_ex:
     type: robot_calibration/BlinkingLightSourceFinder
     topic: /camera_2/depth_registered/points
