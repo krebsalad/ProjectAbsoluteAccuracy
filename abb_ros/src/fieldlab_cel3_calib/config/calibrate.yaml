@@ -6,7 +6,7 @@ models:
    frame: link_6
  - name: camera
    type: camera3d
-   frame: camera_optical_frame
+   frame: external_camera_optical_frame
    topic: /camera/depth_registered/points
 free_params:
   - joint_1
@@ -23,7 +23,7 @@ free_frames:
     roll: false
     pitch: true
     yaw: false
-  - name: camera_optical_joint
+  - name: external_camera_optical_joint
     x: true
     y: true
     z: true
@@ -37,7 +37,7 @@ error_blocks:
    model_b: group1
  - name: restrict_camera
    type: outrageous
-   param: camera_optical_joint
+   param: external_camera_optical_joint
    joint_scale: 0.0
    position_scale: 0.1
    rotation_scale: 0.1

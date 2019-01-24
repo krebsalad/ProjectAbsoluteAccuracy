@@ -320,10 +320,11 @@ int main(int argc, char** argv)
   // extension to name of output file
   char datecode[80];
 
-  std::string calib_output_str;  //string 2 capture param
+  std::string calib_output_str;  //string to capture param
+  std::string calib_output_dir = "/tmp/";
 
   // use calibration output num if available else set datecode to local time
-  if (nh.getParam("/robot_calibration_file_output_ext", calib_output_str))
+  if (nh.getParam("/robot_calibration_output_file_extension", calib_output_str))
   {
     std::stringstream calib_output_code;
     calib_output_code << calib_output_str;
@@ -337,20 +338,27 @@ int main(int argc, char** argv)
     std::strftime(datecode, 80, "%Y_%m_%d_%H_%M_%S", std::localtime(&t));
   }
 
+  if (!(nh.getParam("/robot_calibration_output_directory", calib_output_dir)))
+  {
+    calib_output_dir = "/tmp/";
+  }
+
   // Save updated URDF
   {
     std::stringstream urdf_name;
-    urdf_name << "/tmp/calibrated_" << datecode << ".urdf";
+    urdf_name << calib_output_dir+"calibrated_" << datecode << ".urdf";
     std::ofstream file;
     file.open(urdf_name.str().c_str());
     file << s;
     file.close();
   }
 
+  std::string out_directory;
+
   // Output camera calibration
   {
     std::stringstream depth_name;
-    depth_name << "/tmp/depth_" << datecode << ".yaml";
+    depth_name << calib_output_dir+"depth_" << datecode << ".yaml";
     camera_calibration_parsers::writeCalibration(depth_name.str(), "",
         robot_calibration::updateCameraInfo(
                          opt.getOffsets()->get("camera_fx"),
@@ -360,7 +368,7 @@ int main(int argc, char** argv)
                          data[0].observations[0].ext_camera_info.camera_info));  // TODO avoid hardcoding index
 
     std::stringstream rgb_name;
-    rgb_name << "/tmp/rgb_" << datecode << ".yaml";
+    rgb_name << calib_output_dir+"rgb_" << datecode << ".yaml";
     camera_calibration_parsers::writeCalibration(rgb_name.str(), "",
         robot_calibration::updateCameraInfo(
                          opt.getOffsets()->get("camera_fx"),
@@ -373,7 +381,7 @@ int main(int argc, char** argv)
   // Output the calibration yaml
   {
     std::stringstream yaml_name;
-    yaml_name << "/tmp/calibration_" << datecode << ".yaml";
+    yaml_name << calib_output_dir+"calibration_" << datecode << ".yaml";
     std::ofstream file;
     file.open(yaml_name.str().c_str());
     file << opt.getOffsets()->getOffsetYAML();
