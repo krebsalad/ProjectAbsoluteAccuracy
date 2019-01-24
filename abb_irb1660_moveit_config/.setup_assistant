@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: abb_irb1660_support
+    relative_path: urdf/irb1660_mounted_camera.urdf
+    xacro_args: "--inorder "
+  SRDF:
+    relative_path: config/irb1660_6_155.srdf
+  CONFIG:
+    author_name: johan
+    author_email: johanmgina7@gmail.com
+    generated_timestamp: 1543392917
