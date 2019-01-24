@@ -64,30 +64,15 @@ class JointRelayHandler : public industrial::message_handler::MessageHandler
   using industrial::message_handler::MessageHandler::init;
 
 public:
-
-  /**
-* \brief Constructor
-*/
   JointRelayHandler() {};
 
-
- /**
-  * \brief Class initializer
-  *
-  * \param connection simple message connection that will be used to send replies.
-  * \param joint_names list of joint-names for msg-publishing.
-  *   - Count and order should match data from robot connection.
-  *   - Use blank-name to exclude a joint from publishing.
-  *
-  * \return true on success, false otherwise (an invalid message type)
-  */
  bool init(industrial::smpl_msg_connection::SmplMsgConnection* connection, std::vector<std::string> &joint_names);
- void SetJointOffsets(const std::vector<float> &joint_offsets); /***added!!*******************************************************************/
+ void SetJointOffsets(const std::vector<float> &joint_offsets); // Joint offset support
 
 protected:
 
   std::vector<std::string> all_joint_names_;
-  std::vector<float> all_joint_offsets_; /***added!!*******************************************************************/
+  std::vector<float> all_joint_offsets_;                        // all joint offsets in order of names
 
   ros::Publisher pub_joint_control_state_;
   ros::Publisher pub_joint_sensor_state_;
