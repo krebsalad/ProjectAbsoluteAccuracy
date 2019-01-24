@@ -1,0 +1,24 @@
+<launch>
+
+ <!-- calibrate arguments -->
+  <arg name="calibration_data" default="calibration_data_2019-01-08-09-41-57.bag"/>
+  <arg name="output_file_ext" default="fieldlab_cel3_calib"/>
+  <arg name="robot"  default="fieldlab_cel3_calib" />
+  <arg name="calibrate_config_file_name" default="calibrate_with_multiple_cameras.yaml"/>
+
+  <!-- static args -->
+  <arg name="robot_package_path" value="(find $(arg robot))" />
+  <arg name="dollar" value="$" />
+
+  <!-- Robot calibration calibrate launch -->
+	<rosparam command="delete" param="robot_calibration" />
+	<node pkg="robot_calibration" type="calibrate" name="calibrate"
+			args="--from-bag /tmp/abb_robot_calibration/$(arg calibration_data)"
+			output="screen" required="true">
+		<rosparam file="$(arg dollar)$(arg robot_package_path)/config/$(arg calibraet_config_file_name).yaml" command="load"/>
+	</node>
+
+  <!-- Set output param code -->
+  <param name="robot_calibration_file_output_ext" type="str" value="$(arg output_file_ext)" />
+
+</launch>
