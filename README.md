@@ -1,22 +1,22 @@
 abb_ros
 
-This is a calibration package developed for AWL. The package is generalized for controlling abb_robots with MoveIt.
+This is a calibration package developed for AWL. The package is generalized for controlling abb_robots with MoveIt and calibrating them with robot_calibration.
 
-Self Made packages descriptions:
+Shoet descriptions of packages (heed said package for more details):
 - abb_irbxxx_moveit_config: example moveit configuration for controlling the robot. 
-- abb_irbxxx_support: example of support package. this package has files consisting definitions such as the URDF. Also meshes can be found here.
+- abb_irbxxx_support: example package containing descrption for the moveit config.
 
 - moveit_helper_scripts: Usefull scripts to create initial project and or make changes to abb_irbxxx_moveit_config
-- robot_code: utility for controlling the robot using moveit c++ pipeline. Has cartesian path functionality
-- abb_robot_calibration: robot_calibration custom implementation. Is used to initiate calibration in combination with a specific robot calibration configuration. for example: fieldlab_cel3_calib
+- robot_code: utility for controlling the robot using moveit c++ pipeline.
+- abb_robot_calibration: robot_calibration launch config.Is used to initiate calibration in combination with a specific robot calibration configuration. for example: fieldlab_cel3_calib
 - fieldlab_cel3_calib: example of specific robot calibration configuration for the robot in fieldlab cel3
 
-Dependencies description :
-- abb_driver: Needed to communicate with RAPID by inheriting from industrial_core. Also the files needed for the robot controller can be found in this package.
-- industrial_core packages: Needed for high - low end communication. Current package does have difference from original package. Such as calibration offset implementation.
-- robot_calibration packages: Main calibration package. Some changes made for logging and accepting joint states without effort.
-- realsense2_camera: Intel Real Sense series driver for ros. No changes were made here.
-- code_coverage: Dependency for robot_calibration package. No changes were made here.
+dependency description :
+- abb_driver: Needed to communicate with RAPID by inheriting from industrial_core. Also the files needed for the robot controller can be found in this package. (link to official repo)
+- industrial_core packages: Needed for high - low end communication. Current package does have difference from original package. Such as calibration offset implementation.(link to official repo)
+- robot_calibration packages: Main calibration package. Some changes made for logging and accepting joint states without effort. Including multiple checkers and a different finder. (link to official repo)
+- realsense2_camera: Intel RealSense depth camera driver for ros. No changes were made here.(link to official repo)
+- code_coverage: Dependency for robot_calibration package. No changes were made here.(link to official repo)
 
 #How to use...
 ##A. Requirments
