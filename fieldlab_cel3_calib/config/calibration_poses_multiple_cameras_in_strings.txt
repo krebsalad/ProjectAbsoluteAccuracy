@@ -1,3 +1,5 @@
+This file was generated using robot_code_node and is generally used to recreated the same calibration_poses.bag with capture_poses script and robot_code_node
+
 Orientation:[0.957308, -0.020093, 0.288037, -0.013893], Position:[0.654711, -0.028625, 1.028765]
 Orientation:[0.932575, 0.041080, 0.288426, -0.213137], Position:[0.588609, -0.294715, 1.026012]
 Orientation:[0.937952, 0.033975, 0.206656, -0.276377], Position:[0.466997, -0.308015, 1.104378]

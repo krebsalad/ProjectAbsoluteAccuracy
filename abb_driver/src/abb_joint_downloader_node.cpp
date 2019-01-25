@@ -34,6 +34,8 @@
 #include "industrial_utils/param_utils.h"
 
 using industrial_robot_client::joint_trajectory_downloader::JointTrajectoryDownloader;
+using industrial::joint_traj_pt_message::JointTrajPtMessage;
+
 namespace StandardSocketPorts = industrial::simple_socket::StandardSocketPorts;
 
 class ABB_JointTrajectoryDownloader : public JointTrajectoryDownloader
@@ -65,11 +67,63 @@ public:
     return true;
   }
 
+  //ADDED
+  bool transform_before_sending(std::vector<JointTrajPtMessage>* points)
+  {
+        /******************joint offset tempolary implementatin************/
+    if(all_joint_offsets_.size() > 0)
+    {
+      // loop though all points
+      for(unsigned int iter = 0; iter < points->size(); iter++) 
+      {
+        // get joint data of point as jointData object
+        industrial::joint_data::JointData j_data;
+        (*points)[iter].point_.getJointPosition(j_data);
+
+        // set joint offsets into copy of jointData
+        for(industrial::shared_types::shared_int i = 0; i <  j_data.getMaxNumJoints(); i++)
+        {
+          // get joint value
+          industrial::shared_types::shared_real value;
+          if(j_data.getJoint(i, value))
+          {
+              // set joint value with offset
+              value += all_joint_offsets_[i];
+              j_data.setJoint(i, value);
+          }
+          else
+          {
+            break;
+          }
+        }
+
+        //set new joint data (only the positions)
+        (*points)[iter].point_.setJointPosition(j_data);
+      }
+    }
+    else
+    {
+      ROS_DEBUG("Did not apply joint offsets");
+    }
+    /****************************************************************/
+    return true;
+  }
+
   bool calc_velocity(const trajectory_msgs::JointTrajectoryPoint& pt, double* rbt_velocity)
   {
     *rbt_velocity = 0;  // unused by ABB driver
     return true;
   }
+
+  //ADDED
+  void SetJointOffsets(const std::vector<float> &joint_offsets)
+  {
+  this->all_joint_offsets_ = joint_offsets;
+  }
+
+private:
+  std::vector<float> all_joint_offsets_; //ADDED
+
 };
 
 int main(int argc, char** argv)

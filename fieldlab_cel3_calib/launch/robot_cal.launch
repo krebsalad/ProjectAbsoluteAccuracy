@@ -1,17 +1,41 @@
 <launch>
 
+  <!-- robot args -->
   <arg name="robot_ip" default="172.22.31.3"/>
-  <arg name="rviz_planner" default="true"/>
-  <arg name="camera_launch" default="false"/>
   <arg name="enable_calibration_offsets" default="false"/>
-  <arg name="camera_launcher_arg" default="no_replug"/>
+
+  <!-- utility -->
+  <arg name="rviz_planner" default="true"/>
+
+  <!-- camera args -->
+  <arg name="camera_launcher_arg" default="none"/>
 
   <!-- Launch 3D sensors -->
   <!-- camera launch -->
   <!-- launch camera, with or without replugging, run the script with arg camera_launcher_arg "replug" -->
-  <group if="$(arg camera_launch)">
-      <node pkg="fieldlab_cel3_calib" type="realsense_camera_launcher.py" name="realsense_camera_launcher" args="$(arg camera_launcher_arg)" output="screen" required="true" launch-prefix="xterm -e"/>
+  <!-- group if="$(eval camera_launcher_arg == 'relaunch_all')">
+      <node pkg="fieldlab_cel3_calib" type="realsense_camera_launcher.py" name="realsense_camera_launcher" args="replug" output="screen" required="true" launch-prefix="xterm -e"/>
+  </group--> <!-- NOT REQUIRED, NEW PR ON INTEL REPO WITH RESET functionality. TODO!!! https://github.com/intel-ros/realsense/pull/455 -->
+
+  <group if="$(eval camera_launcher_arg == 'launch_all')">
+     <include file="$(find fieldlab_cel3_calib)/launch/cameras_cal.launch" output="screen" required="true" launch-prefix="xterm -e">
+        <arg name="mounted_camera_launch" value="true"/>
+        <arg name="external_camera_launch" value="true"/>
+     </include>
   </group>
+
+  <group if="$(eval camera_launcher_arg == 'launch_mounted_cam')" >
+     <include file="$(find fieldlab_cel3_calib)/launch/cameras_cal.launch" output="screen" required="true" launch-prefix="xterm -e">
+        <arg name="mounted_camera_launch" value="true"/>
+     </include>
+  </group>
+
+  <group if="$(eval camera_launcher_arg == 'launch_external_cam')">
+     <include file="$(find fieldlab_cel3_calib)/launch/cameras_cal.launch" output="screen" required="true" launch-prefix="xterm -e">
+        <arg name="external_camera_launch" value="true"/>
+     </include>
+  </group>
+
 
     <!-- load calibration offsets, this must be called after robot description is loaded and before robot_interface_download nodes are run-->
   <group if="$(arg enable_calibration_offsets)">

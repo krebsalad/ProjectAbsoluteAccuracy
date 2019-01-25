@@ -5,26 +5,26 @@
   <arg name="robot_utility_launch" default="false"/>
 
   <!-- robot arguments -->
-  <arg name="ip" default="10.128.187.52"/>
-  <arg name="robot" default="fieldlab_cel3_calib"/>
+  <arg name="robot_ip" default="10.128.187.52"/>
+  <arg name="robot_package" default="fieldlab_cel3_calib"/>
   <arg name="sim_launch" default="false"/>
 
   <!-- capture arguments -->
   <arg name="manual" default="true"/>
   <arg name="capture_config_file_name" default="capture_with_multiple_cameras.yaml"/>
-  <arg name="calibration_poses_bag" default="calibration_poses_fake.bag"/>
+  <arg name="calibration_poses_bag" default="calibration_poses_multiple_cameras.bag"/>
   <arg name="output_file_ext" default="fieldlab_cel3_calibration_output"/>
 
   <!-- path arguments -->
-  <arg name="robot_package_path" value="(find $(arg robot))" />
+  <arg name="robot_package_path" value="(find $(arg robot_package))" />
   <arg name="dollar" value="$" />
 
   <!-- launch robot_cal.launch from robot package -->
   <group unless="$(arg sim_launch)">
     <include file="$(arg dollar)$(arg robot_package_path)/launch/robot_cal.launch">
-      <arg name="robot_ip" value="$(arg ip)"/>
+      <arg name="robot_ip" value="$(arg robot_ip)"/>
       <arg name="rviz_planner" value="$(arg rviz)"/>
-      <arg name="camera_launch" value="true"/>
+      <arg name="camera_launcher_arg" value="none"/>
     </include>
   </group>
 
@@ -32,7 +32,7 @@
   <group if="$(arg sim_launch)">
     <include file="$(arg dollar)$(arg robot_package_path)/launch/robot_cal_sim.launch">
       <arg name="rviz_planner" value="$(arg rviz)"/>
-      <arg name="camera_launch" value="true"/>
+      <arg name="camera_launcher_arg" value="none"/>
     </include>
   </group>
 

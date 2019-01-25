@@ -109,13 +109,6 @@ bool JointTrajectoryInterface::init(SmplMsgConnection* connection, const std::ve
   return true;
 }
 
-/************************/
-void JointTrajectoryInterface::SetJointOffsets(const std::vector<float> &joint_offsets)
-{
-  this->all_joint_offsets_ = joint_offsets;
-}
-/**********************/
-
 JointTrajectoryInterface::~JointTrajectoryInterface()
 {  
   trajectoryStop();

@@ -53,6 +53,10 @@ public:
 
   bool send_to_robot(const std::vector<JointTrajPtMessage>& messages);
 
+protected:
+ virtual bool transform_before_sending(std::vector<JointTrajPtMessage>* points) //ADDED
+ { return true;}
+
 };
 
 } //joint_trajectory_downloader

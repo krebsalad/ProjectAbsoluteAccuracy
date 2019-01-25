@@ -67,13 +67,11 @@ public:
   JointRelayHandler() {};
 
  bool init(industrial::smpl_msg_connection::SmplMsgConnection* connection, std::vector<std::string> &joint_names);
- void SetJointOffsets(const std::vector<float> &joint_offsets); // Joint offset support
+
 
 protected:
 
   std::vector<std::string> all_joint_names_;
-  std::vector<float> all_joint_offsets_;                        // all joint offsets in order of names
-
   ros::Publisher pub_joint_control_state_;
   ros::Publisher pub_joint_sensor_state_;
   ros::NodeHandle node_;
@@ -103,6 +101,12 @@ protected:
   virtual bool transform(const std::vector<double>& pos_in, std::vector<double>* pos_out)
   {
     *pos_out = pos_in;  // by default, no transform is applied
+    return true;
+  }
+
+  //ADDED
+  virtual bool transform_before_publishing(std::vector<double>* pos_in)
+  {
     return true;
   }
 

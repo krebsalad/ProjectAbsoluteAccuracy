@@ -56,13 +56,6 @@ bool JointRelayHandler::init(SmplMsgConnection* connection, std::vector<std::str
   return init((int)StandardMsgTypes::JOINT, connection);
 }
 
-/***added!!*******************************************************************/
-void JointRelayHandler::SetJointOffsets(const std::vector<float> &joint_offsets)
-{
-  this->all_joint_offsets_ = joint_offsets;
-}
-/***added!!*******************************************************************/
-
 bool JointRelayHandler::internalCB(SimpleMessage& in)
 {
   JointMessage joint_msg;
@@ -134,22 +127,12 @@ bool JointRelayHandler::create_messages(JointMessage& msg_in,
     return false;
   }
 
-  /******************joint offset tempolary implementatin************/
-  if(this->all_joint_offsets_.size() > 0)
+  //ADDED
+  if (!transform_before_publishing(&pub_joint_pos))
   {
-    for(unsigned int iter = 0; iter < pub_joint_pos.size() && iter < 6; iter++) 
-    {
-      if(all_joint_offsets_[iter] == NULL)
-        break;
-
-      pub_joint_pos[iter] -= all_joint_offsets_[iter];
-    }
-  }else
-  {
-    ROS_DEBUG("Did not unapply joint offsets");
+    LOG_ERROR("Failed to transform joint positions before publishing");
+    return false;
   }
-
-  /****************************************************************/
 
   // assign values to messages
   control_msgs::FollowJointTrajectoryFeedback tmp_control_state;  // always start with a "clean" message

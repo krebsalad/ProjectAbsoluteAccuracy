@@ -57,6 +57,35 @@ public:
 
     return true;
   }
+
+  //ADDED
+  void SetJointOffsets(const std::vector<float> &joint_offsets)
+  {
+    this->all_joint_offsets_ = joint_offsets;
+  }
+
+  //ADDED
+  bool transform_before_publish(std::vector<double>* pos_in)
+  {
+
+    if(this->all_joint_offsets_.size() > 0 && this->all_joint_offsets_.size() == pos_in->size())
+    {
+      for(unsigned int iter = 0; iter < pos_in->size(); iter++) 
+      {
+        (*pos_in)[iter] -= all_joint_offsets_[iter];
+      }
+    }
+    else
+    {
+      ROS_DEBUG("Did not 'unapply' joint offsets");
+    }
+
+    return true;
+  }
+
+private:
+    std::vector<float> all_joint_offsets_; //ADDED
+
 };
 
 int main(int argc, char** argv)

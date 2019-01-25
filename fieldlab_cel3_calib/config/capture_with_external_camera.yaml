@@ -11,27 +11,27 @@ chains:
     planning_group: group1
 duration: 10.0
 features:
-  checkerboard_finder_1_mt:
+  checkerboard_finder_1:
     type: robot_calibration/CheckerboardFinder
-    topic: /mounted_camera/depth_registered/points
-    camera_info_topic: /mounted_camera/depth/camera_info
-    camera_sensor_name: mounted_camera
+    topic: /external_camera/depth_registered/points
+    camera_info_topic: /external_camera/depth/camera_info
+    camera_sensor_name: external_camera
     chain_sensor_name: group1
     checkerboard_frame_name: checkerboard_1
     points_x: 6
     points_y: 4
     size: 0.038
-  checkerboard_finder_2_mt:
+  checkerboard_finder_2:
     type: robot_calibration/CheckerboardFinder
-    topic: /mounted_camera/depth_registered/points
-    camera_info_topic: /mounted_camera/depth/camera_info
-    camera_sensor_name: mounted_camera
+    topic: /external_camera/depth_registered/points
+    camera_info_topic: /external_camera/depth/camera_info
+    camera_sensor_name: external_camera
     chain_sensor_name: group1
     checkerboard_frame_name: checkerboard_2
     points_x: 4
     points_y: 3
     size: 0.048
-  checkerboard_finder_3_ex:
+  checkerboard_finder_3:
     type: robot_calibration/CheckerboardFinder
     topic: /external_camera/depth_registered/points
     camera_info_topic: /external_camera/depth/camera_info
@@ -41,10 +41,3 @@ features:
     points_x: 5
     points_y: 3
     size: 0.042
-  blinking_light_source_finder_ex:
-    type: robot_calibration/BlinkingLightSourceFinder
-    topic: /external_camera/depth_registered/points
-    camera_info_topic: /external_camera/depth/camera_info
-    camera_sensor_name: external_camera
-    chain_sensor_name: group1
-    light_source_frame_name: light_source_1
