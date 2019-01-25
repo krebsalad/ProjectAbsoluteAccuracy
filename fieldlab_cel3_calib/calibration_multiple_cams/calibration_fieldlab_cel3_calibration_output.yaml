@@ -1,0 +1,3 @@
+depth_info: depth_fieldlab_cel3_calibration_output.yaml
+rgb_info: rgb_fieldlab_cel3_calibration_output.yaml
+urdf: calibrated_fieldlab_cel3_calibration_output.urdf

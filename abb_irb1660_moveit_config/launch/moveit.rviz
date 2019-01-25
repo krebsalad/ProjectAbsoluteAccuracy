@@ -7,6 +7,7 @@ Panels:
         - /Global Options1
         - /MotionPlanning1
         - /Marker1
+        - /MarkerArray1
       Splitter Ratio: 0.742560029
     Tree Height: 292
   - Class: rviz/Help
@@ -75,17 +76,17 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          camera_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          camera_optical_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
           external_axis_object:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          external_camera_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          external_camera_optical_frame:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -130,6 +131,16 @@ Visualization Manager:
             Show Trail: false
             Value: true
           link_6:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          mounted_camera_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          mounted_camera_optical_frame:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -204,17 +215,17 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
-          camera_link:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
-          camera_optical_frame:
-            Alpha: 1
-            Show Axes: false
-            Show Trail: false
-            Value: true
           external_axis_object:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          external_camera_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          external_camera_optical_frame:
             Alpha: 1
             Show Axes: false
             Show Trail: false
@@ -263,6 +274,16 @@ Visualization Manager:
             Show Axes: false
             Show Trail: false
             Value: true
+          mounted_camera_link:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
+          mounted_camera_optical_frame:
+            Alpha: 1
+            Show Axes: false
+            Show Trail: false
+            Value: true
           tool0:
             Alpha: 1
             Show Axes: false
@@ -293,8 +314,15 @@ Visualization Manager:
       Marker Topic: /visualization_marker
       Name: Marker
       Namespaces:
-        /some_marker: true
-        some_marker: true
+        {}
+      Queue Size: 100
+      Value: true
+    - Class: rviz/MarkerArray
+      Enabled: true
+      Marker Topic: /robot_calibration_viz/data
+      Name: MarkerArray
+      Namespaces:
+        {}
       Queue Size: 100
       Value: true
   Enabled: true
@@ -313,7 +341,7 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/XYOrbit
-      Distance: 7.41922331
+      Distance: 12.8869228
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
@@ -328,10 +356,10 @@ Visualization Manager:
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.00999999978
-      Pitch: 0.734796882
+      Pitch: 0.639797091
       Target Frame: base_link
       Value: XYOrbit (rviz)
-      Yaw: 2.47176361
+      Yaw: 1.19176424
     Saved: ~
 Window Geometry:
   Displays:

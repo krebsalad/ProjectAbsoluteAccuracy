@@ -191,6 +191,7 @@ int main(int argc, char** argv)
     visualization_msgs::MarkerArray markers;
     for (size_t m = 0; m < model_names.size(); ++m)
     {
+      
       // Project through model
       std::vector<geometry_msgs::PointStamped> points;
       points = models[model_names[m]]->project(data[i], offsets);

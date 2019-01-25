@@ -18,20 +18,20 @@
   </group--> <!-- NOT REQUIRED, NEW PR ON INTEL REPO WITH RESET functionality. TODO!!! https://github.com/intel-ros/realsense/pull/455 -->
 
   <group if="$(eval camera_launcher_arg == 'launch_all')">
-     <include file="$(find fieldlab_cel3_calib)/launch/cameras_cal.launch" output="screen" required="true" launch-prefix="xterm -e">
+     <include file="$(find fieldlab_cel3_calib)/launch/cameras_cal.launch">
         <arg name="mounted_camera_launch" value="true"/>
         <arg name="external_camera_launch" value="true"/>
      </include>
   </group>
 
   <group if="$(eval camera_launcher_arg == 'launch_mounted_cam')" >
-     <include file="$(find fieldlab_cel3_calib)/launch/cameras_cal.launch" output="screen" required="true" launch-prefix="xterm -e">
+     <include file="$(find fieldlab_cel3_calib)/launch/cameras_cal.launch">
         <arg name="mounted_camera_launch" value="true"/>
      </include>
   </group>
 
   <group if="$(eval camera_launcher_arg == 'launch_external_cam')">
-     <include file="$(find fieldlab_cel3_calib)/launch/cameras_cal.launch" output="screen" required="true" launch-prefix="xterm -e">
+     <include file="$(find fieldlab_cel3_calib)/launch/cameras_cal.launch">
         <arg name="external_camera_launch" value="true"/>
      </include>
   </group>
