@@ -50,13 +50,6 @@ free_frames:
     roll: true
     pitch: true
     yaw: true
-  - name: joint_6
-    x: true
-    y: true
-    z: true
-    roll: true
-    pitch: true
-    yaw: true
 error_blocks:
  - name: camera_to_arm
    type: chain3d_to_chain3d

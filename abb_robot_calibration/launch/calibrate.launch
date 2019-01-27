@@ -1,27 +1,47 @@
 <launch>
+  <!-- utility arguments -->
+  <arg name="visualizer" default="false"/> <!-- requires calibrate to have been run atleast once, in case of running at the same time, wait until calibration is done, A window will pop up where further instructions can be found -->
 
  <!--robot arguments -->
   <arg name="robot"  default="fieldlab_cel3_calib" />
 
  <!-- calibrate arguments -->
+ <arg name="calibrate" default="true"/> <!-- must be true to run calibration -->
   <arg name="calibration_data" default="calibration_data_2019-01-25-12-55-17.bag"/>
   <arg name="output_file_ext" default="fieldlab_cel3_calibration_output"/>
   <arg name="calibrate_config_file_name" default="calibrate_with_mounted_camera.yaml"/>
+  <arg name="calibration_output_directory" default="calibration_mounted_cam"/>
 
   <!-- static args -->
   <arg name="robot_package_path" value="(find $(arg robot))" />
   <arg name="dollar" value="$" />
 
   <!-- Robot calibration calibrate launch -->
-	<rosparam command="delete" param="robot_calibration" />
-	<node pkg="robot_calibration" type="calibrate" name="calibrate"
-			args="--from-bag $(arg dollar)$(arg robot_package_path)/calibration_mounted_cam/abb_robot_calibration/$(arg calibration_data)"
-			output="screen" required="true">
-		<rosparam file="$(arg dollar)$(arg robot_package_path)/config/$(arg calibrate_config_file_name)" command="load"/>
-	</node>
+  <group if="$(arg calibrate)">
+    <rosparam command="delete" param="robot_calibration" />
+    <node pkg="robot_calibration" type="calibrate" name="calibrate"
+        args="--from-bag $(arg dollar)$(arg robot_package_path)/$(arg calibration_output_directory)/abb_robot_calibration/$(arg calibration_data)"
+        output="screen" required="false" launch-prefix="xterm -e">
+      <rosparam file="$(arg dollar)$(arg robot_package_path)/config/$(arg calibrate_config_file_name)" command="load"/>
+    </node>
+  </group>
 
-  <!-- Set output param code -->
+   <!-- Set output param code -->
   <param name="robot_calibration_output_file_extension" type="str" value="$(arg output_file_ext)" />
-  <param name="robot_calibration_output_directory" type="str" value="$(arg dollar)$(arg robot_package_path)/calibration_mounted_cam/" />
+  <param name="robot_calibration_output_directory" type="str" value="$(arg dollar)$(arg robot_package_path)/$(arg calibration_output_directory)/" />
+
+  <!-- launch vizualizer -->
+  <group if="$(arg visualizer)">
+    <include file="$(arg dollar)$(arg robot_package_path)/launch/robot_cal_sim.launch">
+      <arg name="rviz_planner" value="true"/>
+      <arg name="camera_launcher_arg" value="none"/>
+    </include>
+
+    <node pkg="robot_calibration" type="viz" name="robot_calibration_viz"
+			args="$(arg dollar)$(arg robot_package_path)/$(arg calibration_output_directory)/abb_robot_calibration/$(arg calibration_data) 
+      $(arg dollar)$(arg robot_package_path)/$(arg calibration_output_directory)/calibration_$(arg output_file_ext).yaml"
+			output="screen" required="false" launch-prefix="xterm -e">
+	  </node>
+  </group>
 
 </launch>

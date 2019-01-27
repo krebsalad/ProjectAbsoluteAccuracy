@@ -237,7 +237,7 @@
     <child link="mounted_camera_link" />
   </joint>
   <joint name="mounted_camera_optical_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.010 0 0.010" />
+    <origin rpy="0.00000000 0.00000000 0.00000000" xyz="0.01000000 0.00000000 0.01000000" />
     <parent link="mounted_camera_link" />
     <child link="mounted_camera_optical_frame" />
   </joint>
@@ -247,7 +247,7 @@
     <child link="external_camera_link" />
   </joint>
   <joint name="external_camera_optical_joint" type="fixed">
-    <origin rpy="0 0 0" xyz="0.010 0 0.010" />
+    <origin rpy="0.00000000 0.00000000 0.00000000" xyz="0.01000000 0.00000000 0.01000000" />
     <parent link="external_camera_link" />
     <child link="external_camera_optical_frame" />
   </joint>
