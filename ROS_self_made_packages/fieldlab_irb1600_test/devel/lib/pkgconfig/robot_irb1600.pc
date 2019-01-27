@@ -1,8 +1,0 @@
-prefix=/home/turtle/fieldlab_irb1600_test/devel
-
-Name: robot_irb1600
-Description: Description of robot_irb1600
-Version: 0.3.0
-Cflags: 
-Libs: -L/home/turtle/fieldlab_irb1600_test/devel/lib 
-Requires: 

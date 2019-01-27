@@ -1,6 +1,0 @@
-set(fieldlab_cel3_calib_SETUP_PY_VERSION "0.0.0")
-set(fieldlab_cel3_calib_SETUP_PY_SCRIPTS "")
-set(fieldlab_cel3_calib_SETUP_PY_PACKAGES "fieldlab_cel3_calib")
-set(fieldlab_cel3_calib_SETUP_PY_PACKAGE_DIRS "src/fieldlab_cel3_calib")
-set(fieldlab_cel3_calib_SETUP_PY_MODULES "")
-set(fieldlab_cel3_calib_SETUP_PY_MODULE_DIRS "")

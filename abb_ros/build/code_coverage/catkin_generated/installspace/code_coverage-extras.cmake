@@ -1,2 +1,0 @@
-# Append the installed cmake modules to the cmake module path
-list(APPEND CMAKE_MODULE_PATH "${code_coverage_DIR}/../../../share/code_coverage/cmake/Modules")

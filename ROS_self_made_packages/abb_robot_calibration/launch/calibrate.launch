@@ -1,9 +1,0 @@
-<launch>
-	<!-- launch calibrate phase-->
-	<node pkg="robot_calibration" type="calibrate" name="calibrate"
-		args="--from-bag /tmp/abb_robot_calibration/calibration_data_2018-11-27-12-47-46.bag"
-		output="screen" required="true">
-	<rosparam file="$(find abb_robot_calibration)/config/calibrate.yaml" command="load"/>
-	</node>
-
-</launch>

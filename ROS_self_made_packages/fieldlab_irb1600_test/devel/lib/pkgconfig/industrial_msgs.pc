@@ -1,8 +1,0 @@
-prefix=/home/turtle/fieldlab_irb1600_test/devel
-
-Name: industrial_msgs
-Description: Description of industrial_msgs
-Version: 0.5.1
-Cflags: -I/home/turtle/fieldlab_irb1600_test/devel/include
-Libs: -L/home/turtle/fieldlab_irb1600_test/devel/lib 
-Requires: message_runtime std_msgs trajectory_msgs genmsg

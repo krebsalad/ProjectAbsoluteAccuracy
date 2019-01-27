@@ -1,8 +1,0 @@
-prefix=/home/turtle/abb_ros/install
-
-Name: simple_message
-Description: Description of simple_message
-Version: 0.5.1
-Cflags: -I/home/turtle/abb_ros/install/include
-Libs: -L/home/turtle/abb_ros/install/lib -lsimple_message_dummy
-Requires: roscpp industrial_msgs

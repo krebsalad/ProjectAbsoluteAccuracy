@@ -1,8 +1,0 @@
-prefix=/home/turtle/abb_ros/devel
-
-Name: abb_irb1660_support
-Description: Description of abb_irb1660_support
-Version: 0.0.0
-Cflags: 
-Libs: -L/home/turtle/abb_ros/devel/lib 
-Requires: 

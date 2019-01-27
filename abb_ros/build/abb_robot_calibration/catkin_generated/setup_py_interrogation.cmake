@@ -1,6 +1,0 @@
-set(abb_robot_calibration_SETUP_PY_VERSION "0.0.0")
-set(abb_robot_calibration_SETUP_PY_SCRIPTS "")
-set(abb_robot_calibration_SETUP_PY_PACKAGES "abb_robot_calibration")
-set(abb_robot_calibration_SETUP_PY_PACKAGE_DIRS "src/abb_robot_calibration")
-set(abb_robot_calibration_SETUP_PY_MODULES "")
-set(abb_robot_calibration_SETUP_PY_MODULE_DIRS "")
