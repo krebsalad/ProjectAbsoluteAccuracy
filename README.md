@@ -1,24 +1,26 @@
 abb_ros
 
-This is a calibration package developed for AWL. The package is generalized for controlling abb_robots with MoveIt.
+This is a calibration package developed for AWL. The package is generalized for controlling abb robots with MoveIt and calibrating them with robot calibration.
 
-Self Made packages descriptions:
+Package descriptions brief:
 - abb_irbxxx_moveit_config: example moveit configuration for controlling the robot. 
-- abb_irbxxx_support: example of support package. this package has files consisting definitions such as the URDF. Also meshes can be found here.
+- abb_irbxxx_support: example of support package with the robot description such as the URDF and meshes.
 
 - moveit_helper_scripts: Usefull scripts to create initial project and or make changes to abb_irbxxx_moveit_config
-- robot_code: utility for controlling the robot using moveit c++ pipeline. Has cartesian path functionality
-- abb_robot_calibration: robot_calibration custom implementation. Is used to initiate calibration in combination with a specific robot calibration configuration. for example: fieldlab_cel3_calib
-- fieldlab_cel3_calib: example of specific robot calibration configuration for the robot in fieldlab cel3
+- robot_code: utility for controlling the robot using moveit c++ pipeline.
+- abb_robot_calibration: robot_calibration configuration Is used to initiate calibration in combination with a specific robot calibration configuration. for example: fieldlab_cel3_calib. 
+- fieldlab_cel3_calib: example of specific robot calibration configuration for the robot in fieldlab cel3. This package contains the calibration configuration which is called from abb_robot_calibration.
 
-Dependencies description :
-- abb_driver: Needed to communicate with RAPID by inheriting from industrial_core. Also the files needed for the robot controller can be found in this package.
-- industrial_core packages: Needed for high - low end communication. Current package does have difference from original package. Such as calibration offset implementation.
-- robot_calibration packages: Main calibration package. Some changes made for logging and accepting joint states without effort.
+Dependency description brief:
+- abb_driver: Needed to communicate with RAPID by inheriting from industrial_core. Also the files needed for the robot controller can be found in this package. The driver in this package differs from the official implementation. This package has joint offset support based on changes made in industrial_core and is therefore dependent on the industrial_core that can be found in this repo.
+- industrial_core packages: Needed for high - low end communication. Current package does have difference from original package. The main addition is an extra tranform funtion. Heed this issue regarding the changes: https://github.com/ros-industrial/industrial_core/issues/218
+- robot_calibration packages: Main calibration package. Some changes made for logging and accepting joint states without effort. Furthermore, multiple features can be used, where not all features can be captured. Heed this issue regarding the changes: https://github.com/mikeferguson/robot_calibration/issues/65
 - realsense2_camera: Intel Real Sense series driver for ros. No changes were made here.
 - code_coverage: Dependency for robot_calibration package. No changes were made here.
 
 #How to use...
+Heed the said package for detailed information on how to use.
+
 ##A. Requirments
 - recommended ubuntu distribution: 16.04 lts xenial xerus for amd64
     1. Download image here: 
@@ -69,11 +71,11 @@ Dependencies description :
         - create the options as said in the tutorial
     5. alternative installation:
         - connect to the controller
-        - create a backup of the current system
+        - create a backup of the actual system
         - create a virtual-system using the backup
         - add your options in to the virtual-system
-        - export the controller parameters from the virtual-system
-        - import the controller parameters into the actual robot
+        - test and backup your virtual system
+        - use system migration to install your virtual system into the actual system. 
 
 ##D. running moveit configuration with the robot
 - Move the robot with Rviz. This requires the robot to be running.
@@ -84,9 +86,7 @@ Dependencies description :
     1. Before doing this, make sure you can control the robot using a simulated robot.
     2. when planning_execution is running and the simulated robot is running, start a new terminal and source the project.
     3. rosrun robot_code robot_code_node
-    4. You will be asked for input
-    5. input 'short'
-    6. The orientaiton will be asked, afterwards the transition. (Don't know what values? Use frames in robotstudio. If your using the actual robot, first move the robot with rviz and make sure it does not collide with anything, then run robot_code_node with input 'curren_position' and note the position. Next time you can use these positions to always go the same pose)
+    4. follow the instructions on the terminal
 
 ##E. Testing RealSense camera
 - make sure the sdk installed properly
@@ -100,11 +100,11 @@ Dependencies description :
     2. In this file the octomap is initialised. The most important in this file is the octomap frame. The frame defined in the example is a camera_frame defined in the urdf. Read further (F) for more about the frame and joints. Also the file sensors_3d.yaml is called in this launch file.
     3. In sensors_3d.yaml file the definitions of the topic coming from the camera can be found. Make sure to change these to the correct topic. 
         - Read more here: http://docs.ros.org/indigo/api/moveit_tutorials/html/doc/pr2_tutorials/planning/src/doc/perception_configuration.html 
-    4. Note that Octomap is only usefull when you mount the camera for calibration, or else it will mess around with your collisions and will prevent planning new paths.
+    4. Note that Octomap automatically has collisions enabled. This could mess around with your planners.
 
 ##F. Calibrating the camera
 - install dynamic calibrator
-    1. Can be installated for windows too. 
+    1. Can be installated for both windows and unix systems. 
         - Installation: https://www.intel.com/content/dam/support/us/en/documents/emerging-technologies/intel-realsense-technology/RealSense_D400_Dyn_Calib_User_Guide.pdf 
 - run dynamic calibration
     1. download dynamic calibrator app from googleplay
@@ -121,22 +121,22 @@ Dependencies description :
     3. camera_optical_joint has a parent frame camera_link and child camera_optical_joint
     4. External camera: camera_joint has a parent frame base_link and child camera_link. The origin shoud specify the distance from the base_link tot the camera.
     5. Mounted camera: camera_joint has a parent frame link_6(or where ever you mounted the camera) and child camera_link. 
+    6. note that the naming is very important. The calibration package will search for ..._link. So if your camera name is mounted_camera, name the links mounted_camera_link and mounted_camera_optical_frame
+    7. Possibly edit your srdf than can be found in the movit config of the robot so that collision are turned off. Look into irbxxx_moveit_config for an example.
 
 - create specific robot calibration configuration
     1. Example: fieldlab_cel3_calib
     2. create robot_cal.launch to link to your specific robot. This should launch your robot for planning paths and executing and should also launch the camera. Base this of the example. So in this case change abb_irb1660_moveit_config to abb_irbxxx_moveit_config and likewise for the support package
-    3. if mounted camera: edit calibrate_mounted.yaml and capture_mounted.yaml
-    4. if external camera: edit calibrate_external.yaml and capture_external.yaml
-    5. The yaml files are the main way for the calibration package to find reference frames when calibrating, which will be used for calculating the offsets and camera calibration. Readmore about the yaml files here: https://github.com/mikeferguson/robot_calibration/blob/master/README.md 
+    3. https://github.com/mikeferguson/robot_calibration/blob/master/README.md 
 
 - setup calibration launch files
     1. the package that initiates the calibration is abb_robot_calibration
     2. edit capture.launch. It is recommended to change the default values to your values.
-    3. edit calibrate.launch. It is recommended to change the default values to your values. No need to change the calibration_data.bag this should be inputted as an option.
+    3. edit calibrate.launch. It is recommended to change the default values to your values.
 
 - steps to changing calibration configuration
-    1. Create capture_new_config.yaml and calibrate_new_config.yaml with desired configuration in the specific calibration package, in this case fieldlab_cel3_calib package
-    2. Call the newly created files from abb_robot_calibration calibrate and capture launch files
+    1. Create capture_new_config.yaml and calibrate_new_config.yaml with desired configuration in the specific calibration package, in my case fieldlab_cel3_calib package
+    2. Call the newly created files from abb_robot_calibration calibrate and capture launch files by adding the parameters there.
     3. Create a new URDF with desired links in the robot's support package
     4. Change collision properties in the SRDF of the robot's moveit configuration to match newly added links
     5. (Not mandatory)Enable or disable octomap in sensor_manager.launch.xml of the robot moveit configuration depending on the camera that is mounted. If mounted -> enable octomap
@@ -149,31 +149,46 @@ Dependencies description :
     ```
     1. add some the options specifying the robot_ip, calibration configuration and manual being true if you did not change the default values.
     2. a new x-terminal will pop-up. This terminal will output the calibration routine. Simply move the robot and press enter after its on the new pose.
-    3. when your done capturing samples, type exit in the x-terminal. Your files will be saved in /tmp/calibrated_urdf_xtension1.urdf and /tmp/abb_robot_calibration/calibration_data_xtension1.yaml
-    4. run calibrate.launch with option of the name of the calibration_data outputted.
-    5. roslaunch abb_robot_calibration calibrate.launch calibration_data:=calibration_data_xtension1.yaml. This will edit the calibrated urdf with offsets in /tmp/
+    3. when your done capturing samples, type exit in the x-terminal. Your files will be saved in /robot_package/calibration_dir/calibrated_urdf_xtension1.urdf and /robot_package/calibration_dir/abb_robot_calibration/calibration_data_1-1-1-1-1.bag
+    4. run calibrate.launch with option of the name of the calibration_data outputted. Aleternatively set the name in the calibrate.launch file.
+    5. roslaunch abb_robot_calibration calibrate.launch calibration_data:=calibration_data_xtension1.bag. This will edit the calibrated urdf with offsets in /robot_package/calibration_dir/....urdf
 
 - auto mode
     1. To do this you need a poses bag file. This can be generated with a script
     2. the scripts can be found in robot_calibration/scripts/capture_poses
     3. if you downloaded the official calibration package instead of the one given in this repository or you want to use other feature finders than only a checkerboard, edit capture_poses and add self.last_state_.features = ['checkerboard_finder'] under line 66
     4. run the script, and move the robot to your poses then press enter and so forth. 
+    ```
+    rosrun robot_calibration capture_poses
+    ```
     5. exit when your done. A file can be found in the directory you executed the script from.
-    6. move the calibration_poses.bag to your robot calibration specific configuration. For example fieldab_cel3_calib/config/
-    7. Now you can automatically run the capture.launch with option manual:=false
+    6. move the calibration_poses.bag to your robot calibration specific configuration. For example fieldab_cel3_calib/config/. If you changed the name of the calibration bag, also edit capture.launch to match this said file.
+    7. Now you can automatically run the capture.launch with option manual:=false. It recommended to set the arguments staticaly in the capture.launch. But if you preferably want to use options. Below an example can be seen.
+    ```
+    roslaunch abb_robot_calibration capture.launch manual:=false robot_ip:=x.x.x.x robot_package:=fieldlab_cel3_calib manual:=false capture_config_file_name:=capture.yaml calibration_poses_bag:=calibration_poses.bag output_file_ext:=xtensions1 calibration_output_directory:=calibration
+    ``` 
+    8. The above command will auto capture samples for calibration based on poses in calibration_poses.bag and parameters in capture.yaml. The output will be saved in the robot_package fieldlab_cel3_calib calibration directory. In this dir file will be named calibrated_xternsions1.urdf and so forth. The data for calibration can be found in fieldlab_cel3_calib/calibration/abb_robot_calibration/calibration_data_1-1-1-1-1.bag
+
+    9. Now for the actual calibration run the following command. Again it is recommended to set this values staticaly in the calibrate.launch. Base the output values on the capture.launch.
+    ```
+    roslaunch abb_robot_calibration calibrate.launch robot_package:=fieldlab_cel3_calib calibrate:=true calibration_data:=calibration_data_1-1-1-1-1.bag calibrate_config_file_name:=calibrate.yaml output_file_ext:=xtensions1 calibration_output_directory:=calibration
+    ``` 
+    10. As you can see above, the output_file_ext and calibration_output_directory are the same as capture parameters.
+
 
 - updating the urdf after calibration
     1. in abb_robot_calibration/scripts/ there is a update_urdf.py script
     2. run this scripts with the path to the calibrated_urdf and the path to your abb_irbxx_moveit_config
     ```
-    python src/abb_robot_calibration/scripts/update_urdf.py /tmp/calibrated_urdf_xtension1.urdf src/abb_irbxxx_moveit_config
+    python src/abb_robot_calibration/scripts/update_urdf.py src/calibration/calibrated_urdf_xtension1.urdf src/abb_irbxxx_moveit_config
     ```
 
-- updating the camera parameters
-    TODO !!!
-
-- joint offsets based on poses
-    TODO !!!
+- visualize the calibration
+    1. you can use the capture.launch file that can be found in abb_robot_calibration to run the visualization. This will run a c++ code in robot_calibration. It requires two parameters. If using the capture.launch in this repo, you only need to set the paths to calibration dir, which should already be done when running calibrate.
+    2. run:
+    ```
+    roslaunch abb_robot_calibration calibrate.launch calibrate:=false visualize:=true
+    ```
 
 ##I. Troubleshooting
 - If you can setup assistant cannot find your robots meshes

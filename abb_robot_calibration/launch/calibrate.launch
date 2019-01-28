@@ -3,7 +3,7 @@
   <arg name="visualizer" default="false"/> <!-- requires calibrate to have been run atleast once, in case of running at the same time, wait until calibration is done, A window will pop up where further instructions can be found -->
 
  <!--robot arguments -->
-  <arg name="robot"  default="fieldlab_cel3_calib" />
+  <arg name="robot_package"  default="fieldlab_cel3_calib" />
 
  <!-- calibrate arguments -->
  <arg name="calibrate" default="true"/> <!-- must be true to run calibration -->
@@ -13,7 +13,7 @@
   <arg name="calibration_output_directory" default="calibration_mounted_cam"/>
 
   <!-- static args -->
-  <arg name="robot_package_path" value="(find $(arg robot))" />
+  <arg name="robot_package_path" value="(find $(arg robot_package))" />
   <arg name="dollar" value="$" />
 
   <!-- Robot calibration calibrate launch -->
