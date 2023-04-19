@@ -1,6 +1,6 @@
 # ROS Robot Calibration
 
-This is a calibration package developed for AWL. The package is generalized for controlling abb robots with MoveIt and calibrating them with robot calibration.
+This is a calibration package developed for AWL during an iternship. The package is generalized for controlling abb robots with MoveIt and calibrating them with robot calibration. Note that alot of packages used here, are pulled from other repos, please heed the 'contributing' section as these packages are outdated by now. Just remember it was developed by a non professional. Feel free to use it as an example (though don't expect any help from me ;9).
 
 Package descriptions brief
 
