@@ -85,7 +85,7 @@ If you are new to ROS-industrial the following tutorials will help out alot.
     ```
     cd ~/
     mkdir -p ~/ROS_Downloads/ros-robot-calibration
-    git clone ssh://git@trackrepo.awl.tech/ros-robot-calibration.git ~/ROS_Downloads/ros-robot-calibration
+    git clone git@github.com:krebsalad/ProjectAbsoluteAccuracy.git ~/ROS_Downloads/ros-robot-calibration
     python ~/ROS_Downloads/ros-robot-calibration/moveit_helper_scripts/scripts/abb_robot_project_maker.py project_name:=catkin_project robot_name:=irb1600
     ls ~/catkin_project/src/
     
