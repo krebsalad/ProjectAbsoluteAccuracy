@@ -246,8 +246,8 @@ If you are new to ROS-industrial the following tutorials will help out alot.
 
 This section covers the contribution to the official repositories. Please do check these with regards to the changes made in this repo. 
 
-- robot calibration: https://github.com/krebsalad/robot_calibration
-- industrial core : https://github.com/krebsalad/robot_calibration
+- robot calibration: https://github.com/mikeferguson/robot_calibration
+- industrial core : https://github.com/ros-industrial/industrial_core
 - abb experimental : https://github.com/krebsalad/abb_experimental 
 - abb driver: https://github.com/krebsalad/abb 
 
